@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,43 +14,55 @@
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
+            margin: 0;  /* Added to remove default browser margins */
         }
+
         h1 {
-            font-size: 1.8em;     /* Decreased font size */
-            font-weight: 200;     /* Thinner font weight */
+            font-size: 1.8em;
+            font-weight: 200;
             color: #555555;
-	    margin-top: 20px;     /* Space between the logo and the text */
+            margin-top: 20px;
         }
+
+        p {
+            color: #777777;
+            text-align: center;
+            width: 70%;
+            line-height: 1.5;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
         img {
             max-width: 400px;
         }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .footer span {
+            margin: 0 15px; /* Gives space between the number and the address */
+        }
     </style>
 </head>
+
 <body>
     <img src="assets/logo.png" alt="Logo">
     <h1>We Tailor your Talks</h1>
-    <iframe
-src="https://www.chatbase.co/chatbot-iframe/eSu4iAy6GdqQw1f-PMwoJ"
-width="100%"
-style="height: 100%; min-height: 700px"
-frameborder="0"
-></iframe>
-
-<script>
-window.embeddedChatbotConfig = {
-chatbotId: "eSu4iAy6GdqQw1f-PMwoJ",
-domain: "www.chatbase.co"
-}
-</script>
-<script
-src="https://www.chatbase.co/embed.min.js"
-chatbotId="eSu4iAy6GdqQw1f-PMwoJ"
-domain="www.chatbase.co"
-defer>
-</script>
-
+    <p>At "We Tailor your Talks", we don't just create chatbots. We meticulously craft them based on your unique dataset, ensuring a personalized communication experience for every user. Let us elevate your business communication with tailored chatbot solutions.</p>
+    <!-- Added Footer for contact details -->
+    <div class="footer">
+        <span>Contact: +916387123784</span>
+        <span>Address: Bangalore, India</span>
+    </div>
 </body>
 
-
 </html>
-
