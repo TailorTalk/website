@@ -1,135 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <link
       rel="stylesheet"
       href="https://chat-plugin-demo.netlify.app/chat-plugin.css"
     />
-    <link rel="icon" type="image/svg+xml" href="https://tailortalk.in/assets/fevicon.svg">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://tailortalk.in/assets/fevicon.svg"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>We Tailor your Talk</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Ubuntu', sans-serif;
-            /* font-family: Arial, sans-serif; */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
+      body {
+        font-family: "Ubuntu", sans-serif;
+        /* font-family: Arial, sans-serif; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
+      }
 
-        h1 {
-            font-size: 1.5em;
-            font-weight: 200;
-            color: #4169E1;
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
+      .tagline {
+        font-size: 1.5em;
+        font-weight: 200;
+        color: #4169e1;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
 
-        p {
-            color: #777777;
-            text-align: center;
-            width: 70%;
-            line-height: 1.5;
-            font-size: 1.2em;
-            margin-top: 20px;
-            margin-bottom: 100px;
-        }
+      .introText {
+        color: #777777;
+        text-align: center;
+        width: 70%;
+        line-height: 1.5;
+        font-size: 1.2em;
+        margin-top: 20px;
+        margin-bottom: 100px;
+      }
 
-        img {
-            max-width: 350px;
-        }
+      .topLogo {
+        max-width: 350px;
+      }
 
-        .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 0.9em;
-        }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 0.9em;
+      }
 
-        .footer span {
-            margin: 0 15px; 
-        }
+      .footer span {
+        margin: 0 15px;
+      }
 
-        a {
-            color: #0099cc;
-            text-decoration: none;
-        }
+      .footer-a {
+        color: #0099cc;
+        text-decoration: none;
+      }
 
-        a:hover {
-            text-decoration: underline;
-        }
+      .footer-a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    
-    <img src="assets/logo.svg" alt="Logo">
-    <h1>We tailor your talk</h1>
-    <p>At "Tailor-Talk", we don't just create chatbots. We meticulously craft them based on your unique dataset, ensuring a personalized communication experience for every user. Let us elevate your business communication with tailored chatbot solutions.</p>
+  <body>
+    <img class="topLogo" src="assets/logo.svg" alt="Logo" />
+    <h1 class="tagline">We tailor your talk</h1>
+    <p class="introText">
+      At "Tailor-Talk", we don't just create chatbots. We meticulously craft
+      them based on your unique dataset, ensuring a personalized communication
+      experience for every user. Let us elevate your business communication with
+      tailored chatbot solutions.
+    </p>
     <!-- Updated Footer with Privacy Policy link -->
     <div class="footer">
-        <div class="footer-contact"> <!-- Contact div to group contact info -->
-            <span>Contact: +916387123784</span>
-            <span>Address: Bangalore, India</span>
-            <span>Email: team@tailortalk.in</span>
-        </div>
-        <div class="footer-links"> <!-- Links div to group site links -->
-            <span><a href="about_us.html">About Us</a></span>
-            <span><a href="privacy_policy.html">Privacy Policy</a></span>
-            <span><a href="business_policy.html">Business Policy</a></span>
-        </div>
+      <div class="footer-contact">
+        <!-- Contact div to group contact info -->
+        <span>Contact: +916387123784</span>
+        <span>Address: Bangalore, India</span>
+        <span>Email: team@tailortalk.in</span>
+      </div>
+      <div class="footer-links">
+        <!-- Links div to group site links -->
+        <span><a class="footer-a" href="about_us.html">About Us</a></span>
+        <span
+          ><a class="footer-a" href="privacy_policy.html"
+            >Privacy Policy</a
+          ></span
+        >
+        <span
+          ><a class="footer-a" href="business_policy.html"
+            >Business Policy</a
+          ></span
+        >
+      </div>
     </div>
 
     <style>
-        .footer {
-            display: flex;
-            flex-direction: column;  /* Stack the contact info and site links vertically */
-            align-items: center;     /* Center them horizontally */
-            padding: 10px 0;
-            background-color: #4169E1;
-            color: #fff;
-            text-align: center;
-            font-size: 0.9em;
-        }
+      .footer {
+        display: flex;
+        flex-direction: column; /* Stack the contact info and site links vertically */
+        align-items: center; /* Center them horizontally */
+        padding: 10px 0;
+        background-color: #4169e1;
+        color: #fff;
+        text-align: center;
+        font-size: 0.9em;
+      }
 
-        .footer-contact, .footer-links {
-            display: flex;           /* Display as row for inline appearance */
-            gap: 15px;               /* Spacing between items */
-            margin: 5px 0;           /* Spacing between rows */
-        }
+      .footer-contact,
+      .footer-links {
+        display: flex; /* Display as row for inline appearance */
+        gap: 15px; /* Spacing between items */
+        margin: 5px 0; /* Spacing between rows */
+      }
 
-        .footer-contact {
-            margin-bottom: 20px;    /* Add space between the two divs */
-        }
+      .footer-contact {
+        margin-bottom: 20px; /* Add space between the two divs */
+      }
 
-        .footer a {
-            /* put white color */
-            color: #fff;
-            text-decoration: underline;
-        }
+      .footer a {
+        /* put white color */
+        color: #fff;
+        text-decoration: underline;
+      }
 
-        .footer a:hover {
-            text-decoration: underline;
-        }
+      .footer a:hover {
+        text-decoration: underline;
+      }
     </style>
     <script
-    id="bot-script"
-    user="nandank.ic.21@nitj.ac.in"
-    src="https://chat-plugin-demo.netlify.app/chat-plugin.js"
-  ></script>
-</body>
-
-
-
+      id="bot-script"
+      user="nandank.ic.21@nitj.ac.in"
+      src="https://chat-plugin-demo.netlify.app/chat-plugin.js"
+    ></script>
+  </body>
 </html>
