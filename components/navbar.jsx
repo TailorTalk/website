@@ -7,28 +7,28 @@ import { BsArrowRight } from "react-icons/bs";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
-  console.log(pathname);
+  // const pathname = usePathname();
+  // console.log(pathname);
 
   return (
-    <div className="min-w-full bg-gray-100 border-b-gray-200 border-b-[1px] container mx-auto px-4 pr-9 flex justify-between items-center h-16 text-[17px] font-normal shadow-sm">
+    <div className="min-w-full container mx-auto px-4 pr-9 flex justify-between items-center h-16 text-[17px] font-normal pt-4">
       {/* shadow-[2px_1px_4px_rgba(0,0,0,0.2)] */}
       <Link href="/">
         <span className="flex items-center text-gray-800">
-          <img src="/logo.png" alt="Logo" className="mr-2 h-11" />
+          <img src="/logo.png" alt="Logo" className="mt-1 ml-3 mr-1 h-11" />
           <span className="text-xl font-semibold font-comfortaa">
             Tailor Talk
           </span>
         </span>
       </Link>
       <div className="text-l ">
-        <ul className="ml-[10vw]  items-center hidden space-x-6 text-gray-900 md:flex gap-28">
+        <ul className="ml-[10vw]  items-center hidden  text-gray-900 md:flex gap-16">
           <li>
             <Link
               className={
-                pathname === "/demo"
-                  ? "underline-offset-[6px] underline text-blue-500"
-                  : "hover:text-blue-500"
+                // pathname === "/demo"
+                //   ? "underline-offset-[6px] underline text-blue-500"
+                "hover:text-blue-500"
               }
               href="/demo"
             >
@@ -38,13 +38,25 @@ const Navbar = () => {
           <li>
             <Link
               className={
-                pathname === "/pricing"
-                  ? "underline-offset-[6px] underline text-blue-500"
-                  : "hover:text-blue-500"
+                // pathname === "/pricing"
+                //   ? "underline-offset-[6px] underline text-blue-500"
+                "hover:text-blue-500"
               }
               href="/pricing"
             >
               Pricing
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={
+                // pathname === "/pricing"
+                //   ? "underline-offset-[6px] underline text-blue-500"
+                "hover:text-blue-500"
+              }
+              href="/pricing"
+            >
+              Our Stories
             </Link>
           </li>
         </ul>

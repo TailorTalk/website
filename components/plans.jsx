@@ -105,13 +105,13 @@ const ChatbotPricing = () => {
   return (
     <div>
       <div className="flex items-center justify-center p-2 my-4 mb-9 ">
-        <div className="p-2 bg-gray-200 rounded-lg">
+        <div className="p-2 bg-gray-100 rounded-lg">
           <button
             className={`mx-0 px-4 py-2 ${
               showMonthly
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 text-gray-900"
-            }  rounded-lg`}
+            }  rounded-md`}
             onClick={togglePricing}
           >
             Monthly
@@ -121,7 +121,7 @@ const ChatbotPricing = () => {
               showMonthly
                 ? "bg-gray-200 text-gray-900"
                 : "bg-blue-500 text-white"
-            } rounded-lg`}
+            } rounded-md`}
             onClick={togglePricing}
           >
             Yearly
@@ -131,7 +131,7 @@ const ChatbotPricing = () => {
       <div className="flex flex-wrap items-center justify-center -mx-4">
         {plansToShow.map((plan, index) => (
           <div key={index} className="w-full px-4 mb-4 sm:w-1/3 lg:w-1/5">
-            <div className="relative h-[400px] p-4 bg-white border-2 border-gray-300 rounded-lg shadow-md flex flex-col justify-between hover:border-blue-300 hover:shadow-xl">
+            <div className="relative h-[400px] p-4 bg-gray-50 border-[1px] border-gray-300 rounded-lg shadow-md flex flex-col justify-between hover:border-blue-300 hover:shadow-xl">
               <div>
                 <h3 className="mb-4 text-2xl font-semibold text-blue-500">
                   {plan.name}
