@@ -1,30 +1,32 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+// import { GoVerified } from "react-icons/go";
 
 const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      header: "Best financial decision ever!",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium quas quisquam non? Quas voluptate nulla minima deleniti optio ullam nesciunt, numquam corporis et asperiores laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus id alias reiciendis, perferendis facere pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.",
-      author: "Aarav Lynn",
-      location: "San Francisco, USA",
+      header: "Seamless Assistance for My Business",
+      text: "TailorTalk's chatbot has seamlessly integrated with my business operations. The intuitive interface and smart responses have significantly improved customer interactions. It's like having a virtual assistant that understands my business needs. Highly recommended!",
+      author: "Shiva Verma",
+      location: "IIT Mandi",
       photo: "/dp.png",
     },
     {
       id: 2,
-      header: "The last step to becoming a complete minimalist",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium quas quisquam non? Quas voluptate nulla minima deleniti optio ullam nesciunt, numquam corporis et asperiores laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus id alias reiciendis, perferendis facere pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.",
-      author: "Miyah Miles",
-      location: "London, UK",
+      header: "Efficiency Redefined with TailorTalk",
+      text: "Good Product",
+      author: "Nandan Kumar",
+      location: "NIT Jalandhar",
       photo: "/dp.png",
     },
     {
       id: 3,
-      header: "Finally free from old-school banks",
-      text: "Debitis, nihil sit minus suscipit magni aperiam vel tenetur incidunt commodi architecto numquam omnis nulla autem, necessitatibus blanditiis modi similique quidem. Odio aliquam culpa dicta beatae quod maiores ipsa minus consequatur error sunt, deleniti saepe aliquid quos inventore sequi. Necessitatibus id alias reiciendis, perferendis facere.",
-      author: "Francisco Gomes",
-      location: "Lisbon, Portugal",
+      header: "Revolutionizing Customer Engagement",
+      text: "Industry demands innovation, and TailorTalk's chatbot delivers just that. It has revolutionized how we engage with our customers. The personalized interactions, quick responses, and analytical insights provided by the chatbot have significantly enhanced our customer satisfaction levels. Kudos to the TailorTalk team!",
+      author: "Akash",
+      location: "IIT Delhi",
       photo: "/dp.png",
     },
   ];
@@ -46,68 +48,64 @@ const Testimonials = () => {
 
   return (
     <section className="max-w-6xl mx-auto mt-20">
-      <h2 className="mb-8 text-4xl font-bold text-center">Testimonials</h2>
-      <div className="relative overflow-hidden">
+      <h2 className="mb-8 text-4xl font-bold text-center text-gray-800">
+        Customer Testimonials
+      </h2>
+      <div className="relative p-8 overflow-hidden bg-white">
         {testimonials.map((testimonial, index) => (
           <div
             key={testimonial.id}
-            className={`w-3/5 mx-auto ${
+            className={`w-4/5 mx-auto flex flex-col ${
               index === currentSlide
-                ? "opacity-100 h-auto"
-                : "opacity-0 translate-x-full hidden overflow-hidden"
-            } transition-all ease-in-out duration-1000`}
-            // key={testimonial.id}
-            // className={`w-3/5 mx-auto ${
-            //   index === currentSlide
-            //     ? "opacity-100 h-auto"
-            //     : "opacity-0 h-0 overflow-hidden"
-            // } transition-all ease-in-out duration-1000`}
+                ? "opacity-100 h-[280px]"
+                : "opacity-0 translate-x-full h-0 p-0 overflow-hidden"
+            } transition-[opacity,transform] ease-in-out duration-1000 rounded-lg p-5 pl-7 bg-gray-50 shadow-lg shadow-zinc-200`}
           >
-            <h5 className="mb-4 text-2xl font-semibold testimonial__header">
-              {testimonial.header}
+            <h5 className="mb-4 text-xl font-semibold text-gray-800">
+              "{testimonial.header}"
             </h5>
-            <blockquote className="mb-8 text-lg text-gray-600 testimonial__text">
+            <blockquote className="flex-grow mb-8 text-gray-600 text-md">
               {testimonial.text}
             </blockquote>
-            <address className="flex items-center ml-12 space-x-4 testimonial__author">
+            <address className="flex items-center space-x-4 border-t-[1px] border-gray-300 pt-2">
               <img
                 src={testimonial.photo}
                 alt={`User ${index + 1}`}
-                className="w-20 h-20 rounded-full"
+                className="w-10 h-10 rounded-full"
               />
               <div>
-                <h6 className="mb-0 text-lg font-semibold testimonial__name">
+                <h6 className="mb-0 text-base font-semibold text-gray-700">
                   {testimonial.author}
                 </h6>
-                <p className="text-base testimonial__location">
-                  {testimonial.location}
-                </p>
+                <p className="text-sm text-gray-500">{testimonial.location}</p>
               </div>
             </address>
           </div>
         ))}
         <button
-          className="absolute z-10 font-sans text-3xl text-gray-800 transform -translate-x-1/2 border-none rounded-full cursor-pointer slider__btn slider__btn--left top-1/2 left-6 bg-opacity-70 h-14 w-14"
+          className="absolute z-10 text-3xl text-gray-800 cursor-pointer top-[37%] left-6 h-14 w-14"
           onClick={() =>
             showSlide(
               (currentSlide - 1 + testimonials.length) % testimonials.length
             )
           }
         >
-          &larr;
+          <GrFormPrevious />
         </button>
         <button
-          className="absolute z-10 font-sans text-3xl text-gray-800 transform translate-x-1/2 border-none rounded-full cursor-pointer slider__btn slider__btn--right top-1/2 right-6 bg-opacity-70 h-14 w-14"
+          className="absolute z-10 text-3xl text-gray-800 cursor-pointer top-[37%] right-6 h-14 w-14"
           onClick={() => showSlide((currentSlide + 1) % testimonials.length)}
         >
-          &rarr;
+          <GrFormNext />
         </button>
-        <div className="absolute flex transform -translate-x-1/2 dots bottom-5 left-1/2">
+        <div className="flex justify-center mt-6">
           {testimonials.map((_, index) => (
             <button
               key={index}
-              className={`dots__dot border-none bg-gray-300 opacity-70 h-4 w-4 rounded-full mr-7 cursor-pointer transition-all duration-500 ${
-                index === currentSlide ? "bg-gray-800 opacity-100" : ""
+              className={`border-gray-900 border-[2px] opacity-70 h-4 w-4 rounded-full mx-2 cursor-pointer transition-all duration-500 ${
+                index === currentSlide
+                  ? "bg-gray-900 opacity-100"
+                  : "hover:bg-gray-900"
               }`}
               onClick={() => showSlide(index)}
             ></button>

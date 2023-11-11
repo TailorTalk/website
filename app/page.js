@@ -46,7 +46,7 @@ export default function Home() {
             </p>
             {/* <div className="flex flex-col items-center justify-center w-fit place-items-center">
               <a
-                className="px-4 py-3 text-base font-semibold leading-7 text-white transition-all rounded-md shadow-lg bg-chatbase-gradient hover:animate-gradient focus-visible:animate-gradient focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                className="px-4 py-3 text-base font-semibold leading-7 text-black transition-all rounded-md shadow-lg bg-chatbase-gradient hover:animate-gradient focus-visible:animate-gradient focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                 href="/auth/signup"
               >
                 Build your Chatbot <span aria-hidden="true">→</span>
