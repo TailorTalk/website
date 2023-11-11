@@ -9,9 +9,9 @@ const GalleryPage = async () => {
     // console.log(logos);
 
     return (
-      <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-24">
-        <h1 className="mt-8 mb-4 text-xl font-bold md:mt-0 md:text-4xl">
-          Chatbase integrates with your favorite tools
+      <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-28">
+        <h1 className="mt-8 mb-10 text-xl font-bold md:mt-0 md:text-4xl">
+          Tailor Talks integrates with your favorite tools
         </h1>
         <div className="flex flex-wrap items-center justify-center">
           {logos &&

@@ -43,7 +43,7 @@ const FeaturesSection = () => {
 
   return (
     <section className="flex flex-col items-center justify-center max-w-6xl mx-auto">
-      <h2 className="mt-8 mb-8 text-xl font-bold md:mt-0 md:text-4xl">
+      <h2 className="mt-8 text-xl font-bold mb-14 md:mt-0 md:text-4xl">
         Elevate Your Chatbot with Tailor-Talk Features
       </h2>
       <div className="flex w-full">
@@ -52,7 +52,7 @@ const FeaturesSection = () => {
           {featureData.map((feature) => (
             <div
               key={feature.id}
-              className={`w-full px-4 py-1 rounded-full group lg:rounded-l-xl lg:rounded-r-xl lg:p-6 hover:cursor-pointer ${
+              className={`w-full px-4 py-1 rounded-full group lg:rounded-l-xl lg:rounded-r-xl lg:p-6 hover:cursor-pointer hover:bg-gray-100 ${
                 selectedFeature === feature.id
                   ? "bg-gray-100 border-gray-200 border"
                   : ""

@@ -110,7 +110,7 @@ const ChatbotPricing = () => {
             className={`mx-0 px-4 py-2 ${
               showMonthly
                 ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-900"
+                : "bg-gray-100 text-gray-900"
             }  rounded-md`}
             onClick={togglePricing}
           >
@@ -119,7 +119,7 @@ const ChatbotPricing = () => {
           <button
             className={`mx-0 px-4 py-2 ${
               showMonthly
-                ? "bg-gray-200 text-gray-900"
+                ? "bg-gray-100 text-gray-900"
                 : "bg-blue-500 text-white"
             } rounded-md`}
             onClick={togglePricing}

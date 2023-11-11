@@ -7,8 +7,8 @@ import { BsArrowRight } from "react-icons/bs";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  // const pathname = usePathname();
-  // console.log(pathname);
+  const pathname = usePathname();
+  console.log(pathname);
 
   return (
     <div className="min-w-full container mx-auto px-4 pr-9 flex justify-between items-center h-16 text-[17px] font-normal pt-4">
@@ -26,9 +26,7 @@ const Navbar = () => {
           <li>
             <Link
               className={
-                // pathname === "/demo"
-                //   ? "underline-offset-[6px] underline text-blue-500"
-                "hover:text-blue-500"
+                pathname === "/demo" ? " text-blue-500" : "hover:text-blue-500"
               }
               href="/demo"
             >
@@ -38,9 +36,9 @@ const Navbar = () => {
           <li>
             <Link
               className={
-                // pathname === "/pricing"
-                //   ? "underline-offset-[6px] underline text-blue-500"
-                "hover:text-blue-500"
+                pathname === "/pricing"
+                  ? "text-blue-500"
+                  : "hover:text-blue-500"
               }
               href="/pricing"
             >
@@ -50,11 +48,9 @@ const Navbar = () => {
           <li>
             <Link
               className={
-                // pathname === "/pricing"
-                //   ? "underline-offset-[6px] underline text-blue-500"
-                "hover:text-blue-500"
+                pathname === "/blogs" ? " text-blue-500" : "hover:text-blue-500"
               }
-              href="/pricing"
+              href="/blogs"
             >
               Our Stories
             </Link>

@@ -45,7 +45,7 @@ const Testimonials = () => {
   }, [currentSlide]);
 
   return (
-    <section className="max-w-6xl mx-auto mt-12">
+    <section className="max-w-6xl mx-auto mt-20">
       <h2 className="mb-8 text-4xl font-bold text-center">Testimonials</h2>
       <div className="relative overflow-hidden">
         {testimonials.map((testimonial, index) => (
