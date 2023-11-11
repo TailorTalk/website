@@ -16,29 +16,29 @@ export default function Home() {
       <section className="mx-auto max-w-6xl md:mt-2 md:mb-16 md:grid md:h-[500px] md:grid-cols-7 md:pl-5">
         {/* Left Content */}
         <div className="flex items-center justify-between space-x-8 md:col-span-4">
-          <div className="flex flex-col items-center justify-center h-[70%] gap-8">
+          <div className="flex flex-col justify-center h-[70%] gap-8">
             <h1 className="text-2xl font-bold md:text-7xl">
-              <span className="mr-6">We</span>
+              <span className="mr-4">We</span>
               {/* Blue highlight effect */}
               <span className="relative inline-block">
-                <span className="relative z-10">Tailor</span>
-                <span
-                  className="absolute inset-0 transform scale-105 skew-x-[-15deg] bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 opacity-70"
+                <span className="relative z-10 text-[#4764FC]">Tailor</span>
+                {/* <span
+                  className="absolute inset-0 transform scale-105 skew-x-[-15deg] bg-gradient-to-r from-[#91a3f9] via-[#647cf4] to-[#4764FC]"
                   aria-hidden="true"
-                ></span>
+                ></span> */}
               </span>
               <br />
               <span className="relative inline-block">
                 <span className="relative z-10">Your</span>
-                <span
-                  className="absolute inset-0 transform scale-105 skew-x-[-15deg] bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 opacity-70"
+                {/* <span
+                  className="absolute inset-0 transform scale-105 skew-x-[-15deg] bg-gradient-to-r from-[#91a3f9] via-[#647cf4] to-[#4764FC]"
                   aria-hidden="true"
-                ></span>
+                ></span> */}
               </span>
-              <span className="ml-6 mr-2">Talks</span>
+              <span className="ml-4 mr-2 text-[#4764FC]">Talks</span>
             </h1>
 
-            <p className="max-w-xl col-start-1 row-start-3 text-lg text-gray-900">
+            <p className="max-w-xl col-start-1 row-start-3 text-lg text-gray-700">
               At "Tailor-Talk", we don't just create chatbots. We meticulously
               craft them based on your unique dataset, ensuring a personalized
               communication experience for every user. Let us elevate your
