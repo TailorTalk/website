@@ -1,6 +1,8 @@
 // pages/index.js
+import FAQSection from "@/components/faq";
 import FeaturesSection from "@/components/feature";
 import IntegrateSection from "@/components/integrate";
+import Testimonials from "@/components/testimonial";
 // import Head from "next/head";
 
 export const metadata = {
@@ -64,7 +66,10 @@ export default function Home() {
 
       {/* Additional Sections and Components */}
       <FeaturesSection />
+      <FAQSection />
       <IntegrateSection />
+
+      <Testimonials />
     </div>
   );
 }
