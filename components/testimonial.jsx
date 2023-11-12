@@ -79,7 +79,7 @@ const Testimonials = () => {
           coverflowEffect={{
             rotate: 500,
             stretch: 100,
-            depth: 0,
+            depth: 1000,
             modifier: 0.08,
             slideShadows: true,
           }}
@@ -106,7 +106,7 @@ const Testimonials = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="p-6 m-4 mb-12 flex flex-col justify-between bg-white rounded-lg shadow-lg h-[330px]">
+              <div className="p-6 m-4 mb-12 flex flex-col justify-between bg-white rounded-lg  h-[330px]">
                 <div>
                   <FaQuoteLeft className="mb-2 text-4xl text-gray-600" />
                   <p className="mb-4 text-gray-800 text-md">
