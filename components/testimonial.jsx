@@ -1,7 +1,23 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-// import { GoVerified } from "react-icons/go";
+// import React, { useRef, useState } from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+// import 'swiper/css/pagination';
+import "swiper/css/pagination";
+
+// import required modules
+import {
+  Navigation,
+  Pagination,
+  Keyboard,
+  Autoplay,
+  EffectCoverflow,
+} from "swiper/modules";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const Testimonials = () => {
   const testimonials = [
@@ -21,95 +37,103 @@ const Testimonials = () => {
     },
     {
       header: "Revolutionizing Customer Engagement",
-      text: "Industry demands innovation, and TailorTalk's chatbot delivers just that. It has revolutionized how we engage with our customers. The personalized interactions, quick responses, and analytical insights provided by the chatbot have significantly enhanced our customer satisfaction levels. Kudos to the TailorTalk team!",
+      text: "Industry demands innovation, and TailorTalk's chatbot delivers just that. It has revolutionized how we engTailorTalk team!",
+      author: "Akash",
+      location: "IIT Delhi",
+      photo: "/dp.png",
+    },
+    {
+      header: "Revolutionizing Customer Engagement",
+      text: "Industry demands innovation, and TailorTalk's chatbot delivers just that. It has revolutionized ho the TailorTalk team!",
+      author: "Akash",
+      location: "IIT Delhi",
+      photo: "/dp.png",
+    },
+    {
+      header: "Revolutionizing Customer Engagement",
+      text: "Industry demands is. The personalized interactions, quick responses, and analytical insights provided by the chatbot have significantly enhanced our customer satisfaction levels. Kudos to the TailorTalk team!",
+      author: "Akash",
+      location: "IIT Delhi",
+      photo: "/dp.png",
+    },
+    {
+      header: "Revolutionizing Customer Engagement",
+      text: "Industry demandsailorTalk team!",
       author: "Akash",
       location: "IIT Delhi",
       photo: "/dp.png",
     },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const showSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const nextSlide = (currentSlide + 1) % testimonials.length;
-      showSlide(nextSlide);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [currentSlide]);
-
   return (
-    <section className="max-w-6xl mx-auto mt-32">
-      <h2 className="mb-8 text-4xl font-bold text-center text-gray-800">
-        Customer Testimonials
-      </h2>
-      <div className="relative p-8 overflow-hidden bg-white">
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className={`w-4/5 mx-auto flex flex-col ${
-              index === currentSlide
-                ? "opacity-100 h-[280px]"
-                : "opacity-0 translate-x-full h-0 p-0 overflow-hidden"
-            } transition-[opacity,transform] ease-in-out duration-1000 rounded-lg p-5 bg-gray-50 shadow-lg shadow-zinc-200`}
-          >
-            <h5 className="mb-4 text-xl font-semibold text-gray-800">
-              "{testimonial.header}"
-            </h5>
-            <blockquote className="flex-grow mb-8 text-gray-600 text-md">
-              {testimonial.text}
-            </blockquote>
-            <address className="flex items-center space-x-4 border-t-[1px] border-gray-300 pt-2">
-              <img
-                src={testimonial.photo}
-                alt={`User ${index + 1}`}
-                className="w-10 h-10 rounded-full"
-              />
-              <div>
-                <h6 className="mb-0 text-base font-semibold text-gray-700">
-                  {testimonial.author}
-                </h6>
-                <p className="text-sm text-gray-500">{testimonial.location}</p>
+    <>
+      <h1 className="mb-10 text-4xl font-bold text-center mt-28 md:text-4xl">
+        Users Speak, Tailor Talks Listens
+      </h1>
+      <section className="flex items-center justify-center max-w-6xl mx-auto ">
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={3}
+          coverflowEffect={{
+            rotate: 500,
+            stretch: 100,
+            depth: 0,
+            modifier: 0.08,
+            slideShadows: true,
+          }}
+          spaceBetween={25}
+          loop={true}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          navigation={true}
+          pagination={{
+            clickable: true,
+          }}
+          //   mousewheel={true}
+          keyboard={true}
+          modules={[
+            Navigation,
+            Pagination,
+            Keyboard,
+            Autoplay,
+            EffectCoverflow,
+          ]}
+          className="mySwiper"
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <div className="p-6 m-4 mb-12 flex flex-col justify-between bg-white rounded-lg shadow-lg h-[330px]">
+                <div>
+                  <FaQuoteLeft className="mb-2 text-4xl text-gray-600" />
+                  <p className="mb-4 text-gray-800 text-md">
+                    {testimonial.text}
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <img
+                    src={testimonial.photo}
+                    alt={`User ${index + 1}`}
+                    className="w-10 h-10 mr-4 rounded-full"
+                  />
+                  <div>
+                    <h6 className="text-lg font-semibold text-gray-700">
+                      {testimonial.author}
+                    </h6>
+                    <p className="text-sm text-gray-500">
+                      {testimonial.location}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </address>
-          </div>
-        ))}
-        <button
-          className="absolute z-10 text-3xl text-gray-800 cursor-pointer top-[37%] left-6 h-14 w-14"
-          onClick={() =>
-            showSlide(
-              (currentSlide - 1 + testimonials.length) % testimonials.length
-            )
-          }
-        >
-          <GrFormPrevious />
-        </button>
-        <button
-          className="absolute z-10 text-3xl text-gray-800 cursor-pointer top-[37%] right-6 h-14 w-14"
-          onClick={() => showSlide((currentSlide + 1) % testimonials.length)}
-        >
-          <GrFormNext />
-        </button>
-        <div className="flex justify-center mt-6">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              className={`border-gray-900 border-[2px] opacity-70 h-4 w-4 rounded-full mx-2 cursor-pointer transition-all duration-500 ${
-                index === currentSlide
-                  ? "bg-gray-900 opacity-100"
-                  : "hover:bg-gray-900"
-              }`}
-              onClick={() => showSlide(index)}
-            ></button>
+            </SwiperSlide>
           ))}
-        </div>
-      </div>
-    </section>
+        </Swiper>
+      </section>
+    </>
   );
 };
 
