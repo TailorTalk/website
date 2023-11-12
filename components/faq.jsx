@@ -10,14 +10,14 @@ const faqs = [
       "TailorTalk is a cutting-edge platform offering customized chatbot and agent solutions, designed to meet specific business needs and enhance customer engagement through intelligent, tailored conversations.",
   },
   {
+    question: "How to create a chatbot?",
+    answer:
+      "To create your chatbot with Tailor-Talk, simply visit our console app. There, you can upload your files and specify custom instructions to craft your unique bot. After creation, you'll receive an embeddable code to integrate the chatbot on your website. For more complex use cases, such as integration with WhatsApp or developing other types of agents, please reach out to our team at team@tailortalk.in for specialized assistance.",
+  },
+  {
     question: "What is Agent offered by Tailor-Talk?",
     answer:
       "Agents are advanced chatbots designed for tasks like customer service and sales support. Capable of complex interactions, they provide personalized responses and can perform actions like booking appointments and accepting payments. These versatile agents can be integrated with platforms like WhatsApp and Slack for comprehensive communication solutions.",
-  },
-  {
-    question: "How to create a chatbot?",
-    answer:
-      "To create your chatbot with Tailor-Talk, simply visit our console app. There, you can upload your data and specify custom instructions to craft your unique bot. After creation, you'll receive an embeddable code to integrate the chatbot on your website. For more complex use cases, such as integration with WhatsApp or developing other types of agents, please reach out to our team at team@tailortalk.in for specialized assistance.",
   },
   {
     question: "Where is my data stored?",

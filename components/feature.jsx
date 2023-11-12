@@ -42,7 +42,7 @@ const FeaturesSection = () => {
   return (
     <section className="flex flex-col items-center justify-center max-w-6xl mx-auto">
       <h2 className="mt-8 text-xl font-bold mb-14 md:mt-0 md:text-4xl">
-        Elevate Your Chatbot with Tailor-Talk Features
+        What we offer
       </h2>
       <div className="flex w-full">
         {/* Left Side - Buttons */}
