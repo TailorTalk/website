@@ -17,12 +17,11 @@ const faqs = [
   {
     question: "How to create a chatbot?",
     answer:
-      "To create your chatbot with Tailor-Talk, simply visit our console app. There, you can upload your data and specify custom instructions to craft your unique bot. After creation, you'll receive an embeddable code to integrate the chatbot on your website. For more complex use cases, such as integration with WhatsApp or developing other types of agents, please reach out to our team at team@tailortalk.in for specialized assistance." },
+      "To create your chatbot with Tailor-Talk, simply visit our console app. There, you can upload your data and specify custom instructions to craft your unique bot. After creation, you'll receive an embeddable code to integrate the chatbot on your website. For more complex use cases, such as integration with WhatsApp or developing other types of agents, please reach out to our team at team@tailortalk.in for specialized assistance.",
+  },
   {
-    question:
-      "Where is my data stored?",
-    answer:
-      "Your data is hosted on secure GCP servers in USA.",
+    question: "Where is my data stored?",
+    answer: "Your data is hosted on secure GCP servers in USA.",
   },
   {
     question: "How can I add my chatbot to my website?",
@@ -35,11 +34,9 @@ const faqs = [
       "Yes, you can update your chatbot at any time. Simply log in to our console and make the necessary changes.",
   },
   {
-    question:
-      "Does it support multiple languages?",
-    answer:
-      "Yes, Tailor-Talk supports more than 50 languages.",
-  }
+    question: "Does it support multiple languages?",
+    answer: "Yes, Tailor-Talk supports more than 50 languages.",
+  },
   // Add more FAQs as needed
 ];
 
@@ -55,7 +52,7 @@ const FAQSection = () => {
       <h2 className="mb-8 text-4xl font-bold text-center">
         Frequently Asked Questions
       </h2>
-      <div className="w-full">
+      <div className="w-full px-20">
         {faqs.map((faq, index) => (
           <div key={index} className="w-full py-6 border-b">
             <div
@@ -70,7 +67,7 @@ const FAQSection = () => {
               )}
             </div>
             {openIndex === index && (
-              <p className="mt-2 text-gray-600">{faq.answer}</p>
+              <p className="mt-5 text-gray-700">{faq.answer}</p>
             )}
           </div>
         ))}

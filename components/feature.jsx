@@ -2,9 +2,7 @@
 import { useState } from "react";
 
 const FeaturesSection = () => {
-  const [selectedFeature, setSelectedFeature] = useState(
-    "unlimitedChatSupport"
-  );
+  const [selectedFeature, setSelectedFeature] = useState("0");
 
   const featureData = [
     {
@@ -22,7 +20,8 @@ const FeaturesSection = () => {
     {
       id: "2",
       title: "Collect leads",
-      description: "Set yout chatbot to collect leads and follow up with them later.",
+      description:
+        "Set yout chatbot to collect leads and follow up with them later.",
       imageUrl: "/feature3.png",
     },
     {
@@ -34,8 +33,7 @@ const FeaturesSection = () => {
     {
       id: "4",
       title: "Intigrate with other systems",
-      description:
-        "Intigrate the bot with your Website, Whatsapp, Slack etc.",
+      description: "Intigrate the bot with your Website, Whatsapp, Slack etc.",
       imageUrl: "/feature5.png",
     },
     // Add more features as needed
@@ -62,7 +60,7 @@ const FeaturesSection = () => {
               <h3 className="text-sm sm:font-semibold sm:text-lg lg:text-xl">
                 {feature.title}
               </h3>
-              <p className="hidden mt-2 text-sm text-gray-700 lg:block">
+              <p className="hidden mt-2 text-gray-700 text-md lg:block">
                 {feature.description}
               </p>
             </div>

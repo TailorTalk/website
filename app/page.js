@@ -14,7 +14,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div>
-      <section className="mx-auto max-w-6xl md:mt-2 md:mb-16 md:grid md:h-[500px] md:grid-cols-7 md:pl-5">
+      <section className="mx-auto max-w-6xl md:mt-2 md:mb-16 md:grid md:h-[680px] md:grid-cols-7 md:pl-5">
         {/* Left Content */}
         <div className="flex items-center justify-between space-x-8 md:col-span-4">
           <div className="flex flex-col justify-center h-[70%] gap-8">
@@ -40,7 +40,8 @@ export default function Home() {
             </h1>
 
             <p className="max-w-xl col-start-1 row-start-3 text-lg text-gray-600">
-            Tailor-Talk specializes in creating custom chatbots and agents designed for specific business needs.
+              Tailor-Talk specializes in creating custom chatbots and agents
+              designed for specific business needs.
             </p>
             {/* <div className="flex flex-col items-center justify-center w-fit place-items-center">
               <a
