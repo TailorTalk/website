@@ -3,13 +3,9 @@ import FAQSection from "@/components/faq";
 import FeaturesSection from "@/components/feature";
 import Footer from "@/components/footer";
 import IntegrateSection from "@/components/integrate";
+import JoinFuture from "@/components/joinFuture";
 import Testimonials from "@/components/testimonial";
 // import Head from "next/head";
-
-export const metadata = {
-  title: "Tailor Talk",
-  description: "Heyooo!",
-};
 
 export default function Home() {
   return (
@@ -20,22 +16,9 @@ export default function Home() {
           <div className="flex flex-col justify-center h-[70%] gap-8">
             <h1 className="text-2xl font-bold md:text-7xl">
               <span className="mr-4">We</span>
-              {/* Blue highlight effect */}
-              <span className="relative inline-block">
-                <span className="relative z-10 text-[#4764FC]">Tailor</span>
-                {/* <span
-                  className="absolute inset-0 transform scale-105 skew-x-[-15deg] bg-gradient-to-r from-[#91a3f9] via-[#647cf4] to-[#4764FC]"
-                  aria-hidden="true"
-                ></span> */}
-              </span>
+              <span className="relative z-10 text-[#4764FC]">Tailor</span>
               <br />
-              <span className="relative inline-block">
-                <span className="relative z-10">Your</span>
-                {/* <span
-                  className="absolute inset-0 transform scale-105 skew-x-[-15deg] bg-gradient-to-r from-[#91a3f9] via-[#647cf4] to-[#4764FC]"
-                  aria-hidden="true"
-                ></span> */}
-              </span>
+              <span className="relative z-10">Your</span>
               <span className="ml-4 mr-2 text-[#4764FC]">Talks</span>
             </h1>
 
@@ -43,17 +26,13 @@ export default function Home() {
               Tailor-Talk specializes in creating custom chatbots and agents
               designed for specific business needs.
             </p>
-            {/* <div className="flex flex-col items-center justify-center w-fit place-items-center">
-              <a
-                className="px-4 py-3 text-base font-semibold leading-7 text-black transition-all rounded-md shadow-lg bg-chatbase-gradient hover:animate-gradient focus-visible:animate-gradient focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                href="/auth/signup"
-              >
-                Build your Chatbot <span aria-hidden="true">→</span>
-              </a>
-              <p className="mt-1 text-sm text-center text-zinc-500">
-                No credit card required
-              </p>
-            </div> */}
+            <a
+              className="w-fit px-3 py-2 text-md bg-[#4764FC] text-white transition-all rounded-md shadow-lg hover:bg-[#5f79fd]"
+              href="https://talkui-production.up.railway.app/assets"
+              target="__blank"
+            >
+              Build your Chatbot <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
 
@@ -69,6 +48,7 @@ export default function Home() {
       <IntegrateSection />
       <FAQSection />
 
+      <JoinFuture />
       <Footer />
     </div>
   );

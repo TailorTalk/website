@@ -1,11 +1,17 @@
 import React from "react";
 
+export const metadata = {
+  title: "About | Tailor Talk",
+  description:
+    "Tailor Talks is your go-to platform for seamless and intelligent conversations. Explore a new era of communication with Tailor Talks.",
+};
+
 function About() {
   return (
-    <div className="bg-gray-200 min-h-screen flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg shadow-md text-center max-w-xl mx-auto">
-        <h4 className="text-2xl font-bold text-gray-700 mb-4">About Us</h4>
-        <p className="text-gray-600 text-sm">
+    <div className="flex items-center justify-center min-h-screen bg-gray-200">
+      <div className="max-w-xl p-6 mx-auto text-center bg-white rounded-lg shadow-md">
+        <h4 className="mb-4 text-2xl font-bold text-gray-700">About Us</h4>
+        <p className="text-sm text-gray-600">
           We are a dedicated team with expertise in building products around
           Large Language Models (LLMs). As proud alumni of IIT, our foundation
           is solid, and our commitment unwavering. Based in Bangalore, we're

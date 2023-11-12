@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Demo | Tailor Talk",
+  description:
+    "Tailor Talks is your go-to platform for seamless and intelligent conversations. Explore a new era of communication with Tailor Talks.",
+};
+
 function page() {
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center">

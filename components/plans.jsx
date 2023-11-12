@@ -10,9 +10,9 @@ const ChatbotPricing = () => {
       name: "Basic",
       price: 9.99,
       features: [
-        "Unlimited Chat Support",
-        "Basic AI Integration",
-        "24/7 Customer Service",
+        { text: "Unlimited Chat Support", color: "gray" },
+        { text: "Basic AI Integration", color: "gray" },
+        { text: "24/7 Customer Service", color: "gray" },
       ],
       billingPeriod: "monthly",
     },
@@ -20,10 +20,10 @@ const ChatbotPricing = () => {
       name: "Pro",
       price: 19.99,
       features: [
-        "Unlimited Chat Support",
-        "Advanced AI Integration",
-        "Customization Options",
-        "Priority Customer Service",
+        { text: "Unlimited Chat Support", color: "gray" },
+        { text: "Advanced AI Integration", color: "gray" },
+        { text: "Customization Options", color: "gray" },
+        { text: "Priority Customer Service", color: "green" },
       ],
       billingPeriod: "monthly",
     },
@@ -31,11 +31,11 @@ const ChatbotPricing = () => {
       name: "Premium",
       price: 29.99,
       features: [
-        "Unlimited Chat Support",
-        "Advanced AI Integration",
-        "Customization Options",
-        "Priority Customer Service",
-        "Analytics and Reporting",
+        { text: "Unlimited Chat Support", color: "gray" },
+        { text: "Advanced AI Integration", color: "gray" },
+        { text: "Customization Options", color: "gray" },
+        { text: "Priority Customer Service", color: "green" },
+        { text: "Analytics and Reporting", color: "green" },
       ],
       billingPeriod: "monthly",
     },
@@ -46,9 +46,9 @@ const ChatbotPricing = () => {
       name: "Basic",
       price: 99.99,
       features: [
-        "Unlimited Chat Support",
-        "Basic AI Integration",
-        "24/7 Customer Service",
+        { text: "Unlimited Chat Support", color: "gray" },
+        { text: "Advanced AI Integration", color: "gray" },
+        { text: "Customization Options", color: "gray" },
       ],
       billingPeriod: "yearly",
     },
@@ -56,10 +56,10 @@ const ChatbotPricing = () => {
       name: "Pro",
       price: 199.99,
       features: [
-        "Unlimited Chat Support",
-        "Advanced AI Integration",
-        "Customization Options",
-        "Priority Customer Service",
+        { text: "Unlimited Chat Support", color: "gray" },
+        { text: "Advanced AI Integration", color: "gray" },
+        { text: "Customization Options", color: "gray" },
+        { text: "Priority Customer Service", color: "green" },
       ],
       billingPeriod: "yearly",
     },
@@ -67,11 +67,11 @@ const ChatbotPricing = () => {
       name: "Premium",
       price: 299.99,
       features: [
-        "Unlimited Chat Support",
-        "Advanced AI Integration",
-        "Customization Options",
-        "Priority Customer Service",
-        "Analytics and Reporting",
+        { text: "Unlimited Chat Support", color: "gray" },
+        { text: "Advanced AI Integration", color: "gray" },
+        { text: "Customization Options", color: "gray" },
+        { text: "Priority Customer Service", color: "green" },
+        { text: "Analytics and Reporting", color: "green" },
       ],
       billingPeriod: "yearly",
     },
@@ -128,7 +128,7 @@ const ChatbotPricing = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap items-center justify-center -mx-4">
+      <div className="flex flex-wrap items-center justify-center">
         {plansToShow.map((plan, index) => (
           <div key={index} className="w-full px-4 mb-4 sm:w-1/3 lg:w-1/5">
             <div className="relative h-[400px] p-4 bg-gray-50 border-[1px] border-gray-300 rounded-lg shadow-md flex flex-col justify-between hover:border-blue-300 hover:shadow-xl">
@@ -143,8 +143,11 @@ const ChatbotPricing = () => {
                       key={featureIndex}
                       className="flex items-start mb-2 text-sm"
                     >
-                      <AiOutlineCheck className="w-5 h-5 mr-2 text-gray-700" />
-                      {feature}
+                      <AiOutlineCheck
+                        className="w-5 h-5 mr-2"
+                        style={{ color: feature.color }}
+                      />
+                      {feature.text}
                     </li>
                   ))}
                 </ul>

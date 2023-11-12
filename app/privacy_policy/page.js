@@ -1,6 +1,12 @@
 // import React from "react";
 // import Head from "next/head";
 
+export const metadata = {
+  title: "Privacy Policies | Tailor Talk",
+  description:
+    "Tailor Talks is your go-to platform for seamless and intelligent conversations. Explore a new era of communication with Tailor Talks.",
+};
+
 function PrivacyPolicy() {
   return (
     <div className="p-4">
