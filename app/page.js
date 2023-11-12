@@ -6,7 +6,7 @@ import Testimonials from "@/components/testimonial";
 // import Head from "next/head";
 
 export const metadata = {
-  title: "Errr!",
+  title: "Tailor Talk",
   description: "Heyooo!",
 };
 
@@ -38,11 +38,8 @@ export default function Home() {
               <span className="ml-4 mr-2 text-[#4764FC]">Talks</span>
             </h1>
 
-            <p className="max-w-xl col-start-1 row-start-3 text-lg text-gray-700">
-              At "Tailor-Talk", we don't just create chatbots. We meticulously
-              craft them based on your unique dataset, ensuring a personalized
-              communication experience for every user. Let us elevate your
-              business communication with tailored chatbot solutions.
+            <p className="max-w-xl col-start-1 row-start-3 text-lg text-gray-600">
+            Tailor-Talk specializes in creating custom chatbots and agents designed for specific business needs.
             </p>
             {/* <div className="flex flex-col items-center justify-center w-fit place-items-center">
               <a
@@ -60,7 +57,7 @@ export default function Home() {
 
         {/* Right Content */}
         <div className="hidden md:col-span-3 md:flex md:justify-center md:items-center">
-          <img className="h-[450px]" src="/landing.png" />
+          <img className="h-[500px]" src="/landing.png" />
         </div>
       </section>
 

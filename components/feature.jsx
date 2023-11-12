@@ -8,34 +8,34 @@ const FeaturesSection = () => {
 
   const featureData = [
     {
-      id: "unlimitedChatSupport",
-      title: "Unlimited Chat Support",
-      description: "Get unlimited chat support 24/7 for your users.",
+      id: "0",
+      title: "Customize behaviour",
+      description: "Customize behaviour to achive custom business needs.",
       imageUrl: "/feature1.png",
     },
     {
-      id: "advancedAIIntegration",
-      title: "Advanced AI Integration",
-      description: "Integrate advanced A.I. capabilities into your chatbot.",
+      id: "1",
+      title: "Customize appearance",
+      description: "Customize appearance to match your brand's identity",
       imageUrl: "/feature2.png",
     },
     {
-      id: "customizationOptions",
-      title: "Customization Options",
-      description: "Customize your chatbot to match your brand's identity.",
+      id: "2",
+      title: "Collect leads",
+      description: "Set yout chatbot to collect leads and follow up with them later.",
       imageUrl: "/feature3.png",
     },
     {
-      id: "priorityCustomerService",
-      title: "Priority Customer Service",
-      description: "Enjoy priority customer service for your chatbot needs.",
+      id: "3",
+      title: "Get insights",
+      description: "Get insights on your chatbot's performance and improve it.",
       imageUrl: "/feature4.png",
     },
     {
-      id: "analyticsAndReporting",
-      title: "Analytics and Reporting",
+      id: "4",
+      title: "Intigrate with other systems",
       description:
-        "Access analytics and reporting tools for valuable insights.",
+        "Intigrate the bot with your Website, Whatsapp, Slack etc.",
       imageUrl: "/feature5.png",
     },
     // Add more features as needed

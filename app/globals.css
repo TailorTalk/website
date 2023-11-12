@@ -5,7 +5,8 @@
 @tailwind utilities;
 
 body {
-  font-family: "Ubuntu", sans-serif;
+  /* font-family: "Ubuntu", sans-serif; */
+  /* font-family: "Source sans pro", sans-serif; */
   box-sizing: content-box;
 }
 
