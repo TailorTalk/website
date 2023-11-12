@@ -43,7 +43,7 @@ const ChatbotPricing = () => {
 
   const [yearlyPlans, setYearlyPlans] = useState([
     {
-      name: "Basic (Yearly)",
+      name: "Basic",
       price: 99.99,
       features: [
         "Unlimited Chat Support",
@@ -53,7 +53,7 @@ const ChatbotPricing = () => {
       billingPeriod: "yearly",
     },
     {
-      name: "Pro (Yearly)",
+      name: "Pro",
       price: 199.99,
       features: [
         "Unlimited Chat Support",
@@ -64,7 +64,7 @@ const ChatbotPricing = () => {
       billingPeriod: "yearly",
     },
     {
-      name: "Premium (Yearly)",
+      name: "Premium",
       price: 299.99,
       features: [
         "Unlimited Chat Support",
