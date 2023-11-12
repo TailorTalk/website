@@ -10,8 +10,8 @@ const GalleryPage = async () => {
 
     return (
       <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-28">
-        <h1 className="mt-8 mb-10 text-xl font-bold md:mt-0 md:text-4xl">
-          Tailor Talks integrates with your favorite tools
+        <h1 className="mt-8 mb-10 text-4xl font-bold md:mt-0 md:text-4xl">
+          Seamless Integration, Endless Possibilities
         </h1>
         <div className="flex flex-wrap items-center justify-center">
           {logos &&
@@ -20,7 +20,7 @@ const GalleryPage = async () => {
                 <img
                   src={`/logos/${logo}`}
                   alt={`Company Logo ${index + 1}`}
-                  className="object-contain w-[300px] h-[150px]"
+                  className="object-contain w-[250px] h-[125px]"
                 />
               </div>
             ))}

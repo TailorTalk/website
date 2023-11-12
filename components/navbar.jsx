@@ -11,7 +11,7 @@ const Navbar = () => {
   console.log(pathname);
 
   return (
-    <div className="min-w-full container mx-auto px-4 pr-9 flex justify-between items-center h-16 text-[17px] font-normal pt-4">
+    <div className="min-w-full container mx-auto px-4 pr-9 flex justify-between items-center h-16 text-[17px] font-normal pt-4 pb-4">
       {/* shadow-[2px_1px_4px_rgba(0,0,0,0.2)] */}
       <Link href="/">
         <span className="flex items-center text-gray-800">

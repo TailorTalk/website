@@ -1,42 +1,109 @@
 import Link from "next/link";
-
-import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaTwitter, FaFacebookSquare, FaGithub } from "react-icons/fa";
+import { PiMediumLogoFill } from "react-icons/pi";
+import { MdEmail } from "react-icons/md";
 
 function Footer() {
   return (
-    <div>
-      <footer className="flex items-center justify-between w-full min-w-full p-3 mt-4 text-black bg-gray-200 sm:p-8 sm:absolute sm:bottom-0 sm:h-32 sm:m-0 ">
-        <div className="flex flex-col text-gray-500">
-          <div className="hidden pb-3 text-lg font-semibold text-gray-700 sm:flex">
-            <img className="h-10" src="./logo.png" />
-            {/* <span>Tailor Talks</span> */}
+    <footer className="relative pt-8 pb-6 mt-12 bg-gray-100">
+      <div className="container px-4 mx-auto">
+        <div className="flex flex-wrap text-left lg:text-left">
+          <div className="w-full px-4 lg:w-6/12">
+            <Link href="/">
+              <span className="flex items-center text-gray-800">
+                <img src="/logo.png" alt="Logo" className="mt-1 mr-1 h-11" />
+                <span className="text-xl font-semibold font-comfortaa">
+                  Tailor Talk
+                </span>
+              </span>
+            </Link>
+            <h5 className="mt-0 mb-2 text-md text-blueGray-600">
+              Find us on any of these platforms
+            </h5>
+            <div className="flex mt-6 mb-6 space-x-2 lg:mb-0">
+              <a
+                href="#"
+                className="flex items-center justify-center w-10 h-10 mr-2 font-normal text-blue-500 bg-white rounded-full shadow-lg outline-none cursor-pointer text-lightBlue-400 align-center focus:outline-none"
+              >
+                <FaTwitter className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="flex items-center justify-center w-10 h-10 mr-2 font-normal text-blue-700 bg-white rounded-full shadow-lg outline-none cursor-pointer text-lightBlue-400 align-center focus:outline-none"
+              >
+                <FaFacebookSquare className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="flex items-center justify-center w-10 h-10 mr-2 font-normal bg-white rounded-full shadow-lg outline-none cursor-pointer text-lightBlue-400 align-center focus:outline-none"
+              >
+                <PiMediumLogoFill className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="flex items-center justify-center w-10 h-10 mr-2 font-normal bg-white rounded-full shadow-lg outline-none cursor-pointer text-lightBlue-400 align-center focus:outline-none"
+              >
+                <FaGithub className="w-5 h-5" />
+              </a>
+            </div>
           </div>
-          <Link href="/about">
-            <span className="hover:underline">About Us</span>
-          </Link>
-          <Link href="/privacy_policy">
-            <span className="hover:underline">Privacy Policy</span>
-          </Link>
-          {/* <Link href="/business_policy">
-            <span className=" hover:underline">Business Policy</span>
-          </Link> */}
+          <div className="w-full px-4 lg:w-6/12">
+            <div className="flex flex-wrap mb-6 items-top">
+              <div className="w-full px-4 ml-auto lg:w-4/12">
+                <span className="block mb-2 text-lg font-semibold text-gray-800">
+                  Useful Links
+                </span>
+                <ul className="list-unstyled">
+                  <li>
+                    <a
+                      className="block pb-2 text-gray-600 text-md hover:text-gray-800"
+                      href="/about"
+                    >
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="block pb-2 text-gray-600 text-md hover:text-gray-800"
+                      href="/privacy_policy"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="w-full px-4 lg:w-4/12">
+                <span className="block mb-2 text-lg font-semibold text-gray-800">
+                  Need Help?
+                </span>
+                <ul className="list-unstyled">
+                  <li>
+                    <a
+                      className="flex items-center pb-2 text-gray-600 text-md hover:text-gray-800"
+                      href="mailto:tailortalks.in"
+                    >
+                      <MdEmail className="w-5 h-5 mr-2" />
+                      Email Us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div className="flex-col hidden text-gray-500 sm:flex ">
-          <div className="pb-3 text-lg font-semibold text-gray-700">
-            Contact Us
-          </div>
-          {/* <div>Phone: +916387123784</div> */}
-          <div>Address: Bangalore, India</div>
-          <div>
-            Email:{" "}
-            <a href="mailto:team@tailortalk.in" className="underline">
-              team@tailortalk.in
-            </a>
+        <hr className="my-6 border-gray-300" />
+        <div className="flex flex-wrap items-center justify-center md:justify-between">
+          <div className="w-full px-4 mx-auto text-center md:w-4/12">
+            <div>
+              Copyright © 2023 by{" "}
+              <a className="font-semibold" href="#">
+                Tailor Talks & Co.
+              </a>
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 }
 
