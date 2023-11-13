@@ -2,11 +2,11 @@ import { BsArrowRight } from "react-icons/bs";
 
 function IntroSection() {
   return (
-    <section className="mx-auto max-w-6xl md:mt-2 md:mb-16 md:grid md:h-[680px] md:grid-cols-7 md:pl-5">
+    <section className="mx-auto p-7 max-w-6xl md:mt-2 md:mb-16 md:flex md:h-[680px]">
       {/* Left Content */}
-      <div className="flex items-center justify-between space-x-8 md:col-span-4">
-        <div className="flex flex-col justify-center h-[70%] gap-8">
-          <h1 className="text-2xl font-bold md:text-7xl">
+      <div className="flex items-center justify-center md:w-3/5">
+        <div className="flex flex-col justify-center h-full gap-4 md:gap-10">
+          <h1 className="text-5xl font-bold md:text-7xl">
             <span className="mr-4">We</span>
             <span className="relative z-10 text-[#4764FC]">Tailor</span>
             <br />
@@ -14,7 +14,7 @@ function IntroSection() {
             <span className="ml-4 mr-2 text-[#4764FC]">Talks</span>
           </h1>
 
-          <p className="max-w-xl col-start-1 row-start-3 text-lg text-gray-600">
+          <p className="max-w-xl text-lg text-gray-600 ">
             Tailor-Talk specializes in creating custom chatbots and agents
             designed for specific business needs.
           </p>
@@ -29,8 +29,12 @@ function IntroSection() {
       </div>
 
       {/* Right Content */}
-      <div className="hidden md:col-span-3 md:flex md:justify-center md:items-center">
-        <img className="h-[500px]" src="/landing.png" />
+      <div className="hidden w-2/5 md:flex md:justify-center md:items-center">
+        <img
+          className="h-[400px] lg:h-[500px]"
+          src="/landing.png"
+          alt="Chatbot Image"
+        />
       </div>
     </section>
   );

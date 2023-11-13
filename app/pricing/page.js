@@ -1,6 +1,6 @@
 //Importing required component
 import Footer from "@/components/Footer";
-import Plans from "@/components/plans";
+import Plans from "@/components/Plans";
 
 // Importing Right Arrow Icon from "React-Icon" libraray
 import { BsArrowRight } from "react-icons/bs";
@@ -14,7 +14,7 @@ export const metadata = {
 function Pricing() {
   return (
     <div>
-      <h2 className="mt-8 mb-10 text-4xl font-semibold text-center text-gray-700 md:font-extrabold">
+      <h2 className="px-4 mt-8 mb-10 text-4xl font-semibold text-center text-gray-700 md:font-extrabold">
         Discover Your Ideal Plan
       </h2>
       <Plans />

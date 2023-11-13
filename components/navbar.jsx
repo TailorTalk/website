@@ -3,7 +3,7 @@ import { useState } from "react"; // Import useState
 import Link from "next/link";
 // import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsList, BsX } from "react-icons/bs"; // Import icons from react-icons library
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,8 +11,7 @@ const Navbar = () => {
   console.log(pathname);
 
   return (
-    <div className="min-w-full container mx-auto px-4 pr-9 flex justify-between items-center h-16 text-[17px] font-normal pt-4 pb-4">
-      {/* shadow-[2px_1px_4px_rgba(0,0,0,0.2)] */}
+    <div className="min-w-full container mx-auto px-4 pr-9 flex justify-between items-center h-16 text-[17px] font-normal pt-4 pb-4 relative">
       <Link href="/">
         <span className="flex items-center text-gray-800">
           <img src="/logo.png" alt="Logo" className="mt-1 ml-3 mr-1 h-11" />
@@ -58,7 +57,7 @@ const Navbar = () => {
         </ul>
         {/* Conditionally render the menu items based on the menuOpen state */}
         {menuOpen ? (
-          <ul className="absolute z-10 block p-4 space-y-4 text-gray-900 bg-white border border-gray-300 rounded-lg shadow-md md:hidden top-20 right-3">
+          <ul className="absolute z-[1000] block p-4 space-y-4 text-gray-900 bg-white border border-gray-300 rounded-lg shadow-md md:hidden top-20 right-3">
             <li>
               <Link className="hover:text-blue-500" href="/demo">
                 Self Demo
@@ -70,8 +69,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link className="hover:text-blue-500" href="/">
-                Console
+              <Link className="hover:text-blue-500" href="/blogs">
+                Stories
               </Link>
             </li>
           </ul>
@@ -83,29 +82,11 @@ const Navbar = () => {
           className="cursor-pointer md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            {menuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
+          {menuOpen ? (
+            <BsX className="w-6 h-6" />
+          ) : (
+            <BsList className="w-6 h-6" />
+          )}
         </div>
       </div>
       <div className="hidden md:block">

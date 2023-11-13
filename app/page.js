@@ -3,8 +3,8 @@ import FAQSection from "@/components/FaqSection";
 import FeaturesSection from "@/components/FeatureSection";
 import Footer from "@/components/Footer";
 import IntegrateSection from "@/components/IntegrateSection";
-import JoinFuture from "@/components/joinFuture";
-import Testimonials from "@/components/testimonial";
+import OutroSection from "@/components/OutroSection";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       <IntegrateSection />
       <FAQSection />
 
-      <JoinFuture />
+      <OutroSection />
       <Footer />
     </>
   );

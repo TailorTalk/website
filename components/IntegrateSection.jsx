@@ -9,7 +9,7 @@ const GalleryPage = async () => {
     const logos = logoFilenames.map((filename) => `/${filename}`);
 
     return (
-      <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-40">
+      <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-16 md:mt-40">
         <h1 className="px-6 mt-8 mb-10 text-3xl font-bold text-center md:mt-0 md:text-4xl">
           Seamless Integration, Endless Possibilities
         </h1>

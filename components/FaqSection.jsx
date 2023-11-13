@@ -50,7 +50,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-36">
+    <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-16 md:mt-40">
       <h2 className="mb-8 text-3xl font-bold text-center px-7 md:text-4xl">
         Frequently Asked Questions
       </h2>

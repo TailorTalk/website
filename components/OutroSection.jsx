@@ -1,11 +1,11 @@
 import { BsArrowRight } from "react-icons/bs";
 
-function JoinFuture() {
+function OutroSection() {
   return (
     <>
       <section className="max-w-6xl mx-auto ">
-        <div className="mt-16 m-auto h-[290px] flex flex-col justify-center items-center bg-gray-900 text-white rounded-3xl w-[90%] gap-9 p-9">
-          <h2 className="text-3xl font-bold">
+        <div className="mt-16 m-auto h-[250px] md:h-[290px] flex flex-col justify-center items-center bg-gray-900 text-white rounded-3xl w-[90%] gap-9 p-9">
+          <h2 className="text-2xl font-bold text-center md:text-3xl">
             Transforming Chats into Experiences - Tailor Talks
           </h2>
           <a
@@ -17,7 +17,7 @@ function JoinFuture() {
           </a>
         </div>
       </section>
-      <p className="mt-12 text-lg text-center text-gray-700">
+      <p className="px-5 mt-12 text-lg text-center text-gray-700">
         Have questions or need assistance? Contact us or chat with our chatbot{" "}
         <span>
           <BsArrowRight className="inline" />
@@ -27,4 +27,4 @@ function JoinFuture() {
   );
 }
 
-export default JoinFuture;
+export default OutroSection;

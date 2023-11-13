@@ -1,11 +1,10 @@
-// components/ChatbotPricing.js
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
 
 const ChatbotPricing = () => {
-  const [monthlyPlans, setMonthlyPlans] = useState([
+  const monthlyPlans = [
     {
       name: "Basic",
       price: 9.99,
@@ -21,8 +20,9 @@ const ChatbotPricing = () => {
       price: 19.99,
       features: [
         { text: "Unlimited Chat Support", color: "gray" },
-        { text: "Advanced AI Integration", color: "gray" },
-        { text: "Customization Options", color: "gray" },
+        { text: "24/7 Customer Service", color: "gray" },
+        { text: "Advanced AI Integration", color: "green" },
+        { text: "Customization Options", color: "green" },
         { text: "Priority Customer Service", color: "green" },
       ],
       billingPeriod: "monthly",
@@ -32,23 +32,24 @@ const ChatbotPricing = () => {
       price: 29.99,
       features: [
         { text: "Unlimited Chat Support", color: "gray" },
-        { text: "Advanced AI Integration", color: "gray" },
-        { text: "Customization Options", color: "gray" },
+        { text: "24/7 Customer Service", color: "gray" },
+        { text: "Advanced AI Integration", color: "green" },
+        { text: "Customization Options", color: "green" },
         { text: "Priority Customer Service", color: "green" },
         { text: "Analytics and Reporting", color: "green" },
       ],
       billingPeriod: "monthly",
     },
-  ]);
+  ];
 
-  const [yearlyPlans, setYearlyPlans] = useState([
+  const yearlyPlans = [
     {
       name: "Basic",
       price: 99.99,
       features: [
         { text: "Unlimited Chat Support", color: "gray" },
         { text: "Advanced AI Integration", color: "gray" },
-        { text: "Customization Options", color: "gray" },
+        { text: "24/7 Customer Service", color: "gray" },
       ],
       billingPeriod: "yearly",
     },
@@ -57,8 +58,9 @@ const ChatbotPricing = () => {
       price: 199.99,
       features: [
         { text: "Unlimited Chat Support", color: "gray" },
-        { text: "Advanced AI Integration", color: "gray" },
-        { text: "Customization Options", color: "gray" },
+        { text: "24/7 Customer Service", color: "gray" },
+        { text: "Advanced AI Integration", color: "green" },
+        { text: "Customization Options", color: "green" },
         { text: "Priority Customer Service", color: "green" },
       ],
       billingPeriod: "yearly",
@@ -68,29 +70,17 @@ const ChatbotPricing = () => {
       price: 299.99,
       features: [
         { text: "Unlimited Chat Support", color: "gray" },
-        { text: "Advanced AI Integration", color: "gray" },
-        { text: "Customization Options", color: "gray" },
+        { text: "24/7 Customer Service", color: "gray" },
+        { text: "Advanced AI Integration", color: "green" },
+        { text: "Customization Options", color: "green" },
         { text: "Priority Customer Service", color: "green" },
         { text: "Analytics and Reporting", color: "green" },
       ],
       billingPeriod: "yearly",
     },
-  ]);
+  ];
 
   const [showMonthly, setShowMonthly] = useState(true);
-
-  //     // Fetch plans data from API here
-
-  //   useEffect(() => {
-  //     fetch("https://your-api-endpoint.com/plans")
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         setPlans(data);
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error fetching plans:", error);
-  //       });
-  //   }, []);
 
   const togglePricing = () => {
     setShowMonthly((prevShowMonthly) => !prevShowMonthly);

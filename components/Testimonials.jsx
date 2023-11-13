@@ -1,23 +1,18 @@
 "use client";
-// import React, { useRef, useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-// import 'swiper/css/pagination';
 import "swiper/css/pagination";
 
 // import required modules
 import {
-  Navigation,
   Pagination,
   Keyboard,
   Autoplay,
   EffectCoverflow,
 } from "swiper/modules";
-import { FaQuoteLeft } from "react-icons/fa";
 
 const Testimonials = () => {
   const testimonials = [
@@ -67,7 +62,7 @@ const Testimonials = () => {
 
   return (
     <>
-      <h1 className="mt-40 mb-10 text-4xl font-bold text-center md:text-4xl">
+      <h1 className="p-6 mt-16 mb-3 text-3xl font-bold text-center md:mb-10 md:mt-40 md:text-4xl">
         Users Speak, Tailor Talks Listens
       </h1>
       <section className="flex items-center justify-center max-w-6xl mx-auto ">
@@ -75,7 +70,7 @@ const Testimonials = () => {
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={3}
+          slidesPerView={1}
           coverflowEffect={{
             rotate: 500,
             stretch: 100,
@@ -84,29 +79,29 @@ const Testimonials = () => {
             slideShadows: true,
           }}
           spaceBetween={25}
+          breakpoints={{
+            500: {
+              slidesPerView: 2,
+            },
+            750: {
+              slidesPerView: 3,
+            },
+          }}
           loop={true}
           autoplay={{
             delay: 2000,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
           }}
-          navigation={true}
           pagination={{
             clickable: true,
           }}
-          //   mousewheel={true}
           keyboard={true}
-          modules={[
-            Navigation,
-            Pagination,
-            Keyboard,
-            Autoplay,
-            EffectCoverflow,
-          ]}
+          modules={[Pagination, Keyboard, Autoplay, EffectCoverflow]}
           className="mySwiper"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="p-6 m-4 mb-12 flex flex-col justify-between bg-white rounded-lg  h-[330px]">
+              <div className="p-3 m-1 md:p-6 md:m-4 mb-12 flex flex-col justify-between bg-white rounded-lg  h-[330px]">
                 <div>
                   {/* <FaQuoteLeft className="mb-2 text-4xl text-gray-600" /> */}
                   <h2 className="mb-3 text-xl font-semibold">
