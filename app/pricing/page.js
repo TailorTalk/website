@@ -1,5 +1,8 @@
-import Footer from "@/components/footer";
+//Importing required component
+import Footer from "@/components/Footer";
 import Plans from "@/components/plans";
+
+// Importing Right Arrow Icon from "React-Icon" libraray
 import { BsArrowRight } from "react-icons/bs";
 
 export const metadata = {
@@ -8,15 +11,15 @@ export const metadata = {
     "Tailor Talks is your go-to platform for seamless and intelligent conversations. Explore a new era of communication with Tailor Talks.",
 };
 
-function Page() {
+function Pricing() {
   return (
     <div>
-      <h2 className="mt-8 mb-10 text-4xl font-extrabold text-center text-gray-700">
+      <h2 className="mt-8 mb-10 text-4xl font-semibold text-center text-gray-700 md:font-extrabold">
         Discover Your Ideal Plan
       </h2>
       <Plans />
 
-      <p className="mt-12 text-lg text-center text-gray-700">
+      <p className="px-5 mt-12 text-lg text-center text-gray-700">
         Have questions or need assistance? Contact us or chat with our chatbot{" "}
         <span>
           <BsArrowRight className="inline" />
@@ -28,4 +31,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Pricing;

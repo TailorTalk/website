@@ -13,6 +13,8 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         {children}
+
+        {/* Including the chatbot script */}
         <script
           id="bot-script"
           bot_id="a705d018-3c29-4996-b87b-a3e4146c8f60"
@@ -22,7 +24,7 @@ export default function RootLayout({ children }) {
           bot_name="Tailor Talks"
           bot_height=""
           bot_width=""
-          white_label="true" //false if wl not needed
+          white_label="true" //set to false if wl not needed
           text_color="white"
           src="https://tailortalk.netlify.app/chat-plugin.js"
         ></script>

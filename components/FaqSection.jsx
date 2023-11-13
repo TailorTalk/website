@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+
+// Importing symbols from the react icon lib.
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const faqs = [
@@ -37,10 +39,10 @@ const faqs = [
     question: "Does it support multiple languages?",
     answer: "Yes, Tailor-Talk supports more than 50 languages.",
   },
-  // Add more FAQs as needed
 ];
 
 const FAQSection = () => {
+  // Setting up a state to track wheather any FAQ is opened or not
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -49,10 +51,10 @@ const FAQSection = () => {
 
   return (
     <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-36">
-      <h2 className="mb-8 text-4xl font-bold text-center">
+      <h2 className="mb-8 text-3xl font-bold text-center px-7 md:text-4xl">
         Frequently Asked Questions
       </h2>
-      <div className="w-full px-20">
+      <div className="w-full px-5 md:px-20">
         {faqs.map((faq, index) => (
           <div key={index} className="w-full py-6 border-b">
             <div

@@ -1,3 +1,5 @@
+// code for "Demo" page - /demo
+
 export const metadata = {
   title: "Demo | Tailor Talk",
   description:
@@ -5,6 +7,7 @@ export const metadata = {
 };
 
 function page() {
+  // Using min-h-[calc(100vh-4rem)] to remove the height of navbar, should be removed later when /demo page get completed
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center">
       <div className="p-8 text-center rounded-lg ">

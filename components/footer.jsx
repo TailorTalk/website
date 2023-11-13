@@ -1,12 +1,15 @@
 import Link from "next/link";
-import { FaTwitter, FaFacebookSquare, FaGithub } from "react-icons/fa";
+
+// Importing icons from react-icon library
+import { FaTwitter } from "react-icons/fa";
 import { PiMediumLogoFill } from "react-icons/pi";
 import { MdEmail } from "react-icons/md";
 
 function Footer() {
   return (
-    <footer className="relative px-4 pb-6 mt-12 bg-gray-100 pt-7">
-      <div className="flex flex-wrap justify-between text-left px-7 lg:text-left">
+    <footer className="relative px-0 pb-6 mt-12 bg-gray-100 md:px-4 pt-7">
+      <div className="flex flex-col flex-wrap text-left sm:flex-row sm:justify-between px-7">
+        {/* Left side logos & socials */}
         <div className="px-4">
           <Link href="/">
             <span className="flex items-center text-gray-800">
@@ -31,6 +34,8 @@ function Footer() {
             </a>
           </div>
         </div>
+
+        {/* Right side contact & links */}
         <ul className="px-4">
           <li>
             <a
