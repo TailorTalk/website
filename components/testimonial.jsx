@@ -67,7 +67,7 @@ const Testimonials = () => {
 
   return (
     <>
-      <h1 className="mb-10 text-4xl font-bold text-center mt-28 md:text-4xl">
+      <h1 className="mt-40 mb-10 text-4xl font-bold text-center md:text-4xl">
         Users Speak, Tailor Talks Listens
       </h1>
       <section className="flex items-center justify-center max-w-6xl mx-auto ">
@@ -108,7 +108,10 @@ const Testimonials = () => {
             <SwiperSlide key={index}>
               <div className="p-6 m-4 mb-12 flex flex-col justify-between bg-white rounded-lg  h-[330px]">
                 <div>
-                  <FaQuoteLeft className="mb-2 text-4xl text-gray-600" />
+                  {/* <FaQuoteLeft className="mb-2 text-4xl text-gray-600" /> */}
+                  <h2 className="mb-3 text-xl font-semibold">
+                    "{testimonial.header}"
+                  </h2>
                   <p className="mb-4 text-gray-800 text-md">
                     {testimonial.text}
                   </p>

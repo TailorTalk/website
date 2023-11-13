@@ -3,8 +3,8 @@ import { BsArrowRight } from "react-icons/bs";
 function JoinFuture() {
   return (
     <>
-      <section>
-        <div className="mt-16 m-auto h-[290px] flex flex-col justify-center items-center bg-gray-900 text-white rounded-3xl w-[90%] gap-9 p-9">
+      <section className="max-w-6xl mx-auto ">
+        <div className="mt-16 m-auto h-[290px] flex flex-col justify-center items-center bg-[#4764FC] text-white rounded-3xl w-[90%] gap-9 p-9">
           <h2 className="text-3xl font-bold">
             Transforming Chats into Experiences - Tailor Talks
           </h2>

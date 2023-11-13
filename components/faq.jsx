@@ -48,7 +48,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-28">
+    <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-36">
       <h2 className="mb-8 text-4xl font-bold text-center">
         Frequently Asked Questions
       </h2>
@@ -59,7 +59,9 @@ const FAQSection = () => {
               className="flex items-center justify-between cursor-pointer"
               onClick={() => toggleAccordion(index)}
             >
-              <h3 className="text-md group-hover:">{faq.question}</h3>
+              <h3 className="text-md text-gray-950 group-hover:">
+                {faq.question}
+              </h3>
               {openIndex === index ? (
                 <IoIosArrowUp className="w-6 h-6" />
               ) : (
@@ -67,7 +69,7 @@ const FAQSection = () => {
               )}
             </div>
             {openIndex === index && (
-              <p className="mt-5 text-gray-700">{faq.answer}</p>
+              <p className="mt-5 text-gray-500">{faq.answer}</p>
             )}
           </div>
         ))}
