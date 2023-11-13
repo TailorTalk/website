@@ -7,6 +7,8 @@ import JoinFuture from "@/components/joinFuture";
 import Testimonials from "@/components/testimonial";
 // import Head from "next/head";
 
+import { BsArrowRight } from "react-icons/bs";
+
 export default function Home() {
   return (
     <div>
@@ -27,11 +29,11 @@ export default function Home() {
               designed for specific business needs.
             </p>
             <a
-              className="w-fit px-3 py-2 text-md bg-[#4764FC] text-white transition-all rounded-md shadow-lg hover:bg-[#5f79fd]"
+              className="w-fit px-4 py-4 text-md bg-[#4764FC] text-white transition-all rounded-md shadow-lg hover:bg-[#5f79fd]"
               href="https://talkui-production.up.railway.app/assets"
               target="__blank"
             >
-              Build your Chatbot <span aria-hidden="true">→</span>
+              Build your Chatbot <BsArrowRight className="inline" />
             </a>
           </div>
         </div>
