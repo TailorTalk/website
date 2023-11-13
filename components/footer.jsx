@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 function Footer() {
   return (
     <footer className="relative px-4 pb-6 mt-12 bg-gray-100 pt-7">
-      <div className="flex flex-wrap justify-between px-4 text-left lg:text-left">
+      <div className="flex flex-wrap justify-between text-left px-7 lg:text-left">
         <div className="px-4">
           <Link href="/">
             <span className="flex items-center text-gray-800">
