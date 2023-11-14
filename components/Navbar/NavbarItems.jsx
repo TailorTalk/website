@@ -6,7 +6,9 @@ function NavbarItems({ pathname }) {
       <li>
         <Link
           className={
-            pathname === "/demo" ? " text-blue-500" : "hover:text-blue-500"
+            pathname === "/demo"
+              ? " text-tailorBlue-500"
+              : "hover:text-tailorBlue-500"
           }
           href="/demo"
         >
@@ -16,7 +18,9 @@ function NavbarItems({ pathname }) {
       <li>
         <Link
           className={
-            pathname === "/pricing" ? "text-blue-500" : "hover:text-blue-500"
+            pathname === "/pricing"
+              ? "text-tailorBlue-500"
+              : "hover:text-tailorBlue-500"
           }
           href="/pricing"
         >
@@ -26,7 +30,9 @@ function NavbarItems({ pathname }) {
       <li>
         <Link
           className={
-            pathname === "/blogs" ? " text-blue-500" : "hover:text-blue-500"
+            pathname === "/blogs"
+              ? " text-tailorBlue-500"
+              : "hover:text-tailorBlue-500"
           }
           href="/blogs"
         >

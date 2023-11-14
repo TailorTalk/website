@@ -4,7 +4,9 @@ function PlansToggleBtn({ showMonthly, togglePricing }) {
       <div className="p-2 bg-gray-100 rounded-lg">
         <button
           className={`mx-0 px-4 py-2 ${
-            showMonthly ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-900"
+            showMonthly
+              ? "bg-tailorBlue-500 text-white"
+              : "bg-gray-100 text-gray-900"
           }  rounded-md`}
           onClick={togglePricing}
         >
@@ -12,7 +14,9 @@ function PlansToggleBtn({ showMonthly, togglePricing }) {
         </button>
         <button
           className={`mx-0 px-4 py-2 ${
-            showMonthly ? "bg-gray-100 text-gray-900" : "bg-blue-500 text-white"
+            showMonthly
+              ? "bg-gray-100 text-gray-900"
+              : "bg-tailorBlue-500 text-white"
           } rounded-md`}
           onClick={togglePricing}
         >

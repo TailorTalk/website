@@ -11,3 +11,7 @@ body {
   /* font-family: "Source sans pro", sans-serif; */
   box-sizing: content-box;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: #4764fc !important;
+}

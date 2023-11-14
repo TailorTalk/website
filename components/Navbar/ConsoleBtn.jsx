@@ -5,7 +5,7 @@ function ConsoleBtn() {
   return (
     <div className="hidden md:block">
       <Link
-        className="hover:text-blue-500"
+        className="hover:text-tailorBlue-500"
         href="https://talkui-production.up.railway.app/assets"
         target="__blank"
       >

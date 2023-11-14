@@ -16,7 +16,7 @@ function Footer() {
           <div className="flex px-3 mt-3 mb-6 space-x-2 lg:mb-0">
             <a
               href="#"
-              className="flex items-center justify-center w-10 h-10 text-blue-500 bg-white rounded-full shadow-lg cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-lg cursor-pointer text-[#26a7de]"
             >
               <FaTwitter className="w-5 h-5" />
             </a>

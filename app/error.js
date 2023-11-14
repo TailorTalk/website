@@ -18,7 +18,7 @@ const Error = ({ error, reset }) => {
       </p>
       <button
         onClick={reset}
-        className="px-4 py-2 text-white transition bg-blue-500 rounded-md hover:bg-blue-600"
+        className="px-4 py-2 text-white transition rounded-md bg-tailorBlue-500 hover:bg-tailorBlue-600"
       >
         Try Again
       </button>

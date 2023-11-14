@@ -10,7 +10,7 @@ const NotFound = () => {
           deleted.
         </p>
         <Link href="/">
-          <span className="block p-2 mt-4 text-lg text-center text-white bg-blue-700 rounded-lg hover:bg-blue-500">
+          <span className="block p-2 mt-4 text-lg text-center text-white rounded-lg bg-tailorBlue-500 hover:bg-tailorBlue-600">
             Go back to the homepage
           </span>
         </Link>

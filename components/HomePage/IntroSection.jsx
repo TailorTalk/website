@@ -8,10 +8,10 @@ function IntroSection() {
         <div className="flex flex-col justify-center h-full gap-4 md:gap-10">
           <h1 className="text-5xl font-bold md:text-7xl">
             <span className="mr-4">We</span>
-            <span className="relative z-10 text-[#4764FC]">Tailor</span>
+            <span className="relative z-10 text-tailorBlue-500">Tailor</span>
             <br />
             <span className="relative z-10">Your</span>
-            <span className="ml-4 mr-2 text-[#4764FC]">Talks</span>
+            <span className="ml-4 mr-2 text-tailorBlue-500">Talks</span>
           </h1>
 
           <p className="max-w-xl text-lg text-gray-600 ">
@@ -19,7 +19,7 @@ function IntroSection() {
             designed for specific business needs.
           </p>
           <a
-            className="w-fit px-2 md:px-4 py-2 md:py-4 text-md bg-[#4764FC] text-white transition-all rounded-md shadow-lg hover:bg-[#5f79fd]"
+            className="px-2 py-2 text-white transition-all rounded-md shadow-lg w-fit md:px-4 md:py-4 text-md bg-tailorBlue-500 hover:bg-tailorBlue-600"
             href="https://talkui-production.up.railway.app/assets"
             target="__blank"
           >
