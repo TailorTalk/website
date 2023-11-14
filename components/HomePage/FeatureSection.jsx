@@ -19,7 +19,7 @@ const FeaturesSection = () => {
               key={feature.id}
               className={`w-full px-4 py-1 justify-center md:whitespace-normal whitespace-nowrap items-center flex md:block border-gray-300 border md:border-none bg-gray-100 md:bg-transparent rounded-full group md:rounded-l-xl md:rounded-r-xl md:p-6 hover:cursor-pointer hover:bg-gray-200 md:hover:bg-gray-100 ${
                 selectedFeature === feature.id
-                  ? " bg-gray-300 md:bg-gray-200 border-gray-200 border"
+                  ? " bg-gray-300 md:bg-gray-100 border-gray-200 border"
                   : ""
               }`}
               onClick={() => setSelectedFeature(feature.id)}

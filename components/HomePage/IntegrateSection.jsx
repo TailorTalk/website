@@ -3,7 +3,7 @@ import path from "path";
 
 // This component reads the files of /logo directory and show all the images present in the directory
 const IntegrateSection = async () => {
-  const imageDirectory = path.join(process.cwd(), "/public/logos");
+  const imageDirectory = path.join(process.cwd(), "/public/images/logos");
   try {
     const logoFilenames = await fs.readdir(imageDirectory);
     const logos = logoFilenames.map((filename) => `/${filename}`);
@@ -18,7 +18,7 @@ const IntegrateSection = async () => {
             logos.map((logo, index) => (
               <div key={index} className="m-4">
                 <img
-                  src={`/logos/${logo}`}
+                  src={`/images/logos/${logo}`}
                   alt={`Company Logo ${index + 1}`}
                   className="object-contain w-[220px] h-[110px]"
                 />

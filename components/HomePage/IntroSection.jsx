@@ -32,7 +32,7 @@ function IntroSection() {
       <div className="hidden w-2/5 md:flex md:justify-center md:items-center">
         <img
           className="h-[400px] lg:h-[500px]"
-          src="/landing.png"
+          src="/images/UI/landing.png"
           alt="Chatbot Image"
         />
       </div>

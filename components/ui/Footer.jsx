@@ -4,22 +4,16 @@ import Link from "next/link";
 import { FaTwitter } from "react-icons/fa";
 import { PiMediumLogoFill } from "react-icons/pi";
 import { MdEmail } from "react-icons/md";
+import Logo from "./Logo";
 
 function Footer() {
   return (
     <footer className="relative px-0 pb-6 mt-12 bg-gray-100 md:px-4 pt-7">
       <div className="flex flex-col flex-wrap text-left sm:flex-row sm:justify-between px-7">
         {/* Left side logos & socials */}
-        <div className="px-4">
-          <Link href="/">
-            <span className="flex items-center text-gray-800">
-              <img src="/logo.png" alt="Logo" className="mt-1 mr-1 h-11" />
-              <span className="text-xl font-semibold font-comfortaa">
-                Tailor Talk
-              </span>
-            </span>
-          </Link>
-          <div className="flex mt-6 mb-6 space-x-2 lg:mb-0">
+        <div>
+          <Logo />
+          <div className="flex px-3 mt-3 mb-6 space-x-2 lg:mb-0">
             <a
               href="#"
               className="flex items-center justify-center w-10 h-10 text-blue-500 bg-white rounded-full shadow-lg cursor-pointer"
