@@ -1,42 +1,10 @@
 "use client";
 import { useState } from "react";
 
+import { featureData } from "@/data/featuresData";
+
 const FeaturesSection = () => {
   const [selectedFeature, setSelectedFeature] = useState(1);
-
-  const featureData = [
-    {
-      id: 1,
-      title: "Customize behaviour",
-      description: "Customize behaviour to achive custom business needs.",
-      imageUrl: "/feature1.png",
-    },
-    {
-      id: 2,
-      title: "Customize appearance",
-      description: "Customize appearance to match your brand's identity",
-      imageUrl: "/feature2.png",
-    },
-    {
-      id: 3,
-      title: "Collect leads",
-      description:
-        "Set yout chatbot to collect leads and follow up with them later.",
-      imageUrl: "/feature3.png",
-    },
-    {
-      id: 4,
-      title: "Get insights",
-      description: "Get insights on your chatbot's performance and improve it.",
-      imageUrl: "/feature4.png",
-    },
-    {
-      id: 5,
-      title: "Intigrate with other systems",
-      description: "Intigrate the bot with your Website, Whatsapp, Slack etc.",
-      imageUrl: "/feature5.png",
-    },
-  ];
 
   return (
     <section className="flex flex-col items-center justify-center max-w-6xl mx-auto">
@@ -45,13 +13,13 @@ const FeaturesSection = () => {
       </h2>
       <div className="flex flex-col w-full md:flex-row">
         {/* Left Side - Buttons */}
-        <div className="flex items-center h-[50px] md:h-auto w-full gap-3 space-y-1 overflow-x-scroll md:overflow-x-hidden md:gap-0 md:w-1/3 md:flex-col">
+        <div className="flex items-center h-[50px] md:h-auto w-full gap-3 overflow-x-scroll md:overflow-x-hidden md:gap-0 md:w-1/3 md:flex-col">
           {featureData.map((feature) => (
             <div
               key={feature.id}
               className={`w-full px-4 py-1 justify-center md:whitespace-normal whitespace-nowrap items-center flex md:block border-gray-300 border md:border-none bg-gray-100 md:bg-transparent rounded-full group md:rounded-l-xl md:rounded-r-xl md:p-6 hover:cursor-pointer hover:bg-gray-200 md:hover:bg-gray-100 ${
                 selectedFeature === feature.id
-                  ? " bg-gray-200 md:bg-gray-100 border-gray-200 border"
+                  ? " bg-gray-300 md:bg-gray-200 border-gray-200 border"
                   : ""
               }`}
               onClick={() => setSelectedFeature(feature.id)}
@@ -68,7 +36,7 @@ const FeaturesSection = () => {
 
         {/* Right Side - Image */}
         <div className="flex items-center justify-center w-full md:w-2/3 ">
-          <div className="h-full overflow-hidden rounded-md shadow-lg shadow-gray-300">
+          <div className="h-[400px] md:h-full overflow-hidden rounded-md shadow-sm md:shadow-lg shadow-gray-300">
             <img
               src={featureData.find((f) => f.id === selectedFeature)?.imageUrl}
               alt="Selected Feature"

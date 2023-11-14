@@ -1,4 +1,5 @@
 import { BsArrowRight } from "react-icons/bs";
+import HaveQuestion from "../ui/HaveQuestion";
 
 function OutroSection() {
   return (
@@ -17,12 +18,7 @@ function OutroSection() {
           </a>
         </div>
       </section>
-      <p className="px-5 mt-12 text-lg text-center text-gray-700">
-        Have questions or need assistance? Contact us or chat with our chatbot{" "}
-        <span>
-          <BsArrowRight className="inline" />
-        </span>
-      </p>
+      <HaveQuestion />
     </>
   );
 }

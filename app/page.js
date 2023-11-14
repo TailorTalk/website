@@ -1,10 +1,10 @@
-import IntroSection from "@/components/IntroSection";
-import FAQSection from "@/components/FaqSection";
-import FeaturesSection from "@/components/FeatureSection";
-import Footer from "@/components/Footer";
-import IntegrateSection from "@/components/IntegrateSection";
-import OutroSection from "@/components/OutroSection";
-import Testimonials from "@/components/Testimonials";
+import IntroSection from "@/components/HomePage/IntroSection";
+import FAQSection from "@/components/HomePage/FaqSection";
+import FeaturesSection from "@/components/HomePage/FeatureSection";
+import Footer from "@/components/ui/Footer";
+import IntegrateSection from "@/components/HomePage/IntegrateSection";
+import OutroSection from "@/components/HomePage/OutroSection";
+import Testimonials from "@/components/Testimonials/Testimonials";
 
 export default function Home() {
   return (

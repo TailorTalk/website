@@ -19,7 +19,7 @@ function IntroSection() {
             designed for specific business needs.
           </p>
           <a
-            className="w-fit px-4 py-4 text-md bg-[#4764FC] text-white transition-all rounded-md shadow-lg hover:bg-[#5f79fd]"
+            className="w-fit px-2 md:px-4 py-2 md:py-4 text-md bg-[#4764FC] text-white transition-all rounded-md shadow-lg hover:bg-[#5f79fd]"
             href="https://talkui-production.up.railway.app/assets"
             target="__blank"
           >

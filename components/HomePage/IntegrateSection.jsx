@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 
 // This component reads the files of /logo directory and show all the images present in the directory
-const GalleryPage = async () => {
+const IntegrateSection = async () => {
   const imageDirectory = path.join(process.cwd(), "/public/logos");
   try {
     const logoFilenames = await fs.readdir(imageDirectory);
@@ -33,4 +33,4 @@ const GalleryPage = async () => {
   }
 };
 
-export default GalleryPage;
+export default IntegrateSection;

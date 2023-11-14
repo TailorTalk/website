@@ -1,5 +1,6 @@
 import React from "react";
 
+// Code for about page - /about
 export const metadata = {
   title: "About | Tailor Talk",
   description:
