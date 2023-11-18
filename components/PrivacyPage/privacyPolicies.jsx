@@ -17,17 +17,17 @@ const PolicySection = () => {
         {privacyPolicies.map((section, index) => (
           <details key={index} className="mb-4 mx-80 border-b border-gray-200">
             <summary className="p-3 my-2 list-none text-md text-gray-950 cursor-pointer" onClick={() => toggleAccordion(index)}>
-              <strong className="flex justify-between">
+              <div className="flex justify-between">
                 {section.title}
                 {openIndex === index ? (
                 <IoIosArrowUp className="w-6 h-6" />
               ) : (
                 <IoIosArrowDown className="w-6 h-6" />
               )}
-              </strong>
+              </div>
               
             </summary>
-            <p className="p-3 pl-4 text-sm rounded-lg">
+            <p className="p-3 pl-4 text-gray-500 rounded-lg">
               {section.content}
             </p>
           </details>
