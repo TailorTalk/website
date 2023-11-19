@@ -13,26 +13,30 @@ const PolicySection = () => {
     };
 
     return(
-        <div className="my-6">
-        {privacyPolicies.map((section, index) => (
-          <details key={index} className="mb-4 mx-80 border-b border-gray-200">
-            <summary className="p-3 my-2 list-none text-md text-gray-950 cursor-pointer" onClick={() => toggleAccordion(index)}>
-              <div className="flex justify-between">
-                {section.title}
-                {openIndex === index ? (
+      <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-16 md:mt-40">
+      <div className="w-full px-5 md:px-20">
+        {privacyPolicies.map((policy, index) => (
+          <div key={index} className="w-full py-6 border-b">
+            <div
+              className="flex items-center justify-between cursor-pointer"
+              onClick={() => toggleAccordion(index)}
+            >
+              <h3 className="text-md text-gray-950 group-hover:">
+                {policy.title}
+              </h3>
+              {openIndex === index ? (
                 <IoIosArrowUp className="w-6 h-6" />
               ) : (
                 <IoIosArrowDown className="w-6 h-6" />
               )}
-              </div>
-              
-            </summary>
-            <p className="p-3 pl-4 text-gray-500 rounded-lg">
-              {section.content}
-            </p>
-          </details>
+            </div>
+            {openIndex === index && (
+              <p className="mt-5 text-gray-500">{policy.content}</p>
+            )}
+          </div>
         ))}
       </div>
+    </section>
     )
 }
 

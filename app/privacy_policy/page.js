@@ -14,9 +14,9 @@ function PrivacyPolicy() {
       <h1 className="text-2xl text-center font-medium text-gray-700">
         Privacy Policy for "Tailor-Talk"
       </h1>
-      <p className="text-sm ml-80 italic text-gray-500">Last updated: {lastUpdate}</p>
+      <p className="text-sm italic text-gray-500">Last updated: {lastUpdate}</p>
 
-      <div className="mt-3 mx-80 text-sm">
+      <div className="mt-3 text-sm">
         Thank you for choosing "We Tailor your Talks". We are committed to
         protecting your privacy and the data you provide to us. This Privacy
         Policy outlines our practices concerning the collection, use, and
