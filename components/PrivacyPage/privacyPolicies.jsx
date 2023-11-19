@@ -13,7 +13,7 @@ const PolicySection = () => {
     };
 
     return(
-      <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-16 md:mt-40">
+      <section className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-16 md:mt-8">
       <div className="w-full px-5 md:px-20">
         {privacyPolicies.map((policy, index) => (
           <div key={index} className="w-full py-6 border-b">
