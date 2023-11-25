@@ -1,6 +1,6 @@
 // code for "Demo" page - /demo
 
-import ComingSoonComp from "@/components/ui/ComingSoonComp";
+import ChatBotCreationData from "@/components/DemoPage/ChatBotCreate";
 
 export const metadata = {
   title: "Demo | Tailor Talk",
@@ -10,7 +10,17 @@ export const metadata = {
 
 function Demo() {
   // Using min-h-[calc(100vh-4rem)] to remove the height of navbar, should be removed later when /demo page get completed
-  return <ComingSoonComp />;
+  return (
+    <div>
+      <div className="my-8">
+        <h1 className="mb-2 text-center text-3xl font-bold">
+          Data Sources
+        </h1>
+        <p className="text-center text-zinc-500">Add your data sources to train your chatbot</p>
+      </div>
+      <ChatBotCreationData/>
+    </div>
+  );
 }
 
 export default Demo;
