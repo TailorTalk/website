@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
         {/* Including the chatbot script */}
         <script
           id="bot-script"
-          bot_id="a705d018-3c29-4996-b87b-a3e4146c8f60"
-          org_id="Pace_wisdom_29102023"
-          primary_color="#4764fc"
+          bot_id="b37bcca7-c4dc-4aa9-ba58-c7e36dedc14a"
+          org_id="xuper_mall_07112023"
+          primary_color=""
           default_message="Hey there, ask questions related to our services."
           bot_name="Tailor Talks"
           bot_height=""
