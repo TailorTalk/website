@@ -2,3 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+.button {
+    color: #6D2EC9;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow here */
+  }
+  
+  .button:hover {
+    color: white;
+    background-color: #6D2EC9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  }
+  
+  .button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.6s ease;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+  }
+  
+  .button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Header from "./components/Header";
 import vector1 from "../../public/vector1.svg";
@@ -57,9 +57,7 @@ export default function Home() {
               nulla etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.
             </div>
             <div>
-              <button className="text-[#6D2EC9] rounded px-4 py-2 bg-white">
-                Demo
-              </button>
+              <button className="button">Demo</button>
             </div>
           </div>
           <div>
