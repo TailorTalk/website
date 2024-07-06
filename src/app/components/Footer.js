@@ -1,40 +1,40 @@
 import React from "react";
 import Image from "next/image";
 import logo from "../../../public/logo.svg";
+import linkedin from "../../../public/linkedin.svg";
+import twitter from "../../../public/twitter.svg";
+
 
 const Footer = () => {
   return (
     <footer className="px-32 py-12 bg-black">
-      <div className="container mx-auto px-4 flex flex-wrap justify-between">
+      <div className="container  flex flex-wrap justify-between">
         {/* Logo and Description */}
-        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
-          <div className="flex">
-            <Image src={logo} alt="logo" className="w-12" />
-            <span className="text-white  text-2xl font-semibold">
-              Tailor-Talk
-            </span>
-          </div>
-          <p className="mt-4 text-gray-400 text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper
-            purus eleifend purus faucibus faucibus.
-          </p>
-          <div className="flex mt-4 space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
+        <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
+          <div>
+            <div className="flex">
+              <Image src={logo} alt="logo" className="w-12" />
+              <span className="text-white  text-2xl font-semibold">
+                Tailor-Talk
+              </span>
+            </div>
+            <p className="mt-4 text-gray-400 text-sm w-2/3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Ullamcorper purus eleifend purus faucibus faucibus.
+            </p>
+            <div className="flex mt-4 space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white">
+                <Image src={twitter} alt="twitter"/>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+              <Image src={linkedin} alt="linkedin"/>
+              </a>
+              
+            </div>
           </div>
         </div>
         {/* Resources */}
-        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
+        <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
           <h3 className="text-lg font-semibold text-white">Resources</h3>
           <ul className="mt-4 space-y-2 text-gray-400 text-sm">
             <li>
@@ -52,7 +52,7 @@ const Footer = () => {
           </ul>
         </div>
         {/* Useful Links */}
-        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
+        <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
           <h3 className="text-lg font-semibold text-white">Useful Links</h3>
           <ul className="mt-4 space-y-2 text-gray-400 text-sm">
             <li>
@@ -70,7 +70,7 @@ const Footer = () => {
           </ul>
         </div>
         {/* Newsletter */}
-        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
+        <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
           <h3 className="text-lg font-semibold text-white">Newsletter</h3>
           <p className="mt-4 text-gray-400 text-sm">
             Sign up and receive the latest news via email.
