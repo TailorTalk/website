@@ -1,12 +1,20 @@
 import Image from "next/image";
 import Header from "./components/Header";
 import vector from "../../public/vector.svg";
+import background from "../../public/background.svg";
 
 export default function Home() {
   return (
     <div className="">
       {/* Introduction  */}
-      <section className="h-720 w-full bg-[#6D2EC9] px-32 py-8">
+      <section
+        style={{
+          backgroundImage: `url(${background.src})`,
+          height: "100vh",
+          width: "auto",
+        }}
+        className="px-32 py-8"
+      >
         <Header />
         <div className="flex justify-between mb-10">
           <div className="mt-20 flex flex-col text-white gap-4">
