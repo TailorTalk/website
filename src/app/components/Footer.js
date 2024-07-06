@@ -9,8 +9,8 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
           <div className="flex">
-            <Image src={logo} alt="logo" className="w-10" />
-            <span className="text-white  text-xl font-semibold">
+            <Image src={logo} alt="logo" className="w-12" />
+            <span className="text-white  text-2xl font-semibold">
               Tailor-Talk
             </span>
           </div>
@@ -36,7 +36,7 @@ const Footer = () => {
         {/* Resources */}
         <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
           <h3 className="text-lg font-semibold text-white">Resources</h3>
-          <ul className="mt-4 space-y-2 text-gray-400 text-sm" >
+          <ul className="mt-4 space-y-2 text-gray-400 text-sm">
             <li>
               <a href="#">Services</a>
             </li>
