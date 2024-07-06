@@ -6,6 +6,7 @@ import arrow1 from "../../public/arrow1.svg";
 import arrow2 from "../../public/arrow2.svg";
 import arrow3 from "../../public/arrow3.svg";
 import background from "../../public/background.svg";
+import FeatureCard from "./components/FeatureCard";
 
 const data = [
   {
@@ -64,6 +65,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Usage  */}
       <section className="py-8 bg-white flex justify-around">
         <div>
           <Image src={vector2} alt="vector2" className="h-[34vw]" />
@@ -79,10 +81,22 @@ export default function Home() {
                   <Image src={item.image} alt="arrow" className="w-6 mr-2" />
                   <p className="text-xl">{item.title}</p>
                 </div>
-                <p className="w-full text-sm px-8 text-[#051114]">{item.description}</p>
+                <p className="w-full text-sm px-8 text-[#051114]">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      {/* Features  */}
+      <section className="py-8 flex bg-white flex-col items-center justify-around">
+        <p className="text-center font-bold text-4xl w-1/2 flex flex-col items-center">
+       
+          We Provides best Feature for customar
+        </p>
+        <div className="flex gap-6 mt-8 flex-wrap">
+          <FeatureCard />
         </div>
       </section>
     </div>
