@@ -4,7 +4,6 @@ import logo from "../../../public/logo.svg";
 import linkedin from "../../../public/linkedin.svg";
 import twitter from "../../../public/twitter.svg";
 
-
 const Footer = () => {
   return (
     <footer className="px-32 py-12 bg-black">
@@ -12,11 +11,9 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
           <div>
-            <div className="flex gap-2">
+            <div className="flex gap-4">
               <Image src={logo} alt="logo" className="w-8" />
-              <span className="text-white  text-2xl">
-                Tailor-Talk
-              </span>
+              <span className="text-[#62F7FF] text-2xl ">TailorTalk</span>
             </div>
             <p className="mt-4 text-gray-400 text-sm w-2/3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -24,12 +21,11 @@ const Footer = () => {
             </p>
             <div className="flex mt-4 space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
-                <Image src={twitter} alt="twitter"/>
+                <Image src={twitter} alt="twitter" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
-              <Image src={linkedin} alt="linkedin"/>
+                <Image src={linkedin} alt="linkedin" />
               </a>
-              
             </div>
           </div>
         </div>
@@ -81,7 +77,7 @@ const Footer = () => {
               className="w-full p-4 rounded-l-lg bg-gray-800 text-gray-300 focus:outline-none"
               placeholder="Email address"
             />
-            <button className="px-4 py-2 bg-[#6D2EC9] text-white rounded-r-lg hover:bg-blue-500">
+            <button className="px-4 py-2 bg-[#62F7FF] text-[#6D2EC9] rounded-r-lg hover:bg-blue-500">
               Send
             </button>
           </div>

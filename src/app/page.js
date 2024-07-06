@@ -50,7 +50,7 @@ export default function Home() {
         <div className="flex justify-between mb-10 mt-32">
           <div className="mt-20 flex flex-col text-white gap-4">
             <div className="text-5xl w-3/4 leading-tight ">
-              Tailor-Talk one of the best system in SAAS.
+              TailorTalk one of the best system in SAAS.
             </div>
             <div className="w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. A nulla
