@@ -19,17 +19,20 @@ const features = [
     id: 2,
     image: feature2,
     title: "Data Analytic",
-    description: "Lorem ipsum dolor sit amet ecte adipiscing elitIpsum.",  },
+    description: "Lorem ipsum dolor sit amet ecte adipiscing elitIpsum.",
+  },
   {
     id: 3,
     image: feature3,
     title: "Fully Secured",
-    description: "Lorem ipsum dolor sit amet ecte adipiscing elitIpsum.",  },
+    description: "Lorem ipsum dolor sit amet ecte adipiscing elitIpsum.",
+  },
   {
     id: 4,
     image: feature4,
     title: "24/7 Support",
-    description: "Lorem ipsum dolor sit amet ecte adipiscing elitIpsum.",  },
+    description: "Lorem ipsum dolor sit amet ecte adipiscing elitIpsum.",
+  },
 ];
 
 const FeatureCard = () => {
