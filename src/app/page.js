@@ -57,7 +57,9 @@ export default function Home() {
               nulla etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.
             </div>
             <div>
-              <button className="button">Demo</button>
+              <a href="">
+                <button className="button">Demo</button>
+              </a>
             </div>
           </div>
           <div>
