@@ -47,7 +47,7 @@ export default function Home() {
         className="px-32 py-8"
       >
         <Header />
-        <div className="flex justify-between mb-10 mt-22">
+        <div className="flex justify-between mb-10 mt-32">
           <div className="mt-20 flex flex-col text-white gap-4">
             <div className="text-5xl w-3/4 leading-tight ">
               Tailor-Talk one of the best system in SAAS.

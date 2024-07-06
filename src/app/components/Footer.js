@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <div className="flex gap-2">
               <Image src={logo} alt="logo" className="w-8" />
-              <span className="text-white  text-2xl font-semibold">
+              <span className="text-white  text-2xl">
                 Tailor-Talk
               </span>
             </div>
