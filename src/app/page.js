@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Header from "./components/Header";
 import vector1 from "../../public/vector1.svg";
@@ -49,7 +50,7 @@ export default function Home() {
         <div className="flex justify-between mb-10">
           <div className="mt-20 flex flex-col text-white gap-4">
             <div className="text-5xl w-3/4 leading-tight ">
-              Codext one of the best system in SAAS.
+              Tailor-Talk one of the best system in SAAS.
             </div>
             <div className="w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. A nulla
@@ -100,8 +101,7 @@ export default function Home() {
         </div>
       </section>
       {/* Footer  */}
-      <section className="">
-      
+      <section>
         <Footer />
       </section>
     </div>
