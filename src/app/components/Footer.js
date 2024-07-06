@@ -12,8 +12,8 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
           <div>
-            <div className="flex">
-              <Image src={logo} alt="logo" className="w-12" />
+            <div className="flex gap-2">
+              <Image src={logo} alt="logo" className="w-8" />
               <span className="text-white  text-2xl font-semibold">
                 Tailor-Talk
               </span>
