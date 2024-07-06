@@ -7,6 +7,7 @@ import arrow2 from "../../public/arrow2.svg";
 import arrow3 from "../../public/arrow3.svg";
 import background from "../../public/background.svg";
 import FeatureCard from "./components/FeatureCard";
+import Footer from "./components/Footer";
 
 const data = [
   {
@@ -92,12 +93,16 @@ export default function Home() {
       {/* Features  */}
       <section className="py-8 flex bg-white flex-col items-center justify-around">
         <p className="text-center font-bold text-4xl w-1/2 flex flex-col items-center">
-       
           We Provides best Feature for customar
         </p>
-        <div className="flex gap-6 mt-8 flex-wrap">
+        <div className="flex gap-6 mt-8 flex-wrap px-32">
           <FeatureCard />
         </div>
+      </section>
+      {/* Footer  */}
+      <section className="">
+      
+        <Footer />
       </section>
     </div>
   );
