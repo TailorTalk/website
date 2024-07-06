@@ -69,16 +69,16 @@ export default function Home() {
       </section>
       {/* Usage  */}
       <section className="py-8 bg-white flex justify-around">
-        <div>
-          <Image src={vector2} alt="vector2" className="h-[34vw]" />
-        </div>
+        <di className="mt-16">
+          <Image src={vector2} alt="vector2" className="w-[70vw]" />
+        </di>
         <div className="mt-16 px-32">
           <div className="text-4xl leading-tight">
             It’s helpful for operating system
           </div>
-          <div className="mt-6 gap-4">
+          <div className="mt-6 gap-4 ">
             {data.map((item) => (
-              <div key={item.id} className="flex flex-col gap-2 mb-4">
+              <div key={item.id} className="flex flex-col gap-2 mb-8">
                 <div className="flex flex-row items-center">
                   <Image src={item.image} alt="arrow" className="w-6 mr-2" />
                   <p className="text-xl">{item.title}</p>
@@ -96,7 +96,7 @@ export default function Home() {
         <p className="text-center font-bold text-4xl w-1/2 flex flex-col items-center">
           We Provides best Feature for customar
         </p>
-        <div className="flex gap-6 mt-8 flex-wrap px-32">
+        <div className="flex gap-6 mt-8 flex-wrap px-32 mb-20">
           <FeatureCard />
         </div>
       </section>
