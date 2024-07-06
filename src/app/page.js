@@ -1,7 +1,35 @@
 import Image from "next/image";
 import Header from "./components/Header";
-import vector from "../../public/vector.svg";
+import vector1 from "../../public/vector1.svg";
+import vector2 from "../../public/vector2.svg";
+import arrow1 from "../../public/arrow1.svg";
+import arrow2 from "../../public/arrow2.svg";
+import arrow3 from "../../public/arrow3.svg";
 import background from "../../public/background.svg";
+
+const data = [
+  {
+    id: 1,
+    title: "Ultra Fast and Secure",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. vitae velit proin justo, elementum siIn morbi",
+    image: arrow1,
+  },
+  {
+    id: 2,
+    title: "Allows customization",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. vitae velit proin justo, elementum siIn morbi",
+    image: arrow2,
+  },
+  {
+    id: 3,
+    title: "Smart contract",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. vitae velit proin justo, elementum siIn morbi",
+    image: arrow3,
+  },
+];
 
 export default function Home() {
   return (
@@ -32,7 +60,28 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <Image src={vector} alt="vector" className="h-[34vw]" />
+            <Image src={vector1} alt="vector1" className="h-[34vw]" />
+          </div>
+        </div>
+      </section>
+      <section className="py-8 bg-white flex justify-around">
+        <div>
+          <Image src={vector2} alt="vector2" className="h-[34vw]" />
+        </div>
+        <div className="mt-16 px-32">
+          <div className="text-4xl leading-tight">
+            It’s helpful for operating system
+          </div>
+          <div className="mt-6 gap-4">
+            {data.map((item) => (
+              <div key={item.id} className="flex flex-col gap-2 mb-4">
+                <div className="flex flex-row items-center">
+                  <Image src={item.image} alt="arrow" className="w-6 mr-2" />
+                  <p className="text-xl">{item.title}</p>
+                </div>
+                <p className="w-full text-sm px-8 text-[#051114]">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
