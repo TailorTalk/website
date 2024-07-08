@@ -49,7 +49,7 @@ export default function Home() {
         <Header />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
           <div className="mt-8 md:mt-20 flex flex-col text-white gap-4 items-center md:items-start text-center md:text-left">
-            <div className="text-3xl md:text-5xl w-full leading-tight">
+            <div className="text-3xl mt-12 md:text-5xl w-full leading-tight">
               TailorTalk: One of the Best Systems in SaaS.
             </div>
             <div className="w-full">
@@ -64,7 +64,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center items-center mt-4 md:mt-0">
-            <div className="mt-4 md:mt-16 hidden md:block">
+            <div className="mt-4 mb-12 md:mt-16 hidden md:block">
               <Image src={vector1} alt="vector1" layout="responsive" />
             </div>
           </div>
