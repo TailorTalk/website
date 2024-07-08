@@ -47,7 +47,7 @@ export default function Home() {
         className="px-8 md:px-32 py-8 pb-12 md:pb-20"
       >
         <Header />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-16 md:mt-26">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
           <div className="mt-8 md:mt-20 flex flex-col text-white gap-4 items-center md:items-start text-center md:text-left">
             <div className="text-3xl md:text-5xl w-full leading-tight">
               TailorTalk: One of the Best Systems in SaaS.
