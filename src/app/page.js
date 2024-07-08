@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="py-8 flex bg-white flex-col items-center justify-around">
+      <section className="py-8 mt-24 flex bg-white flex-col items-center justify-around">
         <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
           We Provide the Best Features for Customers
         </p>
