@@ -63,7 +63,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex justify-center items-center mt-4 md:mt-16">
+          <div className="flex justify-center items-center mt-4 md:mt-0">
             <div className="mt-4 md:mt-16 hidden md:block">
               <Image src={vector1} alt="vector1" layout="responsive" />
             </div>
