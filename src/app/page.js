@@ -73,11 +73,11 @@ export default function Home() {
         </div>
       </section>
       {/* Usage */}
-      <section className="py-8 bg-white flex flex-col md:flex-row justify-around">
+      <section className="py-8 bg-white grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="mt-16 px-4 md:px-0">
           <Image src={vector2} alt="vector2" className="w-full md:w-[70vw]" />
         </div>
-        <div className="mt-16 px-4 md:px-32">
+        <div className="mt-16 px-4 md:px-32 flex flex-col">
           <div className="text-2xl md:text-4xl leading-tight">
             It’s helpful for operating system
           </div>
@@ -96,6 +96,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Features */}
       <section className="py-8 flex bg-white flex-col items-center justify-around">
         <p className="text-center font-bold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
