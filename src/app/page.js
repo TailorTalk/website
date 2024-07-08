@@ -37,22 +37,23 @@ const data = [
 export default function Home() {
   return (
     <div className="">
-      {/* Introduction  */}
+      {/* Introduction */}
       <section
         style={{
           backgroundImage: `url(${background.src})`,
-          height: "auto",
-          width: "auto",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "fit-content"
         }}
-        className="px-32 py-8"
+        className="px-8 md:px-32 py-8"
       >
         <Header />
-        <div className="flex justify-between mb-10 mt-32">
-          <div className="mt-20 flex flex-col text-white gap-4">
-            <div className="text-5xl w-3/4 leading-tight ">
+        <div className="flex flex-col md:flex-row justify-between mb-10 mt-16 md:mt-32">
+          <div className="mt-8 md:mt-20 flex flex-col text-white gap-4">
+            <div className="text-3xl md:text-5xl w-full md:w-3/4 leading-tight">
               TailorTalk one of the best system in SAAS.
             </div>
-            <div className="w-3/4">
+            <div className="w-full md:w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. A nulla
               nulla etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.
             </div>
@@ -62,28 +63,32 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div>
-            <Image src={vector1} alt="vector1" className="h-[34vw]" />
+          <div className="mt-8 md:mt-0">
+            <Image
+              src={vector1}
+              alt="vector1"
+              className="h-[50vw] md:h-[34vw]"
+            />
           </div>
         </div>
       </section>
-      {/* Usage  */}
-      <section className="py-8 bg-white flex justify-around">
-        <di className="mt-16">
-          <Image src={vector2} alt="vector2" className="w-[70vw]" />
-        </di>
-        <div className="mt-16 px-32">
-          <div className="text-4xl leading-tight">
+      {/* Usage */}
+      <section className="py-8 bg-white flex flex-col md:flex-row justify-around">
+        <div className="mt-16 px-4 md:px-0">
+          <Image src={vector2} alt="vector2" className="w-full md:w-[70vw]" />
+        </div>
+        <div className="mt-16 px-4 md:px-32">
+          <div className="text-2xl md:text-4xl leading-tight">
             It’s helpful for operating system
           </div>
-          <div className="mt-6 gap-4 ">
+          <div className="mt-6 gap-4">
             {data.map((item) => (
               <div key={item.id} className="flex flex-col gap-2 mb-8">
                 <div className="flex flex-row items-center">
                   <Image src={item.image} alt="arrow" className="w-6 mr-2" />
-                  <p className="text-xl">{item.title}</p>
+                  <p className="text-lg md:text-xl">{item.title}</p>
                 </div>
-                <p className="w-full text-sm px-8 text-[#051114]">
+                <p className="w-full text-sm md:text-base px-2 md:px-8 text-[#051114]">
                   {item.description}
                 </p>
               </div>
@@ -91,16 +96,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Features  */}
+      {/* Features */}
       <section className="py-8 flex bg-white flex-col items-center justify-around">
-        <p className="text-center font-bold text-4xl w-1/2 flex flex-col items-center">
+        <p className="text-center font-bold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
           We Provides best Feature for customar
         </p>
-        <div className="flex gap-6 mt-8 flex-wrap px-32 mb-20">
+        <div className="flex flex-wrap gap-6 mt-8 px-4 md:px-32 mb-20 justify-center">
           <FeatureCard />
         </div>
       </section>
-      {/* Footer  */}
+      {/* Footer */}
       <section>
         <Footer />
       </section>

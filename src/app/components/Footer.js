@@ -6,16 +6,16 @@ import twitter from "../../../public/twitter.svg";
 
 const Footer = () => {
   return (
-    <footer className="px-32 py-12 bg-black">
-      <div className="container  flex flex-wrap justify-between">
+    <footer className="px-6 sm:px-12 md:px-24 lg:px-32 py-12 bg-black">
+      <div className="container mx-auto flex flex-wrap justify-between">
         {/* Logo and Description */}
-        <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
+        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
           <div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-center">
               <Image src={logo} alt="logo" className="w-8" />
-              <span className="text-[#62F7FF] text-2xl ">TailorTalk</span>
+              <span className="text-[#62F7FF] text-2xl">TailorTalk</span>
             </div>
-            <p className="mt-4 text-gray-400 text-sm w-2/3">
+            <p className="mt-4 text-gray-400 text-sm">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Ullamcorper purus eleifend purus faucibus faucibus.
             </p>
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
         {/* Resources */}
-        <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
+        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
           <h3 className="text-lg font-semibold text-white">Resources</h3>
           <ul className="mt-4 space-y-2 text-gray-400 text-sm">
             <li>
@@ -48,7 +48,7 @@ const Footer = () => {
           </ul>
         </div>
         {/* Useful Links */}
-        <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
+        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
           <h3 className="text-lg font-semibold text-white">Useful Links</h3>
           <ul className="mt-4 space-y-2 text-gray-400 text-sm">
             <li>
@@ -66,7 +66,7 @@ const Footer = () => {
           </ul>
         </div>
         {/* Newsletter */}
-        <div className="w-1/4 sm:w-1/2 lg:w-1/4 mb-6">
+        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
           <h3 className="text-lg font-semibold text-white">Newsletter</h3>
           <p className="mt-4 text-gray-400 text-sm">
             Sign up and receive the latest news via email.
