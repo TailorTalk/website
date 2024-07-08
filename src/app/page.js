@@ -43,27 +43,27 @@ export default function Home() {
           backgroundImage: `url(${background.src})`,
           // backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "fit-content"
+          height: "fit-content",
         }}
         className="px-8 md:px-32 py-8 pb-12 md:pb-20"
       >
         <Header />
-        <div className="flex flex-col md:flex-row justify-between mb-10 mt-16 md:mt-32">
-          <div className="mt-8 md:mt-20 flex flex-col text-white gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 mb-10 mt-16 md:mt-26">
+          <div className="col-span-1 md:col-span-1 mt-8 md:mt-20 flex flex-col text-white gap-4">
             <div className="text-3xl md:text-5xl w-full md:w-3/4 leading-tight">
               TailorTalk one of the best system in SAAS.
             </div>
             <div className="w-full md:w-3/4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. A nulla
-              nulla etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.
+              Lorem ipsum dolor sit amet, consectetur elit. A nulla nulla etiam
+              turpis quam diam et. Arcu nisi, sed aenean sit nisl.
             </div>
             <div>
-              <a href="">
+              <a href="#">
                 <button className="button">Demo</button>
               </a>
             </div>
           </div>
-          <div className="mt-8 md:mt-0">
+          <div className="col-span-1 md:col-span-1 mt-8 md:mt-0">
             <Image
               src={vector1}
               alt="vector1"
