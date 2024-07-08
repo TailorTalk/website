@@ -78,7 +78,7 @@ export default function Home() {
             <Image src={vector2} alt="vector2" layout="responsive" />
           </div>
         </div>
-        <div className="mt-16 px-4 md:px-32 flex flex-col">
+        <div className="mt-36 px-4 md:px-32 flex flex-col">
           <div className="text-2xl md:text-4xl leading-tight">
             It’s Helpful for Operating Systems
           </div>
