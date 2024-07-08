@@ -44,7 +44,7 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
-        class="px-8 md:px-32 py-8 pb-12 md:pb-20"
+        className="px-8 md:px-32 py-8 pb-12 md:pb-20"
       >
         <Header />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
