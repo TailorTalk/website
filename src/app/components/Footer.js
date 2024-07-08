@@ -15,7 +15,7 @@ const Footer = () => {
               <Image src={logo} alt="logo" className="w-8" />
               <span className="text-[#62F7FF] text-2xl">TailorTalk</span>
             </div>
-            <p className="mt-4 text-gray-400 text-sm">
+            <p className="mt-4 w-1/2 text-gray-400 text-sm">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Ullamcorper purus eleifend purus faucibus faucibus.
             </p>

@@ -41,11 +41,11 @@ export default function Home() {
       <section
         style={{
           backgroundImage: `url(${background.src})`,
-          backgroundSize: "cover",
+          // backgroundSize: "cover",
           backgroundPosition: "center",
           height: "fit-content"
         }}
-        className="px-8 md:px-32 py-8"
+        className="px-8 md:px-32 py-8 pb-12 md:pb-20"
       >
         <Header />
         <div className="flex flex-col md:flex-row justify-between mb-10 mt-16 md:mt-32">
