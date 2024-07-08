@@ -11,14 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="montserrat-unique">
-          {/* Content using Montserrat font */}
-          {children}
-        </div>
-        <div className="open-sans-unique">
-          {/* Content using Open Sans font */}
-        </div>
+      <body className={`${inter.className} montserrat-unique`}>
+        {/* Content */}
+        {children}
       </body>
     </html>
   );

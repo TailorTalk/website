@@ -49,7 +49,7 @@ export default function Home() {
         <Header />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
           <div className="mt-8 md:mt-20 flex flex-col text-white gap-4 items-center md:items-start text-center md:text-left">
-            <div className="text-3xl mt-12 md:text-5xl w-full leading-tight">
+            <div className="text-3xl mt-12 md:text-5xl w-full leading-tight font-semibold" >
               TailorTalk: One of the Best Systems in SaaS.
             </div>
             <div className="w-full">
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-36 px-4 md:px-32 flex flex-col">
-          <div className="text-2xl md:text-4xl leading-tight">
+          <div className="text-2xl md:text-4xl leading-tight font-semibold">
             It’s Helpful for Operating Systems
           </div>
           <div className="mt-6">
@@ -100,7 +100,7 @@ export default function Home() {
 
       {/* Features */}
       <section className="py-8 flex bg-white flex-col items-center justify-around">
-        <p className="text-center font-bold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
+        <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
           We Provide the Best Features for Customers
         </p>
         <div className="flex flex-wrap gap-6 mt-8 px-4 md:px-32 mb-20 justify-center">

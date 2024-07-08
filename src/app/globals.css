@@ -41,23 +41,10 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* globals.css */
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
-/* Montserrat font with unique class */
-.montserrat-unique {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400; /* Adjust the weight as needed (100 to 900) */
+@font-face {
+  font-family: 'Inter';
   font-style: normal;
-}
-
-/* Open Sans font with unique class */
-.open-sans-unique {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400; /* Adjust the weight as needed (300 to 800) */
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/path/to/inter-regular.woff2') format('woff2');
 }
