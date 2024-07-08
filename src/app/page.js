@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div className="">
       {/* Introduction */}
-      <section
+      {/* <section
         style={{
           backgroundImage: `url(${background.src})`,
           // backgroundSize: "cover",
@@ -71,10 +71,54 @@ export default function Home() {
             />
           </div>
         </div>
+      </section> */}
+      <section
+        style={{
+          backgroundImage: `url(${background.src})`,
+          // backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          // backgroundSize: "cover",
+          height: "fit-content",
+        }}
+        className="px-8 md:px-32 py-8 pb-12 md:pb-20"
+      >
+        <Header />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-16 md:mt-26">
+          <div className="mt-8 md:mt-20 flex flex-col text-white gap-4 items-center md:items-start text-center md:text-left">
+            <div className="text-3xl md:text-5xl w-full leading-tight">
+              TailorTalk one of the best system in SAAS.
+            </div>
+            <div className="w-full">
+              Lorem ipsum dolor sit amet, consectetur elit. A nulla nulla etiam
+              turpis quam diam et. Arcu nisi, sed aenean sit nisl.Lorem
+              ipsumLorem ipsum dolor sit amet, consectetur elit. A nulla nulla
+              etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.Lorem
+              ipsumLorem ipsum dolor sit amet, consectetur elit. A nulla nulla
+              etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.Lorem
+              ipsumLorem ipsum dolor sit amet, consectetur elit. A nulla nulla
+              etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.Lorem
+              ipsum
+            </div>
+            <div>
+              <a href="#">
+                <button className="button">Demo</button>
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-4 md:mt-16 hidden md:block">
+            <Image
+              src={vector1}
+              alt="vector1"
+              className="w-full md:w-[34vw] h-auto"
+            />
+          </div>
+        </div>
       </section>
+
       {/* Usage */}
       <section className="py-8 bg-white grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="mt-16 px-4 md:px-0">
+        <div className="mt-4 md:mt-16 hidden md:block">
           <Image src={vector2} alt="vector2" className="w-full md:w-[70vw]" />
         </div>
         <div className="mt-16 px-4 md:px-32 flex flex-col">
