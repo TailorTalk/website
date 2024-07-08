@@ -13,23 +13,23 @@ import Footer from "./components/Footer";
 const data = [
   {
     id: 1,
-    title: "Ultra Fast and Secure",
+    title: "Scale your business",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit proin justo, elementum siIn morbi.",
+      "Don't be bottlenecked by manually handling leads. With tailor talk you can easily handle 10x leads.",
     image: arrow1,
   },
   {
     id: 2,
-    title: "Allows customization",
+    title: "Reach out to existing leads",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit proin justo, elementum siIn morbi.",
+      "Upload your existing leads data to Tailor-Talk, which will initiate and manage conversations with your leads.",
     image: arrow2,
   },
   {
     id: 3,
-    title: "Smart contract",
+    title: "Gain insights on your customers",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit proin justo, elementum siIn morbi.",
+      "Understand your customers' needs better, enabling you to make more informed decisions.",
     image: arrow3,
   },
 ];
@@ -50,11 +50,10 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
           <div className="mt-8 md:mt-20 flex flex-col text-white gap-4 items-center md:items-start text-center md:text-left">
             <div className="text-3xl mt-12 md:text-5xl w-full leading-tight font-semibold" >
-              TailorTalk: One of the Best Systems in SaaS.
+            Your presales assistant
             </div>
             <div className="w-full">
-              Lorem ipsum dolor sit amet, consectetur elit. A nulla nulla etiam
-              turpis quam diam et. Arcu nisi, sed aenean sit nisl.
+            Create your customised sales assistant, which engages with leads and keeps you informed about their statuses. Receive real-time updates on critical events directly to your phone, ensuring you're always in the loop and ready to take action.
             </div>
             <div>
               <a href="#">
@@ -80,7 +79,7 @@ export default function Home() {
         </div>
         <div className="mt-36 px-4 md:px-32 flex flex-col">
           <div className="text-2xl md:text-4xl leading-tight font-semibold">
-            It’s Helpful for Operating Systems
+          Why do you need TailorTalk?
           </div>
           <div className="mt-6">
             {data.map((item) => (
@@ -101,7 +100,7 @@ export default function Home() {
       {/* Features */}
       <section className="py-8 mt-24 flex bg-white flex-col items-center justify-around">
         <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
-          We Provide the Best Features for Customers
+        We provide best features to you
         </p>
         <div className="flex flex-wrap gap-6 mt-8 px-4 md:px-32 mb-20 justify-center">
           <FeatureCard />
