@@ -15,21 +15,21 @@ const data = [
     id: 1,
     title: "Ultra Fast and Secure",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. vitae velit proin justo, elementum siIn morbi",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit proin justo, elementum siIn morbi.",
     image: arrow1,
   },
   {
     id: 2,
     title: "Allows customization",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. vitae velit proin justo, elementum siIn morbi",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit proin justo, elementum siIn morbi.",
     image: arrow2,
   },
   {
     id: 3,
     title: "Smart contract",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. vitae velit proin justo, elementum siIn morbi",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit proin justo, elementum siIn morbi.",
     image: arrow3,
   },
 ];
@@ -38,22 +38,21 @@ export default function Home() {
   return (
     <div className="">
       {/* Introduction */}
-      {/* <section
+      <section
         style={{
           backgroundImage: `url(${background.src})`,
-          // backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          height: "fit-content",
         }}
         className="px-8 md:px-32 py-8 pb-12 md:pb-20"
       >
         <Header />
-        <div className="grid grid-cols-1 md:grid-cols-2 mb-10 mt-16 md:mt-26">
-          <div className="col-span-1 md:col-span-1 mt-8 md:mt-20 flex flex-col text-white gap-4">
-            <div className="text-3xl md:text-5xl w-full md:w-3/4 leading-tight">
-              TailorTalk one of the best system in SAAS.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-16 md:mt-26">
+          <div className="mt-8 md:mt-20 flex flex-col text-white gap-4 items-center md:items-start text-center md:text-left">
+            <div className="text-3xl md:text-5xl w-full leading-tight">
+              TailorTalk: One of the Best Systems in SaaS.
             </div>
-            <div className="w-full md:w-3/4">
+            <div className="w-full">
               Lorem ipsum dolor sit amet, consectetur elit. A nulla nulla etiam
               turpis quam diam et. Arcu nisi, sed aenean sit nisl.
             </div>
@@ -63,55 +62,11 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="col-span-1 md:col-span-1 mt-8 md:mt-0">
-            <Image
-              src={vector1}
-              alt="vector1"
-              className="h-[50vw] md:h-[34vw]"
-            />
-          </div>
-        </div>
-      </section> */}
-      <section
-        style={{
-          backgroundImage: `url(${background.src})`,
-          // backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          // backgroundSize: "cover",
-          height: "fit-content",
-        }}
-        className="px-8 md:px-32 py-8 pb-12 md:pb-20"
-      >
-        <Header />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-16 md:mt-26">
-          <div className="mt-8 md:mt-20 flex flex-col text-white gap-4 items-center md:items-start text-center md:text-left">
-            <div className="text-3xl md:text-5xl w-full leading-tight">
-              TailorTalk one of the best system in SAAS.
-            </div>
-            <div className="w-full">
-              Lorem ipsum dolor sit amet, consectetur elit. A nulla nulla etiam
-              turpis quam diam et. Arcu nisi, sed aenean sit nisl.Lorem
-              ipsumLorem ipsum dolor sit amet, consectetur elit. A nulla nulla
-              etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.Lorem
-              ipsumLorem ipsum dolor sit amet, consectetur elit. A nulla nulla
-              etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.Lorem
-              ipsumLorem ipsum dolor sit amet, consectetur elit. A nulla nulla
-              etiam turpis quam diam et. Arcu nisi, sed aenean sit nisl.Lorem
-              ipsum
-            </div>
-            <div>
-              <a href="#">
-                <button className="button">Demo</button>
-              </a>
-            </div>
-          </div>
 
-          <div className="mt-4 md:mt-16 hidden md:block">
-            <Image
-              src={vector1}
-              alt="vector1"
-              className="w-full md:w-[34vw] h-auto"
-            />
+          <div className="flex justify-center items-center mt-4 md:mt-16">
+            <div className="mt-4 md:mt-16 hidden md:block">
+              <Image src={vector1} alt="vector1" layout="responsive" />
+            </div>
           </div>
         </div>
       </section>
@@ -123,7 +78,7 @@ export default function Home() {
         </div>
         <div className="mt-16 px-4 md:px-32 flex flex-col">
           <div className="text-2xl md:text-4xl leading-tight">
-            It’s helpful for operating system
+            It’s Helpful for Operating Systems
           </div>
           <div className="mt-6 gap-4">
             {data.map((item) => (
@@ -144,12 +99,13 @@ export default function Home() {
       {/* Features */}
       <section className="py-8 flex bg-white flex-col items-center justify-around">
         <p className="text-center font-bold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
-          We Provides best Feature for customar
+          We Provide the Best Features for Customers
         </p>
         <div className="flex flex-wrap gap-6 mt-8 px-4 md:px-32 mb-20 justify-center">
           <FeatureCard />
         </div>
       </section>
+
       {/* Footer */}
       <section>
         <Footer />
