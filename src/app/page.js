@@ -72,17 +72,19 @@ export default function Home() {
       </section>
 
       {/* Usage */}
-      <section className="py-8 bg-white grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="mt-4 md:mt-16 hidden md:block">
-          <Image src={vector2} alt="vector2" className="w-full md:w-[70vw]" />
+      <section className="bg-white grid grid-cols-1 md:grid-cols-2">
+        <div className="flex justify-center flex-col items-center ">
+          <div className="mt-8 hidden md:block">
+            <Image src={vector2} alt="vector2" layout="responsive" />
+          </div>
         </div>
         <div className="mt-16 px-4 md:px-32 flex flex-col">
           <div className="text-2xl md:text-4xl leading-tight">
             It’s Helpful for Operating Systems
           </div>
-          <div className="mt-6 gap-4">
+          <div className="mt-6">
             {data.map((item) => (
-              <div key={item.id} className="flex flex-col gap-2 mb-8">
+              <div key={item.id} className="flex flex-col  mb-6">
                 <div className="flex flex-row items-center">
                   <Image src={item.image} alt="arrow" className="w-6 mr-2" />
                   <p className="text-lg md:text-xl">{item.title}</p>
