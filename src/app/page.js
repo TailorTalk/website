@@ -77,17 +77,17 @@ export default function Home() {
       <section className="bg-white grid grid-cols-1 md:grid-cols-2">
         <div className="flex justify-center flex-col items-center">
           <div className="mt-10 hidden md:block w-[60vw]">
-            <Image src={vector2} alt="vector2" layout="responsive"  />
+            <Image src={vector2} alt="vector2" layout="responsive" />
           </div>
         </div>
 
         <div className="mt-36 px-4 md:px-32 flex flex-col">
-          <div className="text-2xl md:text-4xl leading-tight font-semibold">
+          <div style={{lineHeight: "4vw"}} className="text-2xl md:text-4xl font-semibold">
             Why do you need TailorTalk?
           </div>
-          <div className="mt-6">
+          <div className="mt-10">
             {data.map((item) => (
-              <div key={item.id} className="flex flex-col mb-6">
+              <div key={item.id} className="flex flex-col mb-8">
                 <div className="flex flex-row items-center">
                   <Image src={item.image} alt="arrow" className="w-6 mr-2" />
                   <p className="text-lg font-semibold md:text-xl">
