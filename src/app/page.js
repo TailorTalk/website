@@ -49,7 +49,7 @@ export default function Home() {
         <Header />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
           <div className="mt-8 md:mt-20 flex flex-col text-white gap-8 items-center md:items-start text-center md:text-left">
-            <div className="text-3xl mt-12 md:text-7xl w-full leading-tight font-semibold">
+            <div className="text-3xl mt-12 md:text-6xl w-full leading-tight font-semibold">
               Your presales assistant
             </div>
             <div className="w-full">
@@ -83,8 +83,8 @@ export default function Home() {
 
         <div className="mt-36 px-4 md:px-32 flex flex-col">
           <div
-            style={{ lineHeight: "4vw" }}
             className="text-2xl md:text-4xl font-semibold"
+            style={{ lineHeight: "1.6" }}
           >
             Why do you need TailorTalk?
           </div>
