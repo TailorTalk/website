@@ -58,7 +58,7 @@ const FeatureCard = () => {
         >
           {hoveredId === item.id && (
             <div
-              className="absolute bottom-0 left-0 w-full h-48"
+              className="absolute bottom-0 left-0 w-full h-56" // Increased height
               style={{
                 backgroundImage: `url(${wavyPattern.src})`,
                 backgroundRepeat: "no-repeat",
