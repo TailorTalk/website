@@ -47,7 +47,7 @@ const FeatureCard = () => {
       {features.map((item) => (
         <div
           key={item.id}
-          className={`relative max-w-sm flex flex-col mx-auto bg-white shadow-lg rounded-lg overflow-hidden py-10 px-2 items-center text-center gap-8 ${
+          className={`relative max-w-sm flex flex-col mx-auto bg-white shadow-lg rounded-lg overflow-hidden py-6 px-2 items-center text-center gap-4 ${
             hoveredId === item.id ? "text-white" : "text-black"
           }`}
           onMouseEnter={() => setHoveredId(item.id)}
@@ -58,7 +58,7 @@ const FeatureCard = () => {
         >
           {hoveredId === item.id && (
             <div
-              className="absolute bottom-0 left-0 w-full h-56" // Increased height
+              className="absolute bottom-0 left-0 w-full h-52" // Increased height
               style={{
                 backgroundImage: `url(${wavyPattern.src})`,
                 backgroundRepeat: "no-repeat",
@@ -68,11 +68,11 @@ const FeatureCard = () => {
             />
           )}
           <div style={{ zIndex: 1 }}>
-            <Image src={item.image} alt={item.title} className="h-28" />
+            <Image src={item.image} alt={item.title} className="h-28 mb-6" />
           </div>
           <div style={{ zIndex: 1 }}>
-            <p className="text-lg">{item.title}</p>
-            <p className="w-52 text-sm">{item.description}</p>
+            <p className="text-lg font-semibold mb-2">{item.title}</p>
+            <p className="w-52 text-sm ">{item.description}</p>
           </div>
           <div style={{ zIndex: 1 }}>
             <Image src={hoveredId === item.id ? next2 : next1} alt="arrow" />
