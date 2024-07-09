@@ -29,7 +29,7 @@ const data = [
     id: 3,
     title: "Gain insights on your customers",
     description:
-      "Understand your customers&apos; needs better, enabling you to make more informed decisions.",
+      "Understand your customers' needs better, enabling you to make more informed decisions.",
     image: arrow3,
   },
 ];
