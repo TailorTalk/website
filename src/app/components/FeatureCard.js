@@ -47,7 +47,7 @@ const FeatureCard = () => {
       {features.map((item) => (
         <div
           key={item.id}
-          className={`relative max-w-sm flex flex-col mx-auto bg-white shadow-lg rounded-lg overflow-hidden py-8 px-2 items-center text-center gap-8 ${
+          className={`relative max-w-sm flex flex-col mx-auto bg-white shadow-lg rounded-lg overflow-hidden py-10 px-2 items-center text-center gap-8 ${
             hoveredId === item.id ? "text-white" : "text-black"
           }`}
           onMouseEnter={() => setHoveredId(item.id)}

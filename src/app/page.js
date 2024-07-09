@@ -89,9 +89,9 @@ export default function Home() {
               <div key={item.id} className="flex flex-col mb-6">
                 <div className="flex flex-row items-center">
                   <Image src={item.image} alt="arrow" className="w-6 mr-2" />
-                  <p className="text-lg md:text-xl">{item.title}</p>
+                  <p className="text-lg font-semibold md:text-xl">{item.title}</p>
                 </div>
-                <p className="w-full text-sm md:text-base px-2 md:px-8 text-[#051114]">
+                <p className="w-full mt-4 text-xs md:text-sm px-2 md:px-8 text-[#051114]">
                   {item.description}
                 </p>
               </div>
@@ -105,7 +105,7 @@ export default function Home() {
         <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
           We provide best features to you
         </p>
-        <div className="flex flex-wrap gap-6 mt-8 px-4 md:px-32 mb-20 justify-center">
+        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-32 mb-20 justify-center">
           <FeatureCard />
         </div>
       </section>
