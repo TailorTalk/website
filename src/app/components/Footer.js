@@ -13,17 +13,16 @@ const Footer = () => {
           <div>
             <div className="flex gap-4 items-center">
               <Image src={logo} alt="logo" className="w-8" />
-              <span className="text-[#62F7FF] text-2xl">TailorTalk</span>
+              <span className="text-[white] text-2xl">TailorTalk</span>
             </div>
             <p className="mt-4 w-1/2 text-gray-400 text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Ullamcorper purus eleifend purus faucibus faucibus.
+                Banglore, India
             </p>
             <div className="flex mt-4 space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
                 <Image src={twitter} alt="twitter" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.linkedin.com/company/tailortalk-ai/?viewAsMember=true" target="_blank" className="text-gray-400 hover:text-white">
                 <Image src={linkedin} alt="linkedin" />
               </a>
             </div>

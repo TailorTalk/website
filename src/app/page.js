@@ -59,7 +59,7 @@ export default function Home() {
               you&apos;re always in the loop and ready to take action.
             </div>
             <div>
-              <a href="#">
+              <a href="mailto:contact@tailortalk.ai" >
                 <button className="button">Request Demo</button>
               </a>
             </div>
