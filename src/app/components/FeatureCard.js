@@ -13,25 +13,29 @@ const features = [
     id: 1,
     image: feature1,
     title: "Easy to setup",
-    description: "Set up your assistant using simple natural language commands.",
+    description:
+      "Set up your assistant using simple natural language commands.",
   },
   {
     id: 2,
     image: feature2,
     title: "Be updated on phone",
-    description: "Assistant keeps you informed about key events directly on your whatsapp.",
+    description:
+      "Assistant keeps you informed about key events directly on your WhatsApp.",
   },
   {
     id: 3,
     image: feature3,
     title: "Dashboard",
-    description: "Monitor your assistant's performance and access additional features on our dashboard.",
+    description:
+      "Monitor your assistant's performance and access additional features on our dashboard.",
   },
   {
     id: 4,
     image: feature4,
     title: "Fully secured",
-    description: "We prioritise the security of your customer data with robust measures.",
+    description:
+      "We prioritize the security of your customer data with robust measures.",
   },
 ];
 

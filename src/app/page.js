@@ -29,7 +29,7 @@ const data = [
     id: 3,
     title: "Gain insights on your customers",
     description:
-      "Understand your customers' needs better, enabling you to make more informed decisions.",
+      "Understand your customers&apos; needs better, enabling you to make more informed decisions.",
     image: arrow3,
   },
 ];
@@ -49,11 +49,14 @@ export default function Home() {
         <Header />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
           <div className="mt-8 md:mt-20 flex flex-col text-white gap-4 items-center md:items-start text-center md:text-left">
-            <div className="text-3xl mt-12 md:text-5xl w-full leading-tight font-semibold" >
-            Your presales assistant
+            <div className="text-3xl mt-12 md:text-5xl w-full leading-tight font-semibold">
+              Your presales assistant
             </div>
             <div className="w-full">
-            Create your customised sales assistant, which engages with leads and keeps you informed about their statuses. Receive real-time updates on critical events directly to your phone, ensuring you're always in the loop and ready to take action.
+              Create your customised sales assistant, which engages with leads
+              and keeps you informed about their statuses. Receive real-time
+              updates on critical events directly to your phone, ensuring
+              you&apos;re always in the loop and ready to take action.
             </div>
             <div>
               <a href="#">
@@ -79,11 +82,11 @@ export default function Home() {
         </div>
         <div className="mt-36 px-4 md:px-32 flex flex-col">
           <div className="text-2xl md:text-4xl leading-tight font-semibold">
-          Why do you need TailorTalk?
+            Why do you need TailorTalk?
           </div>
           <div className="mt-6">
             {data.map((item) => (
-              <div key={item.id} className="flex flex-col  mb-6">
+              <div key={item.id} className="flex flex-col mb-6">
                 <div className="flex flex-row items-center">
                   <Image src={item.image} alt="arrow" className="w-6 mr-2" />
                   <p className="text-lg md:text-xl">{item.title}</p>
@@ -100,14 +103,14 @@ export default function Home() {
       {/* Features */}
       <section className="py-8 mt-24 flex bg-white flex-col items-center justify-around">
         <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
-        We provide best features to you
+          We provide best features to you
         </p>
         <div className="flex flex-wrap gap-6 mt-8 px-4 md:px-32 mb-20 justify-center">
           <FeatureCard />
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer */} 
       <section>
         <Footer />
       </section>
