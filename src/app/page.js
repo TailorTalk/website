@@ -49,7 +49,7 @@ export default function Home() {
         <Header />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
           <div className="mt-8 md:mt-20 flex flex-col text-white gap-8 items-center md:items-start text-center md:text-left">
-            <div className="text-3xl mt-4 md:text-6xl w-full leading-tight font-semibold">
+            <div className="text-3xl mt-4 md:text-6xl w-full leading-tight font-semibold" style={{lineHeight: "1.2"}}>
               Your presales assistant
             </div>
             <div className="w-full">

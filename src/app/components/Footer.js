@@ -77,7 +77,7 @@ const Footer = () => {
               className="w-full p-4 rounded-l-lg bg-gray-800 text-gray-300 focus:outline-none"
               placeholder="Email address"
             />
-            <button className="px-4 py-2 bg-[#62F7FF] text-[#6D2EC9] rounded-r-lg hover:bg-blue-500">
+            <button className="px-4 py-2 bg-[#42B4EE] text-white rounded-r-lg hover:bg-blue-500">
               Send
             </button>
           </div>
