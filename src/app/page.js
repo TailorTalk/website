@@ -75,11 +75,12 @@ export default function Home() {
 
       {/* Usage */}
       <section className="bg-white grid grid-cols-1 md:grid-cols-2">
-        <div className="flex justify-center flex-col items-center ">
-          <div className="mt-8 hidden md:block">
-            <Image src={vector2} alt="vector2" layout="responsive" />
+        <div className="flex justify-center flex-col items-center">
+          <div className="mt-10 hidden md:block w-[60vw]">
+            <Image src={vector2} alt="vector2" layout="responsive"  />
           </div>
         </div>
+
         <div className="mt-36 px-4 md:px-32 flex flex-col">
           <div className="text-2xl md:text-4xl leading-tight font-semibold">
             Why do you need TailorTalk?
@@ -89,7 +90,9 @@ export default function Home() {
               <div key={item.id} className="flex flex-col mb-6">
                 <div className="flex flex-row items-center">
                   <Image src={item.image} alt="arrow" className="w-6 mr-2" />
-                  <p className="text-lg font-semibold md:text-xl">{item.title}</p>
+                  <p className="text-lg font-semibold md:text-xl">
+                    {item.title}
+                  </p>
                 </div>
                 <p className="w-full mt-4 text-xs md:text-sm px-2 md:px-8 text-[#051114]">
                   {item.description}
@@ -110,7 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */} 
+      {/* Footer */}
       <section>
         <Footer />
       </section>
