@@ -62,7 +62,7 @@ const Footer = () => {
               <a href="#">Cookie Policy</a>
             </li>
             <li>
-              <a href="#">Contact Us</a>
+            <a href="mailto:contact@tailortalk.ai" className="text-gray-400 hover:text-white">Contact Us</a>
             </li>
           </ul>
         </div>
