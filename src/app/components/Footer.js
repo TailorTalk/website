@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../../../public/logo.svg";
 import linkedin from "../../../public/linkedin.svg";
 import twitter from "../../../public/twitter.svg";
@@ -16,7 +17,7 @@ const Footer = () => {
               <span className="text-[white] text-2xl">TailorTalk</span>
             </div>
             <p className="mt-4 w-1/2 text-gray-400 text-sm">
-                Banglore, India
+             San Francisco, USA
             </p>
             <div className="flex mt-4 space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
@@ -33,10 +34,11 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white">Resources</h3>
           <ul className="mt-4 space-y-2 text-gray-400 text-sm">
             <li>
-              <a href="#">Services</a>
+            <a href="/about_founders" className="text-gray-400 hover:text-white">About Founders</a>
+
             </li>
             <li>
-              <a href="#">Pricing</a>
+              <a href="/pricing" className="text-gray-400 hover:text-white">Pricing</a>
             </li>
             <li>
               <a href="#">Testimonials</a>
@@ -50,11 +52,11 @@ const Footer = () => {
         <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
           <h3 className="text-lg font-semibold text-white">Useful Links</h3>
           <ul className="mt-4 space-y-2 text-gray-400 text-sm">
-            <li>
-              <a href="#">Terms of Services</a>
+          <li>
+          <a href="/privacy_policy" className="text-gray-400 hover:text-white">Privacy Policy</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Services</a>
             </li>
             <li>
               <a href="#">Cookie Policy</a>
@@ -84,7 +86,7 @@ const Footer = () => {
       </div>
       <div className="border-t border-gray-800 mt-8 pt-4">
         <p className="text-center text-gray-500">
-          Copyright 2021 The Tailor-Talk. All Rights Reserved.
+          Copyright 2024 TailorTalk. All Rights Reserved.
         </p>
       </div>
     </footer>
