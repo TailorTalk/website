@@ -114,7 +114,7 @@ export default function Home() {
         <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
           We provide best features to you
         </p>
-        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-32 mb-20 justify-center">
+        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-32 mb-20 justify-center 2xl:gap-20">
           <FeatureCard />
         </div>
       </section>
