@@ -44,18 +44,18 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
-        className="px-8 md:px-32 2xl:px-64 py-8 pb-12 md:pb-20 "
+        className="px-8 md:px-32 2xl:px-56 py-8 pb-12 md:pb-20 "
       >
         <Header />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
           <div className="mt-8 md:mt-20 flex flex-col text-white gap-8 items-center md:items-start text-center md:text-left">
             <div
-              className="text-3xl mt-4 md:text-6xl 2xl:text-8xl w-full leading-tight font-semibold"
+              className="text-3xl mt-4 md:text-6xl 2xl:text-7xl w-full leading-tight font-semibold"
               style={{ lineHeight: "1.2" }}
             >
               Your presales assistant
             </div>
-            <div className="w-full text-sm lg:text-base  2xl:text-2xl">
+            <div className="w-full text-sm lg:text-base  2xl:text-xl">
               Create your customised sales assistant, which engages with leads
               and keeps you informed about their statuses. Receive real-time
               updates on critical events directly to your phone, ensuring
@@ -84,9 +84,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-36 px-4 md:px-32 flex flex-col 2xl:mt-[400px]  ">
+        <div className="mt-36 px-4 md:px-32 flex flex-col 2xl:mt-[200px]  ">
           <div
-            className="text-2xl md:text-4xl font-semibold 2xl:text-4xl"
+            className="text-2xl md:text-4xl font-semibold 2xl:text-5xl"
             style={{ lineHeight: "1.6" }}
           >
             Why do you need TailorTalk?
@@ -96,11 +96,11 @@ export default function Home() {
               <div key={item.id} className="flex flex-col mb-8 2xl:mb-16">
                 <div className="flex flex-row items-center">
                   <Image src={item.image} alt="arrow" className="w-6 mr-2" />
-                  <p className="text-lg font-semibold md:text-xl 2xl:text-3xl">
+                  <p className="text-lg font-semibold md:text-xl 2xl:text-2xl">
                     {item.title}
                   </p>
                 </div>
-                <p className="w-full mt-4 text-xs md:text-sm px-2 md:px-8 text-[#051114] 2xl:text-2xl">
+                <p className="w-full mt-4 text-xs md:text-sm px-2 md:px-8 text-[#051114] 2xl:text-xl">
                   {item.description}
                 </p>
               </div>
