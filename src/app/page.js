@@ -79,12 +79,12 @@ export default function Home() {
       {/* Usage */}
       <section className="bg-white grid grid-cols-1 md:grid-cols-2">
         <div className="flex justify-center flex-col items-center">
-          <div className="mt-10 hidden md:block w-[60vw] ">
+          <div className="mt-10 hidden pr-0 md:block w-[60vw] 2xl:pr-20">
             <Image src={vector2} alt="vector2" layout="responsive" />
           </div>
         </div>
 
-        <div className="mt-36 px-4 md:px-32 flex flex-col 2xl:mt-[450px] ">
+        <div className="mt-36 px-4 md:px-32 flex flex-col 2xl:mt-[400px]  ">
           <div
             className="text-2xl md:text-4xl font-semibold 2xl:text-4xl"
             style={{ lineHeight: "1.6" }}
