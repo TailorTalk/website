@@ -84,7 +84,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-36 px-4 md:px-32 flex flex-col 2xl:mt-[200px]  ">
+        <div className="mt-36 px-4 md:px-32 flex flex-col 2xl:mt-[260px]  ">
           <div
             className="text-2xl md:text-4xl font-semibold 2xl:text-5xl"
             style={{ lineHeight: "1.6" }}
