@@ -53,13 +53,11 @@ export default function Home() {
               className="text-3xl mt-4 md:text-6xl 2xl:text-7xl w-full leading-tight font-semibold"
               style={{ lineHeight: "1.2" }}
             >
-              Your presales assistant
+              Your sales assistant
             </div>
             <div className="w-full text-sm lg:text-base  2xl:text-xl">
-              Create your customised sales assistant, which engages with leads
-              and keeps you informed about their statuses. Receive real-time
-              updates on critical events directly to your phone, ensuring
-              you&apos;re always in the loop and ready to take action.
+            Create your personalized B2C sales assistant. It can autonomously engage with and manage your leads. 
+            Receive real-time updates on critical events directly to your phone, ensuring you're always in the loop and ready to take action, and much more.
             </div>
             <div>
               <a href="mailto:contact@tailortalk.ai">
