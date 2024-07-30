@@ -15,7 +15,7 @@ const data = [
     id: 1,
     title: "Scale your business",
     description:
-      "Don't be bottlenecked by manually handling leads. With tailor talk you can easily handle 10x leads.",
+      "Do not be bottlenecked by manually handling leads. With tailor talk you can easily handle 10x leads.",
     image: arrow1,
   },
   {
@@ -59,7 +59,7 @@ export default function Home() {
               Create your customised sales assistant, which engages with leads
               and keeps you informed about their statuses. Receive real-time
               updates on critical events directly to your phone, ensuring
-              you&apos;re always in the loop and ready to take action.
+              you are always in the loop and ready to take action.
             </div>
             <div>
               <a href="mailto:contact@tailortalk.ai">
