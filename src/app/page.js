@@ -15,7 +15,7 @@ const data = [
     id: 1,
     title: "Scale your business",
     description:
-      "Don't be bottlenecked by manually handling leads. With tailor talk you can easily handle 10x leads.",
+      "Do not be bottlenecked by manually handling leads. With tailor talk you can easily handle 10x leads.",
     image: arrow1,
   },
   {
@@ -29,7 +29,7 @@ const data = [
     id: 3,
     title: "Gain insights on your customers",
     description:
-      "Understand your customers' needs better, enabling you to make more informed decisions.",
+      "Understand your customer needs better, enabling you to make more informed decisions.",
     image: arrow3,
   },
 ];
@@ -55,11 +55,11 @@ export default function Home() {
             >
               Your presales assistant
             </div>
-            <div className="w-full text-sm lg:text-base  2xl:text-xl">
+            <div className="w-full text-sm lg:text-base 2xl:text-xl">
               Create your customised sales assistant, which engages with leads
               and keeps you informed about their statuses. Receive real-time
               updates on critical events directly to your phone, ensuring
-              you&apos;re always in the loop and ready to take action.
+              you are always in the loop and ready to take action.
             </div>
             <div>
               <a href="mailto:contact@tailortalk.ai">
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-36 px-4 md:px-32 flex flex-col 2xl:mt-[260px]  ">
+        <div className="mt-36 px-4 md:px-32 flex flex-col 2xl:mt-[260px]">
           <div
             className="text-2xl md:text-4xl font-semibold 2xl:text-5xl"
             style={{ lineHeight: "1.6" }}
