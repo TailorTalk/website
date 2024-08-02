@@ -150,7 +150,7 @@ export default function Home() {
         <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
           We provide best features to you
         </p>
-        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-32 mb-20 justify-center 2xl:gap-20">
+        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-32 mb-10 justify-center 2xl:gap-20">
           <FeatureCard />
         </div>
       </section>
@@ -158,7 +158,7 @@ export default function Home() {
       {/* Video Section */}
       <section
         id="videoSection"
-        className="py-8 mt-12 flex bg-white flex-col items-center justify-around "
+        className="py-8  flex bg-white flex-col items-center justify-around "
       >
         <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-8 lg:px-16 xl:px-32 mb-20 justify-center w-full ">
           <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
