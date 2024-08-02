@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Header from "./components/Header";
 import vector1 from "../../public/vector1.svg";
@@ -35,6 +36,41 @@ const data = [
 ];
 
 export default function Home() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add autoplay to the video URL if it is not already present
+            if (!videoRef.current.src.includes("&autoplay=1")) {
+              videoRef.current.src += "&autoplay=1";
+            }
+          } else {
+            // Remove autoplay from the video URL
+            const src = videoRef.current.src.replace("&autoplay=1", "");
+            videoRef.current.src = src; // Reset the video source to stop playback
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Adjust as needed
+      }
+    );
+
+    const videoSection = document.getElementById("videoSection");
+    if (videoSection) {
+      observer.observe(videoSection);
+    }
+
+    return () => {
+      if (videoSection) {
+        observer.unobserve(videoSection);
+      }
+    };
+  }, []);
+
   return (
     <div className="">
       {/* Introduction */}
@@ -53,10 +89,13 @@ export default function Home() {
               className="text-3xl mt-4 md:text-6xl 2xl:text-7xl w-full leading-tight font-semibold"
               style={{ lineHeight: "1.2" }}
             >
-            Your sales assistant
+              Your sales assistant
             </div>
             <div className="w-full text-sm lg:text-base 2xl:text-xl">
-            Create your personalized B2C sales assistant that autonomously engages with and manages your leads. Receive real-time updates on critical events directly to your phone, ensuring you are always in the loop and ready to take action, and much more.
+              Create your personalized B2C sales assistant that autonomously
+              engages with and manages your leads. Receive real-time updates on
+              critical events directly to your phone, ensuring you are always in
+              the loop and ready to take action, and much more.
             </div>
             <div>
               <a href="mailto:contact@tailortalk.ai">
@@ -72,6 +111,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Video Section */}
+      <section
+  id="videoSection"
+  className="py-8 mt-12 flex bg-white flex-col items-center justify-around"
+>
+  <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-8 lg:px-16 xl:px-32 mb-20 justify-center w-full">
+    <div className="relative w-full" style={{ paddingTop: "50%" }}> {/* Adjusted paddingTop for smaller height */}
+      <iframe
+        ref={videoRef}
+        className="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/gyobVfaHI3Q?rel=0&modestbranding=1&showinfo=0"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
 
       {/* Usage */}
       <section className="bg-white grid grid-cols-1 md:grid-cols-2">
@@ -103,24 +162,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="py-8 mt-24 flex bg-white flex-col items-center justify-around">
-        <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
-          Watch our introduction video
-        </p>
-        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-32 mb-20 justify-center 2xl:gap-20">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/gyobVfaHI3Q"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
         </div>
       </section>
 
