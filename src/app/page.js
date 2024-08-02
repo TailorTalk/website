@@ -111,25 +111,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Video Section */}
-      <section
-        id="videoSection"
-        className="py-8 mt-12 flex bg-white flex-col items-center justify-around "
-      >
-        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-8 lg:px-16 xl:px-32 mb-20 justify-center w-full ">
-          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-            <iframe
-              ref={videoRef}
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/gyobVfaHI3Q?rel=0&modestbranding=1&showinfo=0"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
 
       {/* Usage */}
       <section className="bg-white grid grid-cols-1 md:grid-cols-2">
@@ -171,6 +152,26 @@ export default function Home() {
         </p>
         <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-32 mb-20 justify-center 2xl:gap-20">
           <FeatureCard />
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section
+        id="videoSection"
+        className="py-8 mt-12 flex bg-white flex-col items-center justify-around "
+      >
+        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-8 lg:px-16 xl:px-32 mb-20 justify-center w-full ">
+          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+            <iframe
+              ref={videoRef}
+              className="absolute top-0 left-0 w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/gyobVfaHI3Q?rel=0&modestbranding=1&showinfo=0"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </section>
 
