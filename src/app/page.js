@@ -15,7 +15,7 @@ const data = [
     id: 1,
     title: "Scale your business",
     description:
-      "Do not be bottlenecked by manually handling leads. With tailor talk you can easily handle 10x leads.",
+      "Don't be bottlenecked by manually handling leads. With tailor talk you can easily handle 10x leads.",
     image: arrow1,
   },
   {
@@ -58,8 +58,8 @@ export default function Home() {
             <div className="w-full text-sm lg:text-base 2xl:text-xl">
               Create your customised sales assistant, which engages with leads
               and keeps you informed about their statuses. Receive real-time
-              updates on critical events directly to your phone, ensuring
-              you are always in the loop and ready to take action.
+              updates on critical events directly to your phone, ensuring you
+              are always in the loop and ready to take action.
             </div>
             <div>
               <a href="mailto:contact@tailortalk.ai">
@@ -106,6 +106,24 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-8 mt-24 flex bg-white flex-col items-center justify-around">
+        <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
+          Watch our introduction video
+        </p>
+        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-32 mb-20 justify-center 2xl:gap-20">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/gyobVfaHI3Q"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
 
