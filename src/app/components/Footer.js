@@ -20,7 +20,7 @@ const Footer = () => {
              San Francisco, USA
             </p>
             <div className="flex mt-4 space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://x.com/tailortalk_ai" target="_blank" className="text-gray-400 hover:text-white">
                 <Image src={twitter} alt="twitter" />
               </a>
               <a href="https://www.linkedin.com/company/tailortalk-ai/?viewAsMember=true" target="_blank" className="text-gray-400 hover:text-white">
