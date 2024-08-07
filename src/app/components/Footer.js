@@ -17,7 +17,7 @@ const Footer = () => {
               <span className="text-[white] text-2xl">TailorTalk</span>
             </div>
             <p className="mt-4 w-1/2 text-gray-400 text-sm">
-             San Francisco, USA
+             Bangalore, India
             </p>
             <div className="flex mt-4 space-x-4">
               <a href="https://x.com/tailortalk_ai" target="_blank" className="text-gray-400 hover:text-white">
