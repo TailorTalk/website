@@ -5,9 +5,9 @@ import logo from "../../../public/logo.svg";
 import linkedin from "../../../public/linkedin.svg";
 import twitter from "../../../public/twitter.svg";
 
-const Footer = () => {
+const Footer = ({id}) => {
   return (
-    <footer className="px-6 sm:px-12 md:px-24 lg:px-32 py-12 bg-black">
+    <footer id={id} className="px-6 sm:px-12 md:px-24 lg:px-32 py-12 bg-black">
       <div className="container mx-auto flex flex-wrap justify-between">
         {/* Logo and Description */}
         <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">

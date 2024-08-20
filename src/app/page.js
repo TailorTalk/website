@@ -79,7 +79,7 @@ export default function Home() {
           backgroundImage: `url(${background.src})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-        }}
+        }} 
         className="px-8 md:px-32 2xl:px-56 py-8 pb-12 md:pb-20 "
       >
         <Header />
@@ -113,7 +113,7 @@ export default function Home() {
       </section>
 
       {/* Usage */}
-      <section className="bg-white grid grid-cols-1 md:grid-cols-2">
+      <section id="about" className="bg-white grid grid-cols-1 md:grid-cols-2">
         <div className="flex justify-center flex-col items-center">
           <div className="mt-10 hidden pr-0 md:block w-[60vw] 2xl:pr-20">
             <Image src={vector2} alt="vector2" layout="responsive" />
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="py-8 mt-24 flex bg-white flex-col items-center justify-around">
+      <section id="services" className="py-8 mt-24 flex bg-white flex-col items-center justify-around">
         <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
           We provide best features to you
         </p>
@@ -174,6 +174,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }

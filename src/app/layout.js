@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} montserrat-unique`}>
         {/* Content */}
         {children}
-        <Footer/>
+        <Footer id="contact"/>
       </body>
     </html>
   );
