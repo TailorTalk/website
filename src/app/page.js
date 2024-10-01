@@ -7,6 +7,7 @@ import vector2 from "../../public/vector2.svg";
 import arrow1 from "../../public/arrow1.svg";
 import arrow2 from "../../public/arrow2.svg";
 import arrow3 from "../../public/arrow3.svg";
+import whatsapp from "../../public/whatsapp_icon.svg";
 import background from "../../public/background.svg";
 import FeatureCard from "./components/FeatureCard";
 import Footer from "./components/Footer";
@@ -111,6 +112,49 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+       {/* WhatsApp Floater */}
+      <a
+          href="https://wa.me/919031698165"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            backgroundColor: "#25D366",
+            borderRadius: "50%",
+            width: "60px",
+            height: "60px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+            zIndex: "1000",
+            animation: "bounce 2s infinite",
+          }}
+        >
+          <Image
+            src={whatsapp}
+            alt="WhatsApp"
+            width={35}
+            height={35}
+          />
+        </a>
+
+    <style jsx>{`
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+    `}</style>
 
       {/* Usage */}
       <section className="bg-white grid grid-cols-1 md:grid-cols-2">
