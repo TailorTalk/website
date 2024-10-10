@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../../../public/logo.png"; // Adjust the path as needed
+import logo from "../../../public/logo.png";
+import logoIcon from "../../../public/logo.svg"
 
 const Header = () => {
   return (
     <header className="bg-white px-8 py-5 shadow-md">
       <div className="flex justify-between items-center">
-        {/* Logo */}
         <div className="flex items-center gap-12">
-          <Image src={logo} alt="logo" className="w-36 h-full" />
+          <a href="/"><Image src={logo} alt="logo" className="w-36 h-full" /></a>
           <nav className="hidden md:flex gap-8 items-center">
           <a href="/pricing" className="text-gray-700 hover:text-black font-medium">
             Pricing
@@ -22,13 +22,10 @@ const Header = () => {
         </nav>
         </div>
 
-        {/* Navigation Links */}
-        
-
-        {/* Button */}
         <div>
           <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank">
-            <button className="globalBgColor text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition duration-300">
+            <button className="globalBgColor flex flex-row text-white px-3 py-2 rounded-md hover:bg-indigo-700 transition duration-300">
+              <Image src={logoIcon} alt="icon" className="mr-2 mt-1 w-6 h-4"/>
               Hire Toby Today
             </button>
           </a>

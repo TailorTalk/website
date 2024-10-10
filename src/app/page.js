@@ -73,9 +73,21 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen">
-
-      
+    <div className="flex justify-center py-10 bg-gray-50">
+      <div className="max-w-7xl w-full px-4">
+        <h1 className="text-6xl font-medium text-center mt-10 bg-clip-text text-black">
+        Hi, I’m Toby.
+        </h1>
+        
+        <h2 className="text-6xl font-medium text-center mt-5 mb-4 text-black bg-clip-text">
+        Your AI-Powered
+        <span className="text-6xl font-medium  text-center ml-3 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8] ">Sales Assistant</span>
+        
+        </h2>
+        <p className="text-center font-medium text-lg text-gray-500 mb-10">
+        I work 24/7, at any scale, improving your lead engagement while cutting sales costs by up to 90%.
+        </p>
+      </div>
     </div>
   );
 }
