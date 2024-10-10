@@ -48,3 +48,12 @@
   font-display: swap;
   src: url("/path/to/inter-regular.woff2") format("woff2");
 }
+
+.bg-gradient-2 {
+  background-image: linear-gradient(92deg, #7c3aed 16.84%, #f80282 70.02%);
+}
+
+.globalBgColor{
+  background-color: #4f46e5;
+  color: white;
+}
