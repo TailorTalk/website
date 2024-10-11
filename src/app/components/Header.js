@@ -24,7 +24,7 @@ const Header = () => {
 
         <div>
           <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank">
-            <button className="globalBgColor flex flex-row text-white px-3 py-2 rounded-md hover:bg-indigo-700 transition duration-300">
+            <button className="globalBgColor flex flex-row items-center justify-center text-white px-3 py-2 rounded-md hover:bg-indigo-700 transition duration-300" style={{ height: '46px' }}>
               Hire {AssistantName} today
             </button>
           </a>
