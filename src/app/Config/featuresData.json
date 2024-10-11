@@ -1,9 +1,10 @@
+
 {
   "features": [
     {
       "title": "Updates CRM",
       "description": "Jordan seamlessly integrates with your CRM, and can update your contacts and company records automatically.",
-      "icon": "/icons/crm-icon.png"
+      "icon": "public/test.png"
     },
     {
       "title": "Sends emails and messages",
@@ -14,6 +15,16 @@
       "title": "Schedules meeting",
       "description": "Jordan syncs with your calendar tools to suggest and schedule the best meeting times.",
       "icon": "/icons/calendar-icon.png"
+    },
+    {
+      "title": "Tracks conversations",
+      "description": "Jordan helps track all conversations with leads and clients across multiple channels.",
+      "icon": "/icons/conversation-icon.png"
+    },
+    {
+      "title": "Tracks conversations",
+      "description": "Jordan helps track all conversations with leads and clients across multiple channels.",
+      "icon": "/icons/conversation-icon.png"
     },
     {
       "title": "Tracks conversations",
