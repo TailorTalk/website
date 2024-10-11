@@ -42,10 +42,8 @@ export default function Home() {
       });
     }
 
-      
-
     if(controlsInstance) return controlsInstance.stop;
-}, [xTranslation, width,isPaused,currentX]);
+}, [xTranslation, width,isPaused]);
   
 
 
