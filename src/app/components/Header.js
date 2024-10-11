@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import logo from "../../../public/logo.png";
-import logoIcon from "../../../public/logo.svg"
+import { AssistantName } from "../Config/globalVariables";
 
 const Header = () => {
   return (
@@ -25,8 +25,7 @@ const Header = () => {
         <div>
           <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank">
             <button className="globalBgColor flex flex-row text-white px-3 py-2 rounded-md hover:bg-indigo-700 transition duration-300">
-              <Image src={logoIcon} alt="icon" className="mr-2 mt-1 w-6 h-4"/>
-              Hire Toby Today
+              Hire {AssistantName} today
             </button>
           </a>
         </div>
