@@ -10,21 +10,9 @@ const Pricing = () => {
         <h1 className="text-6xl font-semibold text-center mt-10 bg-clip-text text-black">
         Predictable Pricing
         </h1>
-        <h2 className="text-6xl font-semibold  text-center  mb-4 text-transparent bg-clip-text bg-gradient-2">
+        <h2 className="text-6xl font-semibold  text-center  mb-12 text-transparent bg-clip-text bg-gradient-2">
           Scalable Plans
         </h2>
-        <p className="text-center text-gray-600 mb-10">
-          Get 2 months for free by subscribing yearly.
-        </p>
-
-        <div className="flex justify-center mb-10">
-          <button className="px-6 py-2 mx-2 bg-gray-200 rounded-lg text-gray-800 focus:bg-gray-300 transition">
-            Monthly
-          </button>
-          <button className="px-6 py-2 mx-2 bg-gray-200 rounded-lg text-gray-800 focus:bg-gray-300 transition">
-            Yearly
-          </button>
-        </div>
 
         {/*Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -54,7 +42,7 @@ const Pricing = () => {
               </div>
               
 
-              <button className="w-full py-2 px-4 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition">
+              <button className="w-full py-2 px-4 globalBgColor text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
                 {plan.cta}
               </button>
             </div>
