@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,useState } from "react";
 import Image from 'next/image';
 import { AnimatePresence, animate, motion, useAnimation, useMotionValue } from "framer-motion";
 import leadx from "../../public/Leadx.png";
@@ -9,13 +9,14 @@ import { AssistantName } from "./Config/globalVariables";
 import testimonials from "./Config/testimonials";
 import GradeIcon from '@mui/icons-material/Grade';
 import useMeasure from "react-use-measure";
+import UseCases from "./components/UseCases";
 
 export default function Home() {
   const [isPaused, setIsPaused] = useState(false);
   const [currentX, setCurrentX] = useState(0);
   const [isReversed, setIsReversed] = useState(false);
   const controls = useAnimation();
-  let [ref,{width}] = useMeasure();
+  let [ref, { width }] = useMeasure();
   const xTranslation = useMotionValue(0);
   const stars = 5;
 
@@ -40,12 +41,10 @@ export default function Home() {
 
     if (controlsInstance) return controlsInstance.stop;
   }, [xTranslation, width, isPaused, isReversed]);
-  
-
 
   const AssistantPoints = [
-    "24/7 availabile, ensuring no lead is missed",
-    "Follows up and send reminders to your leads",
+    "24/7 available, ensuring no lead is missed",
+    "Follows up and sends reminders to your leads",
     "Generates insights about your leads.",
     "Chats in any language.",
     "Saves costs by up to 90%",
@@ -54,68 +53,68 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center py-10 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h1 className="text-[56px] font-medium text-center mt-10 bg-clip-text text-black">
+        <h1 className="text-[36px] sm:text-[56px] font-medium text-center mt-10 bg-clip-text text-black">
           Hi, I’m {AssistantName}.
         </h1>
         
-        <h2 className="text-[56px] font-medium text-center mb-4 text-black bg-clip-text">
+        <h2 className="text-[36px] sm:text-[56px] font-medium text-center mb-4 text-black bg-clip-text">
           Your AI-Powered
-          <span className="text-[56px] font-medium text-center ml-3 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8] ">Sales Assistant</span>
+          <span className="text-[36px] sm:text-[56px] font-medium text-center ml-3 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">Sales Assistant</span>
         </h2>
         <p className="text-center font-medium text-lg text-gray-500 mb-10" style={{ lineHeight: '2' }}>
           I work 24/7, at any scale, improving your lead engagement while cutting sales costs by up to 90%. <br /> I seamlessly engage with your leads across WhatsApp, Instagram, email, and more.
         </p>
       </div>
-      <div className="flex w-full max-w-7xl h-auto justify-center items-center bg-[#f1f1ee] mt-10 p-6 rounded-xl shadow-xl mx-auto">
-        <div className="flex w-full h-auto justify-between mx-4 md:mx-16 my-16">
-          {/* Left Section */}
-          <div className="w-[65%] space-y-4 bg-gray-50 p-5 pt-10 pl-10 rounded-xl shadow-lg">
-            <h1 className="text-4xl font-medium mb-8">Hire {AssistantName}</h1>
-            <p className="text-base text-[#1d1a1c99] pb-5">
-              Sign up and hire {AssistantName} for your business. Onboard in minutes.
-            </p>
-            <ul className="space-y-2 pb-5">
-              {AssistantPoints.map((item, index) => (
-                <li key={index} className="flex items-center space-x-2">
-                  <CheckCircleSharpIcon className="w-4 h-4 text-indigo-700 p-[2px] flex items-center justify-center rounded-full" />
-                  <span className="font-light pl-1">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank"><button className="globalBgColor mt-8 flex px-4 py-3 text-base text-white rounded-md hover:bg-indigo-700 transition">
+
+      <div className="flex flex-col lg:flex-row w-full max-w-7xl h-auto justify-center items-center bg-[#f1f1ee] mt-10 p-6 rounded-xl shadow-xl mx-auto">
+        {/* Left Section */}
+        <div className="w-full lg:w-[65%] space-y-4 bg-gray-50 p-5 pt-10 pl-10 rounded-xl shadow-lg">
+          <h1 className="text-3xl sm:text-4xl font-medium mb-8">Hire {AssistantName}</h1>
+          <p className="text-base text-[#1d1a1c99] pb-5">
+            Sign up and hire {AssistantName} for your business. Onboard in minutes.
+          </p>
+          <ul className="space-y-2 pb-5">
+            {AssistantPoints.map((item, index) => (
+              <li key={index} className="flex items-center space-x-2">
+                <CheckCircleSharpIcon className="w-4 h-4 text-indigo-700 p-[2px] flex items-center justify-center rounded-full" />
+                <span className="font-light pl-1">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank">
+            <button className="globalBgColor mt-8 flex px-4 py-3 text-base text-white rounded-md hover:bg-indigo-700 transition">
               Interview {AssistantName}
-            </button></a>
-          </div>
+            </button>
+          </a>
+        </div>
 
-          {/* Right Section */}
-          <div className="w-[37%] flex items-center justify-center bg-gray-50 p-5 ml-5 rounded-xl shadow-lg">
-            <div className="relative">
-              <div className="absolute top-[20px] right-[-100px] bg-white p-2 shadow-lg rounded-full flex items-center space-x-2">
-                <span className="text-indigo-600 font-medium">{AssistantName}</span>
-                <span className="text-gray-600">is joining your team</span>
-              </div>
-
-              <Image src={leadx} alt="icon" className="object-cover rounded-xl" />
+        {/* Right Section */}
+        <div className="w-full lg:w-[37%] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg">
+          <div className="relative">
+            <div className="hidden md:block absolute top-[20px] right-[-100px] bg-white p-2 shadow-lg rounded-full flex items-center space-x-2">
+              <span className="text-indigo-600 font-medium">{AssistantName}</span>
+              <span className="text-gray-600">is joining your team</span>
             </div>
+            <Image src={leadx} alt="icon" className="object-cover rounded-xl" />
           </div>
         </div>
       </div>
+
       {/* Features */}
       <section className="flex flex-col justify-center items-center border-[1px] pt-28 rounded-xl py-16 mx-4 md:mx-16">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-medium pb-10">Features that you will love</h2>
+          <h2 className="text-3xl sm:text-5xl font-medium pb-10">Features that you will love</h2>
           <p className="text-[#1d1a1c99]">{AssistantName} integrates with the tools you love to manage calls and streamline operations on autopilot.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-4 md:mx-28 mt-10">
           {featuresData.features.map((feature, index) => (
-            // Card
             <div key={index} className="bg-white shadow-md rounded-xl p-3">
               <Image
-                src="/test.png" 
+                src="/test.png"
                 alt={feature.title}
-                width={400} 
-                height={300} 
+                width={400}
+                height={300}
                 className="object-cover rounded-xl"
               />
               <h3 className="text-lg font-medium my-3">{feature.title}</h3>
@@ -124,9 +123,13 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="flex justify-center items-center mt-16">
+        <UseCases/>
+      </section>
+
       {/* Testimonial */}
       <div className="flex w-screen flex-col justify-center items-center py-10 bg-gray-50">
-        <h1 className="text-[36px] font-medium text-center mt-10 text-black">
+        <h1 className="text-[28px] sm:text-[36px] font-medium text-center mt-10 text-black">
           Loved by GTM teams, from Startups to Enterprise
         </h1>
 
@@ -141,34 +144,35 @@ export default function Home() {
               ref={ref}
               initial={{ x: 0 }}
               animate={controls}
-              style={{ whiteSpace: 'nowrap', x: xTranslation }} 
+              style={{ whiteSpace: 'nowrap', x: xTranslation }}
             >
               {testimonials.concat(testimonials).map((testimonial, index) => (
-                <div key={index} className="flex flex-col p-8 mx-4 my-4 bg-white shadow-md rounded-xl" style={{  height: '33rem' }}>
+                <div key={index} className="flex flex-col p-8 mx-4 my-4 bg-white shadow-md rounded-xl" style={{ height: '29rem' }}>
                   <div className="flex-1">
                     <div className="flex mb-6">
-                    {Array.from({ length: stars }, (_, i) => (
-                      <GradeIcon key={i} sx={{ color: '#4c6ef5' }} />
-                    ))}
+                      {Array.from({ length: stars }, (_, i) => (
+                        <GradeIcon key={i} sx={{ color: '#4c6ef5' }} />
+                      ))}
                     </div>
 
                     <h3
                       className="text-lg font-medium mb-4"
                       style={{
-                        width:'25rem',
+                        width: '25rem',
                         overflowWrap: 'break-word',
                         wordWrap: 'break-word',
-                        whiteSpace: 'normal', 
+                        whiteSpace: 'normal',
                       }}
-                      >
-                        {testimonial.title}
-                      </h3>
+                    >
+                      {testimonial.title}
+                    </h3>
                     <p className="text-[#1d1a1c99] mb-6 pt-4" style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
                       {testimonial.text}
                     </p>
                   </div>
                   <div className="mt-auto">
-                    <p className="text-sm text-gray-500 font-medium">{testimonial.author},<br /> {testimonial.role}</p>
+                    <p className="text-sm text-gray-600">{testimonial.author}</p>
+                    <p className="text-xs text-gray-400">{testimonial.role}</p>
                   </div>
                 </div>
               ))}
