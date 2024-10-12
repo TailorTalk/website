@@ -2,32 +2,17 @@
 {
   "features": [
     {
-      "title": "Updates CRM",
+      "title": "Smart Dashboard",
       "description": "Jordan seamlessly integrates with your CRM, and can update your contacts and company records automatically.",
       "icon": "public/test.png"
     },
     {
-      "title": "Sends emails and messages",
-      "description": "Jordan can send emails and messages after calls and take care of all the post-call worries.",
-      "icon": "/icons/email-icon.png"
-    },
-    {
-      "title": "Schedules meeting",
+      "title": "Leads insights",
       "description": "Jordan syncs with your calendar tools to suggest and schedule the best meeting times.",
       "icon": "/icons/calendar-icon.png"
     },
     {
-      "title": "Tracks conversations",
-      "description": "Jordan helps track all conversations with leads and clients across multiple channels.",
-      "icon": "/icons/conversation-icon.png"
-    },
-    {
-      "title": "Tracks conversations",
-      "description": "Jordan helps track all conversations with leads and clients across multiple channels.",
-      "icon": "/icons/conversation-icon.png"
-    },
-    {
-      "title": "Tracks conversations",
+      "title": "Campaigns",
       "description": "Jordan helps track all conversations with leads and clients across multiple channels.",
       "icon": "/icons/conversation-icon.png"
     }

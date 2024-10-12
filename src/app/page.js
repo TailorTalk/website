@@ -13,7 +13,7 @@ import useMeasure from "react-use-measure";
 export default function Home() {
   const [isPaused, setIsPaused] = useState(false);
   const [currentX, setCurrentX] = useState(0);
-  const [isReversed, setIsReversed] = useState(false); // New state to track animation direction
+  const [isReversed, setIsReversed] = useState(false);
   const controls = useAnimation();
   let [ref,{width}] = useMeasure();
   const xTranslation = useMotionValue(0);
@@ -33,7 +33,6 @@ export default function Home() {
           setCurrentX(latest);
         },
         onComplete: () => {
-          // Reverse the direction when the animation completes
           setIsReversed((prev) => !prev);
         },
       });
@@ -83,9 +82,9 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <button className="globalBgColor mt-8 flex px-4 py-3 text-base text-white rounded-md hover:bg-indigo-700 transition">
+            <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank"><button className="globalBgColor mt-8 flex px-4 py-3 text-base text-white rounded-md hover:bg-indigo-700 transition">
               Interview {AssistantName}
-            </button>
+            </button></a>
           </div>
 
           {/* Right Section */}
