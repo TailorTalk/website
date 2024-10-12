@@ -7,12 +7,9 @@ const Pricing = () => {
   return (
     <div className="flex justify-center py-10 bg-gray-50">
       <div className="max-w-7xl w-full px-4">
-        <h1 className="text-6xl font-semibold text-center mt-10 bg-clip-text text-black">
-        Predictable Pricing
+        <h1 className="text-6xl font-semibold text-center mt-10 bg-clip-text text-black mb-20">
+          Our Pricing
         </h1>
-        <h2 className="text-6xl font-semibold  text-center  mb-12 text-transparent bg-clip-text bg-gradient-2">
-          Scalable Plans
-        </h2>
 
         {/*Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

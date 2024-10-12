@@ -11,11 +11,11 @@ import testimonials from "./Config/testimonials";
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false)
   const AssistantPoints = [
-    "24/7 availabile, ensuring no lead is missed",
-    "Follows up and send reminders to your leads",
+    "24/7 availabile, chats in multiple languages.",
+    "Follows up and send reminders to your leads.",
     "Generates insights about your leads.",
-    "Chats in any language.",
-    "Saves costs by up to 90%",
+    "Keeps you informed of key developments",
+    "Saves costs by up to 90%.",
   ];
   const testimonialsVariants = {
     animate: {
@@ -84,9 +84,8 @@ export default function Home() {
       {/* features */}
       <section className="flex flex-col justify-center items-center border-[1px] pt-28 rounded-b-xl py-16 mx-16">
       <div className="text-center mb-12">
-        <p className="font-normal text-base text-indigo-700 mb-5">MEET {AssistantName.toUpperCase()}</p>
         <h2 className="text-5xl font-medium pb-10">Features that you will love</h2>
-        <p className="text-[#1d1a1c99]">{AssistantName} integrates with the tools you love to manage calls and streamline operations on autopilot.</p>
+        <p className="text-[#1d1a1c99]">Along with {AssistantName}, you will get many more smart features.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-28 mt-10">
