@@ -15,7 +15,7 @@ const Pricing = () => {
         </h2>
 
         {/*Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {pricingData.plans.map((plan, index) => (
             <div
               key={index}
@@ -42,9 +42,9 @@ const Pricing = () => {
               </div>
               
 
-              <button className="w-full py-2 px-4 globalBgColor text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
+              <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank"><button className="w-full py-2 px-4 globalBgColor text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
                 {plan.cta}
-              </button>
+              </button></a>
             </div>
           ))}
         </div>

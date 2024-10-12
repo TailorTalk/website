@@ -13,37 +13,34 @@ import useMeasure from "react-use-measure";
 export default function Home() {
   const [isPaused, setIsPaused] = useState(false);
   const [currentX, setCurrentX] = useState(0);
+  const [isReversed, setIsReversed] = useState(false); // New state to track animation direction
   const controls = useAnimation();
   let [ref,{width}] = useMeasure();
   const xTranslation = useMotionValue(0);
   const stars = 5;
 
   useEffect(() => {
-    const finalPosition = -width * testimonials.length/1.713; 
-    console.log(finalPosition);//6720
+    const finalPosition = -width * testimonials.length / 2.9;
     let controlsInstance;
 
-
-    if(!isPaused){
-      controlsInstance = animate(xTranslation, [currentX, finalPosition], {
+    if (!isPaused) {
+      controlsInstance = animate(xTranslation, [currentX, isReversed ? 0 : finalPosition], {
         ease: "linear",
         duration: 40,
-        repeat:Infinity,
-        repeatType:'loop',
-        repeatDelay:0,
+        repeat: Infinity,
+        repeatType: "loop",
         onUpdate: (latest) => {
           setCurrentX(latest);
         },
         onComplete: () => {
-          xTranslation.set(0);
-          setCurrentX(0);
+          // Reverse the direction when the animation completes
+          setIsReversed((prev) => !prev);
         },
-        
       });
     }
 
-    if(controlsInstance) return controlsInstance.stop;
-}, [xTranslation, width,isPaused]);
+    if (controlsInstance) return controlsInstance.stop;
+  }, [xTranslation, width, isPaused, isReversed]);
   
 
 
