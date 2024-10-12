@@ -127,7 +127,7 @@ export default function Home() {
       {/* Testimonial */}
       <div className="flex w-screen flex-col justify-center items-center py-10 bg-gray-50">
         <h1 className="text-[36px] font-medium text-center mt-10 text-black">
-          Loved by GTM teams, from Startups to Enterprise
+        Trusted by businesses of all sizes, from startups to enterprises
         </h1>
 
         <div
