@@ -1,20 +1,19 @@
-
 {
   "features": [
     {
       "title": "Smart Dashboard",
-      "description": "Jordan seamlessly integrates with your CRM, and can update your contacts and company records automatically.",
-      "icon": "public/test.png"
+      "description": "Access to real-time lead conversations, track every lead's progress in detail, to supercharge your sales process.",
+      "icon": "/dashboard.png"
     },
     {
-      "title": "Leads insights",
-      "description": "Jordan syncs with your calendar tools to suggest and schedule the best meeting times.",
-      "icon": "/icons/calendar-icon.png"
+      "title": "Lead Insights",
+      "description": "Ask Leadx for valuable insights about your leads, helping you refine your product and understand your customers bertter.",
+      "icon": "/insight.png"
     },
     {
       "title": "Campaigns",
-      "description": "Jordan helps track all conversations with leads and clients across multiple channels.",
-      "icon": "/icons/conversation-icon.png"
+      "description": "Engage with existing leads, initiate targeted campaigns, and effectively track campaign performance.",
+      "icon": "/campaign.png"
     }
   ]
 }
