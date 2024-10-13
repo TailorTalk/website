@@ -1,0 +1,62 @@
+{
+    "plans": [
+      {
+        "name": "Trial",
+        "price": "0",
+        "currency": "$",
+        "duration": "15 days",
+        "features": [
+          "1,000 leads",
+          "1 assitant",
+          "Stats board"
+        ],
+        "cta": "Sign Up"
+      },
+      {
+        "name": "Startup",
+        "price": "39",
+        "currency": "$",
+        "duration": "Per Month",
+        "features": [
+          "3,000 leads/month",
+          "1 assitant",
+          "Stats board",
+          "Leads Insight",
+          "Curstomer support"
+        ],
+        "cta": "Get Started"
+      },
+      {
+        "name": "Standard",
+        "price": "119",
+        "currency": "$",
+        "duration": "Per Month",
+        "features": [
+          "10,000 leads/month",
+          "2 assitant",
+          "Stats board",
+          "Leads Insight",
+          "Curstomer support",
+          "Smart Dashboard"
+        ],
+        "cta": "Get Started"
+      },
+      {
+        "name": "Enterprise",
+        "price": "499",
+        "currency": "$",
+        "duration": "Per Month",
+        "features": [
+          "Unlimited leads",
+          "5 assitant",
+          "Stats board",
+          "Leads Insight",
+          "Curstomer support",
+          "Smart Dashboard",
+          "Customized solutions"
+        ],
+        "cta": "Get Started"
+      }
+    ]
+  }
+  

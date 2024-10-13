@@ -1,228 +1,187 @@
 "use client";
-import { useEffect, useRef } from "react";
-import Image from "next/image";
-import Header from "./components/Header";
-import vector1 from "../../public/vector1.svg";
-import vector2 from "../../public/vector2.svg";
-import arrow1 from "../../public/arrow1.svg";
-import arrow2 from "../../public/arrow2.svg";
-import arrow3 from "../../public/arrow3.svg";
-import whatsapp from "../../public/whatsapp_icon.svg";
-import background from "../../public/background.svg";
-import FeatureCard from "./components/FeatureCard";
-import Footer from "./components/Footer";
-
-const data = [
-  {
-    id: 1,
-    title: "Scale your business",
-    description:
-      "Don't be bottlenecked by manually handling leads. With tailor talk you can easily handle 10x leads.",
-    image: arrow1,
-  },
-  {
-    id: 2,
-    title: "Reach out to existing leads",
-    description:
-      "Upload your existing leads data to Tailor-Talk, which will initiate and manage conversations with your leads.",
-    image: arrow2,
-  },
-  {
-    id: 3,
-    title: "Gain insights on your customers",
-    description:
-      "Understand your customer needs better, enabling you to make more informed decisions.",
-    image: arrow3,
-  },
-];
+import React, { useEffect,useState } from "react";
+import Image from 'next/image';
+import { AnimatePresence, animate, motion, useAnimation, useMotionValue } from "framer-motion";
+import leadx from "../../public/Leadx.png";
+import CheckCircleSharpIcon from '@material-ui/icons/CheckCircleSharp';
+import featuresData from "./Config/featuresData.json";
+import { AssistantName } from "./Config/globalVariables";
+import testimonials from "./Config/testimonials";
+import GradeIcon from '@mui/icons-material/Grade';
+import useMeasure from "react-use-measure";
+import UseCases from "./components/UseCases";
 
 export default function Home() {
-  const videoRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [currentX, setCurrentX] = useState(0);
+  const [isReversed, setIsReversed] = useState(false);
+  const controls = useAnimation();
+  let [ref, { width }] = useMeasure();
+  const xTranslation = useMotionValue(0);
+  const stars = 5;
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Add autoplay to the video URL if it is not already present
-            if (!videoRef.current.src.includes("&autoplay=1")) {
-              videoRef.current.src += "&autoplay=1";
-            }
-          } else {
-            // Remove autoplay from the video URL
-            const src = videoRef.current.src.replace("&autoplay=1", "");
-            videoRef.current.src = src; // Reset the video source to stop playback
-          }
-        });
-      },
-      {
-        threshold: 0.5, // Adjust as needed
-      }
-    );
+    const finalPosition = -width * testimonials.length / 2.9;
+    let controlsInstance;
 
-    const videoSection = document.getElementById("videoSection");
-    if (videoSection) {
-      observer.observe(videoSection);
+    if (!isPaused) {
+      controlsInstance = animate(xTranslation, [currentX, isReversed ? 0 : finalPosition], {
+        ease: "linear",
+        duration: 40,
+        repeat: Infinity,
+        repeatType: "loop",
+        onUpdate: (latest) => {
+          setCurrentX(latest);
+        },
+        onComplete: () => {
+          setIsReversed((prev) => !prev);
+        },
+      });
     }
 
-    return () => {
-      if (videoSection) {
-        observer.unobserve(videoSection);
-      }
-    };
-  }, []);
+    if (controlsInstance) return controlsInstance.stop;
+  }, [xTranslation, width, isPaused, isReversed]);
+
+  const AssistantPoints = [
+    "24/7 available, ensuring no lead is missed",
+    "Follows up and sends reminders to your leads",
+    "Generates insights about your leads.",
+    "Chats in any language.",
+    "Saves costs by up to 90%",
+  ];
 
   return (
-    <div className="">
-      {/* Introduction */}
-      <section
-        style={{
-          backgroundImage: `url(${background.src})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-        className="px-8 md:px-32 2xl:px-56 py-8 pb-12 md:pb-20 "
-      >
-        <Header />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 mt-8 md:mt-8">
-          <div className="mt-8 md:mt-20 flex flex-col text-white gap-8 items-center md:items-start text-center md:text-left">
-            <div
-              className="text-3xl mt-4 md:text-6xl 2xl:text-7xl w-full leading-tight font-semibold"
-              style={{ lineHeight: "1.2" }}
-            >
-              Your sales assistant
-            </div>
-            <div className="w-full text-sm lg:text-base 2xl:text-xl">
-              Create your personalized B2C sales assistant that autonomously
-              engages with and manages your leads. Receive real-time updates on
-              critical events directly to your phone, ensuring you are always in
-              the loop and ready to take action, and much more.
-            </div>
-            <div>
-              <a href="mailto:contact@tailortalk.ai">
-                <button className="button">Request Demo</button>
-              </a>
-            </div>
-          </div>
+    <div className="flex flex-col justify-center items-center py-10 bg-gray-50">
+      <div className="container mx-auto md:px-4">
+        <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 md:mb-12 bg-clip-text text-black">
+          Hi, I’m {AssistantName}.
+        </h1>
+        
+        <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-8 text-black bg-clip-text">
+          Your AI-Powered <br className="block md:hidden"/>
+          <span className="text-3xl sm:text-[56px] font-medium text-center ml-3 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">Sales Assistant</span>
+        </h2>
+        <p className="text-center font-medium text-sm sm:text-lg text-gray-500 pt-5 mb-10" style={{ lineHeight: '2' }}>
+          I work 24/7, at any scale, improving your lead engagement while cutting sales costs by up to 90%. <br /> I seamlessly engage with your leads across WhatsApp, Instagram, email, and more.
+        </p>
+      </div>
 
-          <div className="flex justify-center flex-col items-center mt-4 md:mt-4">
-            <div className="mt-4 mb-12 md:mt-4 hidden md:block">
-              <Image src={vector1} alt="vector1" layout="responsive" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-       {/* WhatsApp Floater */}
-      <a
-          href="https://wa.me/919031698165"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            position: "fixed",
-            bottom: "20px",
-            right: "20px",
-            backgroundColor: "#25D366",
-            borderRadius: "50%",
-            width: "60px",
-            height: "60px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            zIndex: "1000",
-            animation: "bounce 2s infinite",
-          }}
-        >
-          <Image
-            src={whatsapp}
-            alt="WhatsApp"
-            width={35}
-            height={35}
-          />
-        </a>
-
-    <style jsx>{`
-      @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-          transform: translateY(0);
-        }
-        40% {
-          transform: translateY(-10px);
-        }
-        60% {
-          transform: translateY(-5px);
-        }
-      }
-    `}</style>
-
-      {/* Usage */}
-      <section className="bg-white grid grid-cols-1 md:grid-cols-2">
-        <div className="flex justify-center flex-col items-center">
-          <div className="mt-10 hidden pr-0 md:block w-[60vw] 2xl:pr-20">
-            <Image src={vector2} alt="vector2" layout="responsive" />
-          </div>
-        </div>
-
-        <div className="mt-36 px-4 md:px-32 flex flex-col 2xl:mt-[260px]">
-          <div
-            className="text-2xl md:text-4xl font-semibold 2xl:text-5xl"
-            style={{ lineHeight: "1.6" }}
-          >
-            Why do you need TailorTalk?
-          </div>
-          <div className="mt-10">
-            {data.map((item) => (
-              <div key={item.id} className="flex flex-col mb-8 2xl:mb-16">
-                <div className="flex flex-row items-center">
-                  <Image src={item.image} alt="arrow" className="w-6 mr-2" />
-                  <p className="text-lg font-semibold md:text-xl 2xl:text-2xl">
-                    {item.title}
-                  </p>
-                </div>
-                <p className="w-full mt-4 text-xs md:text-sm px-2 md:px-8 text-[#051114] 2xl:text-xl">
-                  {item.description}
-                </p>
-              </div>
+      <div id="Features" className="flex flex-col lg:flex-row w-full max-w-7xl h-auto justify-center items-center bg-[#f1f1ee] mt-10 p-6 rounded-xl shadow-xl mx-auto">
+        {/* Left Section */}
+        <div className="w-full lg:w-[65%] space-y-4 bg-gray-50 p-5 pt-10 pl-10 rounded-xl shadow-lg">
+          <h1 className="text-3xl sm:text-4xl font-medium mb-8">Hire {AssistantName}</h1>
+          <p className="text-base text-[#1d1a1c99] pb-5">
+            Sign up and hire {AssistantName} for your business. Onboard in minutes.
+          </p>
+          <ul className="space-y-2 pb-5">
+            {AssistantPoints.map((item, index) => (
+              <li key={index} className="flex items-center space-x-2">
+                <CheckCircleSharpIcon className="w-4 h-4 text-indigo-700 p-[2px] flex items-center justify-center rounded-full" />
+                <span className="font-light pl-1">{item}</span>
+              </li>
             ))}
+          </ul>
+          <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank">
+            <button className="globalBgColor mt-8 flex px-4 py-3 text-base text-white rounded-md hover:bg-indigo-700 transition">
+              Interview {AssistantName}
+            </button>
+          </a>
+        </div>
+
+        {/* Right Section */}
+        <div className="w-full lg:w-[37%] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg">
+          <div className="relative">
+            <div className="hidden md:block absolute top-[20px] right-[-100px] bg-white p-2 shadow-lg rounded-full flex items-center space-x-2">
+              <span className="text-indigo-600 font-medium">{AssistantName}</span>
+              <span className="text-gray-600">is joining your team</span>
+            </div>
+            <Image src={leadx} alt="icon" className="object-cover rounded-xl" />
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Features */}
-      <section className="py-8 mt-24 flex bg-white flex-col items-center justify-around">
-        <p className="text-center font-semibold text-2xl md:text-4xl w-full md:w-1/2 flex flex-col items-center">
-          We provide best features to you
-        </p>
-        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-32 mb-10 justify-center 2xl:gap-20">
-          <FeatureCard />
+      <section  className="flex flex-col justify-center items-center border-[1px] pt-28 rounded-xl py-16 mx-4 md:mx-16">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl sm:text-5xl font-medium pb-10">Features that you will love</h2>
+          <p className="text-[#1d1a1c99]">You'll have access to many more valuable features alongside {AssistantName}.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-4 md:mx-28 mt-10">
+          {featuresData.features.map((feature, index) => (
+            <div key={index}  className="bg-white shadow-md rounded-xl p-3">
+                <div key={index}>
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={400}
+                    height={300}
+                    className="object-cover rounded-xl"
+                  />
+                </div>
+                <h3 className="text-lg font-medium my-3">{feature.title}</h3>
+                  <p className="text-[#1d1a1c99] text-[0.9rem] font-light mt-6 mb-6">{feature.description}</p>
+            </div>
+            
+          ))}
         </div>
       </section>
+      <section className="w-11/12 flex justify-center items-center mt-16">
+        <UseCases/>
+      </section>
 
-      {/* Video Section */}
-      <section
-        id="videoSection"
-        className="py-8  flex bg-white flex-col items-center justify-around "
-      >
-        <div className="flex flex-wrap gap-6 mt-16 px-4 md:px-8 lg:px-16 xl:px-32 mb-20 justify-center w-full ">
-          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-            <iframe
-              ref={videoRef}
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/gyobVfaHI3Q?rel=0&modestbranding=1&showinfo=0"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+      {/* Testimonial */}
+      <div className="flex w-screen flex-col justify-center items-center py-10 bg-gray-50">
+        <h1 className="md:text-[36px] text-3xl font-medium text-center mt-10 text-black">
+        Trusted by businesses of all sizes, from startups to enterprises
+        </h1>
+
+        <div
+          className="overflow-hidden mt-8 w-full"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <AnimatePresence>
+            <motion.div
+              className="flex"
+              ref={ref}
+              initial={{ x: 0 }}
+              animate={controls}
+              style={{ whiteSpace: 'nowrap', x: xTranslation }}
+            >
+              {testimonials.concat(testimonials).map((testimonial, index) => (
+                <div key={index} className="flex flex-col p-8 mx-4 my-4 bg-white shadow-md rounded-xl md:h-[30rem] h-[40rem]" >
+                  <div className="flex-1">
+                    <div className="flex mb-6">
+                      {Array.from({ length: stars }, (_, i) => (
+                        <GradeIcon key={i} sx={{ color: '#4c6ef5' }} />
+                      ))}
+                    </div>
+
+                    <h3
+                      className="text-lg font-medium mb-4 w-64 md:w-96"
+                      style={{
+                        overflowWrap: 'break-word',
+                        wordWrap: 'break-word',
+                        whiteSpace: 'normal',
+                      }}
+                    >
+                      {testimonial.title}
+                    </h3>
+                    <p className="text-[#1d1a1c99] mb-6 pt-4" style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
+                      {testimonial.text}
+                    </p>
+                  </div>
+                  <div className="mt-auto">
+                    <p className="text-sm text-gray-600">{testimonial.author}</p>
+                    <p className="text-xs text-gray-400">{testimonial.role}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
-      </section>
-
-      {/* Footer */}
-      <section>
-        <Footer />
-      </section>
+      </div>
     </div>
   );
 }
