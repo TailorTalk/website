@@ -53,15 +53,15 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center py-10 bg-gray-50">
       <div className="container mx-auto md:px-4">
-        <h1 className="text-[36px] sm:text-[56px] font-medium text-center mt-10 bg-clip-text text-black">
+        <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 md:mb-10 bg-clip-text text-black">
           Hi, I’m {AssistantName}.
         </h1>
         
-        <h2 className="text-[28px] sm:text-[56px] font-medium text-center mb-4 text-black bg-clip-text">
+        <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-4 text-black bg-clip-text">
           Your AI-Powered <br className="block md:hidden"/>
-          <span className="text-[36px] sm:text-[56px] font-medium text-center ml-3 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">Sales Assistant</span>
+          <span className="text-3xl sm:text-[56px] font-medium text-center ml-3 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">Sales Assistant</span>
         </h2>
-        <p className="text-center font-medium text-lg text-gray-500 mb-10" style={{ lineHeight: '2' }}>
+        <p className="text-center font-medium text-sm sm:text-lg text-gray-500 pt-5 mb-10" style={{ lineHeight: '2' }}>
           I work 24/7, at any scale, improving your lead engagement while cutting sales costs by up to 90%. <br /> I seamlessly engage with your leads across WhatsApp, Instagram, email, and more.
         </p>
       </div>
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/* Testimonial */}
       <div className="flex w-screen flex-col justify-center items-center py-10 bg-gray-50">
-        <h1 className="text-[36px] font-medium text-center mt-10 text-black">
+        <h1 className="md:text-[36px] text-3xl font-medium text-center mt-10 text-black">
         Trusted by businesses of all sizes, from startups to enterprises
         </h1>
 
@@ -150,7 +150,7 @@ export default function Home() {
               style={{ whiteSpace: 'nowrap', x: xTranslation }}
             >
               {testimonials.concat(testimonials).map((testimonial, index) => (
-                <div key={index} className="flex flex-col p-8 mx-4 my-4 bg-white shadow-md rounded-xl" style={{ height: '30rem' }}>
+                <div key={index} className="flex flex-col p-8 mx-4 my-4 bg-white shadow-md rounded-xl md:h-[30rem] h-[40rem]" >
                   <div className="flex-1">
                     <div className="flex mb-6">
                       {Array.from({ length: stars }, (_, i) => (

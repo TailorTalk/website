@@ -13,9 +13,9 @@ const UseCases = () => {
   ];
 
   return (
-    <div className="w-11/12 px-6 md:px-12 lg:px-24 py-12 bg-[#f1f1ee] rounded-3xl mx-auto">
+    <div className="w-11/12 px-6 md:px-12 lg:px-24 pt-12 bg-[#f1f1ee] rounded-3xl mx-auto">
       <h2 className="text-3xl md:text-5xl font-medium text-gray-900 text-center mt-5 mb-6">Use cases</h2>
-      <p className="text-sm md:text-base text-gray-500 text-center mb-12">See how we can transform your customer interactions with a single call.</p>
+      <p className="text-sm md:text-base text-gray-500 text-center md:mb-0 mb-5">See how we can transform your customer interactions with a single call.</p>
       
       <div className="flex flex-col md:flex-row md:pt-28 w-full">
         <div className="w-full md:w-1/2 pr-4 mb-10 md:mb-0">
@@ -23,7 +23,7 @@ const UseCases = () => {
             {Header.map((item) => (
               <div
                 key={item.id}
-                className={`p-[2px] w-full md:w-10/12 rounded-lg ${
+                className={`p-[2px] w-full md:w-10/12 hover:cursor-pointer ml-4 md:ml-0 rounded-lg ${
                   selectedHeader === item.id ? 'globalBgColor' : 'bg-white'
                 }`}
               >
@@ -44,7 +44,7 @@ const UseCases = () => {
 
         <div className="w-full md:w-1/2 flex flex-col items-center pl-4">
           {selectedHeader >= 1 && (
-            <div className="flex flex-col w-full h-auto md:h-[30rem] p-4 overflow-hidden mb-6">
+            <div className="flex flex-col w-full h-auto md:h-[30rem] p-4 overflow-hidden">
               <div className="w-full md:pl-10 flex flex-col justify-center">
                 <h3 className="text-2xl md:text-4xl font-medium text-gray-900 mb-2">
                   {useCaseData[selectedHeader - 1].title}
