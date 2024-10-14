@@ -17,7 +17,7 @@ const Header = () => {
           <nav className="hidden md:flex gap-8 items-center">
             <a href="/pricing" className="text-gray-700 hover:text-black font-medium">Pricing</a>
             <a href="#Features" className="text-gray-700 hover:text-black font-medium">Leadx</a>
-            <a href="#usecase" className="text-gray-700 hover:text-black font-medium">Use Cases</a>
+            <a href="#useCases" className="text-gray-700 hover:text-black font-medium">Use Cases</a>
             <a href="/product" className="text-gray-700 hover:text-black font-medium">Product</a>
             <a href="/demo" className="text-gray-700 hover:text-black font-medium">Instant Demo</a>
           </nav>
