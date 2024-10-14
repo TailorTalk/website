@@ -16,8 +16,8 @@ const useCaseData = [
     },
     {
       id: 4,
-      title: "Reach out to old leads",
-      description: "Leadx can automatically reach out to leads it talked to months ago, checking if they are now interested in buying or learning more. It sends personalized follow-ups to revive old conversations, helping to turn past leads into new opportunities. This ensures you don’t miss out on any potential sales.",
+      title: "Reach out to New Leads",
+      description: "Just upload a file with the contact details of new leads, and Leadx will start conversations with them. These leads can come from your website, social media ads, or other sources. Leadx helps you quickly connect and engage with potential customers.",
     },
     {
       id: 5,
