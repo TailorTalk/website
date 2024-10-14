@@ -19,7 +19,7 @@ const Header = () => {
             <a href="#Features" className="text-gray-700 hover:text-black font-medium">Leadx</a>
             <a href="#useCases" className="text-gray-700 hover:text-black font-medium">Use Cases</a>
             <a href="/product" className="text-gray-700 hover:text-black font-medium">Product</a>
-            <a href="/demo" className="text-gray-700 hover:text-black font-medium">Instant demo</a>
+            <a href="/demo" className="text-gray-700 hover:text-black font-medium">Instant Demo</a>
           </nav>
         </div>
 
@@ -78,7 +78,7 @@ const Header = () => {
                     backgroundColor: '#f5f5f5',
                   },
                 }}>
-                  <ListItemText primary="Instant demo" />
+                  <ListItemText primary="Instant Demo" />
                 </ListItem>
               </List>
             </Drawer>

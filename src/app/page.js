@@ -180,9 +180,6 @@ export default function Home() {
         <h1 className="md:text-[36px] text-3xl font-medium text-center mt-10 text-black">
         Trusted by businesses of all sizes, from startups to enterprises
         </h1>
-
-       
-
         <div
           className="overflow-x-auto overflow-y-hidden mt-8 w-full no-scrollbar"
           onMouseEnter={() => setIsPaused(true)}
