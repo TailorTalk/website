@@ -3,7 +3,7 @@ import React, { useEffect,useRef,useState } from "react";
 import Image from 'next/image';
 import { AnimatePresence, animate, motion, useAnimation, useMotionValue } from "framer-motion";
 import leadx from "../../public/Leadx.png";
-import CheckCircleSharpIcon from '@material-ui/icons/CheckCircleSharp';
+import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
 import featuresData from "./Config/featuresData.json";
 import { AssistantName } from "./Config/globalVariables";
 import testimonials from "./Config/testimonials";
@@ -51,14 +51,14 @@ export default function Home() {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const index = entry.target.dataset.index; // Get the index for features
+        const index = entry.target.dataset.index; 
         if (entry.isIntersecting) {
           if (entry.target.id === 'Features') {
             setIsVisible((prev) => ({ ...prev, assistant: true }));
-          } else if (index !== undefined) { // Check if it is a feature
+          } else if (index !== undefined) {
             setIsVisible((prev) => {
               const newFeatures = [...prev.features];
-              newFeatures[index] = true; // Update visibility for the feature
+              newFeatures[index] = true;
               return { ...prev, features: newFeatures };
             });
           }
