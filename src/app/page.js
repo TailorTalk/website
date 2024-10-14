@@ -87,13 +87,16 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center py-10 bg-gray-50">
       <div className="container mx-auto md:px-4">
-        <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 md:mb-12 bg-clip-text text-black">
+        <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 mb-4 md:mb-12 bg-clip-text text-black">
           Hi, I&#39;m {AssistantName}.
         </h1>
         
-        <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-8 text-black bg-clip-text">
-          Your AI-Powered <br className="block md:hidden"/>
-          <span className="text-3xl sm:text-[56px] font-medium text-center sm:ml-3 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">Sales Assistant</span>
+        <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-4 text-black bg-clip-text">
+          Your AI-Powered <br className="block md:hidden" />
+          <span className="text-3xl sm:text-[56px] font-medium text-center sm:ml-3 space-y-5 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">
+          <span className="block md:hidden mt-[14px]"></span>
+            Sales Assistant
+          </span>
         </h2>
         <p className="text-center font-medium text-sm sm:text-lg text-gray-500 pt-5 mb-10" style={{ lineHeight: '2' }}>
           I work 24/7, at any scale, improving your lead engagement while cutting sales costs by up to 90%. <br /> I seamlessly engage with your leads across WhatsApp, Instagram, email, and more.
@@ -177,11 +180,11 @@ export default function Home() {
         <h1 className="md:text-[36px] text-3xl font-medium text-center mt-10 text-black">
         Trusted by businesses of all sizes, from startups to enterprises
         </h1>
-
         <div
-          className="overflow-hidden mt-8 w-full"
+          className="overflow-x-auto overflow-y-hidden mt-8 w-full no-scrollbar"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: 'touch' }}
         >
           <AnimatePresence>
             <motion.div
@@ -189,10 +192,10 @@ export default function Home() {
               ref={ref}
               initial={{ x: 0 }}
               animate={controls}
-              style={{ whiteSpace: 'nowrap', x: xTranslation }}
+              style={{ whiteSpace: 'nowrap', x: xTranslation , scrollSnapAlign: "center" }}
             >
               {testimonials.concat(testimonials).map((testimonial, index) => (
-                <div key={index} className="flex flex-col p-8 mx-4 my-4 bg-white shadow-md rounded-xl md:h-[30rem] h-[40rem]" >
+                <div key={index} style={{ scrollSnapAlign: "center"}} className="flex flex-col p-8 mx-4 my-4 bg-white shadow-md rounded-xl md:h-[30rem] h-[40rem]" >
                   <div className="flex-1">
                     <div className="flex mb-6">
                       {Array.from({ length: stars }, (_, i) => (
@@ -223,6 +226,7 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
         </div>
+        
       </div>
     </div>
   );
