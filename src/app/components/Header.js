@@ -17,6 +17,7 @@ const Header = () => {
           <nav className="hidden md:flex gap-8 items-center">
             <a href="/pricing" className="text-gray-700 hover:text-black font-medium">Pricing</a>
             <a href="#Features" className="text-gray-700 hover:text-black font-medium">Leadx</a>
+            <a href="#useCases" className="text-gray-700 hover:text-black font-medium">UseCases</a>
             <a href="/product" className="text-gray-700 hover:text-black font-medium">Product</a>
           </nav>
         </div>
@@ -57,16 +58,6 @@ const Header = () => {
                   },
                 }}>
                   <ListItemText primary="Pricing" />
-                </ListItem>
-                <ListItem button component="a" href="#Features" sx={{
-                  marginBottom: '8px',
-                  padding: '8px',
-                  borderRadius: '6px',
-                  '&:hover': {
-                    backgroundColor: '#f5f5f5',
-                  },
-                }}>
-                  <ListItemText primary="Features" />
                 </ListItem>
                 <ListItem button component="a" href="/product" sx={{
                   marginBottom: '8px',
