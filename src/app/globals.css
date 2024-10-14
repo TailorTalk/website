@@ -8,6 +8,30 @@ html {
   scroll-behavior: smooth;
 }
 
+@layer utilities {
+  .slide-in-down-right {
+    @apply opacity-0 translate-x-32 translate-y-32 transition-all duration-[10000ms] ease-in-out will-change-transform;
+  }
+  .slide-in-down-right-active {
+    @apply opacity-100 translate-x-0 translate-y-0;
+  }
+  
+  .slide-in-down-left {
+    @apply opacity-0 -translate-x-32 translate-y-32 transition-all duration-[10000ms] ease-in-out will-change-transform;
+  }
+  .slide-in-down-left-active {
+    @apply opacity-100 translate-x-0 translate-y-0;
+  }
+  
+  .slide-in-up {
+    @apply opacity-0 translate-y-20 transition-all duration-[10000ms] ease-in-out will-change-transform;
+  }
+
+  .slide-in-up-active {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
 .button {
   color: #FFFFFF;
   background-color: #42B4EE;

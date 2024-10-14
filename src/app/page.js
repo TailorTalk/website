@@ -1,9 +1,9 @@
 "use client";
-import React, { useEffect,useState } from "react";
+import React, { useEffect,useRef,useState } from "react";
 import Image from 'next/image';
 import { AnimatePresence, animate, motion, useAnimation, useMotionValue } from "framer-motion";
 import leadx from "../../public/Leadx.png";
-import CheckCircleSharpIcon from '@material-ui/icons/CheckCircleSharp';
+import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
 import featuresData from "./Config/featuresData.json";
 import { AssistantName } from "./Config/globalVariables";
 import testimonials from "./Config/testimonials";
@@ -42,6 +42,40 @@ export default function Home() {
     if (controlsInstance) return controlsInstance.stop;
   }, [xTranslation, width, isPaused, isReversed]);
 
+  const [isVisible, setIsVisible] = useState({ assistant: false, features: [] });
+  const assistantRef = useRef(null);
+  const featureRefs = useRef([]);
+
+  useEffect(() => {
+    const observerOptions = { threshold: 0.5 };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const index = entry.target.dataset.index; 
+        if (entry.isIntersecting) {
+          if (entry.target.id === 'Features') {
+            setIsVisible((prev) => ({ ...prev, assistant: true }));
+          } else if (index !== undefined) {
+            setIsVisible((prev) => {
+              const newFeatures = [...prev.features];
+              newFeatures[index] = true;
+              return { ...prev, features: newFeatures };
+            });
+          }
+        }
+      });
+    }, observerOptions);
+
+    if (assistantRef.current) observer.observe(assistantRef.current);
+    featureRefs.current.forEach((ref) => observer.observe(ref));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  
+
   const AssistantPoints = [
     "24/7 available, ensuring no lead is missed",
     "Follows up and sends reminders to your leads",
@@ -59,16 +93,19 @@ export default function Home() {
         
         <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-8 text-black bg-clip-text">
           Your AI-Powered <br className="block md:hidden"/>
-          <span className="text-3xl sm:text-[56px] font-medium text-center ml-3 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">Sales Assistant</span>
+          <span className="text-3xl sm:text-[56px] font-medium text-center sm:ml-3 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">Sales Assistant</span>
         </h2>
         <p className="text-center font-medium text-sm sm:text-lg text-gray-500 pt-5 mb-10" style={{ lineHeight: '2' }}>
           I work 24/7, at any scale, improving your lead engagement while cutting sales costs by up to 90%. <br /> I seamlessly engage with your leads across WhatsApp, Instagram, email, and more.
         </p>
       </div>
 
-      <div id="Features" className="flex flex-col lg:flex-row w-full max-w-7xl h-auto justify-center items-center bg-[#f1f1ee] mt-10 p-6 rounded-xl shadow-xl mx-auto">
+      {/* Assistant Card  */}
+      <div  id="Features"  ref={assistantRef}  className={`flex flex-col lg:flex-row w-full max-w-7xl h-auto justify-center items-center bg-[#f1f1ee] mt-10 p-6 rounded-xl shadow-xl md:mx-auto`}>
         {/* Left Section */}
-        <div className="w-full lg:w-[65%] space-y-4 bg-gray-50 p-5 pt-10 pl-10 rounded-xl shadow-lg">
+        <div className={`w-full lg:w-[68.5%] space-y-4 bg-gray-50 pl-4 p-2 md:p-5 pt-10 md:pl-10 rounded-xl shadow-lg  transition-transform duration-1000 ease-out ${
+          isVisible.assistant ? 'slide-in-down-left-active' : 'slide-in-down-left'
+        }`}>
           <h1 className="text-3xl sm:text-4xl font-medium mb-8">Hire {AssistantName}</h1>
           <p className="text-base text-[#1d1a1c99] pb-5">
             Sign up and hire {AssistantName} for your business. Onboard in minutes.
@@ -89,7 +126,9 @@ export default function Home() {
         </div>
 
         {/* Right Section */}
-        <div className="w-full lg:w-[37%] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg">
+        <div className={`w-full lg:w-[37%] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg  transition-transform duration-700 ease-out ${
+          isVisible.assistant ? 'slide-in-down-right-active' : 'slide-in-down-right'
+        }`}>
           <div className="relative">
             <div className="hidden md:block absolute top-[20px] right-[-100px] bg-white p-2 shadow-lg rounded-full flex items-center space-x-2">
               <span className="text-indigo-600 font-medium">{AssistantName}</span>
@@ -109,7 +148,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-4 md:mx-28 mt-10">
           {featuresData.features.map((feature, index) => (
-            <div key={index}  className="bg-white shadow-md rounded-xl p-3">
+            <div key={index} ref={(el) => (featureRefs.current[index] = el)}  data-index={index}  className={`bg-white shadow-md rounded-xl p-3 transition-transform duration-1000 ease-out ${
+              isVisible.features[index] ? 'slide-in-up-active' : 'slide-in-up'
+            }`}>
                 <div key={index}>
                   <Image
                     src={feature.icon}
@@ -125,6 +166,7 @@ export default function Home() {
             
           ))}
         </div>
+        {/* UseCases */}
       </section>
       <section className="w-11/12 flex justify-center items-center mt-16">
         <UseCases/>
