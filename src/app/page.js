@@ -88,7 +88,7 @@ export default function Home() {
     <div className="flex flex-col justify-center items-center py-10 bg-gray-50">
       <div className="container mx-auto md:px-4">
         <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 md:mb-12 bg-clip-text text-black">
-          Hi, I’m {AssistantName}.
+          Hi, I&#39;m {AssistantName}.
         </h1>
         
         <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-8 text-black bg-clip-text">
@@ -143,7 +143,7 @@ export default function Home() {
       <section  className="flex flex-col justify-center items-center border-[1px] pt-28 rounded-xl py-16 mx-4 md:mx-16">
         <div className="text-center mb-8">
           <h2 className="text-3xl sm:text-5xl font-medium pb-10">Features that you will love</h2>
-          <p className="text-[#1d1a1c99]">You'll have access to many more valuable features alongside {AssistantName}.</p>
+          <p className="text-[#1d1a1c99]">You&#39;ll have access to many more valuable features alongside {AssistantName}.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-4 md:mx-28 mt-10">
@@ -168,7 +168,7 @@ export default function Home() {
         </div>
         {/* UseCases */}
       </section>
-      <section className="w-11/12 flex justify-center items-center mt-16">
+      <section id="useCases" className="w-11/12 flex justify-center items-center mt-16">
         <UseCases/>
       </section>
 

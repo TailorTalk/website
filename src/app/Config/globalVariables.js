@@ -1,2 +1,2 @@
-const AssistantName = "Leadx"; // Ensure it's a string
+const AssistantName = "Leadx";
 export { AssistantName };
