@@ -77,11 +77,12 @@ export default function Home() {
   
 
   const AssistantPoints = [
-    "24/7 available, ensuring no lead is missed",
-    "Follows up and sends reminders to your leads",
+    "Does Personalized conversation with your leads.",
+    "Follows up and sends reminders.",
+    "Schedules appointments with your leads",
     "Generates insights about your leads.",
-    "Chats in any language.",
-    "Saves costs by up to 90%",
+    "Organize your lead data, no need to use messy excel sheets.",
+    "Can reach-out and send campaigns to existing leads.",
   ];
 
   return (
