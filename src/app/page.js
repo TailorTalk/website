@@ -77,12 +77,11 @@ export default function Home() {
   
 
   const AssistantPoints = [
-    "Does Personalized conversation with your leads.",
-    "Follows up and sends reminders.",
-    "Schedules appointments with your leads",
+    "24x7 availability, no breaks.",
+    "Personalized conversation.",
+    "Followups with your leads.",
+    "Can send campaigns to your leads.",
     "Generates insights about your leads.",
-    "Organize your lead data, no need to use messy excel sheets.",
-    "Can reach-out and send campaigns to existing leads.",
   ];
 
   return (
@@ -93,14 +92,14 @@ export default function Home() {
         </h1>
         
         <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-4 text-black bg-clip-text">
-          Your AI-Powered <br className="block md:hidden" />
+          Your<br className="block md:hidden" />
           <span className="text-3xl sm:text-[56px] font-medium text-center sm:ml-3 space-y-5 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">
           <span className="block md:hidden mt-[14px]"></span>
-            Sales Assistant
+            AI Sales Agent
           </span>
         </h2>
         <p className="text-center font-medium text-sm sm:text-lg text-gray-500 pt-5 mb-10" style={{ lineHeight: '2' }}>
-          I work 24/7, at any scale, improving your lead engagement while cutting sales costs by up to 90%. <br /> I seamlessly engage with your leads across WhatsApp, Instagram, email, and more.
+        I automate your sales through WhatsApp and Instagram. <br />  I can boost conversion rates by 30% while reducing sales costs by 80%.
         </p>
       </div>
 
@@ -124,7 +123,7 @@ export default function Home() {
           </ul>
           <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank">
             <button className="globalBgColor mt-8 flex px-4 py-3 text-base text-white rounded-md hover:bg-indigo-700 transition">
-              Interview {AssistantName}
+              Book a Demo
             </button>
           </a>
         </div>
