@@ -4,12 +4,14 @@ import Image from 'next/image';
 import { AnimatePresence, animate, motion, useAnimation, useMotionValue } from "framer-motion";
 import leadx from "../../public/Leadx.png";
 import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
-import featuresData from "./Config/featuresData.json";
+// import featuresData from "./Config/featuresData.json";
 import { AssistantName } from "./Config/globalVariables";
 import testimonials from "./Config/testimonials";
 import GradeIcon from '@mui/icons-material/Grade';
 import useMeasure from "react-use-measure";
 import UseCases from "./components/UseCases";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { videos } from "./Config/Videos";
 
 export default function Home() {
   const [isPaused, setIsPaused] = useState(false);
@@ -19,6 +21,26 @@ export default function Home() {
   let [ref, { width }] = useMeasure();
   const xTranslation = useMotionValue(0);
   const stars = 5;
+  const [activeVideo, setActiveVideo] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const handleNext = () => {
+    if (activeVideo < videos.length - 1) {
+      setDirection(1);
+      setActiveVideo(prev => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (activeVideo > 0) {
+      setDirection(-1);
+      setActiveVideo(prev => prev - 1);
+    }
+  };
+
+  // Check if previous and next videos exist
+  const hasPreviousVideo = activeVideo > 0;
+  const hasNextVideo = activeVideo < videos.length - 1;
 
   useEffect(() => {
     const finalPosition = -width * testimonials.length / 2.9;
@@ -143,7 +165,7 @@ export default function Home() {
       </div>
 
       {/* Features */}
-      <section  className="flex flex-col justify-center items-center border-[1px] pt-28 rounded-xl py-16 mx-4 md:mx-16">
+      {/* <section  className="flex flex-col justify-center items-center border-[1px] pt-28 rounded-xl py-16 mx-4 md:mx-16">
         <div className="text-center mb-8">
           <h2 className="text-3xl sm:text-5xl font-medium pb-10">Features that you will love</h2>
           <p className="text-[#1d1a1c99]">You&#39;ll have access to many more valuable features alongside {AssistantName}.</p>
@@ -170,8 +192,115 @@ export default function Home() {
           ))}
         </div>
         {/* UseCases */}
-      </section>
-      <section id="useCases" className="w-11/12 flex justify-center items-center mt-16">
+      {/* </section> */}
+
+      <section id="video" className="flex justify-center items-center h-[100vh] w-full">
+      <div className="relative w-full max-w-7xl mx-auto px-4 py-12">
+        <div className="relative flex items-center justify-center">
+          {hasPreviousVideo && (
+            <button 
+              onClick={handlePrev}
+              className="absolute left-0 z-10 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transform -translate-x-1/2"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-800" />
+            </button>
+          )}
+
+          <div className="flex w-full justify-center md:justify-between items-center px-4 md:px-12 lg:px-32">
+            <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  className="relative w-[140px] h-[235px] opacity-50 cursor-pointer hidden md:block"
+                  key={`prev-${activeVideo}`}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 0.5, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={handlePrev}
+                >
+                  {hasPreviousVideo && <img
+                    src={videos[activeVideo - 1].thumbnail}
+                    alt="Previous video"
+                    className="w-full h-full object-cover rounded-lg"
+                  />}
+                </motion.div>
+            </AnimatePresence>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                className="relative w-[340px] h-[560px] z-20"
+                key={`current-${activeVideo}`}
+                initial={{ 
+                  scale: 0.8,
+                  x: direction > 0 ? 250 : -250 
+                }}
+                animate={{ 
+                  opacity: 1,
+                  scale: 1,
+                  x: 0 
+                }}
+                exit={{
+                  scale: 0.8,
+                  x: direction > 0 ? -250 : 250,
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                <video
+                  key={videos[activeVideo].src}
+                  className="w-full h-full object-cover rounded-lg"
+                  src={videos[activeVideo].src}
+                  controls
+                  autoPlay
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  className="relative w-[140px] h-[235px] opacity-100 cursor-pointer hidden md:block"
+                  key={`next-${activeVideo}`}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 0.5, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={handleNext}
+                >
+                  {hasNextVideo && <img
+                    src={videos[activeVideo + 1].thumbnail}
+                    alt="Next video"
+                    className="w-full h-full object-cover rounded-lg"
+                  />}
+                </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {hasNextVideo && (
+            <button 
+              onClick={handleNext}
+              className="absolute right-0 z-10 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transform translate-x-1/2"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-800" />
+            </button>
+          )}
+        </div>
+
+        <div className="flex justify-center space-x-2 mt-6">
+          {videos.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setDirection(index > activeVideo ? 1 : -1);
+                setActiveVideo(index);
+              }}
+              className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                index === activeVideo ? 'bg-red-600' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+      <section id="useCases" className="w-full p-6 flex justify-center items-center mt-16">
         <UseCases/>
       </section>
 
@@ -217,9 +346,12 @@ export default function Home() {
                       {testimonial.text}
                     </p>
                   </div>
-                  <div className="mt-auto">
+                  <div className="flex">
+                  <div className="mt-auto flex-1">
                     <p className="text-sm text-gray-600">{testimonial.author}</p>
                     <p className="text-xs text-gray-400">{testimonial.role}</p>
+                  </div>
+                  <Image width={10} height={10} src={testimonial.icon} alt="logo" className="w-12 h-12"/>
                   </div>
                 </div>
               ))}
