@@ -70,7 +70,7 @@ const Header = () => {
                 }}>
                   <ListItemText primary="Product" />
                 </ListItem>
-                <ListItem button component="a" href="/demo" sx={{
+                {/* <ListItem button component="a" href="/demo" sx={{
                   marginBottom: '8px',
                   padding: '8px',
                   borderRadius: '6px',
@@ -79,7 +79,7 @@ const Header = () => {
                   },
                 }}>
                   <ListItemText primary="Instant Demo" />
-                </ListItem>
+                </ListItem> */}
               </List>
             </Drawer>
           </div>
