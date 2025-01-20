@@ -40,10 +40,7 @@ export default function Home() {
   const settings = {
     dots: true,
     infinite: true,
-<<<<<<< HEAD
     speed: 1000,
-=======
->>>>>>> 21bd8cd2b0d4ece8b3b4993dc3603ec096690fc5
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
