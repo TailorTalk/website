@@ -1,28 +1,37 @@
 const testimonials = [
   {
-    id: 1,
-    title:"Leadx has doubled our revenue with ease",
-    text: "Our primary leads came from Instagram ads, but we struggled to scale due to the manual effort required to handle them. With Leadx now managing our Instagram leads, we’ve increased our ad spend and are handling 2.5 times the leads we used to, resulting in a twofold increase in revenue.",
-    author: "Mukta Dharma",
-    role:"Founder - Tootly",
-    icon:'/logoPng.png',
-  },
-  {
     id: 2,
-    title:"Leadx turned exhibition visitors into valuable leads",
-    text: "We used Leadx during our exhibition by creating a WhatsApp QR code that allowed visitors to learn about our products easily. Not only did this generate interest at the event, but it also helped us collect contact details of potential customers. Leadx followed up with them afterward, leading to meaningful conversations and new sales opportunities.",
+    title:"TailorTalk helped in exhibition",
+    text: "We used TailorTalk during our exhibition by creating a WhatsApp QR code that allowed visitors to learn about our products easily. Not only did this generate interest at the event, but it also helped us collect contact details of potential customers. TailorTalk followed up with them afterward, leading to meaningful conversations and new sales opportunities.",
     author: "Ayappan Radhakrishnan",
     role:"Sales consultant - CF Tech",
-    icon:'/logoPng.png',
+    icon:'/cf_tech.jpg',
+  },
+  {
+    id: 1,
+    title:"TailorTalk has doubled our revenue",
+    text: "Our primary leads came from Instagram ads, but we struggled to scale due to the manual effort required to handle them. With TailorTalk now managing our Instagram leads, we’ve increased our ad spend and are handling 2.5 times the leads we used to, resulting in a twofold increase in revenue.",
+    author: "Mukta Dharma",
+    role:"Founder - Tootly",
+    icon:'/tootly.jpg',
   },
   {
     id: 3,
-    title:"Leadx improved our appointment booking process significantly",
-    text: "We integrated Leadx with WhatsApp on our website to improve appointment bookings for our eye care hospital. Leadx helps by asking patients the necessary questions, assigning the appropriate doctor, and scheduling the appointment. As soon as an appointment is confirmed, our receptionist receives all the patient details directly on her phone, making the process more efficient for both our staff and patients.",
-    author: "Dr. Shaifali Chahar",
-    role:"Physician - Horus Eye Care",
-    icon:'/logoPng.png',
-  }
+    title: "TailorTalk streamlined our booking process",
+    text: "We integrated TailorTalk with WhatsApp on our website to enhance our booking process at Rage Room. TailorTalk helps customers by guiding them through package options, understanding their preferences, and confirming their bookings instantly. Once a booking is made, our team receives all the details on their phones, ensuring a seamless experience for both our staff and customers.",
+    author: "Ananya pandey",
+    role: "Founder - Rage Room",
+    icon: '/rageroom.jpg',
+},
+{
+  "id": 4,
+  "title": "TailorTalk made coach booking delightful",
+  "text": "Integrating TailorTalk into our system has transformed the way we handle coach bookings at CoachDirect. It recommends the right coach based on customer preferences and answers their queries instantly, making the entire booking process smooth and efficient. TailorTalk has significantly reduced manual efforts.",
+  "author": "Veera Varma",
+  "role": "Strategy & Marketing - CoachDirect",
+  "icon": "/coach_direct.jpg"
+}
+
 ];
 
 export default testimonials;

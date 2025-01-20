@@ -44,9 +44,9 @@ const UseCases = () => {
           {selectedHeader >= 1 && (
             <div className="flex flex-col w-full h-auto md:h-[26rem] pb-7 md:p-4 overflow-hidden">
               <div className="w-full md:pl-10 flex flex-col justify-center">
-                <h3 className="text-2xl md:text-4xl font-medium text-gray-900 mb-4" style={{ lineHeight: '1.5' }}>
+                <h1 className="text-2xl md:text-3xl font-normal text-gray-900 mb-4" style={{ lineHeight: '1.5' }}>
                   {useCaseData[selectedHeader - 1].title}
-                </h3>
+                </h1>
                 <p className="text-gray-600 text-base md:text-l mt-6" style={{ lineHeight: '1.6' }}>
                   {useCaseData[selectedHeader - 1].description}
                 </p>

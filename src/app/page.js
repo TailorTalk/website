@@ -287,18 +287,18 @@ export default function Home() {
   </div>
 </section>
 
-      <section id="useCases" className="w-full p-6 flex flex-col justify-center items-center mt-5 md:mt-10">
-      <h2 className="text-3xl md:text-5xl font-medium text-gray-900 text-center mt-5 mb-8">Use cases</h2>
+      <section id="useCases" className="w-full p-6 flex flex-col justify-center items-center mt-5 md:mt-4">
+      <h2 className="md:text-[36px] text-3xl font-normal text-center my-10 text-black pt-4">Use cases</h2>
         <UseCases/>
       </section>
 
       {/* Testimonial */}
       <div className="flex w-screen flex-col justify-center items-center py-10 bg-gray-50">
-        <h1 className="md:text-[36px] text-3xl font-medium text-center mt-10 text-black">
+        <h1 className="md:text-[36px] text-3xl font-normal text-center my-10 text-black pt-4">
         Loved by businesses of all kind
         </h1>
         <div
-          className="overflow-x-auto overflow-y-hidden mt-8 w-full no-scrollbar"
+          className="overflow-x-auto overflow-y-hidden w-full no-scrollbar"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: 'touch' }}
@@ -316,7 +316,7 @@ export default function Home() {
                   <div className="flex-1">
                     <div className="flex mb-6">
                       {Array.from({ length: stars }, (_, i) => (
-                        <GradeIcon key={i} sx={{ color: '#4c6ef5' }} />
+                        <GradeIcon key={i} sx={{ color: '#4c6ef5'}}  />
                       ))}
                     </div>
 
@@ -339,7 +339,7 @@ export default function Home() {
                     <p className="text-sm text-gray-600">{testimonial.author}</p>
                     <p className="text-xs text-gray-400">{testimonial.role}</p>
                   </div>
-                  <Image width={10} height={10} src={testimonial.icon} alt="logo" className="w-11 h-11"/>
+                  <Image width={80} height={80} src={testimonial.icon} alt="logo"  className="rounded-lg"/>
                   </div>
                 </div>
               ))}
