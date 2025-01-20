@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect,useRef,useState } from "react";
 import Image from 'next/image';
+import ReactMarkdown from "react-markdown"
 import { AnimatePresence, animate, motion, useAnimation, useMotionValue } from "framer-motion";
 import leadx from "../../public/Leadx.png";
 import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
@@ -39,11 +40,11 @@ export default function Home() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     arrows: false, // Disable default arrows
     responsive: [
@@ -121,19 +122,21 @@ export default function Home() {
   
 
   const AssistantPoints = [
-    "24x7 availability, no breaks.",
-    "Personalized conversation.",
-    "Followups with your leads.",
-    "Can send campaigns to your leads.",
-    "Generates insights about your leads.",
+    "Automates **inbound** and **outbound** sales.",
+    "Automates **follow ups** with your leads",
+    "Automates **campaigns** for your leads.",
+    "Provide **insights** on your leads.",
+    "Provide 24x7 **customer support**.",
+    "Take actions like **payment**, book **appointments** and more.",
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center py-10 bg-gray-50">
+    <div className="flex flex-col justify-center items-c
+    enter py-10 bg-gray-50 pt-20">
       <div className="container mx-auto md:px-4">
-        <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 mb-4 md:mb-12 bg-clip-text text-black">
+        {/* <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 mb-4 md:mb-12 bg-clip-text text-black">
           Hi, I&#39;m {AssistantName}.
-        </h1>
+        </h1> */}
         
         <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-4 text-black bg-clip-text">
           Your<br className="block md:hidden" />
@@ -142,9 +145,14 @@ export default function Home() {
             AI Sales Agent
           </span>
         </h2>
-        <p className="text-center font-medium text-sm sm:text-lg text-gray-500 pt-5 mb-10" style={{ lineHeight: '2' }}>
-        I automate your sales through WhatsApp and Instagram. <br />  I can boost conversion rates by 30% while reducing sales costs by 80%.
-        </p>
+        <p className="text-center font-medium text-sm sm:text-lg text-gray-500 pt-8 mb-10" style={{ lineHeight: '3' }}>
+ Automate your sales through{' '}
+  <span style={{ color: '#25D366' }}>WhatsApp</span> and{' '}
+  <span style={{ color: '#E4405F' }}>Instagram</span>. <br />
+  Boost conversion rates by <span style={{ color: 'black' }}>30%</span> and reduce operational costs by <span style={{ color: 'black' }}>80%</span>. <br />
+  Set up in just <span style={{ color: 'black' }}>12 minutes</span>, no technical skills required.
+</p>
+
       </div>
 
       {/* Assistant Card  */}
@@ -153,20 +161,23 @@ export default function Home() {
         <div className={`w-full lg:w-[68.5%] space-y-4 bg-gray-50 pl-4 p-2 md:p-5 pt-10 md:pl-10 rounded-xl shadow-lg  transition-transform duration-1000 ease-out ${
           isVisible.assistant ? 'slide-in-down-left-active' : 'slide-in-down-left'
         }`}>
-          <h1 className="text-3xl sm:text-4xl font-medium mb-8">Hire {AssistantName}</h1>
-          <p className="text-base text-[#1d1a1c99] pb-5">
-            Sign up and hire {AssistantName} for your business. Onboard in minutes.
-          </p>
+          <h1 className="text-3xl sm:text-4xl font-medium mb-3"></h1>
+          <p className="text-xl font-normal text-[#1d1a1c] pb-5">
+  Word's simplest and powerful AI sales agent, onboard in minutes.
+</p>
+
           <ul className="space-y-2 pb-5">
             {AssistantPoints.map((item, index) => (
               <li key={index} className="flex items-center space-x-2">
-                <CheckCircleSharpIcon className="w-4 h-4 text-indigo-700 p-[2px] flex items-center justify-center rounded-full" />
-                <span className="font-light pl-1">{item}</span>
+                <CheckCircleSharpIcon className="w-5 h-5 text-indigo-700 p-[2px] flex items-center justify-center rounded-full" />
+                <span className="font-normal text-black/70 pl-1">
+                <ReactMarkdown>{item}</ReactMarkdown>
+                  </span>
               </li>
             ))}
           </ul>
           <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank">
-            <button className="globalBgColor mt-8 flex px-4 py-3 text-base text-white rounded-md hover:bg-indigo-700 transition">
+            <button className="globalBgColor mt-4 flex px-4 py-3 text-base text-white rounded-md hover:bg-indigo-700 transition">
               Book a Demo
             </button>
           </a>
@@ -177,10 +188,10 @@ export default function Home() {
           isVisible.assistant ? 'slide-in-down-right-active' : 'slide-in-down-right'
         }`}>
           <div className="relative">
-            <div className="hidden md:block absolute top-[20px] right-[-100px] bg-white p-2 shadow-lg rounded-full flex items-center space-x-2">
+            {/* <div className="hidden md:block absolute top-[20px] right-[-100px] bg-white p-2 shadow-lg rounded-full flex items-center space-x-2">
               <span className="text-indigo-600 font-medium">{AssistantName}</span>
               <span className="text-gray-600">is joining your team</span>
-            </div>
+            </div> */}
             <Image src={leadx} alt="icon" className="object-cover rounded-xl" />
           </div>
         </div>
@@ -217,8 +228,8 @@ export default function Home() {
       {/* </section> */}
 
       <section id="video" className="w-full py-10 bg-[#f7f8fa]">
-  <h1 className="md:text-[36px] text-3xl font-semibold text-center my-10 text-black">
-    Build for any industry
+  <h1 className="md:text-[36px] text-3xl font-normal text-center my-10 text-black pt-4">
+    Built for any business
   </h1>
   <div className="container mx-auto relative px-12 py-10 rounded-xl bg-[#f1f1ee]">
     {/* Custom Navigation Buttons */}
@@ -256,10 +267,10 @@ export default function Home() {
             
             <div className="pb-1 px-3 w-full h-full flex flex-col">
               <div className="flex-1">
-              <h5 className="text-xl mt-4 mb-2 font-semibold">{testCase.title}</h5>
+              <h5 className="text-lg mt-4 mb-3 font-semibold">{testCase.title}</h5>
               <div className="mt-2">
                 {testCase.content.map((point, idx) => (
-                    <li key={idx} className="text-gray-800 text-base">{point}</li>
+                    <li key={idx} className="text-gray-800 text-sm">{point}</li>
                   ))}
               </div>
               </div>
@@ -282,7 +293,7 @@ export default function Home() {
       {/* Testimonial */}
       <div className="flex w-screen flex-col justify-center items-center py-10 bg-gray-50">
         <h1 className="md:text-[36px] text-3xl font-medium text-center mt-10 text-black">
-        Trusted by businesses of all sizes, from startups to enterprises
+        Loved by businesses of all kind
         </h1>
         <div
           className="overflow-x-auto overflow-y-hidden mt-8 w-full no-scrollbar"
