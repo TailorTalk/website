@@ -150,7 +150,7 @@ export default function Home() {
   <span style={{ color: '#25D366' }}>WhatsApp</span> and{' '}
   <span style={{ color: '#E4405F' }}>Instagram</span>. <br />
   Boost conversion rates by <span style={{ color: 'black' }}>30%</span> and reduce operational costs by <span style={{ color: 'black' }}>80%</span>. <br />
-  Set up in just <span style={{ color: 'black' }}>12 minutes</span>, no technical skills required.
+  Set up in just <span style={{ color: 'black' }}>25 minutes</span>, no technical skills required.
 </p>
 
       </div>
@@ -176,9 +176,15 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <Link href='#' className="pb-2 md:pb-0 text-blue-600 text-base flex transform transition-transform hover:scale-105 w-32">
-                   <Image src={whatsappIcon} width={23} height={23} className="mr-1"/> <p className="mt-[2px]">Try now</p> <ChevronRight className="ml-1 mt-[3px]" />
-                  </Link>
+          <Link 
+  href='#' 
+  className="pb-2 md:pb-0 text-blue-600 text-base flex items-center transform transition-transform hover:scale-105 w-100"
+  >
+    <Image src={whatsappIcon} width={40} height={40} className="-ml-2 mr-2" />
+    <p className="leading-none">Chat With TailorTalk</p>
+    <ChevronRight className="ml-1" />
+  </Link>
+
         </div>
 
         {/* Right Section */}
@@ -276,8 +282,8 @@ export default function Home() {
                 </div>
               </div>
             
-              <Link href={testCase.link} className="w-32 text-blue-600 text-base flex transform transition-transform hover:scale-105">
-                   <Image src={whatsappIcon} width={23} height={23} className="mr-1"/> <p className="mt-[2px]">Try now</p> <ChevronRight className="ml-1 mt-[3px]" />
+              <Link href={testCase.link} className="w-60 text-blue-600 text-base flex transform transition-transform hover:scale-105">
+                   <Image src={whatsappIcon} width={28} height={28} className="-ml-3 mr-1"/> <p className="mt-[2px]">Start Demo Chat</p> <ChevronRight className="ml-1 mt-[3px]" />
                   </Link>
             </div>
           </div>

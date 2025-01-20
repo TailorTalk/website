@@ -4,10 +4,9 @@ const TestCases = [
     title: "Ed-Tech",
     src: "/ed_tech.jpg",
     content: [
-      "WhatsApp gives marketing agencies an opportunity to help their clients stand out in a noisy digital landscape.",
-      "Course updates",
-      "Parent-teacher communication",
-      "Exam notifications"
+      "Provide instant responses to queries regarding course details, pricing, and schedules.",
+      "Share course brochures, demo class links, and enrollment procedures.",
+      "Automated reminders for upcoming classes and more.",
     ],
     link: "#",
   },
@@ -16,10 +15,9 @@ const TestCases = [
     title: "Health and Wellness",
     src: "/health.jpg",
     content: [
-      "From promoting your deals and discounts to scheduling servicing, WhatsApp Business API simplifies customer communication.",
-      "Health tips",
-      "Appointment scheduling",
-      "Service promotions"
+      "Instant responses to inquiries about classes, therapy sessions, and wellness programs.",
+      "Automated ppointment booking with therapists, nutritionists, and fitness trainers based on availability.",
+      "Automated reminders for upcoming appointments, follow-up sessions and more.",
     ],
     link: "#",
   },
@@ -28,10 +26,9 @@ const TestCases = [
     title: "Tourism",
     src: "/tour.jpg",
     content: [
-      "Streamline appointment scheduling and provide timely health updates to patients using WhatsApp Business API.",
-      "Travel bookings",
-      "Hotel recommendations",
-      "Travel updates"
+      "Suggest personalized packages based on user preferences, budget, and interest.",
+      "Share images and videos of travel destinations, accommodations, and activities to enhance decision-making.",
+      "Offer multi-language support to assist travelers from diverse regions.",
     ],
     link: "#",
   },
@@ -40,10 +37,9 @@ const TestCases = [
     title: "E-Commerce",
     src: "/e_com.jpg",
     content: [
-      "Engage with students and parents effectively with course updates, reminders, and more through WhatsApp.",
-      "Order tracking",
-      "Product recommendations",
-      "Customer support"
+      "Instant responses to customer inquiries about product, pricing, and availability.",
+      "Share product catalog images, videos, and detailed descriptions to help customers make informed purchasing decisions.",
+      "Facilitate secure UPI payments for orders, ensuring a seamless checkout process.",
     ],
     link: "#",
   },
@@ -52,10 +48,9 @@ const TestCases = [
     title: "Banking & Insurance",
     src: "/banking.jpg",
     content: [
-      "Leverage the WhatsApp Business Platform with Interakt to acquire, engage & convert prospect buyers and retain customers.",
-      "Claim assistance",
-      "Policy updates",
-      "Customer support"
+      "Qualify leads by collecting details such as income, credit score, loan requirements to match them with suitable financial products.",
+      "Provide instant responses related to loan options, interest rates, and eligibility criteria.",
+      "Guide customers on document and more.",
     ],
     link: "#",
   },
@@ -64,10 +59,10 @@ const TestCases = [
     title: "Real Estate",
     src: "/real_estate.jpg",
     content: [
-      "Enhance customer shopping experiences with personalized recommendations and seamless communication through WhatsApp.",
-      "Property listings",
-      "Virtual tours",
-      "Personalized recommendation"
+      "Personalized property recommendations.",
+      "Share property images and videos to interested buyers.",
+      "Automate scheduling of property visits based on buyer preferences.",
+      "Qualify leads based on key information such as budget, location preference, and timeline.",
     ],
     link: "#",
   },
