@@ -13,11 +13,9 @@ const UseCases = () => {
   ];
 
   return (
-    <div className="w-11/12 px-2 md:px-12 lg:px-24 pt-12 bg-[#f1f1ee] rounded-3xl mx-auto">
-      <h2 className="text-3xl md:text-5xl font-medium text-gray-900 text-center mt-5 mb-6">Use cases</h2>
-      <p className="text-l md:text-lg text-gray-500 text-center mb-10 md:mb-1">See how Leadx can transform your business.</p>
+    <div className="w-11/12 px-2 md:px-12 lg:px-24 bg-[#f1f1ee] rounded-3xl mx-auto">
       
-      <div className="flex flex-col md:flex-row md:pt-16 w-full">
+      <div className="flex flex-col md:flex-row pt-6 md:pt-16 w-full">
         <div className="w-full md:w-1/2 pr-4 mb-10 md:mb-0">
           <div className="flex flex-col gap-4 justify-center items-center">
             {Header.map((item) => (
@@ -44,7 +42,7 @@ const UseCases = () => {
 
         <div className="w-full md:w-1/2 flex flex-col items-center pl-4">
           {selectedHeader >= 1 && (
-            <div className="flex flex-col w-full h-auto md:h-[30rem] pb-7 md:p-4 overflow-hidden">
+            <div className="flex flex-col w-full h-auto md:h-[26rem] pb-7 md:p-4 overflow-hidden">
               <div className="w-full md:pl-10 flex flex-col justify-center">
                 <h3 className="text-2xl md:text-4xl font-medium text-gray-900 mb-4" style={{ lineHeight: '1.5' }}>
                   {useCaseData[selectedHeader - 1].title}

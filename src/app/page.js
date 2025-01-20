@@ -158,7 +158,7 @@ export default function Home() {
       {/* Assistant Card  */}
       <div  id="Features"  ref={assistantRef}  className={`flex flex-col lg:flex-row w-full max-w-7xl h-auto justify-center items-center bg-[#f1f1ee] mt-10 p-6 rounded-xl shadow-xl md:mx-auto`}>
         {/* Left Section */}
-        <div className={`w-full lg:w-[68.5%] space-y-4 bg-gray-50 pl-4 p-2 md:p-5 pt-10 md:pl-10 rounded-xl shadow-lg  transition-transform duration-1000 ease-out ${
+        <div className={`w-full lg:w-[68.5%] space-y-4 bg-gray-50 pl-4 p-2 md:p-5 md:pt-7 md:pl-10 rounded-xl shadow-lg  transition-transform duration-1000 ease-out ${
           isVisible.assistant ? 'slide-in-down-left-active' : 'slide-in-down-left'
         }`}>
           <h1 className="text-3xl sm:text-4xl font-medium mb-3"></h1>
@@ -176,15 +176,13 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <a href="https://calendly.com/shiva-tailortalk/30min" target="_blank">
-            <button className="globalBgColor mt-4 flex px-4 py-3 text-base text-white rounded-md hover:bg-indigo-700 transition">
-              Book a Demo
-            </button>
-          </a>
+          <Link href='#' className="pb-2 md:pb-0 text-blue-600 text-base flex transform transition-transform hover:scale-105 w-32">
+                   <Image src={whatsappIcon} width={23} height={23} className="mr-1"/> <p className="mt-[2px]">Try now</p> <ChevronRight className="ml-1 mt-[3px]" />
+                  </Link>
         </div>
 
         {/* Right Section */}
-        <div className={`w-full lg:w-[37%] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg  transition-transform duration-700 ease-out ${
+        <div className={`w-full lg:w-[30.5%] md:h-[23.4rem] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg  transition-transform duration-700 ease-out ${
           isVisible.assistant ? 'slide-in-down-right-active' : 'slide-in-down-right'
         }`}>
           <div className="relative">
@@ -192,7 +190,7 @@ export default function Home() {
               <span className="text-indigo-600 font-medium">{AssistantName}</span>
               <span className="text-gray-600">is joining your team</span>
             </div> */}
-            <Image src={leadx} alt="icon" className="object-cover rounded-xl" />
+            <Image src={leadx} alt="icon" className="rounded-xl md:h-[21rem] md:w-[21rem]" />
           </div>
         </div>
       </div>
@@ -263,19 +261,22 @@ export default function Home() {
                   height={300}
                   className="rounded-lg h-60 w-full object-cover "
                 />
-            
-            
+
             <div className="pb-1 px-3 w-full h-full flex flex-col">
               <div className="flex-1">
               <h5 className="text-lg mt-4 mb-3 font-semibold">{testCase.title}</h5>
-              <div className="mt-2">
-                {testCase.content.map((point, idx) => (
-                    <li key={idx} className="text-gray-800 text-sm">{point}</li>
-                  ))}
-              </div>
+                <div className="mt-2">
+                  <ul className="list-disc pl-3">
+                    {testCase.content.map((point, idx) => (
+                      <li key={idx} className="text-gray-800 text-sm leading-relaxed">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             
-              <Link href={testCase.link} className=" text-blue-600 text-base flex transform transition-transform hover:scale-105">
+              <Link href={testCase.link} className="w-32 text-blue-600 text-base flex transform transition-transform hover:scale-105">
                    <Image src={whatsappIcon} width={23} height={23} className="mr-1"/> <p className="mt-[2px]">Try now</p> <ChevronRight className="ml-1 mt-[3px]" />
                   </Link>
             </div>
@@ -286,7 +287,8 @@ export default function Home() {
   </div>
 </section>
 
-      <section id="useCases" className="w-full p-6 flex justify-center items-center mt-5 md:mt-16">
+      <section id="useCases" className="w-full p-6 flex flex-col justify-center items-center mt-5 md:mt-10">
+      <h2 className="text-3xl md:text-5xl font-medium text-gray-900 text-center mt-5 mb-8">Use cases</h2>
         <UseCases/>
       </section>
 
@@ -337,7 +339,7 @@ export default function Home() {
                     <p className="text-sm text-gray-600">{testimonial.author}</p>
                     <p className="text-xs text-gray-400">{testimonial.role}</p>
                   </div>
-                  <Image width={10} height={10} src={testimonial.icon} alt="logo" className="w-12 h-12"/>
+                  <Image width={10} height={10} src={testimonial.icon} alt="logo" className="w-11 h-11"/>
                   </div>
                 </div>
               ))}
