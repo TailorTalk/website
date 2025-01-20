@@ -40,13 +40,16 @@ export default function Home() {
   const settings = {
     dots: true,
     infinite: true,
+<<<<<<< HEAD
     speed: 1000,
+=======
+>>>>>>> 21bd8cd2b0d4ece8b3b4993dc3603ec096690fc5
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    arrows: false, // Disable default arrows
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -231,11 +234,11 @@ export default function Home() {
   <h1 className="md:text-[36px] text-3xl font-normal text-center my-10 text-black pt-4">
     Built for any business
   </h1>
-  <div className="container mx-auto relative px-12 py-10 rounded-xl bg-[#f1f1ee]">
+  <div className="container mx-auto relative px-4 md:px-12 py-10 rounded-xl bg-[#f1f1ee]">
     {/* Custom Navigation Buttons */}
     <button
       onClick={previous}
-      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white rounded-full shadow-md hover:bg-gray-50 transition-all flex items-center justify-center focus:outline-none"
+      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-5 h-5 md:w-8 md:h-8 bg-white rounded-full shadow-md hover:bg-gray-50 transition-all flex items-center justify-center focus:outline-none"
       style={{ transform: 'translate(-50%, -50%)' }}
     >
       <ChevronLeft className="w-6 h-6 text-gray-700" />
@@ -243,7 +246,7 @@ export default function Home() {
 
     <button
       onClick={next}
-      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white rounded-full shadow-md hover:bg-gray-50 transition-all flex items-center justify-center focus:outline-none"
+      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-5 h-5 md:w-8 md:h-8 bg-white rounded-full shadow-md hover:bg-gray-50 transition-all flex items-center justify-center focus:outline-none"
       style={{ transform: 'translate(50%, -50%)' }}
     >
       <ChevronRight className="w-6 h-6 text-gray-700" />
@@ -252,7 +255,7 @@ export default function Home() {
     {/* Slider */}
     <Slider ref={sliderRef} {...settings}>
       {TestCases.map((testCase, index) => (
-        <div key={index} className="px-4">
+        <div key={index} className="md:px-4">
           <div
             className="flex flex-col rounded-xl border border-gray-400 bg-gray-50 shadow-md p-3 h-[33rem]"
           >
@@ -286,7 +289,7 @@ export default function Home() {
   </div>
 </section>
 
-      <section id="useCases" className="w-full p-6 flex justify-center items-center mt-16">
+      <section id="useCases" className="w-full p-6 flex justify-center items-center mt-5 md:mt-16">
         <UseCases/>
       </section>
 

@@ -19,7 +19,7 @@ const Header = () => {
             <a href="/pricing" className="text-gray-700 hover:text-black font-medium">Pricing</a>
             {/* <a href="#useCases" className="text-gray-700 hover:text-black font-medium">Use Cases</a> */}
             <a href="/product" className="text-gray-700 hover:text-black font-medium">Product</a>
-            <a href="/demo" className="text-gray-700 hover:text-black font-medium">Instant Demo</a>
+            {/* <a href="/demo" className="text-gray-700 hover:text-black font-medium">Instant Demo</a> */}
           </nav>
         </div>
 
@@ -70,7 +70,7 @@ const Header = () => {
                 }}>
                   <ListItemText primary="Product" />
                 </ListItem>
-                <ListItem button component="a" href="/demo" sx={{
+                {/* <ListItem button component="a" href="/demo" sx={{
                   marginBottom: '8px',
                   padding: '8px',
                   borderRadius: '6px',
@@ -79,7 +79,7 @@ const Header = () => {
                   },
                 }}>
                   <ListItemText primary="Instant Demo" />
-                </ListItem>
+                </ListItem> */}
               </List>
             </Drawer>
           </div>
