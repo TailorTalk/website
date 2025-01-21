@@ -163,7 +163,7 @@ export default function Home() {
         }`}>
           <h1 className="text-3xl sm:text-4xl font-medium mb-3"></h1>
           <p className="text-xl font-normal text-[#1d1a1c] pb-5">
-  Word's simplest and powerful AI sales agent, onboard in minutes.
+          World's simplest and powerful AI sales agent, onboard in minutes.
 </p>
 
           <ul className="space-y-2 pb-5">
@@ -177,13 +177,16 @@ export default function Home() {
             ))}
           </ul>
           <Link 
-  href='#' 
+  href='https://wa.me/message/3JLVHNLXUJPXD1' 
+  target="_blank" 
+  rel="noopener noreferrer" 
   className="pb-2 md:pb-0 text-blue-600 text-base flex items-center transform transition-transform hover:scale-105 w-100"
-  >
-    <Image src={whatsappIcon} width={40} height={40} className="-ml-2 mr-2" />
-    <p className="leading-none">Chat With TailorTalk</p>
-    <ChevronRight className="ml-1" />
-  </Link>
+>
+  <Image src={whatsappIcon} width={40} height={40} className="-ml-2 mr-2" />
+  <p className="leading-none">Chat with Tailortalk</p>
+  <ChevronRight className="ml-1" />
+</Link>
+
 
         </div>
 
@@ -282,9 +285,16 @@ export default function Home() {
                 </div>
               </div>
             
-              <Link href={testCase.link} className="w-60 text-blue-600 text-base flex transform transition-transform hover:scale-105">
-                   <Image src={whatsappIcon} width={28} height={28} className="-ml-3 mr-1"/> <p className="mt-[2px]">Start Demo Chat</p> <ChevronRight className="ml-1 mt-[3px]" />
-                  </Link>
+              <Link 
+  href={testCase.link} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="w-60 text-blue-600 text-base flex transform transition-transform hover:scale-105"
+>
+  <Image src={whatsappIcon} width={28} height={28} className="-ml-3 mr-1"/> 
+  <p className="mt-[2px]">Start demo chat</p> 
+  <ChevronRight className="ml-1 mt-[3px]" />
+</Link>
             </div>
           </div>
         </div>

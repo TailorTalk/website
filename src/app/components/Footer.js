@@ -12,10 +12,9 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
           <div>
-            <div className="flex gap-4 items-center">
-              <Image src={logo} alt="logo" className="w-8" />
-              <span className="text-[white] text-2xl">TailorTalk</span>
-            </div>
+          <div className="flex gap-4 items-center">
+        <span className="text-white text-lg font-normal">Tailortalk Private Limited</span>
+      </div>
             <p className="mt-4 w-1/2 text-gray-400 text-sm">
              Bangalore, India
             </p>
@@ -56,7 +55,7 @@ const Footer = () => {
           <a href="/privacy_policy" className="text-gray-400 hover:text-white">Privacy Policy</a>
             </li>
             <li>
-              <a href="#">Terms of Services</a>
+              <a href="#">Terms of Service</a>
             </li>
             <li>
               <a href="#">Cookie Policy</a>
