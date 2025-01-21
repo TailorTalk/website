@@ -163,7 +163,7 @@ export default function Home() {
         }`}>
           <h1 className="text-3xl sm:text-4xl font-medium mb-3"></h1>
           <p className="text-xl font-normal text-[#1d1a1c] pb-5">
-          World's simplest and powerful AI sales agent, onboard in minutes.
+          Simplest and powerful AI sales agent, onboard in minutes.
 </p>
 
           <ul className="space-y-2 pb-5">
