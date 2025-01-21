@@ -6,8 +6,8 @@
         "currency": "$",
         "duration": "15 days",
         "features": [
-          "1,000 leads",
-          "1 assistant",
+          "100 leads",
+          "1 agent",
           "Stats board"
         ],
         "cta": "Sign Up"
@@ -19,7 +19,7 @@
         "duration": "Per Month",
         "features": [
           "1,000 leads/month",
-          "1 assistant",
+          "1 agent",
           "Stats board",
           "Leads Insight",
           "Customer support"
@@ -33,7 +33,7 @@
         "duration": "Per Month",
         "features": [
           "3,000 leads/month",
-          "2 assistant",
+          "2 agents",
           "Stats board",
           "Leads Insight",
           "Customer support",
@@ -48,12 +48,12 @@
         "duration": "Per Month",
         "features": [
           "Unlimited leads",
-          "5 assistant",
+          "5 agents",
           "Stats board",
           "Leads Insight",
           "Customer support",
           "Smart Dashboard",
-          "Customized solutions"
+          "Custom solutions"
         ],
         "cta": "Get Started"
       }
