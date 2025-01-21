@@ -1,15 +1,12 @@
 "use client";
 import React, { useEffect,useRef,useState } from "react";
 import Image from 'next/image';
-import ReactMarkdown from "react-markdown"
-import { AnimatePresence, animate, motion, useAnimation, useMotionValue } from "framer-motion";
+import ReactMarkdown from "react-markdown";
 import leadx from "../../public/Leadx.png";
 import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
 // import featuresData from "./Config/featuresData.json";
-import { AssistantName } from "./Config/globalVariables";
 import testimonials from "./Config/testimonials";
 import GradeIcon from '@mui/icons-material/Grade';
-import useMeasure from "react-use-measure";
 import UseCases from "./components/UseCases";
 import { TestCases } from "./Config/testCases";
 import Slider from "react-slick";
@@ -20,12 +17,6 @@ import whatsappIcon from "../../public/whatsapp_icon.svg";
 import Link from "next/link";
 
 export default function Home() {
-  const [isPaused, setIsPaused] = useState(false);
-  const [currentX, setCurrentX] = useState(0);
-  const [isReversed, setIsReversed] = useState(false);
-  const controls = useAnimation();
-  let [ref, { width }] = useMeasure();
-  const xTranslation = useMotionValue(0);
   const stars = 5;
   const sliderRef = useRef(null);
 
@@ -65,40 +56,49 @@ export default function Home() {
     ],
   };
 
-  useEffect(() => {
-    const finalPosition = -width * testimonials.length / 2.9;
-    let controlsInstance;
-
-    if (!isPaused) {
-      controlsInstance = animate(xTranslation, [currentX, isReversed ? 0 : finalPosition], {
-        ease: "linear",
-        duration: 40,
-        repeat: Infinity,
-        repeatType: "loop",
-        onUpdate: (latest) => {
-          setCurrentX(latest);
+  const settingsTestimonial = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 8000,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: false,
+    draggable: false,
+    swipe: false,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
         },
-        onComplete: () => {
-          setIsReversed((prev) => !prev);
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
-      });
-    }
-
-    if (controlsInstance) return controlsInstance.stop;
-  }, [xTranslation, width, isPaused, isReversed]);
-
+      },
+    ],
+  };
+  
   const [isVisible, setIsVisible] = useState({ assistant: false, features: [] });
   const assistantRef = useRef(null);
   const featureRefs = useRef([]);
-
+  
   useEffect(() => {
     const observerOptions = { threshold: 0.5 };
-
+  
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const index = entry.target.dataset.index; 
+        const index = entry.target.dataset.index;
         if (entry.isIntersecting) {
-          if (entry.target.id === 'Features') {
+          if (entry.target.id === "Features") {
             setIsVisible((prev) => ({ ...prev, assistant: true }));
           } else if (index !== undefined) {
             setIsVisible((prev) => {
@@ -110,16 +110,14 @@ export default function Home() {
         }
       });
     }, observerOptions);
-
+  
     if (assistantRef.current) observer.observe(assistantRef.current);
     featureRefs.current.forEach((ref) => observer.observe(ref));
-
+  
     return () => {
       observer.disconnect();
     };
-  }, []);
-
-  
+  }, []);  
 
   const AssistantPoints = [
     "Automates **inbound** and **outbound** sales.",
@@ -131,8 +129,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-c
-    enter py-10 bg-gray-50 pt-20">
+    <div className="flex flex-col justify-center items-center py-10 bg-gray-50 pt-20">
       <div className="container mx-auto md:px-4">
         {/* <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 mb-4 md:mb-12 bg-clip-text text-black">
           Hi, I&#39;m {AssistantName}.
@@ -180,9 +177,9 @@ export default function Home() {
   href='https://wa.me/message/3JLVHNLXUJPXD1' 
   target="_blank" 
   rel="noopener noreferrer" 
-  className="pb-2 md:pb-0 text-blue-600 text-base flex items-center transform transition-transform hover:scale-105 w-100"
+  className="pb-2 md:pb-0 text-blue-600 text-base flex items-center transform transition-transform hover:scale-105 w-56"
 >
-  <Image src={whatsappIcon} width={40} height={40} className="-ml-2 mr-2" />
+  <Image src={whatsappIcon} alt="" width={40} height={40} className="-ml-2 mr-2" />
   <p className="leading-none">Chat with Tailortalk</p>
   <ChevronRight className="ml-1" />
 </Link>
@@ -191,7 +188,7 @@ export default function Home() {
         </div>
 
         {/* Right Section */}
-        <div className={`w-full lg:w-[30.5%] md:h-[23.4rem] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg  transition-transform duration-700 ease-out ${
+        <div className={`w-full lg:w-[31.5%] md:h-[24.2rem] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg  transition-transform duration-700 ease-out ${
           isVisible.assistant ? 'slide-in-down-right-active' : 'slide-in-down-right'
         }`}>
           <div className="relative">
@@ -199,7 +196,7 @@ export default function Home() {
               <span className="text-indigo-600 font-medium">{AssistantName}</span>
               <span className="text-gray-600">is joining your team</span>
             </div> */}
-            <Image src={leadx} alt="icon" className="rounded-xl md:h-[21rem] md:w-[21rem]" />
+            <Image src={leadx} alt="icon" className="rounded-xl md:h-[22rem] md:w-[22rem]" />
           </div>
         </div>
       </div>
@@ -291,7 +288,7 @@ export default function Home() {
   rel="noopener noreferrer" 
   className="w-60 text-blue-600 text-base flex transform transition-transform hover:scale-105"
 >
-  <Image src={whatsappIcon} width={28} height={28} className="-ml-3 mr-1"/> 
+  <Image src={whatsappIcon} alt="" width={28} height={28} className="-ml-3 mr-1"/> 
   <p className="mt-[2px]">Start demo chat</p> 
   <ChevronRight className="ml-1 mt-[3px]" />
 </Link>
@@ -309,61 +306,51 @@ export default function Home() {
       </section>
 
       {/* Testimonial */}
-      <div className="flex w-screen flex-col justify-center items-center py-10 bg-gray-50">
-        <h1 className="md:text-[36px] text-3xl font-normal text-center my-10 text-black pt-4">
-        Loved by businesses of all kind
-        </h1>
-        <div
-          className="overflow-x-auto overflow-y-hidden w-full no-scrollbar"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: 'touch' }}
-        >
-          <AnimatePresence>
-            <motion.div
-              className="flex"
-              ref={ref}
-              initial={{ x: 0 }}
-              animate={controls}
-              style={{ whiteSpace: 'nowrap', x: xTranslation , scrollSnapAlign: "center" }}
-            >
-              {testimonials.concat(testimonials).map((testimonial, index) => (
-                <div key={index} style={{ scrollSnapAlign: "center"}} className="flex flex-col p-8 mx-4 my-4 bg-white shadow-md rounded-xl md:h-[30rem] h-[40rem]" >
-                  <div className="flex-1">
-                    <div className="flex mb-6">
-                      {Array.from({ length: stars }, (_, i) => (
-                        <GradeIcon key={i} sx={{ color: '#4c6ef5'}}  />
-                      ))}
-                    </div>
-
-                    <h3
-                      className="text-lg font-medium mb-4 w-64 md:w-96"
-                      style={{
-                        overflowWrap: 'break-word',
-                        wordWrap: 'break-word',
-                        whiteSpace: 'normal',
-                      }}
-                    >
-                      {testimonial.title}
-                    </h3>
-                    <p className="text-[#1d1a1c99] mb-6 pt-4" style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
-                      {testimonial.text}
-                    </p>
+      <div className="flex w-full flex-col justify-center items-center py-8 bg-gray-50">
+      <h1 className="md:text-4xl text-3xl font-normal text-center my-10 text-black pt-4">
+        Loved by businesses of all kinds
+      </h1>
+      
+      <div className="w-full overflow-hidden md:px-8">
+        <Slider {...settingsTestimonial}>
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="px-3">
+              <div className="flex flex-col p-8 bg-white shadow-md rounded-xl w-[20rem] md:w-[27.5rem] md:h-[30rem] h-[40rem]">
+                <div className="flex-1">
+                  <div className="flex mb-6">
+                  {Array.from({ length: stars }, (_, i) => (
+                <GradeIcon key={i} sx={{ color: "#4c6ef5" }} />
+              ))}
                   </div>
-                  <div className="flex">
-                  <div className="mt-auto flex-1">
+                  
+                  <h3 className="text-lg font-medium mb-4 w-full break-words">
+                    {testimonial.title}
+                  </h3>
+                  
+                  <p className="text-gray-500 mb-6 pt-4 break-words">
+                    {testimonial.text}
+                  </p>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div>
                     <p className="text-sm text-gray-600">{testimonial.author}</p>
                     <p className="text-xs text-gray-400">{testimonial.role}</p>
                   </div>
-                  <Image width={80} height={80} src={testimonial.icon} alt="logo"  className="rounded-lg"/>
-                  </div>
+                  <Image
+                    width={80}
+                    height={80}
+                    src={testimonial.icon}
+                    alt={`${testimonial.author}'s company logo`}
+                    className="rounded-lg"
+                  />
                 </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-        
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
+    </div>
     </div>
   );
 }
