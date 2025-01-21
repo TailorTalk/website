@@ -177,9 +177,9 @@ export default function Home() {
   href='https://wa.me/message/3JLVHNLXUJPXD1' 
   target="_blank" 
   rel="noopener noreferrer" 
-  className="pb-2 md:pb-0 text-blue-600 text-base flex items-center transform transition-transform hover:scale-105 w-100"
+  className="pb-2 md:pb-0 text-blue-600 text-base flex items-center transform transition-transform hover:scale-105 w-56"
 >
-  <Image src={whatsappIcon} width={40} height={40} className="-ml-2 mr-2" />
+  <Image src={whatsappIcon} alt="" width={40} height={40} className="-ml-2 mr-2" />
   <p className="leading-none">Chat with Tailortalk</p>
   <ChevronRight className="ml-1" />
 </Link>
@@ -188,7 +188,7 @@ export default function Home() {
         </div>
 
         {/* Right Section */}
-        <div className={`w-full lg:w-[30.5%] md:h-[23.4rem] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg  transition-transform duration-700 ease-out ${
+        <div className={`w-full lg:w-[31.5%] md:h-[24.2rem] flex items-center justify-center bg-gray-50 p-5 mt-5 lg:mt-0 ml-0 lg:ml-5 rounded-xl shadow-lg  transition-transform duration-700 ease-out ${
           isVisible.assistant ? 'slide-in-down-right-active' : 'slide-in-down-right'
         }`}>
           <div className="relative">
@@ -196,7 +196,7 @@ export default function Home() {
               <span className="text-indigo-600 font-medium">{AssistantName}</span>
               <span className="text-gray-600">is joining your team</span>
             </div> */}
-            <Image src={leadx} alt="icon" className="rounded-xl md:h-[21rem] md:w-[21rem]" />
+            <Image src={leadx} alt="icon" className="rounded-xl md:h-[22rem] md:w-[22rem]" />
           </div>
         </div>
       </div>
