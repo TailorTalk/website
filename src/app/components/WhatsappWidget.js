@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import IconButton from '@mui/material/IconButton';
 import { SendHorizontal, X, } from 'lucide-react';
-import { WhatsApp } from '@mui/icons-material';
 import Image from 'next/image';
 
 const WhatsappWidget = () => {
@@ -66,7 +65,7 @@ const WhatsappWidget = () => {
         className="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-all duration-200 flex items-center justify-center"
       >
         <div className="w-2 h-2 bg-red-500 fixed right-[1.65rem] bottom-[4.3rem] rounded-full"/>
-        <Image src='/whatsapp_icon.svg' width={30} height={30} className='w-9 h-9' />
+        <Image src='/whatsapp_icon.svg' width={30} height={30} className='w-10 h-10' />
       </button>
 
       <Dialog 
