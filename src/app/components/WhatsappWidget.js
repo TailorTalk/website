@@ -87,12 +87,6 @@ const WhatsappWidget = () => {
             boxShadow: '0 4px 20px rgba(0,0,0,0.15)'
           }
         }}
-        sx={{
-          '& .MuiDialog-container': {
-            alignItems: 'flex-end',
-            justifyContent: 'flex-end'
-          }
-        }}
       >
         <DialogContent className="p-0">
           <div className="bg-[#128c7e] p-4 flex items-center justify-between">
