@@ -99,13 +99,8 @@ const WhatsappWidget = () => {
                 <p className="text-xs opacity-90">Online</p>
               </div>
             </div>
-            <IconButton
-              onClick={() => setIsOpen(false)}
-              className="text-white hover:opacity-75"
-              size="small"
-            >
-              <X size={24} />
-            </IconButton>
+            
+              <X size={24} className='text-white' />
           </div>
 
           {/* Chat */}
