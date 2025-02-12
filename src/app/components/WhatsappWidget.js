@@ -75,16 +75,16 @@ const WhatsappWidget = () => {
         onClose={() => setIsOpen(false)}
         maxWidth={false}
         PaperProps={{
-          style: {
+          sx: {
             position: 'fixed',
             bottom: '90px',
             right: '16px',
-            margin: '0',
+            margin: 0,
             width: '100%',
-            maxWidth: '350px',
-            borderRadius: '16px',
+            maxWidth: 350,
+            borderRadius: 2,
             overflow: 'hidden',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.15)'
+            boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
           }
         }}
       >
@@ -93,7 +93,7 @@ const WhatsappWidget = () => {
             <div className="flex items-center space-x-3">
             
               <div className="w-10 h-10 relative bg-white rounded-full flex items-center justify-center">
-                <Image src='/logoPng.png' width={50} height={50} className='w-10 h-10 rounded-full' />
+                <Image src='/logoPng.png' alt='T' width={50} height={50} className='w-10 h-10 rounded-full' />
                 {/* <div className="w-2 h-2 bg-green-400 absolute bottom-[3px] right-0 rounded-full"/> */}
               </div>
               <div className="text-white">
