@@ -100,7 +100,7 @@ const WhatsappWidget = () => {
               </div>
             </div>
             
-              <X size={24} className='text-white' />
+              <span onClick={()=>setIsOpen(false)} className='text-white text-3xl cursor-pointer mr-2 mb-1 font-extralight'>&times;</span>
           </div>
 
           {/* Chat */}
