@@ -88,7 +88,7 @@ const WhatsappWidget = () => {
           }
         }}
       >
-        <DialogContent sx={{ padding: 0 }}>
+        <div className='p-0'>
           <div className="bg-[#128c7e] p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">
             
@@ -141,7 +141,7 @@ const WhatsappWidget = () => {
               </button>
             </div>
           </form>
-        </DialogContent>
+        </div>
       </Dialog>
     </div>
   );
