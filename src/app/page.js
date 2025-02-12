@@ -15,6 +15,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import whatsappIcon from "../../public/whatsapp_icon.svg";
 import Link from "next/link";
+import WhatsappWidget from "./components/WhatsappWidget";
 
 export default function Home() {
   const stars = 5;
@@ -130,6 +131,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center py-10 bg-gray-50 pt-20">
+      <WhatsappWidget/>
       <div className="container mx-auto md:px-4">
         {/* <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 mb-4 md:mb-12 bg-clip-text text-black">
           Hi, I&#39;m {AssistantName}.
