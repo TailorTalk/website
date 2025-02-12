@@ -82,13 +82,13 @@ const WhatsappWidget = () => {
             margin: 0,
             width: '100%',
             maxWidth: 350,
-            borderRadius: 2,
+            borderRadius: 3,
             overflow: 'hidden',
             boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
           }
         }}
       >
-        <DialogContent className="p-0">
+        <DialogContent sx={{ padding: 0 }}>
           <div className="bg-[#128c7e] p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">
             
