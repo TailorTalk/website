@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Dialog from '@mui/material/Dialog';
-import IconButton from '@mui/material/IconButton';
 import { SendHorizontal, X, } from 'lucide-react';
 import Image from 'next/image';
+import whatsappIcon from "../../../public/whatsapp_icon.svg"
 
 const WhatsappWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,8 +64,8 @@ const WhatsappWidget = () => {
         onClick={() => setIsOpen(true)}
         className="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-all duration-200 flex items-center justify-center"
       >
-        <div className="w-2 h-2 bg-red-500 fixed right-[1.65rem] bottom-[4.3rem] rounded-full"/>
-        <Image src='/whatsapp_icon.svg' width={30} height={30} className='w-10 h-10' />
+        <div className="w-2 h-2 bg-red-500 fixed right-[1.75rem] bottom-[4.5rem] rounded-full"/>
+        <Image src={whatsappIcon} width={30} height={30} className='w-[2.4rem] h-[2.4rem]' />
       </button>
 
       <Dialog 
