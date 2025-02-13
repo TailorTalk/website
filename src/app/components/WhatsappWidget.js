@@ -9,6 +9,7 @@ const WhatsappWidget = () => {
   const [message, setMessage] = useState('hi');
   const [currentTime, setCurrentTime] = useState('');
   const inputFocus = useRef(null);
+  //ddd
 
   const businessInfo = {
     phoneNumber: '9031698165',
