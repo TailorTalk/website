@@ -177,7 +177,7 @@ export default function Home() {
             ))}
           </ul>
           <Link 
-  href='https://wa.me/message/3JLVHNLXUJPXD1' 
+  href='https://wa.me/message/G2HPGNBO7MXZE'
   target="_blank" 
   rel="noopener noreferrer" 
   className="pb-2 md:pb-0 text-blue-600 text-base flex items-center transform transition-transform hover:scale-105 w-100"
