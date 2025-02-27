@@ -12,7 +12,7 @@ const WhatsappWidget = () => {
   //ddd
 
   const businessInfo = {
-    phoneNumber: '9031698165',
+    phoneNumber: '9900130255',
     countryCode: '91',
     businessName: 'Tailor Talk'
   };

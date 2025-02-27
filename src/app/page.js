@@ -91,6 +91,15 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState({ assistant: false, features: [] });
   const assistantRef = useRef(null);
   const featureRefs = useRef([]);
+
+  const businessInfo = {
+    phoneNumber: '9900130255',
+    countryCode: '91',
+    businessName: 'Tailor Talk'
+  };
+
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${businessInfo.countryCode}${businessInfo.phoneNumber}&text=hi&source=&data=&app_absent=`;
+
   
   useEffect(() => {
     const observerOptions = { threshold: 0.5 };
@@ -131,7 +140,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center py-10 bg-gray-50 pt-20">
-      <WhatsappWidget/>
+      <WhatsappWidget />
       <div className="container mx-auto md:px-4">
         {/* <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 mb-4 md:mb-12 bg-clip-text text-black">
           Hi, I&#39;m {AssistantName}.
@@ -176,7 +185,7 @@ export default function Home() {
             ))}
           </ul>
           <Link 
-  href='https://wa.me/message/G2HPGNBO7MXZE1'
+  href={whatsappUrl} 
   target="_blank" 
   rel="noopener noreferrer" 
   className="pb-2 md:pb-0 text-blue-600 text-base flex items-center transform transition-transform hover:scale-105 w-56"
@@ -285,7 +294,7 @@ export default function Home() {
               </div>
             
               <Link 
-  href={testCase.link} 
+  href={whatsappUrl}
   target="_blank" 
   rel="noopener noreferrer" 
   className="w-60 text-blue-600 text-base flex transform transition-transform hover:scale-105"
