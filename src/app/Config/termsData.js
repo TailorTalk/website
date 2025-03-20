@@ -30,23 +30,22 @@ const termsData = {
           features: [
             "Inbound lead qualification and routing",
             "Outbound sales campaigns and prospecting",
-            "Automated follow-up sequences and reminders",
-            "Sales pipeline management and conversion tracking"
+            "Automated follow-up sequences",
+            "Sales management and conversion tracking"
           ]
         },
         {
           title: "Customer Support",
           features: [
-            "24/7 automated customer assistance",
+            "Customer assistance",
             "Instant response to frequently asked questions",
             "Seamless handoff to human agents when needed",
-            "Post-sale support and product education"
+            "Post-sale support"
           ]
         },
         {
           title: "Transaction Capabilities",
           features: [
-            "Secure payment processing integration",
             "Appointment scheduling and calendar management",
             "Order processing and confirmation",
             "Invoice generation and delivery"
@@ -56,9 +55,8 @@ const termsData = {
           title: "Analytics and Insights",
           features: [
             "Comprehensive performance dashboards",
-            "Conversation analysis and sentiment tracking",
-            "Lead scoring and qualification metrics",
-            "Conversion funnel optimization recommendations"
+            "Conversation analysis and tracking",
+            "Lead qualification metrics",
           ]
         }
       ],
