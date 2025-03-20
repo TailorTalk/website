@@ -1,8 +1,7 @@
-// termsData.js - Data file for Terms of Service content
 
 const termsData = {
     companyName: "TailorTalk",
-    companyEmail: "support@tailortalk.com",
+    companyEmail: "contact@tailortalk.ai",
     
     aboutCompany: [
       "TailorTalk automates your sales through WhatsApp and Instagram. Boost conversion rates by 30% and reduce operational costs by 80%. Set up in just 25 minutes, no technical skills required.",
