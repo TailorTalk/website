@@ -1,6 +1,6 @@
 const testimonials = [
   {
-    id: 2,
+    id: 1,
     title:"TailorTalk helped in exhibition",
     text: "We used TailorTalk during our exhibition by creating a WhatsApp QR code that allowed visitors to learn about our products easily. Not only did this generate interest at the event, but it also helped us collect contact details of potential customers. TailorTalk followed up with them afterward, leading to meaningful conversations and new sales opportunities.",
     author: "Ayappan Radhakrishnan",
@@ -8,7 +8,7 @@ const testimonials = [
     icon:'/cf_tech.jpg',
   },
   {
-    id: 1,
+    id: 2,
     title:"TailorTalk has doubled our revenue",
     text: "Our primary leads came from Instagram ads, but we struggled to scale due to the manual effort required to handle them. With TailorTalk now managing our Instagram leads, we’ve increased our ad spend and are handling 2.5 times the leads we used to, resulting in a twofold increase in revenue.",
     author: "Mukta Dharma",
@@ -24,12 +24,20 @@ const testimonials = [
     icon: '/rageroom.jpg',
 },
 {
-  "id": 4,
-  "title": "TailorTalk made coach bookings delightful",
-  "text": "Integrating TailorTalk into our system has transformed the way we handle coach bookings at CoachDirect. It recommends the right coach based on customer preferences and answers their queries instantly, making the entire booking process smooth and efficient. TailorTalk has significantly reduced manual efforts.",
-  "author": "Veera Varma",
-  "role": "Strategy & Marketing - CoachDirect",
-  "icon": "/coach_direct.jpg"
+    id: 4,
+    title: "TailorTalk saved us hundreds of hours",
+    text: "We integrated TailorTalk with WhatsApp to streamline our customer journey at Keerthi. TailorTalk assists customers in exploring bike models, comparing features, scheduling test rides, and booking service appointments—all through a simple chat. This automation has saved us hundreds of manual hours while providing a seamless and efficient experience for both our customers and team.",
+    author: "S Kumar",
+    role: "General Manager - Keerthi Triump",
+    icon: '/keerthi.jpg',
+},
+{
+    "id": 5,
+    "title": "TailorTalk made coach bookings delightful",
+    "text": "Integrating TailorTalk into our system has transformed the way we handle coach bookings at CoachDirect. It recommends the right coach based on customer preferences and answers their queries instantly, making the entire booking process smooth and efficient. TailorTalk has significantly reduced manual efforts.",
+    "author": "Veera Varma",
+    "role": "Strategy & Marketing - CoachDirect",
+    "icon": "/coach_direct.jpg"
 }
 
 ];

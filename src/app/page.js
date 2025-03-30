@@ -148,13 +148,17 @@ export default function Home() {
         
         <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-4 text-black bg-clip-text">
           Your<br className="block md:hidden" />
-          <span className="text-3xl sm:text-[56px] font-medium text-center sm:ml-3 space-y-5 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">
+          <span className="text-3xl sm:text-[56px] font-medium text-center sm:ml-3 space-y-5 mb-4 text-black">
           <span className="block md:hidden mt-[14px]"></span>
-            AI Sales Agent
+            AI </span>
+          <span className="text-3xl sm:text-[56px] font-medium text-center space-y-5 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">
+            Sales & Support </span>
+          <span className="text-3xl sm:text-[56px] font-medium text-center space-y-5 mb-4 text-black">
+            Agent
           </span>
         </h2>
         <p className="text-center font-medium text-sm sm:text-lg text-gray-500 pt-8 mb-10" style={{ lineHeight: '3' }}>
- Automate your sales through{' '}
+Automate your sales through{' '}
   <span style={{ color: '#25D366' }}>WhatsApp</span> and{' '}
   <span style={{ color: '#E4405F' }}>Instagram</span>. <br />
   Boost conversion rates by <span style={{ color: 'black' }}>30%</span> and reduce operational costs by <span style={{ color: 'black' }}>80%</span>. <br />
