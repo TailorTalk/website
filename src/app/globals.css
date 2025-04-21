@@ -1,34 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+layer(utilities);
 
-html {
-  scroll-behavior: smooth;
+@theme {
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility slide-in-down-right {
+  @apply opacity-0 translate-x-32 translate-y-32 transition-all duration-[10000ms] ease-in-out will-change-transform;
+}
+
+@utility slide-in-down-right-active {
+  @apply opacity-100 translate-x-0 translate-y-0;
+}
+
+@utility slide-in-down-left {
+  @apply opacity-0 -translate-x-32 translate-y-32 transition-all duration-[10000ms] ease-in-out will-change-transform;
+}
+
+@utility slide-in-down-left-active {
+  @apply opacity-100 translate-x-0 translate-y-0;
+}
+
+@utility slide-in-up {
+  @apply opacity-0 translate-y-20 transition-all duration-[10000ms] ease-in-out will-change-transform;
+}
+
+@utility slide-in-up-active {
+  @apply opacity-100 translate-y-0;
 }
 
 @layer utilities {
-  .slide-in-down-right {
-    @apply opacity-0 translate-x-32 translate-y-32 transition-all duration-[10000ms] ease-in-out will-change-transform;
-  }
-  .slide-in-down-right-active {
-    @apply opacity-100 translate-x-0 translate-y-0;
-  }
-  
-  .slide-in-down-left {
-    @apply opacity-0 -translate-x-32 translate-y-32 transition-all duration-[10000ms] ease-in-out will-change-transform;
-  }
-  .slide-in-down-left-active {
-    @apply opacity-100 translate-x-0 translate-y-0;
-  }
-  
-  .slide-in-up {
-    @apply opacity-0 translate-y-20 transition-all duration-[10000ms] ease-in-out will-change-transform;
-  }
-
-  .slide-in-up-active {
-    @apply opacity-100 translate-y-0;
+  html {
+    scroll-behavior: smooth;
   }
 }
 

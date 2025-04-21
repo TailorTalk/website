@@ -1,180 +1,161 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import Markdown from "markdown-to-jsx";
+import React from 'react';
+import Markdown from 'markdown-to-jsx';
 
-export default function MarkdownRenderer({ children }) {
-  const [content, setContent] = useState("");
-  
-  useEffect(() => {
-    setContent(children || "");
-  }, [children]);
-
-  const CustomImage = ({ alt, src, width, ...props }) => {
-    const getImagePath = (src) => {
-      if (src.startsWith("http")) return src;
-      // Handle relative paths and point to the correct images directory
-      if (src.includes("../images/")) {
-        return `/guide/images/${src.split("../images/")[1]}`;
-      }
-      if (!src.startsWith("/")) {
-        return `/guide/images/${src}`;
-      }
-      return src;
-    };
-  
-    const getWidthClass = (width) => {
-      if (!width) return "w-full";
-      const percentage = parseInt(width);
-      switch (percentage) {
-        case 100: return "w-full";
-        case 90: return "w-11/12";
-        case 80: return "w-4/5";
-        case 75: return "w-3/4";
-        case 60: return "w-3/5";
-        case 50: return "w-1/2";
-        case 40: return "w-2/5";
-        case 25: return "w-1/4";
-        default: return "w-full";
-      }
-    };
-  
-    const imagePath = getImagePath(src);
-    const widthClass = getWidthClass(width?.replace("%", ""));
-    
-    return (
-      <div className="my-8 flex justify-center">
-        <div className={`${widthClass} max-w-4xl`}>
-          <img
-            src={imagePath}
-            alt={alt || ""}
-            className="w-full h-auto object-contain rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    );
+const CustomImage = ({ alt, src, width, ...props }) => {
+  const getImagePath = (src) => {
+    if (src.startsWith('http')) return src;
+    if (src.includes('../images/')) {
+      return `/guide/images/${src.replace('../images/', '')}`;
+    }
+    return src.startsWith('/guide') ? src : `/guide${src}`;
   };
 
-  if (!content) {
-    return (
-      <div className="flex items-center justify-center h-full w-full">
-        <div className="w-8 h-8 border-t-2 border-indigo-600 rounded-full animate-spin" />
+  const getWidthClass = (width) => {
+    if (!width) return 'w-full';
+    const percentage = parseInt(width);
+    switch (percentage) {
+      case 100: return 'w-full';
+      case 90: return 'w-11/12';
+      case 80: return 'w-4/5';
+      case 75: return 'w-3/4';
+      case 60: return 'w-3/5';
+      case 50: return 'w-1/2';
+      case 40: return 'w-2/5';
+      case 25: return 'w-1/4';
+      default: return 'w-full';
+    }
+  };
+
+  const imagePath = getImagePath(src);
+  const widthClass = getWidthClass(width?.replace('%', ''));
+  
+  return (
+    <div className="relative my-4">
+      <div className={`${widthClass}`}>
+        <img
+          src={imagePath}
+          alt={alt || ''}
+          className="w-full h-auto object-contain rounded-lg border-[1px]"
+          loading="lazy"
+        />
       </div>
-    );
-  }
+    </div>
+  );
+};
+
+const CustomHeading = ({ children, level }) => {
+  const HeadingTag = `h${level}`;
+  const id = children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-') || '';
+  
+  const className = {
+    1: 'text-[2em] font-semibold mt-2 mb-6 text-gray-900 border-b border-gray-200 pb-3 scroll-mt-24',
+    2: 'text-[1.5em] font-semibold mt-8 mb-4 text-gray-900 border-b border-gray-200 pb-2 scroll-mt-24',
+    3: 'text-[1.25em] font-semibold mt-6 mb-3 text-gray-900 scroll-mt-24',
+    4: 'text-[1.1em] font-semibold mt-5 mb-2 text-gray-900 scroll-mt-24'
+  }[level];
 
   return (
-    <div className=" max-w-none w-full bg-white">
+    <HeadingTag id={id} className={className}>
+      {children}
+    </HeadingTag>
+  );
+};
+
+export default function MarkdownRenderer({ children }) {
+  return (
+    <div className="w-full prose-lg xl:prose-xl max-w-none">
       <Markdown options={{
         overrides: {
+          img: CustomImage,
           h1: {
-            component: "h1",
-            props: {
-              className: "text-4xl font-bold mt-8 mb-6 text-gray-900 pb-4 border-b border-gray-200",
-            },
+            component: (props) => <CustomHeading level={1} {...props} />
           },
           h2: {
-            component: "h2",
-            props: {
-              className: "text-2xl font-semibold mt-12 mb-6 text-gray-900 pb-2 border-b border-gray-100",
-            },
+            component: (props) => <CustomHeading level={2} {...props} />
           },
           h3: {
-            component: "h3",
-            props: {
-              className: "text-xl font-semibold mt-8 mb-4 text-gray-900",
-            },
+            component: (props) => <CustomHeading level={3} {...props} />
           },
           h4: {
-            component: "h4",
-            props: {
-              className: "text-lg font-semibold mt-6 mb-3 text-gray-900",
-            },
+            component: (props) => <CustomHeading level={4} {...props} />
           },
           p: {
-            component: "p",
+            component: 'p',
             props: {
-              className: "mb-6 leading-7 text-gray-700",
+              className: 'mb-4 leading-7 text-gray-700',
             },
           },
           ul: {
-            component: "ul",
+            component: 'ul',
             props: {
-              className: "list-disc pl-6 mb-6 space-y-2 text-gray-700",
+              className: 'list-disc pl-6 mb-4 space-y-2',
             },
           },
           ol: {
-            component: "ol",
+            component: 'ol',
             props: {
-              className: "list-decimal pl-6 mb-6 space-y-2 text-gray-700",
+              className: 'list-decimal pl-6 mb-4 space-y-2',
             },
           },
           li: {
-            component: "li",
+            component: 'li',
             props: {
-              className: "text-gray-700 leading-7 pl-2",
+              className: 'text-gray-700 leading-7',
             },
           },
           a: {
-            component: "a",
+            component: 'a',
             props: {
-              className: "text-indigo-600 hover:text-indigo-700 decoration-2 hover:underline transition-colors duration-150",
+              className: 'text-blue-600 hover:underline',
             },
           },
           blockquote: {
-            component: "blockquote",
+            component: 'blockquote',
             props: {
-              className: "border-l-4 border-indigo-200 pl-6 my-6 text-gray-600 italic bg-gray-50 py-4 rounded-r-lg",
+              className: 'border-l-4 border-gray-200 pl-4 italic my-4 text-gray-600',
             },
           },
           code: {
-            component: "code",
+            component: 'code',
             props: {
-              className: "bg-gray-100 rounded-md px-2 py-1 text-sm font-mono text-gray-800 border border-gray-200",
+              className: 'bg-gray-100 rounded px-1.5 py-0.5 text-sm font-mono text-gray-800',
             },
           },
           pre: {
-            component: "pre",
+            component: 'pre',
             props: {
-              className: "bg-gray-50 rounded-xl p-4 mb-6 overflow-x-auto font-mono text-sm leading-6 text-gray-800 border border-gray-200",
+              className: 'bg-gray-100 rounded-lg p-4 mb-4 overflow-x-auto font-mono text-sm leading-6 text-gray-800',
             },
           },
           table: {
-            component: "div",
+            component: 'table',
             props: {
-              className: "overflow-x-auto my-6",
+              className: 'min-w-full border border-gray-200 my-4',
             },
-            children: (children) => (
-              <table className="min-w-full border border-gray-200 rounded-lg overflow-hidden">
-                {children}
-              </table>
-            ),
           },
           th: {
-            component: "th",
+            component: 'th',
             props: {
-              className: "border-b border-gray-200 px-4 py-3 bg-gray-50 text-left text-sm font-semibold text-gray-900",
+              className: 'border border-gray-200 px-4 py-2 bg-gray-50 text-left text-sm font-semibold text-gray-900',
             },
           },
           td: {
-            component: "td",
+            component: 'td',
             props: {
-              className: "border-b border-gray-200 px-4 py-3 text-sm text-gray-700",
+              className: 'border border-gray-200 px-4 py-2 text-sm text-gray-700',
             },
           },
           hr: {
-            component: "hr",
+            component: 'hr',
             props: {
-              className: "my-8 border-t border-gray-200",
+              className: 'my-6 border-t border-gray-200',
             },
-          },
-          img: {
-            component: CustomImage
           },
         },
       }}>
-        {content}
+        {children}
       </Markdown>
     </div>
   );

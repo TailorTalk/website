@@ -66,7 +66,7 @@ const WhatsappWidget = () => {
         className="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-all duration-200 flex items-center justify-center"
       >
         <div className="w-2 h-2 bg-red-500 fixed right-[1.75rem] bottom-[4.5rem] rounded-full"/>
-        <Image src={whatsappIcon} width={30} height={30} className='w-[2.4rem] h-[2.4rem]' />
+        <Image src={whatsappIcon} alt='w' width={30} height={30} className='w-[2.4rem] h-[2.4rem]' />
       </button>
 
       <Dialog 
@@ -109,7 +109,7 @@ const WhatsappWidget = () => {
             <div className='w-full mb-3'>
               <p className='text-center text-gray-400 text-[10px] font-light'>{currentTime}</p>
             </div>
-            <div className="bg-white rounded-lg p-3 shadow-sm max-w-[75%]">
+            <div className="bg-white rounded-lg p-3 shadow-xs max-w-[75%]">
               <p className="text-gray-700 text-sm">Hello! 👋 How can we help you today?</p>
             </div>
           </div>
@@ -124,7 +124,7 @@ const WhatsappWidget = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Enter your message..."
-                className="flex-1 font-light focus:outline-none text-sm rounded-lg px-4 py-3 "
+                className="flex-1 font-light focus:outline-hidden text-sm rounded-lg px-4 py-3 "
                 required
               />
               <button

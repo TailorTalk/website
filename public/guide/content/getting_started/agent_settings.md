@@ -1,13 +1,13 @@
 # Agent Settings
 
-The **Agent Settings** allows you to customize and control your AI agent's behavior, including how it tracks lead statuses and escalations. To access settings, go to the **Agent** section and click on **Settings** for the specific agent.
+The **Agent Settings** allows you to customize and control your AI agent's behavior, including how it tracks lead statuses and escalations. To access settings, go to the **Agent** section and click on **Settings** for the specific TailorTalk agent.
 
-<img src="../images/agent_settings.png" alt="text" width="60%" />
+<img src="../images/agent_settings.png" alt="TailorTalk Agent Settings Interface" width="60%" />
 
 
 ## Status and Custom Tags
 
-Your agent can track lead statuses such as **Converted, Hot, Warm, Cold, and Dead**. Each status has a predefined meaning, but you can also customize them to better match your business needs.
+Your TailorTalk agent can track lead statuses such as **Converted, Hot, Warm, Cold, and Dead**. Each status has a predefined meaning, but you can also customize them to better match your business needs.
 
 - **Custom Definitions:** You can update how each lead status is defined based on your sales process.
 - **Manual Tags:** These allow you to tag leads manually for better tracking and segmentation. For instance, you can create tags like `Needs Demo` or `Budget Constraint`. These tags help your team filter and prioritize leads accordingly.
@@ -28,7 +28,7 @@ Escalation settings allow you to decide when a lead should be escalated to a hum
 
 ## Follow-up Configuration
 
-Follow-up settings allow you to automate and customize how your agent maintains contact with leads.
+Customize how your TailorTalk agent maintains contact with leads through automated follow-ups.
 
 - **Enable/Disable:** Toggle follow-ups to activate automated lead engagement
 - **Follow-up Period:** Set the time interval (in hours) between follow-up messages

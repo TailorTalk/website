@@ -139,19 +139,19 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center py-10 bg-gray-50 pt-20">
+    <div className="flex flex-col justify-center items-center py-10 bg-gray-50 pt-40">
       <WhatsappWidget />
       <div className="container mx-auto md:px-4">
         {/* <h1 className="text-3xl sm:text-[56px] font-medium text-center mt-10 mb-4 md:mb-12 bg-clip-text text-black">
           Hi, I&#39;m {AssistantName}.
         </h1> */}
         
-        <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-4 text-black bg-clip-text">
+        <h2 className="text-3xl sm:text-[56px] font-medium text-center mb-2 text-black bg-clip-text">
           Your<br className="block md:hidden" />
           <span className="text-3xl sm:text-[56px] font-medium text-center sm:ml-3 space-y-5 mb-4 text-black">
           <span className="block md:hidden mt-[14px]"></span>
             AI </span>
-          <span className="text-3xl sm:text-[56px] font-medium text-center space-y-5 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">
+          <span className="text-3xl sm:text-[56px] font-medium text-center space-y-5 mb-4 text-transparent bg-clip-text bg-linear-to-r from-[#4f46e5] via-[#3b82f6] to-[#1d4ed8]">
             Sales & Support </span>
           <span className="text-3xl sm:text-[56px] font-medium text-center space-y-5 mb-4 text-black">
             Agent
@@ -194,7 +194,7 @@ Automate your sales through{' '}
   rel="noopener noreferrer" 
   className="pb-2 md:pb-0 text-blue-600 text-base flex items-center transform transition-transform hover:scale-105 w-56"
 >
-  <Image src={whatsappIcon} alt="" width={40} height={40} className="-ml-2 mr-2" />
+  <Image src={whatsappIcon} alt="whatsapp" width={40} height={40} className="-ml-2 mr-2" />
   <p className="leading-none">Chat with Tailortalk</p>
   <ChevronRight className="ml-1" />
 </Link>
@@ -254,7 +254,7 @@ Automate your sales through{' '}
     {/* Custom Navigation Buttons */}
     <button
       onClick={previous}
-      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-5 h-5 md:w-8 md:h-8 bg-white rounded-full shadow-md hover:bg-gray-50 transition-all flex items-center justify-center focus:outline-none"
+      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-5 h-5 md:w-8 md:h-8 bg-white rounded-full shadow-md hover:bg-gray-50 transition-all flex items-center justify-center focus:outline-hidden"
       style={{ transform: 'translate(-50%, -50%)' }}
     >
       <ChevronLeft className="w-6 h-6 text-gray-700" />
@@ -262,7 +262,7 @@ Automate your sales through{' '}
 
     <button
       onClick={next}
-      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-5 h-5 md:w-8 md:h-8 bg-white rounded-full shadow-md hover:bg-gray-50 transition-all flex items-center justify-center focus:outline-none"
+      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-5 h-5 md:w-8 md:h-8 bg-white rounded-full shadow-md hover:bg-gray-50 transition-all flex items-center justify-center focus:outline-hidden"
       style={{ transform: 'translate(50%, -50%)' }}
     >
       <ChevronRight className="w-6 h-6 text-gray-700" />

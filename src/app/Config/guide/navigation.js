@@ -1,45 +1,114 @@
-// app/lib/config/navigation.js
+/**
+ * @typedef {Object} GuideItem
+ * @property {string} id - Unique identifier for the guide
+ * @property {string} header - Display title of the guide
+ * @property {string} link - Path to the markdown file
+ */
 
+/**
+ * @typedef {Object} GuideCategory
+ * @property {string} id - Category identifier
+ * @property {string} title - Category display title
+ * @property {GuideItem[]} items - Guide items in this category
+ */
+
+/** @type {GuideCategory[]} */
 export const guideNavigation = [
   {
     id: "agent_guide",
-    title: "Getting started",
+    title: "Getting Started",
     items: [
-      { id: 'Agent', header: 'Agent Settings', link: '/guide/content/getting_started/agent_settings.md' },
-      { id: 'project_settings', header: 'Project Settings', link: '/guide/content/getting_started/project_settings.md' },
-      { id: 'Campaign', header: 'Campaign', link: '/guide/content/getting_started/campaign.md' },
-      { id: 'Dashboard', header: 'Dashboard', link: '/guide/content/getting_started/dashboard.md' },
-      { id: 'Prompt', header: 'Prompt', link: '/guide/content/getting_started/prompt.md' },
+      { 
+        id: 'agent_settings', 
+        header: 'Agent Settings', 
+        link: '/guide/content/getting_started/agent_settings.md'
+      },
+      { 
+        id: 'project_settings', 
+        header: 'Project Settings', 
+        link: '/guide/content/getting_started/project_settings.md'
+      },
+      { 
+        id: 'campaign', 
+        header: 'Campaign', 
+        link: '/guide/content/getting_started/campaign.md'
+      },
+      { 
+        id: 'dashboard', 
+        header: 'Dashboard', 
+        link: '/guide/content/getting_started/dashboard.md'
+      },
+      { 
+        id: 'prompt', 
+        header: 'Prompt', 
+        link: '/guide/content/getting_started/prompt.md'
+      },
     ]
   },
   {
     id: "tools_guide",
     title: "Tools",
     items: [
-      { id: 'tools', header: 'What is Tool', link: '/guide/content/tools/what_is_tool.md' },
-      { id: 'GOOGLE_CALENDAR', header: 'Calendar tool', link: '/guide/content/tools/calendar_tool.md' },
-      { id: 'MEDIA', header: 'Media tool', link: '/guide/content/tools/media_tool.md' },
-      { id: 'QR_PAYMENT', header: 'QR Payment tool', link: '/guide/content/tools/qr_payment_tool.md' },
-      { id: 'QUERY', header: 'Knowledge tool', link: '/guide/content/tools/knowledge_tool.md' },
+      { 
+        id: 'what_is_tool', 
+        header: 'What is a Tool?', 
+        link: '/guide/content/tools/what_is_tool.md'
+      },
+      { 
+        id: 'calendar_tool', 
+        header: 'Calendar Tool', 
+        link: '/guide/content/tools/calendar_tool.md'
+      },
+      { 
+        id: 'media_tool', 
+        header: 'Media Tool', 
+        link: '/guide/content/tools/media_tool.md'
+      },
+      { 
+        id: 'qr_payment_tool', 
+        header: 'QR Payment Tool', 
+        link: '/guide/content/tools/qr_payment_tool.md'
+      },
+      { 
+        id: 'knowledge_tool', 
+        header: 'Knowledge Tool', 
+        link: '/guide/content/tools/knowledge_tool.md'
+      },
     ]
   },
   {
     id: "integration_guide",
-    title: "Integration",
+    title: "Integrations",
     items: [
-      { id: 'Whatsapp', header: 'Whatsapp', link: '/guide/content/integrations/whatsapp_integration.md' },
-      { id: 'Instagram', header: 'Instagram', link: '/guide/content/integrations/insta_integration.md' },
+      { 
+        id: 'whatsapp_integration', 
+        header: 'WhatsApp Integration', 
+        link: '/guide/content/integrations/whatsapp_integration.md'
+      },
+      { 
+        id: 'instagram_integration', 
+        header: 'Instagram Integration', 
+        link: '/guide/content/integrations/insta_integration.md'
+      },
     ]
   },
   {
     id: "api_guide",
-    title: "API",
+    title: "API Reference",
     items: [
-      { id: 'API', header: 'Send Template', link: '/guide/content/api/campaign_api.md' },
+      { 
+        id: 'campaign_api', 
+        header: 'Campaign API', 
+        link: '/guide/content/api/campaign_api.md'
+      },
     ]
   }
 ];
 
+/**
+ * Get all guides as a flat array with category information
+ * @returns {Array<GuideItem & {category: string, categoryTitle: string}>}
+ */
 export const getAllGuides = () => {
   return guideNavigation.flatMap(category => 
     category.items.map(item => ({
@@ -50,6 +119,12 @@ export const getAllGuides = () => {
   );
 };
 
+/**
+ * Get a specific guide by its category type and ID
+ * @param {string} type - Category ID
+ * @param {string} id - Guide ID
+ * @returns {(GuideItem|null)} The guide item or null if not found
+ */
 export const getGuideByTypeAndId = (type, id) => {
   const category = guideNavigation.find(cat => cat.id === type);
   if (!category) return null;
@@ -57,6 +132,12 @@ export const getGuideByTypeAndId = (type, id) => {
   return category.items.find(item => item.id === id) || null;
 };
 
+/**
+ * Get the next guide in the sequence
+ * @param {string} type - Current guide's category ID
+ * @param {string} id - Current guide's ID
+ * @returns {(GuideItem & {category: string, categoryTitle: string}|null)}
+ */
 export const getNextGuide = (type, id) => {
   const allGuides = getAllGuides();
   const currentIndex = allGuides.findIndex(guide => guide.category === type && guide.id === id);
@@ -65,6 +146,12 @@ export const getNextGuide = (type, id) => {
   return allGuides[currentIndex + 1];
 };
 
+/**
+ * Get the previous guide in the sequence
+ * @param {string} type - Current guide's category ID
+ * @param {string} id - Current guide's ID
+ * @returns {(GuideItem & {category: string, categoryTitle: string}|null)}
+ */
 export const getPreviousGuide = (type, id) => {
   const allGuides = getAllGuides();
   const currentIndex = allGuides.findIndex(guide => guide.category === type && guide.id === id);

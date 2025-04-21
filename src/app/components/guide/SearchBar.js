@@ -29,7 +29,7 @@ export default function Sidebar({ currentType, currentId }) {
   };
   
   return (
-    <div className="w-64 flex-shrink-0 h-full overflow-y-auto bg-white border-r border-gray-200">
+    <div className="w-64 shrink-0 h-full overflow-y-auto bg-white mt-10">
       <div className="p-6">
         <nav className="space-y-4">
           {guideNavigation.map((category) => (

@@ -2,6 +2,11 @@
 import fs from 'fs';
 import path from 'path';
 import { promises as fsPromises } from 'fs';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkGfm from 'remark-gfm';
+import yaml from 'js-yaml';
 
 // Function to fetch markdown content from file path or URL
 export async function fetchMarkdownContent(source) {
@@ -74,5 +79,36 @@ export function addIdsToHeadings(markdownContent) {
     content = content.replace(regex, `$1${text} {#${uniqueSlug}}`);
   });
   
+  return content;
+}
+
+export function getMarkdownMetadata(content) {
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkFrontmatter, ['yaml'])
+    .use(remarkGfm);
+
+  const tree = processor.parse(content);
+  let metadata = {};
+
+  if (tree.children.length > 0 && tree.children[0].type === 'yaml') {
+    try {
+      metadata = yaml.load(tree.children[0].value) || {};
+    } catch (e) {
+      console.error('Error parsing frontmatter:', e);
+    }
+  }
+
+  return metadata;
+}
+
+export function removeMarkdownFrontmatter(content) {
+  const lines = content.split('\n');
+  if (lines[0] === '---') {
+    const endIndex = lines.findIndex((line, index) => index > 0 && line === '---');
+    if (endIndex !== -1) {
+      return lines.slice(endIndex + 1).join('\n').trim();
+    }
+  }
   return content;
 }
