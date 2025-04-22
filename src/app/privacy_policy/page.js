@@ -1,12 +1,25 @@
 import Head from 'next/head';
+import { privacyPolicyMetadata } from '../Config/metadata';
+import { generateBreadcrumbSchema } from '../Config/metadata/structuredData';
+import Script from 'next/script';
+
+export { privacyPolicyMetadata as metadata };
 
 export default function PrivacyPolicy() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Privacy Policy', path: '/privacy_policy' }
+    ]);
+
     return (
         <>
+            <Script id="breadcrumb-schema" type="application/ld+json">
+                {JSON.stringify(breadcrumbSchema)}
+            </Script>
             <Head>
                 <title>Privacy Policy - TailorTalk</title>
             </Head>
-            <div className="flex items-center justify-center min-h-screen bg-gray-100">
+            <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-16">
                 <div className="bg-white p-8 rounded-lg shadow-lg max-w-xl">
                     <h1 className="text-xl font-bold mb-6 text-center">Privacy Policy</h1>
                     <p><strong>Effective Date:</strong> 10/07/2024</p>

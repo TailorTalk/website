@@ -12,6 +12,16 @@ const CustomImage = ({ alt, src, width, ...props }) => {
     return src.startsWith('/guide') ? src : `/guide${src}`;
   };
 
+  // Generate descriptive alt text if none provided
+  const getAltText = (src, providedAlt) => {
+    if (providedAlt) return providedAlt;
+    // Extract filename without extension and convert to title case
+    const fileName = src.split('/').pop().replace(/\.[^/.]+$/, '');
+    return fileName.split('_')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   const getWidthClass = (width) => {
     if (!width) return 'w-full';
     const percentage = parseInt(width);
@@ -30,13 +40,14 @@ const CustomImage = ({ alt, src, width, ...props }) => {
 
   const imagePath = getImagePath(src);
   const widthClass = getWidthClass(width?.replace('%', ''));
+  const altText = getAltText(src, alt);
   
   return (
     <div className="relative my-4">
       <div className={`${widthClass}`}>
         <img
           src={imagePath}
-          alt={alt || ''}
+          alt={altText}
           className="w-full h-auto object-contain rounded-lg border-[1px]"
           loading="lazy"
         />
@@ -50,10 +61,10 @@ const CustomHeading = ({ children, level }) => {
   const id = children?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-') || '';
   
   const className = {
-    1: 'text-[2em] font-semibold mt-2 mb-6 text-gray-900 border-b border-gray-200 pb-3 scroll-mt-24',
-    2: 'text-[1.5em] font-semibold mt-8 mb-4 text-gray-900 border-b border-gray-200 pb-2 scroll-mt-24',
-    3: 'text-[1.25em] font-semibold mt-6 mb-3 text-gray-900 scroll-mt-24',
-    4: 'text-[1.1em] font-semibold mt-5 mb-2 text-gray-900 scroll-mt-24'
+    1: 'text-[2em] font-medium mt-2 mb-6 text-gray-900 border-b border-gray-200 pb-3 scroll-mt-24',
+    2: 'text-[1.5em] font-medium mt-8 mb-4 text-gray-900 border-b border-gray-200 pb-2 scroll-mt-24',
+    3: 'text-[1.25em] font-medium mt-6 mb-3 text-gray-900 scroll-mt-24',
+    4: 'text-[1.1em] font-medium mt-5 mb-2 text-gray-900 scroll-mt-24'
   }[level];
 
   return (
@@ -63,7 +74,8 @@ const CustomHeading = ({ children, level }) => {
   );
 };
 
-export default function MarkdownRenderer({ children }) {
+export default function MarkdownRenderer({ children, pageTitle }) {
+
   return (
     <div className="w-full prose-lg xl:prose-xl max-w-none">
       <Markdown options={{
@@ -84,7 +96,7 @@ export default function MarkdownRenderer({ children }) {
           p: {
             component: 'p',
             props: {
-              className: 'mb-4 leading-7 text-gray-700',
+              className: 'mb-4 leading-7 text-gray-700 font-[340]',
             },
           },
           ul: {
@@ -115,6 +127,12 @@ export default function MarkdownRenderer({ children }) {
             component: 'blockquote',
             props: {
               className: 'border-l-4 border-gray-200 pl-4 italic my-4 text-gray-600',
+            },
+          },
+          strong: {
+            component: 'strong',
+            props: {
+              className: 'font-semibold text-gray-900',
             },
           },
           code: {

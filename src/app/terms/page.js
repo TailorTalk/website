@@ -1,9 +1,23 @@
 import React from 'react';
 import termsData from '../Config/termsData';
+import { termsMetadata } from '../Config/metadata/index';
+import { generateBreadcrumbSchema } from '../Config/metadata/structuredData';
+import Script from 'next/script';
 
-const TermsOfService = () => {
+export { termsMetadata as metadata };
+
+export default function TermsOfService() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Terms of Service', path: '/terms' }
+  ]);
+
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
+    <>
+      <Script id="breadcrumb-schema" type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </Script>
+      <div className="min-h-screen bg-gray-100 py-10 px-4 mt-16">
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-8">
         <h1 className="text-3xl font-bold text-center mb-6">Terms of Service</h1>
 
@@ -88,8 +102,7 @@ const TermsOfService = () => {
           </p>
         </footer>
       </div>
-    </div>
+      </div>  
+    </>
   );
-};
-
-export default TermsOfService;
+}
