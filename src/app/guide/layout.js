@@ -1,17 +1,9 @@
 import DocHeader from "../components/guide/DocHeader";
 import MobileSidebar from "../components/guide/MobileSidebar";
 import Sidebar from "../components/guide/Sidebar";
+import { guideMetadata } from "../Config/metadata/index";
 
-export const metadata = {
-  title: "TailorTalk Documentation - Guides",
-  description: "Learn how to use TailorTalk's AI-powered customer communication platform with our comprehensive guides covering WhatsApp automation, campaign management, and more.",
-  openGraph: {
-    title: 'TailorTalk Documentation - Guides',
-    description: 'Comprehensive guides and documentation for TailorTalk platform',
-    type: 'article',
-    images: ['/logoPng.png'],
-  }
-};
+export { guideMetadata as metadata };
 
 export default function GuideLayout({ children }) {
   return (

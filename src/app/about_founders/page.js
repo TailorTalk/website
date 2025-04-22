@@ -1,8 +1,21 @@
 import Head from 'next/head';
+import { aboutFoundersMetadata } from '../Config/metadata/index';
+import { generateBreadcrumbSchema } from '../Config/metadata/structuredData';
+import Script from 'next/script';
+
+export { aboutFoundersMetadata as metadata };
 
 export default function AboutFounder() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'About Founders', path: '/about_founders' }
+    ]);
+
     return (
         <>
+            <Script id="breadcrumb-schema" type="application/ld+json">
+                {JSON.stringify(breadcrumbSchema)}
+            </Script>
             <div className="flex items-center justify-center min-h-screen bg-gray-100">
                 <div className="bg-white p-8 rounded-lg shadow-lg  max-w-xl">
                     <h1 className="text-xl font-bold mb-6 text-center">About the Founders</h1>

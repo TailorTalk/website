@@ -82,12 +82,12 @@ export const guideNavigation = [
     items: [
       { 
         id: 'whatsapp_integration', 
-        header: 'WhatsApp Integration', 
+        header: 'WhatsApp', 
         link: '/guide/content/integrations/whatsapp_integration.md'
       },
       { 
         id: 'instagram_integration', 
-        header: 'Instagram Integration', 
+        header: 'Instagram', 
         link: '/guide/content/integrations/insta_integration.md'
       },
     ]
@@ -98,7 +98,7 @@ export const guideNavigation = [
     items: [
       { 
         id: 'campaign_api', 
-        header: 'Campaign API', 
+        header: 'Send Template', 
         link: '/guide/content/api/campaign_api.md'
       },
     ]

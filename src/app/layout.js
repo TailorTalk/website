@@ -1,17 +1,17 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import Header from "./components/Header.js";
-// import Footer from "./components/Footer.js";
 import Script from "next/script";
 import ClientLayout from "./components/ClientLayout";
-import { metadata } from "./Config/metadata";
+import { baseMetadata } from "./Config/metadata/index";
+import { generateMainSchema } from "./Config/metadata/structuredData";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export { metadata };
+export { baseMetadata as metadata };
 
 export default function RootLayout({ children }) {
   const GTM_ID = "GTM-NC76S95W";
+  const mainSchema = generateMainSchema();
 
   return (
     <html lang="en">
@@ -37,36 +37,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           strategy="beforeInteractive"
         >
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "Tailor Talk",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web",
-              "description": "AI-powered customer communication platform for automating and personalizing business communications across WhatsApp and other channels",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "150"
-              },
-              "creator": {
-                "@type": "Organization",
-                "name": "Tailor Talk",
-                "url": "https://tailortalk.ai",
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "email": "support@tailortalk.ai",
-                  "contactType": "customer service"
-                }
-              }
-            }
-          `}
+          {JSON.stringify(mainSchema)}
         </Script>
       </head>
       <body className={`${inter.className} montserrat-unique flex flex-col min-h-screen`}>
@@ -85,8 +56,6 @@ export default function RootLayout({ children }) {
             title="Google Tag Manager"
           ></iframe>
         </noscript>
-
-        {/* <Header /> */}
         
         <main id="main-content" className="flex-grow">
           <ClientLayout>
