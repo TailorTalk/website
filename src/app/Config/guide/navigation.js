@@ -55,7 +55,7 @@ export const guideNavigation = [
         link: '/guide/content/tools/what_is_tool.md'
       },
       { 
-        id: 'calendar_tool', 
+        id: 'google_calendar_tool', 
         header: 'Calendar Tool', 
         link: '/guide/content/tools/calendar_tool.md'
       },
@@ -70,7 +70,7 @@ export const guideNavigation = [
         link: '/guide/content/tools/qr_payment_tool.md'
       },
       { 
-        id: 'knowledge_tool', 
+        id: 'query_tool', 
         header: 'Knowledge Tool', 
         link: '/guide/content/tools/knowledge_tool.md'
       },

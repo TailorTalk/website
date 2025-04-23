@@ -2,7 +2,7 @@ import { baseMetadata } from './baseMetadata';
 
 export const pricingMetadata = {
   ...baseMetadata,
-  title: 'Pricing Plans | TailorTalk - AI-Powered Customer Communication',
+  title: 'Pricing Plans | TailorTalk - Your AI Sales & Support Agent',
   description: 'Explore TailorTalk\'s flexible pricing plans. Choose the right plan for your business needs and scale your customer communications with AI automation.',
   keywords: [
     ...baseMetadata.keywords,
