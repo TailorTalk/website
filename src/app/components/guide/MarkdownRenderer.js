@@ -96,7 +96,7 @@ export default function MarkdownRenderer({ children, pageTitle }) {
           p: {
             component: 'p',
             props: {
-              className: 'mb-4 leading-7 text-gray-700 font-[340]',
+              className: 'mb-4 leading-7 text-gray-700 !font-[340]',
             },
           },
           ul: {
@@ -114,7 +114,7 @@ export default function MarkdownRenderer({ children, pageTitle }) {
           li: {
             component: 'li',
             props: {
-              className: 'text-gray-700 leading-7',
+              className: 'text-gray-700 leading-7 !font-[340]',
             },
           },
           a: {

@@ -1,5 +1,5 @@
 import React from "react";
-import { demoMetadata } from '../Config/metadata';
+import { demoMetadata } from '../Config/metadata/index';
 import { generateBreadcrumbSchema } from '../Config/metadata/structuredData';
 import Script from 'next/script';
 
