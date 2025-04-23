@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { privacyPolicyMetadata } from '../Config/metadata';
+import { privacyPolicyMetadata } from '../Config/metadata/index';
 import { generateBreadcrumbSchema } from '../Config/metadata/structuredData';
 import Script from 'next/script';
 

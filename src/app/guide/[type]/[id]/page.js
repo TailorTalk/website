@@ -8,11 +8,10 @@ import Script from 'next/script';
 import { guideNavigation, getGuideByTypeAndId, getNextGuide, getPreviousGuide } from "@/app/Config/guide/navigation";
 import { generateGuideMetadata } from "@/app/Config/metadata/generateGuideMetadata";
 import { generateGuideSchema, generateBreadcrumbSchema } from "@/app/Config/metadata/structuredData";
-import { LinkedIn, Twitter } from "@mui/icons-material";
 import Image from "next/image";
 
 export async function generateMetadata({ params }) {
-  const { type, id } = params;
+  const { type, id } = await params;
   const guide = getGuideByTypeAndId(type, id);
   
   if (!guide) {
@@ -50,7 +49,7 @@ export async function generateStaticParams() {
 }
 
 export default async function GuidePage({ params }) {
-  const { type, id } = params;
+  const { type, id } = await params;
   const guide = getGuideByTypeAndId(type, id);
   
   if (!guide) {
