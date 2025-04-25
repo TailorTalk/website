@@ -1,10 +1,10 @@
-# Calendar Tool
+# Booking Tool
 
-The **Calendar Tool** allows users to integrate single or multiple calendars with their AI agent. Once integrated, your TailorTalk agent can efficiently manage appointments and bookings, streamlining scheduling processes for various use cases.
+The **Booking Tool** allows users to integrate single or multiple calendars with their AI agent. Once integrated, your TailorTalk agent can efficiently manage appointments and bookings, streamlining scheduling processes for various use cases.
 
-<img src="../images/calendar_tool.png" alt="TailorTalk Agent Calendar Tool Interface" width="60%" />
+<img src="../images/booking_tool.png" alt="TailorTalk Agent Booking Tool Interface" width="60%" />
 
-## Configuring the Calendar Tool
+## Configuring the Booking Tool
 1. **Enter Calendar ID**: Enter Gmail ID associated with the calendar. This tells your TailorTalk agent which calendar to use.
 2. **Assign Calendar Labels**: You can define which calendar corresponds to which function. For example:
    - `ceo@tailortalk.ai` → "CEO calendar"
