@@ -2,7 +2,7 @@
 
 The **Knowledge Tool** allows you to enhance your TailorTalk AI agent's knowledge base by uploading website URLs and documents. Instead of cluttering the prompt with detailed information, this tool helps your TailorTalk agent store and access relevant data efficiently when interacting with leads.
 
-<img src="../images/knowledge_tool.png" alt="TailorTalk Agent Knowledge Tool Interface" width="60%" />
+<img src="../images/knowledge_tool.png" alt="TailorTalk Agent Knowledge Tool Interface" width="50%" />
 
 ## Uploading Data to Your TailorTalk Agent
 Users can upload their data in two ways:

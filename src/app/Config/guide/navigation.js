@@ -74,6 +74,11 @@ export const guideNavigation = [
         header: 'Knowledge Tool', 
         link: '/guide/content/tools/knowledge_tool.md'
       },
+      { 
+        id: 'api_tool',
+        header: 'API Tool',
+        link: '/guide/content/tools/api_tool.md' 
+      },
     ]
   },
   {
