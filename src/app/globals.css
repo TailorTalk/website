@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap')
 layer(utilities);
 
 @theme {
@@ -10,6 +10,115 @@ layer(utilities);
     var(--tw-gradient-stops)
   );
 }
+@theme {
+  /* 1) Define your animation value as a theme variable: */
+  --animate-border-spin: border-spin 3s linear infinite;
+  --animate-border-spin-reverse: border-spin-reverse 3s linear infinite;
+
+  @keyframes border-spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes border-spin-reverse {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+  }
+}
+
+
+/* @utility card-wrapper {
+  @apply relative overflow-hidden rounded-2xl bg-white;
+} */
+
+/* @utility card-content {
+  @apply absolute left-[2px] top-[2px]
+         h-[calc(100%-4px)] w-[calc(100%-4px)]
+         rounded-2xl;
+} */
+
+/* 3) Pseudo-element still lives in plain CSS */
+.card-wrapper-0::before {
+  @apply absolute left-[-25%] top-[-25%]
+         h-[150%] w-[150%]
+         content-[''] animate-border-spin;
+         background: conic-gradient(
+    from 0deg,
+    rgba(102, 95, 235, 0.406)  0deg,  
+    rgba(79, 70, 229, 1)  15deg,
+    rgba(79, 70, 229, 1)  25deg, 
+    rgba(121, 117, 208, 0)  40deg 
+  ); 
+}
+.card-wrapper-1::before {
+  @apply absolute left-[-25%] top-[-25%]
+         h-[150%] w-[150%]
+         content-[''] animate-border-spin;
+         background: conic-gradient(
+    from 0deg,
+    rgba(223, 172, 224, 0.4) 0deg,   /* transparent purple */
+    rgb(227, 128, 209)   15deg,  /* solid purple */
+    rgb(237, 126, 182)   25deg,  /* solid pink */
+    rgba(236,  72, 153, 0)   40deg   /* transparent pink */
+  );
+}
+.card-wrapper-2::before {
+  @apply absolute left-[-25%] top-[-25%]
+         h-[150%] w-[150%]
+         content-[''] animate-border-spin-reverse;
+         background: conic-gradient(
+    from 0deg,
+    rgba(251, 146,  60, 0.4) 0deg,   /* transparent orange */
+    rgba(251, 146,  60, 1)   15deg,  /* solid orange */
+    rgba(250, 204,  21, 1)   25deg,  /* solid yellow */
+    rgba(250, 204,  21, 0)   40deg   /* transparent yellow */
+  );
+}
+
+.card-wrapper-3::before {
+  @apply absolute left-[-25%] top-[-25%]
+         h-[150%] w-[150%]
+         content-[''] animate-border-spin-reverse;
+         background: conic-gradient(
+    from 0deg,
+    rgba(6, 182, 212, 0.406) 0deg,  /* transparent cyan */
+    rgba(6, 182, 212, 1)    15deg, /* solid cyan */
+    rgb(124, 171, 245)   25deg, /* solid blue */
+    rgba(59, 130, 246, 0)   40deg  /* transparent blue */
+  );
+}
+.card-wrapper-4::before {
+  @apply absolute left-[-25%] top-[-25%]
+         h-[150%] w-[150%]
+         content-[''] animate-border-spin-reverse;
+         background: conic-gradient(
+    from 0deg,
+    rgba(6, 182, 212, 0.406) 0deg,  /* transparent cyan */
+    rgba(6, 182, 212, 1)    15deg, /* solid cyan */
+    rgb(124, 171, 245)   25deg, /* solid blue */
+    rgba(6, 182, 212, 0.406)   40deg  /* transparent blue */
+  );
+}
+.card-wrapper-5::before {
+  @apply absolute left-[-25%] top-[-25%]
+         h-[150%] w-[150%]
+         content-[''] animate-border-spin;
+         background: conic-gradient(
+    from 0deg,
+    /* ─── Royal Yellow→Orange cone (top) ─── */
+    rgba(255,215,0,0.4) 0deg,    /* transparent gold */
+    rgba(255,215,0,1)   30deg,   /* solid gold */
+    rgba(255,140,0,1)   50deg,   /* solid orange */
+    rgba(255,140,0,0)   80deg,   /* transparent orange */
+
+    /* ─── Sky-Blue→Cyan cone (bottom) ─── */
+    rgb(100, 216, 237)   180deg,  /* transparent cyan */
+    rgba(6,182,212,1)   195deg,  /* solid cyan */
+    rgba(124,171,245,1) 205deg,  /* solid sky-blue */
+    rgba(124,171,245,0.4)220deg, /* semi-transparent sky-blue */
+    rgba(124,171,245,0) 225deg   /* transparent sky-blue */
+  );
+}
+
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -28,6 +137,24 @@ layer(utilities);
     border-color: var(--color-gray-200, currentcolor);
   }
 }
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* @keyframes border-spin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes border-spin-reverse {
+  100% {
+    transform: rotate(360deg);
+  }
+} */
 
 @utility slide-in-down-right {
   @apply opacity-0 translate-x-32 translate-y-32 transition-all duration-[10000ms] ease-in-out will-change-transform;
