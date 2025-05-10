@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,45 +42,58 @@ const Header = () => {
       transition: { 
         type: "spring", 
         stiffness: 100, 
-        delay: 0.6 
+        delay: 0.4 
       }
     }
   };
 
-  // Navigation item component with enhanced animations
+  // Navigation item component with inverted hover effect
   const NavItem = ({ href, label, id }) => {
-    const isActive = activeLink === id;
-    
     return (
-      <motion.div
-        className="relative"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        onHoverStart={() => setActiveLink(id)}
-      >
+      <div className="relative">
         <a 
           href={href} 
-          className="text-sm text-gray-700 hover:text-black font-medium transition-all duration-300 py-2 px-3 block"
+          className={`
+        text-gray-800 px-5 py-2 rounded-lg
+        transition duration-200 ease-in-out
+        hover:bg-[#F7F7F8]
+        hover:shadow-[inset_0px_4px_6px_rgba(0,0,0,0.1),inset_0px_-2px_4px_rgba(255,255,255,0.8)]
+          `}
         >
           {label}
         </a>
+      </div>
+    );
+  };
+
+  // Resources dropdown item with inverted hover effect
+  const ResourcesDropdown = () => {
+    return (
+      <div className="relative group">
+        <button 
+          className="text-sm flex items-center font-medium transition duration-200 py-2 px-5 rounded-full
+            text-gray-700 group-hover:bg-indigo-600 group-hover:text-white border-2 border-transparent group-hover:border-indigo-600"
+        >
+          Resources
+          <ChevronDown className="ml-1 h-3 w-3" />
+        </button>
         
-        {/* Animated underline effect */}
-        <motion.div
-          className="absolute bottom-0 left-0 h-0.5 bg-indigo-600 rounded-full"
-          initial={{ width: 0 }}
-          animate={{ 
-            width: isActive ? '100%' : 0,
-            opacity: isActive ? 1 : 0
-          }}
-          transition={{ 
-            type: "spring", 
-            stiffness: 300, 
-            damping: 30
-          }}
-        />
-      </motion.div>
+        {/* Simple dropdown panel */}
+        <div 
+          className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-lg overflow-hidden p-2 min-w-40 
+            opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+        >
+          {['Documentation', 'Templates', 'Tutorials', 'API Reference'].map((item) => (
+            <a 
+              key={item} 
+              href={`/${item.toLowerCase()}`}
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white rounded transition duration-200 border border-transparent hover:border-indigo-600"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+      </div>
     );
   };
 
@@ -92,13 +104,13 @@ const Header = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed items-center justify-center top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-        ? ' w-[86%] border border-white/20 bg-white/10 text-sm font-medium text-white backdrop-blur-sm backdrop-saturate-200 shadow-lg py-2 mx-auto mt-3 rounded-full' 
-        : 'bg-transparent py-5 mx-auto w-[86.5%]'
+        ? 'w-[90%] border border-white/20 bg-white/10 backdrop-blur-md backdrop-saturate-200 shadow-lg py-2 mx-auto mt-3 rounded-full' 
+        : 'bg-transparent py-5 mx-auto w-[90%]'
       }`}
     >
-      <div className="max-w-screen px-6">
+      <div className="max-w-screen px-4 sm:px-6">
         <div className="flex w-full justify-between items-center">
-          <div className="flex flex-1 items-center gap-12">
+          <div className="flex flex-1 items-center gap-8 md:gap-12">
             <motion.a 
               href="/" 
               className="transition-transform hover:scale-105"
@@ -109,87 +121,17 @@ const Header = () => {
               <Image 
                 src={logo} 
                 alt="logo" 
-                className="w-32 h-full transition-all duration-300" 
+                className="w-28 md:w-32 h-full transition-all duration-300" 
                 priority 
               />
             </motion.a>
             
-            <motion.nav 
-              className="hidden md:flex gap-8 items-center"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-                }
-              }}
-            >
-              {/* Nav items with animations */}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: -20 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-              >
-                <NavItem href="/" label="Home" id="home" />
-              </motion.div>
-              
-              <motion.div 
-                className="relative group"
-                variants={{
-                  hidden: { opacity: 0, y: -20 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-              >
-                <button 
-                  className="text-sm flex items-center text-gray-700 hover:text-black font-medium transition-all duration-300 py-2 px-3"
-                  onMouseEnter={() => setActiveLink('resources')}
-                >
-                  Resources
-                  <motion.span
-                    animate={{ rotate: activeLink === 'resources' ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ChevronDown className="ml-1 h-3 w-3" />
-                  </motion.span>
-                </button>
-                
-                {/* Animated underline effect for Resources */}
-                <motion.div
-                  className="absolute bottom-0 left-0 h-0.5 bg-indigo-600 rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ 
-                    width: activeLink === 'resources' ? '100%' : 0,
-                    opacity: activeLink === 'resources' ? 1 : 0
-                  }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 300, 
-                    damping: 30
-                  }}
-                />
-              </motion.div>
-              
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: -20 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-              >
-                <NavItem href="/pricing" label="Pricing" id="pricing" />
-              </motion.div>
-              
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: -20 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-              >
-                <NavItem href="/docs" label="Docs" id="docs" />
-              </motion.div>
-            </motion.nav>
+            <nav className="hidden md:flex gap-2 items-center">
+              <NavItem href="/" label="Home" id="home" />
+              <ResourcesDropdown />
+              <NavItem href="/pricing" label="Pricing" id="pricing" />
+              <NavItem href="/docs" label="Docs" id="docs" />
+            </nav>
           </div>
 
           <div className="flex items-center gap-4">
@@ -203,19 +145,14 @@ const Header = () => {
               whileTap={{ scale: 0.95 }}
             >
               <motion.button 
-                className={`
-                  bg-indigo-600 text-sm text-white rounded-full hover:shadow-lg transition-all duration-500 font-medium
-                  px-5 py-2 ${ scrolled ? 'rounded-xl' : 'rounded-lg' }`}
-                whileHover={{ 
-                  scale: 1.05,
-                  backgroundColor: "#4338ca" // Darker indigo for hover
-                }}
+                className="bg-indigo-600 text-sm text-white rounded-full shadow-sm transition duration-200 font-medium
+                  px-6 py-2.5 border-2 border-transparent hover:bg-white hover:text-indigo-600 hover:border-indigo-600"
               >
                 Book a Demo
               </motion.button>
             </motion.a>
 
-            {/* Mobile Menu Icon */}
+            {/* Mobile Menu Icon with improved animation */}
             <motion.div 
               className="md:hidden block"
               initial={{ opacity: 0 }}
@@ -224,9 +161,9 @@ const Header = () => {
             >
               <IconButton 
                 onClick={() => setDrawerOpen(true)}
-                className="hover:bg-gray-100 transition-colors"
+                className="hover:bg-indigo-50 transition-colors rounded-full p-2"
               >
-                <Menu />
+                <Menu className="text-indigo-600" />
               </IconButton>
               <Drawer
                 anchor="right"
@@ -236,6 +173,8 @@ const Header = () => {
                     width: '280px',
                     backgroundColor: 'rgba(255, 255, 255, 0.95)',
                     backdropFilter: 'blur(10px)',
+                    borderTopLeftRadius: '24px',
+                    borderBottomLeftRadius: '24px',
                   },
                 }}
                 onClose={() => setDrawerOpen(false)}
@@ -248,12 +187,30 @@ const Header = () => {
                       exit={{ x: 280 }}
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     >
+                      <div className="flex justify-between items-center p-6 border-b border-gray-100">
+                        <Image 
+                          src={logo} 
+                          alt="logo" 
+                          className="w-24 h-full" 
+                          priority 
+                        />
+                        <IconButton 
+                          onClick={() => setDrawerOpen(false)}
+                          className="rounded-full hover:bg-gray-100"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                          </svg>
+                        </IconButton>
+                      </div>
+                      
                       <List onClick={() => setDrawerOpen(false)} sx={{ padding: '20px' }}>
                         {[
                           { href: '/', label: 'Home' },
+                          { href: '/resources', label: 'Resources' },
                           { href: '/pricing', label: 'Pricing' },
-                          { href: '/docs', label: 'Docs' },
-                          { href: '/ui-kit', label: 'UI Kit' }
+                          { href: '/docs', label: 'Docs' }
                         ].map((item, index) => (
                           <motion.div
                             key={item.href}
@@ -270,14 +227,11 @@ const Header = () => {
                               component="a" 
                               href={item.href}
                               sx={{
-                                marginBottom: '8px',
-                                padding: '12px',
-                                borderRadius: '8px',
+                                marginBottom: '12px',
+                                padding: '12px 16px',
+                                borderRadius: '50px',
                                 transition: 'all 0.2s',
-                                '&:hover': {
-                                  backgroundColor: 'rgba(0, 0, 0, 0.05)',
-                                  transform: 'translateX(4px)',
-                                },
+                                border: '2px solid transparent',
                               }}
                             >
                               <ListItemText 
@@ -295,12 +249,13 @@ const Header = () => {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.5 }}
+                          className="mt-8"
                         >
                           <a 
                             href="/remix-template" 
-                            className="mt-4 block"
+                            className="block"
                           >
-                            <button className="w-full bg-purple-600 text-white px-4 py-3 rounded-lg hover:shadow-md transition-all duration-300 font-medium">
+                            <button className="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl hover:shadow-md transition-all duration-300 font-medium border border-transparent hover:border-indigo-400">
                               Book a Demo
                             </button>
                           </a>

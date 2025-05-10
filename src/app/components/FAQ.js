@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Define the FAQ data
 const faqData = [
@@ -37,66 +37,70 @@ const faqData = [
 ];
 
 // Individual FAQ Item component
-const FAQItem = ({ item, isOpen, toggleOpen }) => {
-  return (
-    <motion.div 
-      className="mb-4 rounded-xl overflow-hidden group relative"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      style={{
-        background: 'linear-gradient(145deg, #ffffff, #f5f7fa)',
-        boxShadow: isOpen 
-          ? '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
-          : '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
-        border: '1px solid rgba(255, 255, 255, 0.7)',
-      }}
-    >
+const FAQItem = ({ item, isOpen, toggleOpen, index }) => {
+    return (
       <motion.div 
-        className={`flex justify-between items-center py-5 px-6 cursor-pointer backdrop-blur-sm ${isOpen ? 'border-b border-gray-100' : ''}`}
-        onClick={toggleOpen}
-        transition={{ duration: 0.2 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className={`mb-4 rounded-xl overflow-hidden group relative transition-all duration-300 ${
+          isOpen 
+            ? 'shadow-lg bg-white' 
+            : 'shadow-md hover:shadow-lg bg-gray-50 hover:bg-white'
+        }`}
+        style={{
+          borderTopWidth: '1px',
+          borderBottomWidth: '1px',
+          borderLeftWidth: '0',
+          borderRightWidth: '0',
+          borderStyle: 'solid',
+          borderTopColor: 'white',
+          borderBottomColor: '#E2E8F0',
+          transform: isOpen ? 'translateY(-2px)' : 'none'
+        }}
       >
-        <h3 className="text-[17px] font-normal text-gray-700">{item.question}</h3>
-        <motion.div 
-          className="text-gray-400"
-          animate={{ rotate: isOpen ? 0 : 45 }}
-          transition={{ duration: 0.3 }}
+        <div 
+          className={`flex justify-between items-center py-5 px-6 cursor-pointer ${isOpen ? 'border-b border-gray-100' : ''}`}
+          onClick={toggleOpen}
         >
-            <X size={20} className='group-hover:text-gray-600' /> 
+          <h3 className="text-lg text-gray-900 font-sans">{item.question}</h3>
+          <motion.div 
+            className="text-gray-400"
+            animate={{ rotate: isOpen ? 0 : 45 }}
+            transition={{ duration: 0.3 }}
+          >
+            <X size={20} strokeWidth={1.5} className='group-hover:text-indigo-500' /> 
+          </motion.div>
+        </div>
+        
+        <motion.div 
+          initial={false}
+          animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="overflow-hidden"
+        >
+          <div className="p-6 pt-4 text-[#61646B] font-[350]">
+            {item.answer}
+          </div>
         </motion.div>
       </motion.div>
-      
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div 
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            <div className="p-5 pt-2 text-gray-600 text-base">
-              {item.answer}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-};
+    );
+  };
 
 // FAQ Section component
 const FAQSection = () => {
-  const [openItem, setOpenItem] = useState(null);
+  const [openItem, setOpenItem] = useState(0); // First item open by default
 
   const toggleItem = (id) => {
     setOpenItem(openItem === id ? null : id);
   };
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8" style={{ 
-      backgroundSize: '20px 20px', 
-      backgroundPosition: '0 0, 10px 10px'
+    <div className="min-h-screen py-12 px-4 bg-gradient-to-br from-gray-50 to-white bg-opacity-50" style={{ 
+      backgroundImage: 'radial-gradient(rgba(134, 36, 255, 0.03) 2px, transparent 2px)',
+      backgroundSize: '40px 40px',
+      backgroundPosition: '0 0'
     }}>
       <div className="max-w-3xl mx-auto">
         <motion.div 
@@ -106,10 +110,10 @@ const FAQSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl font-bold text-gray-900">
-            Frequently Asked <span className="text-gray-400">Questions</span>
+            Frequently Asked <span className="text-indigo-600">Questions</span>
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Seamlessly use your preferred tools for unified work, start to finish.
+            Everything you need to know about our platform and services
           </p>
         </motion.div>
         
@@ -118,6 +122,7 @@ const FAQSection = () => {
             <FAQItem 
               key={item.id}
               item={item}
+              index={index}
               isOpen={openItem === item.id}
               toggleOpen={() => toggleItem(item.id)}
             />

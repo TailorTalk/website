@@ -5,8 +5,8 @@ import testimonials from '../Config/testimonials';
 const LogoMarquee = () => {
   // Sample logos from testimonials
   const logos = testimonials.map((item) => ({
-    id: item.id,
-    logo: item.icon,
+    id: item.company,
+    logo: item.logo,
     name: item.role,
   }));
 

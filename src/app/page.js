@@ -23,6 +23,8 @@ import PricingModule from "./components/Pricing";
 import { ThreeDMarqueeDemoSecond } from "./components/DashboardMarquee";
 import FAQSection from "./components/FAQ";
 import { IntegrationHub } from "./components/IntegrationHub";
+import TestimonialSection from "./components/Testimonials";
+import { ThreeDCardDemo } from "./components/Grid";
 
 // export { homeMetadata as metadata };
 
@@ -163,23 +165,35 @@ export default function Home() {
       style={{
         background: "repeating-linear-gradient(45deg, rgb(245, 246, 248), rgb(245, 246, 248) 1px, transparent 1px, transparent 4px)"
       }}
+      // style={{
+      //   background: `repeating-linear-gradient(
+      //     45deg,
+      //     rgba(200, 200, 200, 0.3) 0,
+      //     rgba(200, 200, 200, 0.3) 1px,
+      //     transparent 1px,
+      //     transparent 6px
+      //   )`
+      // }}   
       >
         <WhatsappWidget />
         <HeroSection />
         <div>
           <LogoMarquee/>
         </div>
-        <div className="w-full h-full">
+        {/* <div className="w-full h-full">
           <IntegrationHub/>
-        </div>
+        </div> */}
         <div className="w-full">
           <PricingModule/>
+        </div>
+        <div className="w-full">
+          <TestimonialSection/>
         </div>
         <div className="w-full">
           <FAQSection/>
         </div>
         <div className="w-full">
-          <ThreeDMarqueeDemoSecond/>
+          <ThreeDCardDemo/>
         </div>
 
       </main>

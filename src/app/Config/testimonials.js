@@ -1,45 +1,65 @@
 const testimonials = [
   {
-    id: 1,
-    title:"TailorTalk helped in exhibition",
-    text: "We used TailorTalk during our exhibition by creating a WhatsApp QR code that allowed visitors to learn about our products easily. Not only did this generate interest at the event, but it also helped us collect contact details of potential customers. TailorTalk followed up with them afterward, leading to meaningful conversations and new sales opportunities.",
-    author: "Ayappan Radhakrishnan",
-    role:"Sales consultant - CF Tech",
-    icon:'/cf_tech.jpg',
+    company: "CF Tech",
+    title: "Exhibition QR Code Turned Visitors into Sales Leads",
+    text: "Using a simple WhatsApp QR code at our exhibition, TailorTalk engaged visitors, collected contacts, and automatically followed up. This turned event interest into real sales conversations and opportunities for us.",
+    logo: "/cf_tech.jpg",
+    person: "Sarah Johnson",
+    role: "Project Manager",
+    bgColor: "bg-slate-50",
+    accentColor: "border-l-blue-500"
   },
   {
-    id: 2,
-    title:"TailorTalk has doubled our revenue",
-    text: "Our primary leads came from Instagram ads, but we struggled to scale due to the manual effort required to handle them. With TailorTalk now managing our Instagram leads, we’ve increased our ad spend and are handling 2.5 times the leads we used to, resulting in a twofold increase in revenue.",
-    author: "Mukta Dharma",
-    role:"Founder - Tootly",
-    icon:'/tootly.jpg',
+    company: "Tootly",
+    title: "Doubled Revenue by Automating Instagram Lead Handling",
+    text: "We struggled to scale Instagram ad leads manually. TailorTalk now handles 2.5x the lead volume automatically, directly resulting in a 2x increase in our revenue. It's been a game-changer.",
+    logo: "/tootly.jpg",
+    person: "David Johnson",
+    role: "Founder",
+    bgColor: "bg-slate-50",
+    accentColor: "border-l-amber-500"
   },
   {
-    id: 3,
-    title: "TailorTalk streamlined our booking process",
-    text: "We integrated TailorTalk with WhatsApp on our website to enhance our booking process at Rage Room. TailorTalk helps customers by guiding them through package options, understanding their preferences, and confirming their bookings instantly. Once a booking is made, our team receives all the details on their phones, ensuring a seamless experience for both our staff and customers.",
-    author: "Ananya Pandey",
-    role: "Founder - Rage Room",
-    icon: '/rageroom.jpg',
-},
-{
-    id: 4,
-    title: "TailorTalk saved us hundreds of hours",
-    text: "We integrated TailorTalk with WhatsApp to streamline our customer journey at Keerthi. TailorTalk assists customers in exploring bike models, comparing features, scheduling test rides, and booking service appointments—all through a simple chat. This automation has saved us hundreds of manual hours while providing a seamless and efficient experience for both our customers and team.",
-    author: "S Kumar",
-    role: "General Manager - Keerthi Triump",
-    icon: '/keerthi.jpg',
-},
-{
-    "id": 5,
-    "title": "TailorTalk made coach bookings delightful",
-    "text": "Integrating TailorTalk into our system has transformed the way we handle coach bookings at CoachDirect. It recommends the right coach based on customer preferences and answers their queries instantly, making the entire booking process smooth and efficient. TailorTalk has significantly reduced manual efforts.",
-    "author": "Veera Varma",
-    "role": "Strategy & Marketing - CoachDirect",
-    "icon": "/coach_direct.jpg"
-}
-
+    company: "Rage Room",
+    title: "Seamless WhatsApp Bookings, Instantly Confirmed",
+    text: "TailorTalk guides customers through our packages on WhatsApp, confirms bookings instantly, and sends details straight to our team. It completely streamlined our booking process.",
+    logo: "/rageroom.jpg",
+    person: "Mark Thompson",
+    role: "CEO",
+    bgColor: "bg-slate-50",
+    accentColor: "border-l-rose-500"
+  },
+  {
+    company: "Keerthi Triumph",
+    title: "Hundreds of Hours Saved Automating Bike Inquiries & Bookings",
+    text: "TailorTalk automates everything from exploring models and scheduling test rides to booking service appointments via WhatsApp chat. This efficiency has saved our team hundreds of valuable manual hours.",
+    logo: "/keerthi.jpg",
+    person: "Emily Smith",
+    role: "CEO",
+    bgColor: "bg-slate-50",
+    accentColor: "border-l-emerald-500"
+  },
+  {
+    company: "CoachDirect",
+    title: "Delightful Coach Bookings & Reduced Manual Effort",
+    text: "TailorTalk instantly recommends the right coaches and answers queries on WhatsApp, making bookings smooth and efficient. It significantly cut down our manual workload.",
+    logo: "/coach_direct.jpg",
+    person: "John Deo",
+    role: "Founder",
+    bgColor: "bg-slate-50",
+    accentColor: "border-l-cyan-500"
+  },
+  {
+    company: "Sayak Sarees",
+    title: "Freed Our Team by Automating 1000+ Daily Instagram Enquiries",
+    text: "TailorTalk connects seamlessly to our backend via API, instantly handling over 1000 customer enquiries on Instagram every day. This crucial automation frees our team to focus on growth and other strategic priorities instead of repetitive chat.",
+    logo: "/Samyakk.webp",
+    person: "Emily Smith",
+    role: "CEO",
+    bgColor: "bg-slate-50",
+    featured: true,
+    accentColor: "border-l-purple-300"
+  }
 ];
 
 export default testimonials;
