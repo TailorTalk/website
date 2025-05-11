@@ -25,6 +25,8 @@ import FAQSection from "./components/FAQ";
 import { IntegrationHub } from "./components/IntegrationHub";
 import TestimonialSection from "./components/Testimonials";
 import { ThreeDCardDemo } from "./components/Grid";
+import { VortexDemo } from "./components/JoiningSection";
+import AIAgentToolkit from "./components/Features";
 
 // export { homeMetadata as metadata };
 
@@ -180,9 +182,9 @@ export default function Home() {
         <div>
           <LogoMarquee/>
         </div>
-        {/* <div className="w-full h-full">
-          <IntegrationHub/>
-        </div> */}
+        <div className="w-full">
+          <AIAgentToolkit/>
+        </div>
         <div className="w-full">
           <PricingModule/>
         </div>
@@ -194,6 +196,9 @@ export default function Home() {
         </div>
         <div className="w-full">
           <ThreeDCardDemo/>
+        </div>
+        <div className="w-full">
+          <VortexDemo/>
         </div>
 
       </main>

@@ -35,7 +35,7 @@ export const ThreeDMarquee = ({
                 }}
                 key={colIndex + "marquee"}
                 className="flex flex-col items-start gap-8">
-                <GridLineVertical className="-left-4" offset="80px" />
+                <GridLineVertical className="-left-4" offset="80px"  />
                 {subarray.map((image, imageIndex) => (
                   <div className="relative" key={imageIndex + image}>
                     <GridLineHorizontal className="-top-4" offset="20px" />

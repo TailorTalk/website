@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import logo from "../../../public/logo.png";
+import logo from "../../../public/logoSvg.svg";
 import { ChevronDown } from 'lucide-react';
 import { Menu } from 'lucide-react';
 import { Drawer, IconButton, List, ListItem, ListItemText } from '@mui/material';
@@ -47,17 +47,19 @@ const Header = () => {
     }
   };
 
-  // Navigation item component with inverted hover effect
+  // Improved Navigation item component with consistent styling
   const NavItem = ({ href, label, id }) => {
     return (
       <div className="relative">
         <a 
           href={href} 
           className={`
-        text-gray-800 px-5 py-2 rounded-lg
-        transition duration-200 ease-in-out
-        hover:bg-[#F7F7F8]
-        hover:shadow-[inset_0px_4px_6px_rgba(0,0,0,0.1),inset_0px_-2px_4px_rgba(255,255,255,0.8)]
+            relative text-gray-700 px-4 py-2 rounded-full text-sm font-medium
+            transition duration-300 ease-in-out
+            hover:text-indigo-700 
+            after:content-[''] after:absolute after:h-0.5 after:w-0 after:left-1/2 after:-translate-x-1/2
+            after:bottom-0 after:bg-indigo-600 after:transition-all after:duration-300
+            hover:after:w-3/4
           `}
         >
           {label}
@@ -66,30 +68,34 @@ const Header = () => {
     );
   };
 
-  // Resources dropdown item with inverted hover effect
+  // Improved Resources dropdown with consistent styling
   const ResourcesDropdown = () => {
     return (
       <div className="relative group">
         <button 
-          className="text-sm flex items-center font-medium transition duration-200 py-2 px-5 rounded-full
-            text-gray-700 group-hover:bg-indigo-600 group-hover:text-white border-2 border-transparent group-hover:border-indigo-600"
+          className="text-sm flex items-center font-medium px-4 py-2 rounded-full
+            text-gray-700 transition duration-300 ease-in-out
+            hover:text-indigo-700 group-hover:text-indigo-700"
         >
           Resources
-          <ChevronDown className="ml-1 h-3 w-3" />
+          <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
         </button>
         
-        {/* Simple dropdown panel */}
+        {/* Improved dropdown panel with consistent styling */}
         <div 
-          className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-lg overflow-hidden p-2 min-w-40 
-            opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+          className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-xl overflow-hidden p-3 min-w-48 
+            opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300
+            border border-gray-100 transform origin-top scale-95 group-hover:scale-100"
         >
           {['Documentation', 'Templates', 'Tutorials', 'API Reference'].map((item) => (
             <a 
               key={item} 
               href={`/${item.toLowerCase()}`}
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white rounded transition duration-200 border border-transparent hover:border-indigo-600"
+              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 rounded-lg transition duration-200
+              flex items-center space-x-2"
             >
-              {item}
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100"></span>
+              <span>{item}</span>
             </a>
           ))}
         </div>
@@ -104,7 +110,7 @@ const Header = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed items-center justify-center top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-        ? 'w-[90%] border border-white/20 bg-white/10 backdrop-blur-md backdrop-saturate-200 shadow-lg py-2 mx-auto mt-3 rounded-full' 
+        ? 'w-[85%] border border-white/20 bg-white/10 backdrop-blur-md backdrop-saturate-200 shadow-lg py-2 mx-auto mt-3 rounded-full' 
         : 'bg-transparent py-5 mx-auto w-[90%]'
       }`}
     >
@@ -126,7 +132,7 @@ const Header = () => {
               />
             </motion.a>
             
-            <nav className="hidden md:flex gap-2 items-center">
+            <nav className="hidden md:flex gap-3 items-center">
               <NavItem href="/" label="Home" id="home" />
               <ResourcesDropdown />
               <NavItem href="/pricing" label="Pricing" id="pricing" />
@@ -145,8 +151,9 @@ const Header = () => {
               whileTap={{ scale: 0.95 }}
             >
               <motion.button 
-                className="bg-indigo-600 text-sm text-white rounded-full shadow-sm transition duration-200 font-medium
-                  px-6 py-2.5 border-2 border-transparent hover:bg-white hover:text-indigo-600 hover:border-indigo-600"
+                className="bg-indigo-600 text-sm text-white rounded-full shadow-md transition duration-300 font-medium
+                  px-6 py-2.5 border border-transparent hover:bg-white hover:text-indigo-600 hover:border-indigo-600
+                  hover:shadow-indigo-100 hover:shadow-lg"
               >
                 Book a Demo
               </motion.button>
@@ -229,9 +236,13 @@ const Header = () => {
                               sx={{
                                 marginBottom: '12px',
                                 padding: '12px 16px',
-                                borderRadius: '50px',
-                                transition: 'all 0.2s',
-                                border: '2px solid transparent',
+                                borderRadius: '16px',
+                                transition: 'all 0.3s',
+                                '&:hover': {
+                                  backgroundColor: 'rgba(79, 70, 229, 0.08)',
+                                  color: '#4F46E5',
+                                  transform: 'translateX(5px)'
+                                }
                               }}
                             >
                               <ListItemText 
@@ -255,7 +266,8 @@ const Header = () => {
                             href="/remix-template" 
                             className="block"
                           >
-                            <button className="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl hover:shadow-md transition-all duration-300 font-medium border border-transparent hover:border-indigo-400">
+                            <button className="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl hover:shadow-md transition-all duration-300 font-medium 
+                              hover:bg-indigo-700 shadow-sm hover:shadow-indigo-100 hover:shadow-lg">
                               Book a Demo
                             </button>
                           </a>

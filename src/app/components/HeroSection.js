@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import AnimatedCard from './ui/GradientBorder';
 import { motion } from 'framer-motion';
+import { FlipWords } from './ui/flip-words';
+import { CardBody, CardContainer, CardItem } from './ui/3d-card';
 
 const HeroSection = () => {
   // Animation variants
@@ -31,6 +33,7 @@ const HeroSection = () => {
       transition: { duration: 0.8, ease: "easeOut", delay: 0.3 }
     }
   };
+  const words = ["follow-ups", "appointments", "payments"];
 
   return (
     <section className="py-24 md:py-24 overflow-hidden relative mt-16 w-full flex flex-col items-center justify-center">
@@ -56,12 +59,19 @@ const HeroSection = () => {
             </div>
           </motion.h1>
           
-          <motion.p 
-            className="text-[17px] text-gray-600 mb-8 max-w-[55rem] mx-auto pl-1 font-light"
-            variants={fadeInUp}
-          >
-            Let our AI agent manage your B2C sales, support, and any complex workflow on WhatsApp & Instagram chat. It automates follow-ups, appointments, payments, and even integrates with your systems for more actions.
-          </motion.p>
+          <motion.div
+  className="text-[17px] text-gray-600 mb-8 max-w-[55rem] mx-auto pl-1 font-light"
+  variants={fadeInUp}
+>
+  <span>Let our AI agent manage your B2C sales, support, and any complex workflow on WhatsApp & Instagram chat. It automates </span>
+  <FlipWords
+  words={words}
+  duration={3000}
+  className="inline-block text-[17px] font-medium text-gray-600"
+/>
+
+  <span>and even integrates with your systems for more actions.</span>
+</motion.div>
           
           <motion.div 
             className="flex flex-col sm:flex-row justify-center gap-4"
