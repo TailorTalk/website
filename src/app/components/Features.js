@@ -70,7 +70,7 @@ export default function AIAgentToolkit() {
             Powerful Features
           </span>
           <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
-            Your AI Agent's <span className="text-indigo-700">Toolkit</span>
+            Your AI Agent&rsquo;s <span className="text-indigo-700">Toolkit</span>
           </h2>
           <p className="max-w-2xl mx-auto text-gray-600 leading-relaxed">
             Everything your agent needs to succeed with powerful features for action
