@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import AnimatedCard from './ui/GradientBorder';
 import { motion } from 'framer-motion';
 import { FlipWords } from './ui/flip-words';
+import KeyboardButton from './ui/button';
 
 const HeroSection = () => {
   // Animation variants
@@ -79,13 +80,11 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row justify-center gap-4"
             variants={fadeInUp}
           >
-            <motion.button 
-              className="bg-indigo-600 hover:bg-indigo-700 cursor-pointer text-white rounded-lg px-7 py-2 shadow-lg shadow-indigo-600/25"
-              whileHover={{ scale: 1.05 }}
+            <motion.div
               whileTap={{ scale: 0.95 }}
             >
-              Get Started
-            </motion.button>
+             <KeyboardButton color="indigo">Get started</KeyboardButton>
+            </motion.div>
             <motion.button 
               className="bg-white hover:bg-gray-50 cursor-pointer text-gray-800 border border-gray-200 rounded-lg px-7 py-2"
               whileHover={{ scale: 1.05 }}
