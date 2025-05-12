@@ -92,7 +92,7 @@ const FAQItem = ({ item, isOpen, toggleOpen, index }) => {
         onClick={toggleOpen}
         whileTap={{ scale: 0.98 }}
       >
-        <h3 className="text-lg text-gray-900 font-sans">{item.question}</h3>
+        <h3 className="text-[17px] text-gray-900">{item.question}</h3>
         <motion.div 
           className="text-gray-400"
           animate={{ 
