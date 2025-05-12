@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Plus } from 'lucide-react';
+import { ArrowRight, MoveRight, Plus } from 'lucide-react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 // Define the FAQ data
@@ -85,10 +85,6 @@ const FAQItem = ({ item, isOpen, toggleOpen, index }) => {
         borderTopColor: 'white',
         borderBottomColor: '#E2E8F0',
         transform: isOpen ? 'translateY(-2px)' : 'none'
-      }}
-      whileHover={{ 
-        translateY: isOpen ? -2 : -1,
-        transition: { duration: 0.2 }
       }}
     >
       <motion.div 
@@ -216,6 +212,15 @@ const FAQSection = () => {
               toggleOpen={() => toggleItem(item.id)}
             />
           ))}
+         <div className="flex justify-center pt-4">
+  <button
+    onClick={() => router.push('/faqs')}
+    className="group flex items-center gap-2 px-7 py-2 rounded-2xl bg-indigo-50 text-indigo-700 font-medium shadow hover:bg-indigo-100 hover:text-indigo-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 cursor-pointer"
+  >
+    More FAQs
+    <MoveRight className="ml-1 transition-transform group-hover:translate-x-1 hover:text-indigo-800 text-indigo-700" size={20} />
+  </button>
+</div>
         </motion.div>
       </div>
     </div>

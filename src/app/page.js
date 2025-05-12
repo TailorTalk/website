@@ -27,6 +27,7 @@ import TestimonialSection from "./components/Testimonials";
 import { ThreeDCardDemo } from "./components/Grid";
 import { VortexDemo } from "./components/JoiningSection";
 import AIAgentToolkit from "./components/Features";
+import { TypewriterEffect } from "./components/ui/typewritter-effect";
 
 // export { homeMetadata as metadata };
 
@@ -194,11 +195,11 @@ export default function Home() {
         <div className="w-full">
           <FAQSection/>
         </div>
-        <div className="w-full">
+        {/* <div className="w-full">
           <ThreeDCardDemo/>
-        </div>
+        </div> */}
         <div className="w-full">
-          <VortexDemo/>
+          {/* <TypewriterEffect/> */}
         </div>
 
       </main>

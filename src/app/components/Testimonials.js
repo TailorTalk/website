@@ -91,7 +91,7 @@ const TestimonialsSection = () => {
                     
                     {/* Testimonial text - consistent positioning */}
                     <div className="py-6 flex-grow">
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-[#61646B] font-[350] leading-relaxed">
                         {testimonial.text}
                       </p>
                     </div>
@@ -111,7 +111,7 @@ const TestimonialsSection = () => {
                         <img 
                           src={testimonial.logo || "/api/placeholder/48/48"} 
                           alt={testimonial.company} 
-                          className="object-contain"
+                          className="object-containf rounded-lg"
                         />
                       </div>
                     </div>

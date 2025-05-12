@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import AnimatedCard from './ui/GradientBorder';
 import { motion } from 'framer-motion';
 import { FlipWords } from './ui/flip-words';
-import { CardBody, CardContainer, CardItem } from './ui/3d-card';
 
 const HeroSection = () => {
   // Animation variants
@@ -67,7 +66,7 @@ const HeroSection = () => {
   <FlipWords
   words={words}
   duration={3000}
-  className="inline-block text-[17px] font-medium text-gray-600"
+  className="inline-block text-[17px] font-medium text-indigo-600"
 />
 
   <span>and even integrates with your systems for more actions.</span>

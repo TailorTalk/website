@@ -59,6 +59,17 @@ const testimonials = [
     bgColor: "bg-slate-50",
     featured: true,
     accentColor: "border-l-purple-300"
+  },
+  {
+    company: "Stallions",
+    title: "Freed Our Team by Automating 1000+ Daily Instagram Enquiries",
+    text: "TailorTalk connects seamlessly to our backend via API, instantly handling over 1000 customer enquiries on Instagram every day. This crucial automation frees our team to focus on growth and other strategic priorities instead of repetitive chat.",
+    logo: "/stallions.png",
+    person: "Emily Smith",
+    role: "CEO",
+    bgColor: "bg-slate-50",
+    featured: true,
+    accentColor: "border-l-purple-300"
   }
 ];
 

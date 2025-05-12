@@ -10,19 +10,34 @@ export const FlipWords = ({
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isDulling, setIsDulling] = useState(false);
+
+  const dullDuration = 1500;
 
   // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
     setIsAnimating(true);
+    setIsDulling(false);
   }, [currentWord, words]);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
+    if (!isAnimating) {
+      // Start dulling before the word changes
+      const dullTimeout = setTimeout(() => {
+        setIsDulling(true);
+      }, duration - dullDuration);
+
+      const changeTimeout = setTimeout(() => {
         startAnimation();
       }, duration);
+
+      return () => {
+        clearTimeout(dullTimeout);
+        clearTimeout(changeTimeout);
+      };
+    }
   }, [isAnimating, duration, startAnimation]);
 
   return (
@@ -52,8 +67,12 @@ export const FlipWords = ({
           scale: 2,
           position: "absolute",
         }}
+        style={{
+          color: isDulling ? "#818CF8" : "#4F46E5",
+          transition: "color 2s"
+        }}
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 px-0.5",
+          "z-10 inline-block relative text-left text-neutral-900 px-0.5 transition-colors duration-700",
           className
         )}
         key={currentWord}>
