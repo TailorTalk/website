@@ -39,6 +39,10 @@ export default function RootLayout({ children }) {
         >
           {JSON.stringify(mainSchema)}
         </Script>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+        </style>
+
       </head>
       <body className={`${inter.className} montserrat-unique flex flex-col min-h-screen`}>
         {/* Skip to main content link for accessibility */}

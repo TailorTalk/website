@@ -32,7 +32,6 @@ const HeroSection = () => {
       transition: { duration: 0.8, ease: "easeOut", delay: 0.3 }
     }
   };
-  const words = ["follow-ups", "appointments", "payments"];
 
   return (
     <section className="py-24 md:py-24 overflow-hidden relative mt-16 w-full flex flex-col items-center justify-center">
@@ -59,13 +58,17 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.div
-  className="text-[17px] text-gray-600 mb-8 max-w-[55rem] mx-auto pl-1 font-light"
+  className="text-[17px] text-gray-600 mb-8 max-w-[50rem] mx-auto pl-1 font-light"
   variants={fadeInUp}
 >
-  <span>Let our AI agent manage your B2C sales, support, and any complex workflow on WhatsApp & Instagram chat. It automates </span>
+  <span>Let our AI agent manage your B2C sales, support, and any complex workflow on </span> <FlipWords
+  words={["Whatsapp", "Instagram",]}
+  duration={2000}
+  className="inline-block text-[17px] font-medium text-indigo-600"
+/><span>chat. It automates </span>
   <FlipWords
-  words={words}
-  duration={3000}
+  words={["follow-ups", "appointments", "payments"]}
+  duration={2000}
   className="inline-block text-[17px] font-medium text-indigo-600"
 />
 
