@@ -166,8 +166,11 @@ export default function Home() {
       
       <main className="flex flex-col justify-center items-center py-10 bg-white font-sans"
       style={{
-        background: "repeating-linear-gradient(45deg, rgb(245, 246, 248), rgb(245, 246, 248) 1px, transparent 1px, transparent 4px)"
+        background: "repeating-linear-gradient(45deg, rgb(240, 241, 244), rgb(240, 241, 244) 1px, transparent 1px, transparent 4px)"
       }}
+      // style={{
+      //   background: "repeating-linear-gradient(45deg, rgb(245, 246, 248), rgb(245, 246, 248) 1px, transparent 1px, transparent 4px)"
+      // }}
       // style={{
       //   background: `repeating-linear-gradient(
       //     45deg,

@@ -10,34 +10,18 @@ export const FlipWords = ({
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [isDulling, setIsDulling] = useState(false);
 
-  const dullDuration = 1500;
-
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
     setIsAnimating(true);
-    setIsDulling(false);
   }, [currentWord, words]);
 
   useEffect(() => {
-    if (!isAnimating) {
-      // Start dulling before the word changes
-      const dullTimeout = setTimeout(() => {
-        setIsDulling(true);
-      }, duration - dullDuration);
-
-      const changeTimeout = setTimeout(() => {
+    if (!isAnimating)
+      setTimeout(() => {
         startAnimation();
       }, duration);
-
-      return () => {
-        clearTimeout(dullTimeout);
-        clearTimeout(changeTimeout);
-      };
-    }
   }, [isAnimating, duration, startAnimation]);
 
   return (
@@ -48,55 +32,66 @@ export const FlipWords = ({
       <motion.div
         initial={{
           opacity: 0,
-          y: 10,
+          rotateX: -90,
+          transformOrigin: "center center"
         }}
         animate={{
           opacity: 1,
-          y: 0,
+          rotateX: 0
         }}
         transition={{
           type: "spring",
-          stiffness: 100,
-          damping: 10,
+          stiffness: 70,
+          damping: 15,
+          duration: 0.6
         }}
         exit={{
           opacity: 0,
-          y: -40,
-          x: 40,
-          filter: "blur(8px)",
-          scale: 2,
+          rotateX: 90,
+          transformOrigin: "center center",
           position: "absolute",
         }}
-        style={{
-          color: isDulling ? "#818CF8" : "#4F46E5",
-          transition: "color 2s"
-        }}
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 px-0.5 transition-colors duration-700",
+          "z-10 inline-block relative text-left text-neutral-900 px-0.5",
           className
         )}
         key={currentWord}>
-        {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
         {currentWord.split(" ").map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, rotateX: -90 }}
+            animate={{ opacity: 1, rotateX: 0 }}
             transition={{
-              delay: wordIndex * 0.3,
-              duration: 0.3,
+              delay: wordIndex * 0.08,
+              duration: 0.5,
+              type: "spring",
+              stiffness: 70,
+              damping: 15
             }}
-            className="inline-block whitespace-nowrap">
+            className="inline-block whitespace-nowrap"
+            style={{ 
+              transformStyle: "preserve-3d", 
+              perspective: "1200px", 
+              display: "inline-block",
+              backfaceVisibility: "hidden"
+            }}>
             {word.split("").map((letter, letterIndex) => (
               <motion.span
                 key={word + letterIndex}
-                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, rotateX: -90 }}
+                animate={{ opacity: 1, rotateX: 0 }}
                 transition={{
-                  delay: wordIndex * 0.3 + letterIndex * 0.05,
-                  duration: 0.2,
+                  delay: wordIndex * 0.08 + letterIndex * 0.02,
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 70, 
+                  damping: 15
                 }}
-                className="inline-block">
+                style={{ 
+                  transformStyle: "preserve-3d", 
+                  display: "inline-block",
+                  backfaceVisibility: "hidden" 
+                }}>
                 {letter}
               </motion.span>
             ))}

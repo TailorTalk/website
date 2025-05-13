@@ -74,7 +74,7 @@ const FAQItem = ({ item, isOpen, toggleOpen, index }) => {
       className={`mb-4 rounded-xl overflow-hidden group relative transition-all duration-300 ${
         isOpen 
           ? 'shadow-lg bg-white' 
-          : 'shadow-md hover:shadow-lg bg-gray-50 hover:bg-white'
+          : 'shadow-md hover:shadow-lg bg-zinc-50 hover:bg-white'
       }`}
       style={{
         borderTopWidth: '1px',
@@ -88,7 +88,7 @@ const FAQItem = ({ item, isOpen, toggleOpen, index }) => {
       }}
     >
       <motion.div 
-        className={`flex justify-between items-center py-5 px-6 cursor-pointer ${isOpen ? 'border-b border-gray-100' : ''}`}
+        className={`flex justify-between items-center py-6 px-6 cursor-pointer ${isOpen ? 'border-b border-gray-100' : ''}`}
         onClick={toggleOpen}
         whileTap={{ scale: 0.98 }}
       >

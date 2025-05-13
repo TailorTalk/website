@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AnimatedCard from './ui/GradientBorder';
 import { motion } from 'framer-motion';
 import { FlipWords } from './ui/flip-words';
-import KeyboardButton from './ui/button';
+import { Button } from './ui/button';
 
 const HeroSection = () => {
   // Animation variants
@@ -59,17 +59,17 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.div
-  className="text-[17px] text-gray-600 mb-8 max-w-[50rem] mx-auto pl-1 font-light"
+  className="text-[17px] text-[#61646B] mb-8 max-w-[50rem] mx-auto pl-1 font-light"
   variants={fadeInUp}
 >
   <span>Let our AI agent manage your B2C sales, support, and any complex workflow on </span> <FlipWords
   words={["Whatsapp", "Instagram",]}
-  duration={2000}
+  duration={1000}
   className="inline-block text-[17px] font-medium text-indigo-600"
 /><span>chat. It automates </span>
   <FlipWords
   words={["follow-ups", "appointments", "payments"]}
-  duration={2000}
+  duration={1000}
   className="inline-block text-[17px] font-medium text-indigo-600"
 />
 
@@ -83,15 +83,13 @@ const HeroSection = () => {
             <motion.div
               whileTap={{ scale: 0.95 }}
             >
-             <KeyboardButton color="indigo">Get started</KeyboardButton>
+             <Button color="indigo">Get Started</Button>
             </motion.div>
-            <motion.button 
-              className="bg-white hover:bg-gray-50 cursor-pointer text-gray-800 border border-gray-200 rounded-lg px-7 py-2"
-              whileHover={{ scale: 1.05 }}
+            <motion.div
               whileTap={{ scale: 0.95 }}
             >
-              See how it works
-            </motion.button>
+              <Button color="white">See how it works</Button>
+            </motion.div>
           </motion.div>
         </motion.div>
         

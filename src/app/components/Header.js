@@ -50,20 +50,36 @@ const Header = () => {
   // Improved Navigation item component with consistent styling
   const NavItem = ({ href, label, id }) => {
     return (
-      <div className="relative">
-        <a 
-          href={href} 
+      <div className="group relative">
+        {/* Base/bottom layer for the 3D effect */}
+        <div className={`
+          absolute
+          inset-0
+          rounded-lg
+        `}></div>
+        
+        <button
           className={`
-            relative text-gray-700 px-4 py-2 rounded-full text-sm font-medium
-            transition duration-300 ease-in-out
-            hover:text-indigo-700 
-            after:content-[''] after:absolute after:h-0.5 after:w-0 after:left-1/2 after:-translate-x-1/2
-            after:bottom-0 after:bg-indigo-600 after:transition-all after:duration-300
-            hover:after:w-3/4
+            relative text-[#24242A]
+            hover:bg-zinc-100
+            active:bg-zinc-100
+            w-full
+            rounded-lg
+            text-[14px]
+            px-4.5 py-1.5
+            transition-all duration-150
+            
+            /* Default bulged out appearance */
+            transform
+            
+            /* Hover effect - sink in */
+            group-hover:shadow-[inset_0_1px_2px_rgba(0,0,0,0.08),inset_0_-1px_0_0_rgba(255,255,255,1)]
+            group-hover:translate-y-0
+            
           `}
         >
           {label}
-        </a>
+        </button>
       </div>
     );
   };
@@ -71,14 +87,36 @@ const Header = () => {
   // Improved Resources dropdown with consistent styling
   const ResourcesDropdown = () => {
     return (
-      <div className="relative group">
-        <button 
-          className="text-sm flex items-center font-medium px-4 py-2 rounded-full
-            text-gray-700 transition duration-300 ease-in-out
-            hover:text-indigo-700 group-hover:text-indigo-700"
+      <div className="group relative">
+        {/* Base/bottom layer for the 3D effect */}
+        <div className={`
+          absolute
+          inset-0
+          rounded-lg
+        `}></div>
+        <button
+          className={`
+            relative text-[#24242A]
+            hover:bg-zinc-100
+            active:bg-zinc-100
+            w-full
+            rounded-lg
+            text-[14px]
+            px-4 py-1.5
+            transition-all duration-150
+            
+            /* Default bulged out appearance */
+            transform
+            
+            /* Hover effect - sink in */
+            group-hover:shadow-[inset_0_1px_2px_rgba(0,0,0,0.08),inset_0_-1px_0_0_rgba(255,255,255,1)]
+            group-hover:translate-y-0
+            flex
+            
+          `}
         >
           Resources
-          <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+          <ChevronDown className="ml-1 mt-[2px] h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
         </button>
         
         {/* Improved dropdown panel with consistent styling */}
