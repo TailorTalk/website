@@ -1,23 +1,23 @@
 "use client";
-import React, { useEffect,useRef,useState } from "react";
-import Image from 'next/image';
-import ReactMarkdown from "react-markdown";
-import leadx from "../../public/Leadx.png";
 import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
-import testimonials from "./Config/testimonials";
 import GradeIcon from '@mui/icons-material/Grade';
-import UseCases from "./components/UseCases";
-import { TestCases } from "./Config/testCases";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import whatsappIcon from "../../public/whatsapp_icon.svg";
+import Image from 'next/image';
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import leadx from "../../public/Leadx.png";
+import whatsappIcon from "../../public/whatsapp_icon.svg";
+import UseCases from "./components/UseCases";
 import WhatsappWidget from "./components/WhatsappWidget";
+import { TestCases } from "./Config/testCases";
+import testimonials from "./Config/testimonials";
 // import { homeMetadata } from './Config/metadata';
-import { generateOrganizationSchema, generateFAQSchema } from './Config/metadata/structuredData';
 import Script from 'next/script';
+import { generateFAQSchema, generateOrganizationSchema } from './Config/metadata/structuredData';
 
 // export { homeMetadata as metadata };
 
@@ -282,60 +282,68 @@ export default function Home() {
       >
         <ChevronRight className="w-6 h-6 text-gray-700" />
       </button>
+        <Slider ref={sliderRef} {...settings}>
+          {TestCases.map((testCase, index) => (
+            <div key={index} className="md:px-4">
+          <div
+            className="flex flex-col rounded-xl border border-gray-400 bg-gray-50 shadow-md p-3 h-[33rem]"
+          >
+            <Image
+              src={testCase.src}
+              alt={testCase.title}
+              width={400}
+              height={300}
+              className="rounded-lg h-60 w-full object-cover "
+            />
 
-      {/* Slider */}
-      <Slider ref={sliderRef} {...settings}>
-        {TestCases.map((testCase, index) => (
-          <div key={index} className="md:px-4">
-            <div
-              className="flex flex-col rounded-xl border border-gray-400 bg-gray-50 shadow-md p-3 h-[33rem]"
-            >
-                  <Image
-                    src={testCase.src}
-                    alt={testCase.title}
-                    width={400}
-                    height={300}
-                    className="rounded-lg h-60 w-full object-cover "
-                  />
-
-              <div className="pb-1 px-3 w-full h-full flex flex-col">
-                <div className="flex-1">
-                <h5 className="text-lg mt-4 mb-3 font-semibold">{testCase.title}</h5>
-                  <div className="mt-2">
-                    <ul className="list-disc pl-3">
-                      {testCase.content.map((point, idx) => (
-                        <li key={idx} className="text-gray-800 text-sm leading-relaxed">
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              
-                <Link 
-    href={whatsappUrl}
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="w-60 text-blue-600 text-base flex transform transition-transform hover:scale-105"
-  >
-    <Image src={whatsappIcon} alt="" width={28} height={28} className="-ml-3 mr-1"/> 
-    <p className="mt-[2px]">Start demo chat</p> 
-    <ChevronRight className="ml-1 mt-[3px]" />
-  </Link>
+            <div className="pb-1 px-3 w-full h-full flex flex-col">
+              <div className="flex-1">
+              <h5 className="text-lg mt-4 mb-3 font-semibold">{testCase.title}</h5>
+            <div className="mt-2">
+              <ul className="list-disc pl-3">
+                {testCase.content.map((point, idx) => (
+              <li key={idx} className="text-gray-800 text-sm leading-relaxed">
+                {point}
+              </li>
+                ))}
+              </ul>
+            </div>
               </div>
+            
+              <Link 
+          href={whatsappUrl}
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="w-60 text-blue-600 text-base flex transform transition-transform hover:scale-105"
+        >
+          <Image src={whatsappIcon} alt="" width={28} height={28} className="-ml-3 mr-1"/> 
+          <p className="mt-[2px]">Start demo chat</p> 
+          <ChevronRight className="ml-1 mt-[3px]" />
+        </Link>
             </div>
           </div>
-        ))}
-      </Slider>
-    </div>
-  </section>
-
-        <section id="useCases" className="w-full p-6 flex flex-col justify-center items-center mt-5 md:mt-4">
-        <h2 className="md:text-[36px] text-3xl font-normal text-center my-10 text-black pt-4">Use cases</h2>
-          <UseCases/>
+            </div>
+          ))}
+        </Slider>
+          </div>
         </section>
 
-        {/* Testimonial */}
+          <section id="useCases" className="w-full p-6 flex flex-col justify-center items-center mt-5 md:mt-4">
+          <h2 className="md:text-[36px] text-3xl font-normal text-center my-10 text-black pt-4">Use cases</h2>
+            <UseCases/>
+          </section>
+          <section className="w-full flex flex-col items-center justify-center py-12">
+            <Link 
+          href='https://dashboard-preview.tailortalk.ai'
+          rel="noopener noreferrer" 
+          className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-md flex items-center justify-center transform transition-transform hover:scale-105 max-w-xs w-full"
+            >
+          <span>Get started</span>
+          <ChevronRight className="ml-2" />
+            </Link>
+          </section>
+
+          {/* Testimonial */}
         <div className="flex w-full flex-col justify-center items-center py-8 bg-gray-50">
         <h1 className="md:text-4xl text-3xl font-normal text-center my-10 text-black pt-4">
           Loved by businesses of all kinds
