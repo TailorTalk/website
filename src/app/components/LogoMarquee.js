@@ -1,6 +1,6 @@
 // components/LogoMarquee.jsx
 import Marquee from 'react-fast-marquee';
-import testimonials from '../Config/testimonials';
+import { testimonials } from '../Config/testimonials';
 
 const LogoMarquee = () => {
   // Sample logos from testimonials

@@ -1,14 +1,20 @@
-const testimonials = [
+export const testimonials = [
   {
+    company: "Keerthi Triumph",
+    title: "Hundreds of Hours Saved Automating Bike Inquiries & Bookings",
+    text: "TailorTalk automates everything from exploring models and scheduling test rides to booking service appointments via WhatsApp chat. This efficiency has saved our team hundreds of valuable manual hours.",
+    logo: "/keerthi.jpg",
+    person: "Emily Smith",
+    role: "CEO",
+  },
+  {    
     company: "CF Tech",
     title: "Exhibition QR Code Turned Visitors into Sales Leads",
     text: "Using a simple WhatsApp QR code at our exhibition, TailorTalk engaged visitors, collected contacts, and automatically followed up. This turned event interest into real sales conversations and opportunities for us.",
     logo: "/cf_tech.jpg",
     person: "Sarah Johnson",
     role: "Project Manager",
-    bgColor: "bg-slate-50",
-    accentColor: "border-l-blue-500"
-  },
+},
   {
     company: "Tootly",
     title: "Doubled Revenue by Automating Instagram Lead Handling",
@@ -16,8 +22,6 @@ const testimonials = [
     logo: "/tootly.jpg",
     person: "David Johnson",
     role: "Founder",
-    bgColor: "bg-slate-50",
-    accentColor: "border-l-amber-500"
   },
   {
     company: "Rage Room",
@@ -26,18 +30,6 @@ const testimonials = [
     logo: "/rageroom.jpg",
     person: "Mark Thompson",
     role: "CEO",
-    bgColor: "bg-slate-50",
-    accentColor: "border-l-rose-500"
-  },
-  {
-    company: "Keerthi Triumph",
-    title: "Hundreds of Hours Saved Automating Bike Inquiries & Bookings",
-    text: "TailorTalk automates everything from exploring models and scheduling test rides to booking service appointments via WhatsApp chat. This efficiency has saved our team hundreds of valuable manual hours.",
-    logo: "/keerthi.jpg",
-    person: "Emily Smith",
-    role: "CEO",
-    bgColor: "bg-slate-50",
-    accentColor: "border-l-emerald-500"
   },
   {
     company: "CoachDirect",
@@ -46,31 +38,21 @@ const testimonials = [
     logo: "/coach_direct.jpg",
     person: "John Deo",
     role: "Founder",
-    bgColor: "bg-slate-50",
-    accentColor: "border-l-cyan-500"
   },
   {
-    company: "Sayak Sarees",
+    company: "Samyak Sarees",
     title: "Freed Our Team by Automating 1000+ Daily Instagram Enquiries",
     text: "TailorTalk connects seamlessly to our backend via API, instantly handling over 1000 customer enquiries on Instagram every day. This crucial automation frees our team to focus on growth and other strategic priorities instead of repetitive chat.",
     logo: "/Samyakk.webp",
     person: "Emily Smith",
     role: "CEO",
-    bgColor: "bg-slate-50",
-    featured: true,
-    accentColor: "border-l-purple-300"
   },
-  {
-    company: "Stallions",
-    title: "Freed Our Team by Automating 1000+ Daily Instagram Enquiries",
-    text: "TailorTalk connects seamlessly to our backend via API, instantly handling over 1000 customer enquiries on Instagram every day. This crucial automation frees our team to focus on growth and other strategic priorities instead of repetitive chat.",
-    logo: "/stallions.png",
-    person: "Emily Smith",
-    role: "CEO",
-    bgColor: "bg-slate-50",
-    featured: true,
-    accentColor: "border-l-purple-300"
-  }
+{
+  company: "Stallions",
+  title: "Freed Our Team by Automating 1000+ Daily Instagram Enquiries",
+  text: "TailorTalk connects seamlessly to our backend via API, instantly handling over 1000 customer enquiries on Instagram every day. This crucial automation frees our team to focus on growth and other strategic priorities instead of repetitive chat.",
+  logo: "/stallions.png",
+  person: "Emily Smith",
+  role: "CEO",
+}
 ];
-
-export default testimonials;

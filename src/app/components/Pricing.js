@@ -1,80 +1,9 @@
 import React, { useState } from 'react';
 import Button from './ui/button';
+import { plans } from '../Config/pricing';
 
 export default function PricingModule() {
   const [billingPeriod, setBillingPeriod] = useState('monthly');
-  
-  const pricingHeaders = {
-    title: "Simple Pricing",
-    subtitle: "Choose the plan that fits your needs and boost your productivity with TodoFusion."
-  };
-  
-  const plans = [
-    {
-      forText: "For small businesses & startups",
-      title: "Starter",
-      description: "Perfect for small businesses & startups getting started with sales & support automation.",
-      price: {
-        monthly: "59",
-        annual: "49"
-      },
-      period: {
-        monthly: "/month",
-        annual: "/yearly"
-      },
-      features: [
-        "Up to 1,000 Unique Monthly Users*",
-        "All channel Integration",
-        "Access to All Tools & Features (excluding API tool access)"
-      ],
-      buttonText: "Start Free Trial",
-      buttonStyle: "outline"
-    },
-    {
-      forText: "For growing businesses",
-      title: "Growth",
-      description: "Ideal for growing businesses aiming to automate sales, support & marketing across key channels with advanced features.",
-      price: {
-        monthly: "119",
-        annual: "99"
-      },
-      period: {
-        monthly: "/month",
-        annual: "/yearly"
-      },
-      features: [
-        "Up to 2,000 Unique Monthly Users*",
-        "All channel Integration",
-        "Access to All Tools & Features, including API Tool Access",
-        "Initial Agent Setup & Tutorials"
-      ],
-      buttonText: "Start Free Trial",
-      popular: true,
-      buttonStyle: "premium"
-    },
-    {
-      forText: "For established businesses",
-      title: "Enterprise",
-      description: "For established businesses with high volume, complex workflows, deep integration needs, and requirements for dedicated support.",
-      price: {
-        monthly: "Custom",
-        annual: "Custom"
-      },
-      period: {
-        monthly: " pricing",
-        annual: " pricing"
-      },
-      features: [
-        "Unlimited Monthly Users",
-        "All channel Integration",
-        "Access to All Tools & Features, including API Tool Access",
-        "Advanced & Custom Integrations",
-        "Agent Setup & 24*7 support"
-      ],
-      buttonText: "Contact Sales",
-      buttonStyle: "outline"
-    }
-  ];
 
   return (
     <div className="w-full max-w-6xl mx-auto py-16 px-4">
@@ -82,10 +11,10 @@ export default function PricingModule() {
       <div className="text-center mb-12">
         <div className="inline-block mb-5">
         </div>
-<h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-5">
-  Simple <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">pricing</span>
-</h2>    
-<p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Choose the plan that fits your needs and boost your productivity with TailorTalk.</p>
+        <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-5">
+          Simple <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">pricing</span>
+        </h2>    
+        <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Choose the plan that fits your needs and boost your productivity with TailorTalk.</p>
       </div>
       
       {/* Billing Toggle */}
