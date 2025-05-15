@@ -56,8 +56,8 @@ export default function PricingModule() {
               key={index}
               style={{
                 boxShadow: isPopular
-                  ? '0 6px 10px 0 rgba(99,102,241,0.4), inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0'
-                  : 'inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)'
+                  ? '0 6px 10px 0 rgba(99,102,241,0.4), inset 0 2px 0 0 white, inset 0 -1px 0 0 #E2E8F0'
+                  : 'inset 0 2px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)'
               }}
               className={`flex flex-col h-full rounded-xl overflow-hidden bg-zinc-50 hover:shadow-lg transition-all ${
                 isPopular 
