@@ -35,12 +35,24 @@ const TestimonialsSection = () => {
                   background: "repeating-linear-gradient(45deg, rgba(230, 225, 230, 0.3), rgba(230, 225, 230, 0.3) 1px, transparent 1px, transparent 4px)"
                 }}
               >
-                <div className="relative h-full rounded-2xl overflow-hidden group shadow-[0_6px_10px_0_rgba(99,102,241,0.4)] transition-all duration-300">
+                <div
+                  className={
+                    `relative h-full rounded-2xl overflow-hidden group transition-all duration-300 ` +
+                    (index % 2 === 0
+                      ? "shadow-[0_6px_10px_0_rgba(99,102,241,0.4)]"
+                      : "border border-gray-200 shadow-sm")
+                  }
+                >
                   {/* Gradient backlight effect */}
                   <div className="absolute inset-0 bg-white opacity-70 transform scale-100 transition-all duration-300"></div>
                   
                   {/* Card border accent */}
-                  <div className="absolute inset-x-0 top-0 h-1 bg-indigo-600"></div>
+                  <div
+                    className="absolute inset-x-0 top-0"
+                    style={{
+                      height: "3px",
+    background: "linear-gradient(90deg,rgb(124, 126, 229) 0%,rgb(239, 78, 225) 100%)"                    }}
+                  ></div>
                   
                   {/* Content container */}
                   <div className="relative z-10 h-full p-8 flex flex-col">
