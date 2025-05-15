@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../../../public/logoSvg.svg";
-import { ChevronDown } from 'lucide-react';
+import { Book, ChevronDown, Clock, Code, Code2, HelpCircle } from 'lucide-react';
 import { Menu } from 'lucide-react';
 import { Drawer, IconButton, List, ListItem, ListItemText } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
+import Button from "./ui/button";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -86,6 +87,32 @@ const Header = () => {
 
   // Improved Resources dropdown with consistent styling
   const ResourcesDropdown = () => {
+    const resourceItems = [
+      {
+        title: "Guide",
+        description: "Find out everything on how to use chatbase, and unlock its full potential.",
+        icon: Book,
+        href: "/guide"
+      },
+      {
+        title: "Blog",
+        description: "Learn more about chatbase by reading our latest articles.",
+        icon: HelpCircle,
+        href: "/blog"
+      },
+      {
+        title: "Docs",
+        description: "Explore our API and learn how to integrate chatbase with your app.",
+        icon: Code,
+        href: "/docs"
+      },
+      {
+        title: "Changelog",
+        description: "Stay up to date with the latest updates and features.",
+        icon: Clock,
+        href: "/changelog"
+      }
+    ];
     return (
       <div className="group relative">
         {/* Base/bottom layer for the 3D effect */}
@@ -121,21 +148,30 @@ const Header = () => {
         
         {/* Improved dropdown panel with consistent styling */}
         <div 
-          className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-xl overflow-hidden p-3 min-w-48 
+          className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-xl overflow-hidden min-w-96 
             opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300
-            border border-gray-100 transform origin-top scale-95 group-hover:scale-100"
+            border border-gray-100 transform origin-top scale-95 group-hover:scale-100 p-4 w-full max-w-md"
         >
-          {['Documentation', 'Templates', 'Tutorials', 'API Reference'].map((item) => (
-            <a 
-              key={item} 
-              href={`/${item.toLowerCase()}`}
-              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 rounded-lg transition duration-200
-              flex items-center space-x-2"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100"></span>
-              <span>{item}</span>
-            </a>
-          ))}
+          {resourceItems.map((resource, index) => {
+  const Icon = resource.icon;
+  return (
+    <a
+  key={index}
+  href={resource.href}
+  className="group flex items-center p-4 rounded-lg cursor-pointer transition-colors duration-200 hover:bg-gray-100"
+>
+  <div 
+    className="mr-4 flex-shrink-0 bg-gray-100 rounded-lg p-3 flex items-center justify-center transition-transform duration-200 group-hover:scale-110  group-hover:border  group-hover:border-gray-200"
+  >
+    <Icon strokeWidth={1.5} className="h-5 w-5 text-gray-500 transition-transform duration-200 group-hover:scale-105" />
+  </div>
+  <div>
+    <h3 className="text-base font-medium text-gray-900">{resource.title}</h3>
+    <p className="text-sm text-gray-500">{resource.description}</p>
+  </div>
+</a>
+  );
+})}
         </div>
       </div>
     );
@@ -148,13 +184,13 @@ const Header = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed items-center justify-center top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-        ? 'w-[85%] border border-white/20 bg-white/10 backdrop-blur-md backdrop-saturate-200 shadow-lg py-2 mx-auto mt-3 rounded-full' 
-        : 'bg-transparent py-5 mx-auto w-[90%]'
+        ? 'w-[85%] border border-white bg-[#ffffff80] backdrop-blur-sm backdrop-saturate-100 shadow-lg py-2 mx-auto mt-3 rounded-full' 
+        : 'bg-transparent py-4 mx-auto w-[90%]'
       }`}
     >
-      <div className="max-w-screen px-4 sm:px-6">
+      <div className="max-w-screen sm:px-3">
         <div className="flex w-full justify-between items-center">
-          <div className="flex flex-1 items-center gap-8 md:gap-12">
+          <div className="flex flex-1 items-center gap-7">
             <motion.a 
               href="/" 
               className="transition-transform hover:scale-105"
@@ -172,9 +208,8 @@ const Header = () => {
             
             <nav className="hidden md:flex gap-3 items-center">
               <NavItem href="/" label="Home" id="home" />
-              <ResourcesDropdown />
               <NavItem href="/pricing" label="Pricing" id="pricing" />
-              <NavItem href="/docs" label="Docs" id="docs" />
+              <ResourcesDropdown />
             </nav>
           </div>
 
@@ -188,13 +223,42 @@ const Header = () => {
               animate="visible"
               whileTap={{ scale: 0.95 }}
             >
-              <motion.button 
-                className="bg-indigo-600 text-sm text-white rounded-full shadow-md transition duration-300 font-medium
-                  px-6 py-2.5 border border-transparent hover:bg-white hover:text-indigo-600 hover:border-indigo-600
-                  hover:shadow-indigo-100 hover:shadow-lg"
-              >
-                Book a Demo
-              </motion.button>
+               <div className="group relative">
+        {/* Base/bottom layer for the 3D effect */}
+        <div className={`
+          absolute
+          inset-0
+          bg-[#493fd8]
+          ${scrolled ? 'rounded-full' : 'rounded-lg'}
+        `}></div>
+        
+        <button
+          className={`
+            relative
+            bg-indigo-600 text-white
+            hover:bg-[#493fd8]
+            active:bg-[#493fd8]
+            w-full
+            ${scrolled ? 'rounded-full' : 'rounded-lg'}
+            text-[15px]
+            font-light
+            px-4 py-1
+            transition-all duration-150
+            cursor-pointer
+            
+            /* Default bulged out appearance */
+            transform
+            shadow-[0_2px_4px_1px_rgba(99,102,241,0.9),inset_0_-1px_0_0_rgb(73,63,216)]
+            
+            /* Hover effect - sink in */
+            group-hover:shadow-[inset_0_1px_0_0_rgba(0,0,0,0.7),inset_0_2px_3px_rgba(0,0,0,0.4),inset_0_-1px_0_0_rgba(255,255,255,0.9)]
+            group-hover:translate-y-0
+            
+          `}
+        >
+          Book a demo
+        </button>
+      </div>
             </motion.a>
 
             {/* Mobile Menu Icon with improved animation */}
@@ -304,10 +368,9 @@ const Header = () => {
                             href="/remix-template" 
                             className="block"
                           >
-                            <button className="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl hover:shadow-md transition-all duration-300 font-medium 
-                              hover:bg-indigo-700 shadow-sm hover:shadow-indigo-100 hover:shadow-lg">
+                            <Button color="indigo">
                               Book a Demo
-                            </button>
+                            </Button>
                           </a>
                         </motion.div>
                       </List>

@@ -11,7 +11,7 @@ export default function DocHeader() {
 
   const navItems = [
     { name: 'User Guide', href: '/guide', pattern: /^\/guide(?:\/[^/]+\/[^/]+)?$/ },
-    // { name: 'API Reference', href: '/guide/api_guide/campaign_api', pattern: /^\/guide\/api_guide\// },
+    { name: 'FAQs', href: '/faqs', pattern: /^\/faqs(?:\/[^/]+\/[^/]+)?$/ },
     // { name: 'FAQ', href: '/guide/tools_guide/what_is_tool', pattern: /^\/guide\/tools_guide\// },
   ];
 

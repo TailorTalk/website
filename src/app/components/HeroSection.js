@@ -3,6 +3,7 @@ import AnimatedCard from './ui/GradientBorder';
 import { motion } from 'framer-motion';
 import { FlipWords } from './ui/flip-words';
 import { Button } from './ui/button';
+import { PointerHighlight } from './ui/pointer-highlight';
 
 const HeroSection = () => {
   // Animation variants
@@ -62,11 +63,14 @@ const HeroSection = () => {
   className="text-[17px] text-[#61646B] mb-8 max-w-[50rem] mx-auto pl-1 font-light"
   variants={fadeInUp}
 >
-  <span>Let our AI agent manage your B2C sales, support, and any complex workflow on </span> <FlipWords
+  <span>Let our AI agent manage your B2C sales, support, and any complex workflow on </span> 
+  <FlipWords
   words={["Whatsapp", "Instagram",]}
   duration={1000}
   className="inline-block text-[17px] font-medium text-indigo-600"
-/><span>chat. It automates </span>
+/>
+
+<span>chat. It automates </span>
   <FlipWords
   words={["follow-ups", "appointments", "payments"]}
   duration={1000}

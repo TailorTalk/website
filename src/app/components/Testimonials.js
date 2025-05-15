@@ -74,7 +74,7 @@ const TestimonialsSection = () => {
                 key={index}
                 className="mx-4 pb-5 w-96 h-[30rem] bg-white rounded-2xl"
               >
-                <div className="relative h-full rounded-2xl overflow-hidden group shadow-lg shadow-indigo-500/40 hover:shadow-xl hover:shadow-indigo-500/60 transition-all duration-300">
+                <div className="relative h-full rounded-2xl overflow-hidden group shadow-lg shadow-indigo-500/60 transition-all duration-300">
                   {/* Gradient backlight effect */}
                   <div className="absolute inset-0 bg-white opacity-70 transform scale-95 group-hover:scale-100 transition-all duration-300"></div>
                   

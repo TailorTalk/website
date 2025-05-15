@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './ui/button';
 
 export default function PricingModule() {
   const [billingPeriod, setBillingPeriod] = useState('monthly');
@@ -23,14 +24,8 @@ export default function PricingModule() {
       },
       features: [
         "Up to 1,000 Unique Monthly Users*",
-        "Core AI Agent Capabilities",
-        "1 Channel Integration (Choose WhatsApp or Instagram)",
-        "Knowledge Base Access (FAQs & Documents)",
-        "Basic Workflow Automation (Lead Capture, Simple Q&A)",
-        "Basic Lead Status Tagging",
-        "Easy Natural Language Setup",
-        "Standard Email & Chat Support",
-        "Basic Analytics Dashboard"
+        "All channel Integration",
+        "Access to All Tools & Features (excluding API tool access)"
       ],
       buttonText: "Start Free Trial",
       buttonStyle: "outline"
@@ -48,21 +43,10 @@ export default function PricingModule() {
         annual: "/month"
       },
       features: [
-        "Up to 3,000 Unique Monthly Users*",
-        "Everything in Starter, plus:",
-        "Up to 3 Channels (WhatsApp, Instagram, Website Chat)",
-        "Advanced Workflow Automation",
-        "Automated Contextual Follow-ups",
-        "Rich Media Handling (Send & Receive Images, Docs, Video, Audio)",
-        "Booking Management Automation",
-        "In-Chat Payments (UPI & More)",
-        "Shopify Integration",
-        "Smart Data Organization (Custom Fields)",
-        "Basic API Access",
-        "Personalized WhatsApp Campaigns (Up to 3,000 contacts/month)",
-        "Priority Email & Chat Support",
-        "Enhanced Analytics",
-        "Up to 3 Team Member Seats"
+        "Up to 2,000 Unique Monthly Users*",
+        "All channel Integration",
+        "Access to All Tools & Features, including API Tool Access",
+        "Initial Agent Setup & Tutorials"
       ],
       buttonText: "Start Free Trial",
       popular: true,
@@ -81,20 +65,11 @@ export default function PricingModule() {
         annual: " pricing"
       },
       features: [
-        "Custom Unique Monthly User Volume",
-        "Everything in Growth, plus:",
-        "Unlimited Channels",
-        "Advanced & Custom API Integrations",
-        "Complex, Multi-Step Workflow Design",
-        "Volume Personalized Campaigns",
-        "Advanced AI Capabilities (Potential Fine-tuning)",
-        "Natural Language Insights Querying",
-        "Dedicated Account Manager",
-        "Premium SLA Support",
-        "Advanced Security & Compliance Options",
-        "Multi-Language Support at Scale",
-        "Custom Onboarding & Training",
-        "Unlimited Team Member Seats w/ Roles"
+        "Unlimited Monthly Users",
+        "All channel Integration",
+        "Access to All Tools & Features, including API Tool Access",
+        "Advanced & Custom Integrations",
+        "Agent Setup & 24*7 support"
       ],
       buttonText: "Contact Sales",
       buttonStyle: "outline"
@@ -152,108 +127,80 @@ export default function PricingModule() {
           return (
             <div 
               key={index}
-              className={`rounded-lg border transition-all duration-300 hover:shadow-lg bg-white ${
+              style={{
+                boxShadow: 'inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.2)'
+              }}
+              className={`rounded-xl overflow-hidden bg-zinc-50 hover:shadow-lg transition-all ${
                 isPopular 
-                  ? 'border-indigo-200 shadow-md' 
-                  : 'border-gray-200 hover:border-gray-300'
+                  ? 'border-gray-200 shadow-lg' 
+                  : 'border-gray-200 shadow-md'
               }`}
             >
-              <div className="p-6 flex flex-col h-full relative">
-                {/* Status badge for popular plan */}
-                {isPopular && (
-                  <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/3">
-                    <span className="px-3 py-1 bg-indigo-600 text-white text-xs font-medium rounded-full shadow-sm">
-                      Popular
-                    </span>
-                  </div>
-                )}
-                
-                {/* Header */}
-                <div className="mb-4">
-                  <p className="text-xs font-medium uppercase tracking-wider text-indigo-600 mb-1">
-                    {plan.forText}
-                  </p>
-                  <h2 className="text-2xl font-semibold text-gray-900">
-                    {plan.title}
-                  </h2>
-                  <p className="mt-2 text-xs text-gray-500 min-h-12">
-                    {plan.description}
-                  </p>
-                </div>
-                
-                {/* Divider */}
-                <div className="w-full h-px bg-gray-100 my-4"></div>
+              {/* Card Header */}
+              <div className="px-6 pt-6 pb-4">
+                <h2 className="text-2xl font-bold text-gray-900 mb-1">
+                  {plan.title}
+                </h2>
+                <p className="text-sm text-gray-500 mb-4">
+                  {plan.description}
+                </p>
                 
                 {/* Price */}
-                <div className="mb-6">
-                  <div className="flex items-baseline">
-                    {isEnterprise ? (
-                      <span className="text-2xl font-bold text-gray-900">
+                <div className="mt-4 mb-6">
+                  {isEnterprise ? (
+                    <div className="flex items-baseline">
+                      <span className="text-2xl font-semibold text-gray-900">
                         {plan.price[billingPeriod]}
-                        <span className="text-sm font-normal text-gray-500">
-                          {plan.period[billingPeriod]}
-                        </span>
                       </span>
-                    ) : (
-                      <>
-                        <span className="text-3xl font-bold text-gray-900">
-                          ${plan.price[billingPeriod]}
-                        </span>
-                        <span className="text-sm ml-1 font-normal text-gray-500">
-                          {plan.period[billingPeriod]}
-                        </span>
-                      </>
-                    )}
-                  </div>
+                      <span className="ml-1 text-gray-500">
+                        {plan.period[billingPeriod]}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="flex items-baseline">
+                      <span className="text-3xl font-semibold text-gray-900">
+                        ${plan.price[billingPeriod]}
+                      </span>
+                      <span className="ml-1 text-gray-500">
+                        {plan.period[billingPeriod]}
+                      </span>
+                    </div>
+                  )}
+                  <p className="text-xs text-gray-500 mt-1">plus local taxes</p>
+                </div>
+              </div>
+              
+              {/* CTA Button */}
+              <div className="px-6">
+                <Button
+                color={isPopular || plan.buttonStyle === 'premium' ? 'indigo': 'black'}
+                  // className={`w-full py-2 rounded-lg text-center font-medium transition-all `}
+                >
+                  {plan.buttonText}
+                </Button>
+              </div>
+              
+              {/* Feature List - Simple bullet points */}
+              <div className="px-6 py-6 mt-4">
+                <div className="flex items-center space-x-2 mb-4">
+                  <div className="h-px bg-gray-200 flex-grow"></div>
+                  <span className="text-sm font-medium text-gray-500">Features</span>
+                  <div className="h-px bg-gray-200 flex-grow"></div>
                 </div>
                 
-                {/* Features */}
-                <div className="mb-6 flex-grow">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-900 mb-3">
-                    Features
-                  </h3>
-                  <ul className="space-y-2">
-                    {plan.features.map((feature, idx) => {
-                      const isHighlight = feature.includes("Everything in") || 
-                                        feature.includes("Custom") || 
-                                        feature.includes("Unlimited") ||
-                                        feature.includes("Advanced") ||
-                                        feature.includes("Dedicated") ||
-                                        feature.includes("Premium") ||
-                                        feature.includes("Natural Language");
-                      
-                      return (
-                        <li key={idx} className="flex items-start">
-                          <div className="mr-2 rounded-full p-0.5 mt-0.5 bg-indigo-50">
-                            <svg 
-                              className="w-3 h-3 text-indigo-600" 
-                              fill="currentColor" 
-                              viewBox="0 0 20 20"
-                            >
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                          </div>
-                          <span className={`text-xs ${isHighlight ? 'font-medium text-gray-800' : 'text-gray-600'}`}>
-                            {feature}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-                
-                {/* CTA */}
-                <div className="mt-auto">
-                  <button 
-                    className={`w-full py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                      isPopular
-                        ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                        : 'border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-400'
-                    }`}
-                  >
-                    {plan.buttonText}
-                  </button>
-                </div>
+                <ul className="space-y-3">
+                  {plan.features.slice(0, 6).map((feature, idx) => (
+                    <li key={idx} className="flex items-start text-sm">
+                      <span className="mr-3 text-gray-400">•</span>
+                      <span className="text-gray-600">{feature}</span>
+                    </li>
+                  ))}
+                  {plan.features.length > 6 && (
+                    <li className="flex items-center text-sm text-indigo-600 font-medium">
+                      + {plan.features.length - 6} more features
+                    </li>
+                  )}
+                </ul>
               </div>
             </div>
           );

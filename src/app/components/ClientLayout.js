@@ -6,13 +6,13 @@ import Header from './Header';
 
 export default function ClientLayout({ children }) {
   const pathname = usePathname();
-  const isGuidePage = pathname?.startsWith('/guide');
+  const isNotDisplayPage = pathname?.startsWith('/guide') || pathname?.startsWith('/faqs');
 
   return (
     <>
-        {!isGuidePage && <Header />}
+        {!isNotDisplayPage && <Header />}
       {children}
-      {!isGuidePage && <Footer />}
+      {!isNotDisplayPage && <Footer />}
     </>
   );
 }

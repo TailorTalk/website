@@ -56,6 +56,12 @@ export default function Button({
         pressed: 'bg-gray-50',
         border: 'border-gray-200',
         shadow: 'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9),0_2px_8px_0_rgba(229,231,235,1),inset_0_-1px_0_0_rgba(229,231,235,1)]' // using gray-200 for shadow
+      },
+      black: {
+        main: 'bg-black text-white',
+        pressed: 'bg-gray-900',
+        border: 'border-gray-800',
+        shadow: 'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_2px_8px_0_rgba(0,0,0,0.5),inset_0_-1px_0_0_rgba(31,41,55,1)]'
       }
   };
 
