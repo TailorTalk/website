@@ -128,14 +128,21 @@ export default function PricingModule() {
             <div 
               key={index}
               style={{
-                boxShadow: 'inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.2)'
+                boxShadow: isPopular
+                  ? '0 6px 10px 0 rgba(99,102,241,0.4), inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0'
+                  : 'inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)'
               }}
-              className={`rounded-xl overflow-hidden bg-zinc-50 hover:shadow-lg transition-all ${
+              className={`rounded-xl relative overflow-hidden bg-zinc-50 hover:shadow-lg transition-all ${
                 isPopular 
-                  ? 'border-gray-200 shadow-lg' 
-                  : 'border-gray-200 shadow-md'
+                  ? 'shadow-lg ring-[1px] ring-indigo-200/50'
+                  : ' shadow-md'
               }`}
             >
+              {isPopular && (
+                <span className="inline-block absolute right-3 top-7 mb-2 px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-700 shadow-sm">
+                  Popular
+                </span>
+              )}
               {/* Card Header */}
               <div className="px-6 pt-6 pb-4">
                 <h2 className="text-2xl font-bold text-gray-900 mb-1">
