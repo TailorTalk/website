@@ -13,14 +13,14 @@ export default function PricingModule() {
     {
       forText: "For small businesses & startups",
       title: "Starter",
-      description: "Perfect for small businesses & startups getting started with essential chat automation on their primary channel.",
+      description: "Perfect for small businesses & startups getting started with sales & support automation.",
       price: {
         monthly: "59",
         annual: "49"
       },
       period: {
         monthly: "/month",
-        annual: "/month"
+        annual: "/yearly"
       },
       features: [
         "Up to 1,000 Unique Monthly Users*",
@@ -33,14 +33,14 @@ export default function PricingModule() {
     {
       forText: "For growing businesses",
       title: "Growth",
-      description: "Unlock enhanced capabilities with multi-channel integration, advanced workflows, and premium features.",
+      description: "Ideal for growing businesses aiming to automate sales, support & marketing across key channels with advanced features.",
       price: {
         monthly: "119",
         annual: "99"
       },
       period: {
         monthly: "/month",
-        annual: "/month"
+        annual: "/yearly"
       },
       features: [
         "Up to 2,000 Unique Monthly Users*",
@@ -119,7 +119,7 @@ export default function PricingModule() {
       </div>
 
       {/* All Plans */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
         {plans.map((plan, index) => {
           const isPopular = plan.popular;
           const isEnterprise = plan.title === "Enterprise";
@@ -133,14 +133,14 @@ export default function PricingModule() {
                   ? '0 6px 10px 0 rgba(99,102,241,0.4), inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0'
                   : 'inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)'
               }}
-              className={`rounded-xl relative overflow-hidden bg-zinc-50 hover:shadow-lg transition-all ${
+              className={`rounded-xl overflow-hidden bg-zinc-50 hover:shadow-lg transition-all ${
                 isPopular 
                   ? 'shadow-lg ring-[1px] ring-indigo-200/50'
                   : ' shadow-md'
               }`}
             >
               {isPopular && (
-                <span className="inline-block absolute right-3 top-7 mb-2 px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-700 shadow-sm">
+                <span className="inline-block absolute right-[23.2rem] top-[-0.5rem] mb-2 px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-700 shadow-sm">
                   Popular
                 </span>
               )}

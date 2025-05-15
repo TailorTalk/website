@@ -278,7 +278,7 @@ export default function FAQPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
-                Discover everything you need to know about TailorTalk's AI capabilities and solutions
+                Discover everything you need to know about TailorTalk&apos;s AI capabilities and solutions
               </motion.p>
             </motion.div>
           </div>
