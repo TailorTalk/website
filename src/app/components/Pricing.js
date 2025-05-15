@@ -112,7 +112,7 @@ export default function PricingModule() {
           >
             Annual 
             <span className="ml-1.5 bg-green-50 text-green-700 text-xxs px-1.5 py-0.5 rounded-full">
-              Save 16%
+              Save 20%
             </span>
           </button>
         </div>
@@ -123,6 +123,7 @@ export default function PricingModule() {
         {plans.map((plan, index) => {
           const isPopular = plan.popular;
           const isEnterprise = plan.title === "Enterprise";
+          const isStarter = plan.title === "Starter"
           
           return (
             <div 
@@ -145,7 +146,7 @@ export default function PricingModule() {
               )}
               {/* Card Header */}
               <div className="px-6 pt-6 pb-4">
-                <h2 className="text-2xl font-bold text-gray-900 mb-1">
+                <h2 className="text-2xl font-medium text-gray-900 mb-1">
                   {plan.title}
                 </h2>
                 <p className="text-sm text-gray-500 mb-4">
@@ -180,7 +181,7 @@ export default function PricingModule() {
               {/* CTA Button */}
               <div className="px-6">
                 <Button
-                color={isPopular || plan.buttonStyle === 'premium' ? 'indigo': 'black'}
+                color={isEnterprise ? 'black' : 'indigo'}
                   // className={`w-full py-2 rounded-lg text-center font-medium transition-all `}
                 >
                   {plan.buttonText}
@@ -191,7 +192,7 @@ export default function PricingModule() {
               <div className="px-6 py-6 mt-4">
                 <div className="flex items-center space-x-2 mb-4">
                   <div className="h-px bg-gray-200 flex-grow"></div>
-                  <span className="text-sm font-medium text-gray-500">Features</span>
+                  <span className=" font-medium text-gray-700">Features</span>
                   <div className="h-px bg-gray-200 flex-grow"></div>
                 </div>
                 
