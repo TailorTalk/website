@@ -1,7 +1,7 @@
 import Head from 'next/head';
+import Script from 'next/script';
 import { privacyPolicyMetadata } from '../Config/metadata/index';
 import { generateBreadcrumbSchema } from '../Config/metadata/structuredData';
-import Script from 'next/script';
 
 export { privacyPolicyMetadata as metadata };
 
@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
             <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-16">
                 <div className="bg-white p-8 rounded-lg shadow-lg max-w-xl">
                     <h1 className="text-xl font-bold mb-6 text-center">Privacy Policy</h1>
-                    <p><strong>Effective Date:</strong> 10/07/2024</p>
+                    <p><strong>Effective Date:</strong> 15/05/2025</p>
                     <p>TailorTalk is committed to protecting the privacy of our clients and their leads. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.</p>
                     
                     <h2 className="font-semibold mt-4">1. Information We Collect</h2>
@@ -69,10 +69,13 @@ export default function PrivacyPolicy() {
                     <h2 className="font-semibold mt-4">10. Legal Basis for Processing</h2>
                     <p>Our legal basis for processing personal data is the contract we have with our clients.</p>
 
-                    <h2 className="font-semibold mt-4">11. Changes to This Privacy Policy</h2>
+                    <h2 className="font-semibold mt-4">11. Google Workspace APIs Usage</h2>
+                    <p>We explicitly affirm that any data accessed through Google Workspace APIs is not used to develop, improve, or train generalized artificial intelligence (AI) and/or machine learning (ML) models.</p>
+
+                    <h2 className="font-semibold mt-4">12. Changes to This Privacy Policy</h2>
                     <p>We may update this Privacy Policy from time to time. Clients will be informed of any changes via email.</p>
 
-                    <h2 className="font-semibold mt-4">12. Contact Us</h2>
+                    <h2 className="font-semibold mt-4">13. Contact Us</h2>
                     <p>If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:contact@tailortalk.ai" className="text-blue-500">contact@tailortalk.ai</a>.</p>
                 </div>
             </div>
