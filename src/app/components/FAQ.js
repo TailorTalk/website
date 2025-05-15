@@ -139,30 +139,12 @@ const FAQSection = () => {
       backgroundPosition: '0 0'
     }}>
       <div className="max-w-3xl mx-auto" ref={sectionRef}>
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <motion.h2 
-            className="text-4xl font-bold text-gray-900"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.2, duration: 0.4 }}
-          >
-            Frequently Asked <span className="text-indigo-600">Questions</span>
-          </motion.h2>
-          
-          <motion.p 
-            className="mt-4 text-[#61646b] text-[17px]"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.4, duration: 0.4 }}
-          >
-            Everything you need to know about our platform and services
-          </motion.p>
-        </motion.div>
+      <div className="text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-5">
+        Frequently Asked <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Questions</span>
+        </h2>    
+        <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Everything you need to know about our platform and services</p>
+      </div>
         
         <motion.div 
           className="space-y-4"
