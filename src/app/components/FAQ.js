@@ -188,7 +188,7 @@ const FAQSection = () => {
           </motion.h2>
           
           <motion.p 
-            className="mt-4 text-lg text-gray-600"
+            className="mt-4 text-[#61646b] text-[17px]"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.4, duration: 0.4 }}

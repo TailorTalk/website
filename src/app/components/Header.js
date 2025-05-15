@@ -184,7 +184,7 @@ const Header = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed items-center justify-center top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-        ? 'w-[85%] border border-white bg-[#ffffff80] backdrop-blur-sm backdrop-saturate-100 shadow-lg py-2 mx-auto mt-3 rounded-full' 
+        ? 'w-[84.5%] border border-white bg-[#ffffff80] backdrop-blur-lg backdrop-saturate-100 shadow-[0_1px_6px_0_rgba(99,102,241,0.4)] py-2 mx-auto mt-3 rounded-full' 
         : 'bg-transparent py-4 mx-auto w-[90%]'
       }`}
     >

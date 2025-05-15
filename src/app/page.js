@@ -11,8 +11,6 @@ import React, { useEffect,useRef,useState } from "react";
 // import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import Link from "next/link";
 import WhatsappWidget from "./components/WhatsappWidget";
 // import { homeMetadata } from './Config/metadata';
 import { generateOrganizationSchema, generateFAQSchema } from './Config/metadata/structuredData';
@@ -20,14 +18,10 @@ import Script from 'next/script';
 import HeroSection from "./components/HeroSection";
 import LogoMarquee from "./components/LogoMarquee";
 import PricingModule from "./components/Pricing";
-import { ThreeDMarqueeDemoSecond } from "./components/DashboardMarquee";
 import FAQSection from "./components/FAQ";
-import { IntegrationHub } from "./components/IntegrationHub";
 import TestimonialSection from "./components/Testimonials";
-import { ThreeDCardDemo } from "./components/Grid";
-import { VortexDemo } from "./components/JoiningSection";
 import AIAgentToolkit from "./components/Features";
-import { TypewriterEffect } from "./components/ui/typewritter-effect";
+import ToolsIntegrations from "./components/ToolsIntegration";
 
 // export { homeMetadata as metadata };
 
@@ -198,9 +192,9 @@ export default function Home() {
         <div className="w-full">
           <FAQSection/>
         </div>
-        {/* <div className="w-full">
-          <ThreeDCardDemo/>
-        </div> */}
+        <div className="w-full">
+          <ToolsIntegrations/>
+        </div>
         <div className="w-full">
           {/* <TypewriterEffect/> */}
         </div>

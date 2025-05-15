@@ -5,8 +5,8 @@ export default function PricingModule() {
   const [billingPeriod, setBillingPeriod] = useState('monthly');
   
   const pricingHeaders = {
-    title: "Find the Perfect Plan for Your Business Growth",
-    subtitle: "Choose the right plan based on the number of unique customers you engage with each month via your AI Agent. Simple, transparent pricing designed to scale with you."
+    title: "Simple Pricing",
+    subtitle: "Choose the plan that fits your needs and boost your productivity with TodoFusion."
   };
   
   const plans = [
@@ -85,8 +85,8 @@ export default function PricingModule() {
             Pricing
           </span>
         </div>
-        <h1 className="text-3xl font-semibold text-gray-900 mb-4">{pricingHeaders.title}</h1>
-        <p className="text-sm text-gray-600 max-w-3xl mx-auto leading-relaxed">{pricingHeaders.subtitle}</p>
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">Simple <span className='text-indigo-600'>pricing</span></h2>
+        <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Choose the plan that fits your needs and boost your productivity with TailorTalk.</p>
       </div>
       
       {/* Billing Toggle */}
@@ -133,23 +133,23 @@ export default function PricingModule() {
                   ? '0 6px 10px 0 rgba(99,102,241,0.4), inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0'
                   : 'inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)'
               }}
-              className={`rounded-xl overflow-hidden bg-zinc-50 hover:shadow-lg transition-all ${
+              className={`flex flex-col h-full rounded-xl overflow-hidden bg-zinc-50 hover:shadow-lg transition-all ${
                 isPopular 
                   ? 'shadow-lg ring-[1px] ring-indigo-200/50'
                   : ' shadow-md'
               }`}
             >
               {isPopular && (
-                <span className="inline-block absolute right-[23.2rem] top-[-0.5rem] mb-2 px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-700 shadow-sm">
+                <span className="inline-block absolute md:right-[33%] md:top-[-0.5rem] right-[5%] top-[32.5%] mb-2 px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-700 shadow-sm">
                   Popular
                 </span>
               )}
               {/* Card Header */}
-              <div className="px-6 pt-6 pb-4">
-                <h2 className="text-2xl font-medium text-gray-900 mb-1">
+              <div className="px-6 pt-2 pb-4 flex flex-col">
+                <h2 className="text-2xl font-medium text-gray-900 mb-1 min-h-[32px]">
                   {plan.title}
                 </h2>
-                <p className="text-sm text-gray-500 mb-4">
+                <p className="text-sm text-gray-500 mb-4 min-h-[48px]">
                   {plan.description}
                 </p>
                 
@@ -165,7 +165,7 @@ export default function PricingModule() {
                       </span>
                     </div>
                   ) : (
-                    <div className="flex items-baseline">
+                    <div className={`flex items-baseline ${isStarter ? 'mt-2' : ''}`}>
                       <span className="text-3xl font-semibold text-gray-900">
                         ${plan.price[billingPeriod]}
                       </span>
@@ -179,7 +179,7 @@ export default function PricingModule() {
               </div>
               
               {/* CTA Button */}
-              <div className="px-6">
+              <div className={`px-6`}>
                 <Button
                 color={isEnterprise ? 'black' : 'indigo'}
                   // className={`w-full py-2 rounded-lg text-center font-medium transition-all `}

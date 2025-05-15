@@ -60,25 +60,25 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.div
-  className="text-[17px] text-[#61646B] mb-8 max-w-[50rem] mx-auto pl-1 font-light"
-  variants={fadeInUp}
->
-  <span>Let our AI agent manage your B2C sales, support, and any complex workflow on </span> 
-  <FlipWords
-  words={["Whatsapp", "Instagram",]}
-  duration={1000}
-  className="inline-block text-[17px] font-medium text-indigo-600"
-/>
+            className="text-[17px] text-[#61646B] mb-8 max-w-[50rem] mx-auto pl-1 font-light"
+            variants={fadeInUp}
+          >
+            <span>Let our AI agent manage your B2C sales, support, and any complex workflow on </span> 
+            <FlipWords
+            words={["Whatsapp", "Instagram",]}
+            duration={1000}
+            className="inline-block text-[17px] font-medium text-indigo-600"
+          />
 
-<span>chat. It automates </span>
-  <FlipWords
-  words={["follow-ups", "appointments", "payments"]}
-  duration={1000}
-  className="inline-block text-[17px] font-medium text-indigo-600"
-/>
+          <span>chat. It automates </span>
+            <FlipWords
+            words={["follow-ups", "appointments", "payments"]}
+            duration={1000}
+            className="inline-block text-[17px] font-medium text-indigo-600 px-2"
+          />
 
-  <span>and even integrates with your systems for more actions.</span>
-</motion.div>
+            <span>and even integrates with your systems for more actions.</span>
+          </motion.div>
           
           <motion.div 
             className="flex flex-col sm:flex-row justify-center gap-4"

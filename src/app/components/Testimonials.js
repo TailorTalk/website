@@ -57,7 +57,7 @@ const TestimonialsSection = () => {
         {/* Section Header */}
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">Client Success <span className='text-indigo-600'>Stories</span></h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Discover how businesses are achieving measurable results with our solutions</p>
+          <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Discover how businesses are achieving measurable results with our solutions</p>
         </div>
 
         {/* Premium Testimonials Marquee */}
@@ -73,10 +73,13 @@ const TestimonialsSection = () => {
               <div 
                 key={index}
                 className="mx-4 pb-5 w-96 h-[30rem] bg-white rounded-2xl"
+                style={{
+                  background: "repeating-linear-gradient(45deg, rgba(230, 225, 230, 0.3), rgba(230, 225, 230, 0.3) 1px, transparent 1px, transparent 4px)"
+                }}
               >
-                <div className="relative h-full rounded-2xl overflow-hidden group shadow-lg shadow-indigo-500/60 transition-all duration-300">
+                <div className="relative h-full rounded-2xl overflow-hidden group shadow-[0_6px_10px_0_rgba(99,102,241,0.4)] transition-all duration-300">
                   {/* Gradient backlight effect */}
-                  <div className="absolute inset-0 bg-white opacity-70 transform scale-95 group-hover:scale-100 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-white opacity-70 transform scale-100 transition-all duration-300"></div>
                   
                   {/* Card border accent */}
                   <div className="absolute inset-x-0 top-0 h-1 bg-indigo-600"></div>
