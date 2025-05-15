@@ -140,7 +140,7 @@ const FAQSection = () => {
     }}>
       <div className="max-w-3xl mx-auto" ref={sectionRef}>
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-5">
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-5">
         Frequently Asked <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Questions</span>
         </h2>    
         <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Everything you need to know about our platform and services</p>

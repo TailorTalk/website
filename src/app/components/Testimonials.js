@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
       <div className="max-w-8xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-5">
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-5">
         Client Success <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Stories</span>
         </h2>    
         <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Discover how businesses are achieving measurable results with our solutions</p>

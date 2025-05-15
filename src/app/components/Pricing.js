@@ -9,7 +9,7 @@ export default function PricingModule() {
     <div className="w-full max-w-6xl mx-auto py-16 px-4">
       {/* Pricing Headers */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-5">
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-5">
           Simple <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">pricing</span>
         </h2>    
         <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Choose the plan that fits your needs and boost your productivity with TailorTalk.</p>
