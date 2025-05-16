@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
                   <div className="relative z-10 h-full p-8 flex flex-col">
                     
                     {/* Title - consistent height */}
-                    <h4 className="text-xl font-medium text-gray-900 h-16">
+                    <h4 className="text-lg font-medium text-gray-900 h-16">
                       {testimonial.title}
                     </h4>
                     
