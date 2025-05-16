@@ -32,8 +32,9 @@ export default function SeamlessIntegrations() {
   const leftIntegrations = integrations.slice(0, 5);
   const rightIntegrations = integrations.slice(5);
 
-  const leftRefs = Array.from({ length: 5 }, () => useRef(null));
-  const rightRefs = Array.from({ length: 3 }, () => useRef(null));
+  // Use refs as arrays, initialized once
+  const leftRefs = useRef([]);
+  const rightRefs = useRef([]);
   const containerRef = useRef(null);
 
   const [busPoints, setBusPoints] = useState({
@@ -67,9 +68,9 @@ export default function SeamlessIntegrations() {
       if (!containerRect) return;
 
       // Get left points
-      const leftPoints = leftRefs.map(ref => {
-        const rect = ref.current?.getBoundingClientRect();
-        if (!rect) return null;
+      const leftPoints = leftRefs.current.map(ref => {
+        if (!ref) return null;
+        const rect = ref.getBoundingClientRect();
         return {
           x: rect.right - containerRect.left,
           y: rect.top + rect.height / 2 - containerRect.top,
@@ -77,9 +78,9 @@ export default function SeamlessIntegrations() {
       }).filter(Boolean);
 
       // Get right points
-      const rightPoints = rightRefs.map(ref => {
-        const rect = ref.current?.getBoundingClientRect();
-        if (!rect) return null;
+      const rightPoints = rightRefs.current.map(ref => {
+        if (!ref) return null;
+        const rect = ref.getBoundingClientRect();
         return {
           x: rect.left - containerRect.left,
           y: rect.top + rect.height / 2 - containerRect.top,
@@ -399,7 +400,7 @@ export default function SeamlessIntegrations() {
             {leftIntegrations.map((integration, idx) => (
               <motion.div
                 key={integration.id}
-                ref={leftRefs[idx]}
+                ref={el => leftRefs.current[idx] = el}
                 className="rounded-xl overflow-hidden bg-zinc-50 w-48"
                 style={{ boxShadow: "inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)" }}
                 variants={{
@@ -426,7 +427,7 @@ export default function SeamlessIntegrations() {
             {rightIntegrations.map((integration, idx) => (
               <motion.div
                 key={integration.id}
-                ref={rightRefs[idx]}
+                ref={el => rightRefs.current[idx] = el}
                 className="rounded-xl overflow-hidden bg-zinc-50 w-48"
                 style={{ boxShadow: "inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)" }}
                 variants={{
