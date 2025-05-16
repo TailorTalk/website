@@ -189,11 +189,11 @@ export default function Home() {
         <div className="w-full">
           <TestimonialSection/>
         </div>
-        <div className="w-full">
-          <FAQSection/>
-        </div>
         <div className="w-full flex justify-center items-center">
           <ToolsIntegrations/>
+        </div>
+        <div className="w-full">
+          <FAQSection/>
         </div>
         <div className="w-full">
           {/* <TypewriterEffect/> */}
