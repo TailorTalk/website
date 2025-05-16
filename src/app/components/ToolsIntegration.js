@@ -1,101 +1,110 @@
+import { Instagram, WhatsApp } from '@mui/icons-material';
 import { motion } from 'framer-motion';
+import { CalendarCheck, Code, Globe, Image, NotebookText, QrCode } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 export default function SeamlessIntegrations() {
   const [hovered, setHovered] = useState(null);
 
   const integrations = [
-    { id: 'UPI Payments', name: 'UPI Payments', icon: '⬛', 
-      svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 4L4 8L12 12L20 8L12 4Z" fill="#1A1A1A"/>
-              <path d="M4 16L12 20L20 16" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M4 12L12 16L20 12" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg> },
-    { id: 'Booking', name: 'Booking', icon: '❄️',
-      svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 3L17 8L12 13L7 8L12 3Z" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M17 16L12 21L7 16" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg> },
-    { id: 'Documnets', name: 'Documnets', icon: '📈',
-      svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 12C2 13.9778 2.58649 15.9112 3.6853 17.5557C4.78412 19.2002 6.3459 20.4819 8.17317 21.2388C10.0004 21.9957 12.0111 22.1937 13.9509 21.8079C15.8907 21.422 17.6725 20.4696 19.0711 19.0711C20.4696 17.6725 21.422 15.8907 21.8079 13.9509C22.1937 12.0111 21.9957 10.0004 21.2388 8.17317C20.4819 6.3459 19.2002 4.78412 17.5557 3.6853C15.9112 2.58649 13.9778 2 12 2" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 2V8L16 10" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg> },
-    { id: 'Media', name: 'Media', icon: '📈',
-      svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 12C2 13.9778 2.58649 15.9112 3.6853 17.5557C4.78412 19.2002 6.3459 20.4819 8.17317 21.2388C10.0004 21.9957 12.0111 22.1937 13.9509 21.8079C15.8907 21.422 17.6725 20.4696 19.0711 19.0711C20.4696 17.6725 21.422 15.8907 21.8079 13.9509C22.1937 12.0111 21.9957 10.0004 21.2388 8.17317C20.4819 6.3459 19.2002 4.78412 17.5557 3.6853C15.9112 2.58649 13.9778 2 12 2" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 2V8L16 10" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg> },
-    { id: 'API', name: 'API', icon: '📈',
-      svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 12C2 13.9778 2.58649 15.9112 3.6853 17.5557C4.78412 19.2002 6.3459 20.4819 8.17317 21.2388C10.0004 21.9957 12.0111 22.1937 13.9509 21.8079C15.8907 21.422 17.6725 20.4696 19.0711 19.0711C20.4696 17.6725 21.422 15.8907 21.8079 13.9509C22.1937 12.0111 21.9957 10.0004 21.2388 8.17317C20.4819 6.3459 19.2002 4.78412 17.5557 3.6853C15.9112 2.58649 13.9778 2 12 2" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 2V8L16 10" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg> },
-    { id: 'flexify', name: 'Flexify', icon: '□',
-      svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="4" width="16" height="16" rx="2" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg> },
-    { id: 'landify', name: 'Landify', icon: '□',
-      svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="4" width="16" height="16" rx="2" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg> },
-    { id: 'platify', name: 'Platify', icon: '▐▐',
-      svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="4" width="6" height="16" rx="1" fill="#1A1A1A"/>
-              <rect x="14" y="4" width="6" height="16" rx="1" fill="#1A1A1A"/>
-            </svg> },
+    { id: 'UPI Payments', name: 'UPI Payments', icon: QrCode },
+    { id: 'Booking', name: 'Booking', icon: CalendarCheck },
+    { id: 'Documnets', name: 'Documnets', icon: NotebookText },
+    { id: 'Media', name: 'Media', icon: Image },
+    { id: 'API', name: 'API', icon: Code },
+    { id: 'Whatsapp', name: 'Whatsapp', icon: WhatsApp },
+    { id: 'Instagram', name: 'Instagram', icon: Instagram },
+    { id: 'Website', name: 'Website', icon: Globe },
   ];
 
-  const cardVariants = {
-    idle: { scale: 1 },
-    hover: { scale: 1.03, transition: { duration: 0.2 } }
-  };
-
-  // Divide integrations into left and right columns
+  // 5 left, 3 right
   const leftIntegrations = integrations.slice(0, 5);
   const rightIntegrations = integrations.slice(5);
 
-  // Refs for left and right cards
-  const leftRefs = [useRef(null), useRef(null), useRef(null)];
-  const rightRefs = [useRef(null), useRef(null), useRef(null)];
+  const leftRefs = Array.from({ length: 5 }, () => useRef(null));
+  const rightRefs = Array.from({ length: 3 }, () => useRef(null));
   const containerRef = useRef(null);
 
-  const [lines, setLines] = useState([]);
+  const [busPoints, setBusPoints] = useState({
+    left: [],
+    right: [],
+    busX: 0,
+    busYMerge: 0,
+    busYSplit: 0,
+    busXSplit: 0,
+    busXMerge: 0,
+    busYCenter: 0,
+  });
 
-  // Calculate lines on mount and resize
   useEffect(() => {
-    function calculateLines() {
-      const newLines = leftRefs.map((leftRef, i) => {
-        const leftRect = leftRef.current?.getBoundingClientRect();
-        const rightRect = rightRefs[i]?.current?.getBoundingClientRect();
-        const containerRect = containerRef.current?.getBoundingClientRect();
+    function calculateBus() {
+      const containerRect = containerRef.current?.getBoundingClientRect();
+      if (!containerRect) return;
 
-        if (leftRect && rightRect && containerRect) {
-          return {
-            x1: leftRect.right - containerRect.left,
-            y1: leftRect.top + leftRect.height / 2 - containerRect.top,
-            x2: rightRect.left - containerRect.left,
-            y2: rightRect.top + rightRect.height / 2 - containerRect.top,
-          };
-        }
-        return null;
+      // Get left points
+      const leftPoints = leftRefs.map(ref => {
+        const rect = ref.current?.getBoundingClientRect();
+        if (!rect) return null;
+        return {
+          x: rect.right - containerRect.left,
+          y: rect.top + rect.height / 2 - containerRect.top,
+        };
       }).filter(Boolean);
-      setLines(newLines);
+
+      // Get right points
+      const rightPoints = rightRefs.map(ref => {
+        const rect = ref.current?.getBoundingClientRect();
+        if (!rect) return null;
+        return {
+          x: rect.left - containerRect.left,
+          y: rect.top + rect.height / 2 - containerRect.top,
+        };
+      }).filter(Boolean);
+
+      // Bus X positions
+      const busXMerge = containerRect.width * 0.32; // merge further left
+      const busX = containerRect.width / 2; // center of container (behind center card)
+      const busXSplit = containerRect.width * 0.68; // split further right
+
+      // Merge Y: average of left points
+      const busYMerge = leftPoints.length
+        ? leftPoints.reduce((sum, pt) => sum + pt.y, 0) / leftPoints.length
+        : containerRect.height / 2;
+
+      // Split Y: average of right points
+      const busYSplit = rightPoints.length
+        ? rightPoints.reduce((sum, pt) => sum + pt.y, 0) / rightPoints.length
+        : containerRect.height / 2;
+
+      // Center Y
+      const busYCenter = containerRect.height / 2;
+
+      setBusPoints({
+        left: leftPoints,
+        right: rightPoints,
+        busX,
+        busYMerge,
+        busYSplit,
+        busXSplit,
+        busXMerge,
+        busYCenter,
+      });
     }
 
-    calculateLines();
-    window.addEventListener('resize', calculateLines);
-    return () => window.removeEventListener('resize', calculateLines);
-    // eslint-disable-next-line
+    calculateBus();
+    window.addEventListener('resize', calculateBus);
+    return () => window.removeEventListener('resize', calculateBus);
   }, []);
 
   return (
-    <div className=" min-h-screen flex flex-col items-center justify-center p-8 w-[60%]">
+    <div className="min-h-screen flex flex-col items-center justify-center p-8 w-[70%]">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-5">
           Seamless <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Integrations</span>
         </h2>
-        <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Connect TodoFusion with your favorite tools like Notion and Google. Enjoy a unified workflow for enhanced productivity and efficiency.</p>
+        <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">
+          Connect TodoFusion with your favorite tools like Notion and Google. Enjoy a unified workflow for enhanced productivity and efficiency.
+        </p>
       </div>
 
       <div className="relative w-full max-w-4xl mx-auto" ref={containerRef} style={{ minHeight: 400 }}>
@@ -104,30 +113,29 @@ export default function SeamlessIntegrations() {
           className="absolute top-0 left-0 w-full h-full pointer-events-none"
           style={{ zIndex: 10 }}
         >
-          {/* Vertical center line */}
-          {lines.length >= 2 && (() => {
-            const x = (containerRef.current?.offsetWidth ?? 0) / 2;
-            const y1 = lines[0].y1;
-            const y2 = lines[lines.length - 1].y1;
-            return (
-              <line
-                x1={x}
-                y1={y1}
-                x2={x}
-                y2={y2}
-                stroke="#e0e2e6"
-                strokeWidth="1"
-              />
-            );
-          })()}
-          {/* Horizontal lines */}
-          {lines.map((line, idx) => (
-            <line
-              key={idx}
-              x1={line.x1}
-              y1={line.y1}
-              x2={line.x2}
-              y2={line.y2}
+          {/* Left lines to merge point */}
+          {busPoints.left.map((pt, idx) => (
+            <polyline
+              key={`left-${idx}`}
+              points={`${pt.x},${pt.y} ${busPoints.busXMerge},${pt.y} ${busPoints.busXMerge},${busPoints.busYMerge}`}
+              fill="none"
+              stroke="#e0e2e6"
+              strokeWidth="1"
+            />
+          ))}
+          {/* Bus from merge to split (behind center card) */}
+          <polyline
+            points={`${busPoints.busXMerge},${busY(busPoints)} ${busPoints.busX},${busY(busPoints)} ${busPoints.busXSplit},${busPoints.busYSplit}`}
+            fill="none"
+            stroke="#e0e2e6"
+            strokeWidth="1"
+          />
+          {/* Right lines from split point */}
+          {busPoints.right.map((pt, idx) => (
+            <polyline
+              key={`right-${idx}`}
+              points={`${busPoints.busXSplit},${busPoints.busYSplit} ${busPoints.busXSplit},${pt.y} ${pt.x},${pt.y}`}
+              fill="none"
               stroke="#e0e2e6"
               strokeWidth="1"
             />
@@ -135,11 +143,11 @@ export default function SeamlessIntegrations() {
         </svg>
 
         {/* Center card */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[85%] z-50 flex items-center justify-center">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[50%] z-50 flex items-center justify-center">
           {/* Inner container with diagonal pattern */}
           <div className="w-full h-full rounded-2xl flex items-center justify-center">
             {/* Card container */}
-            <motion.div 
+            <motion.div
               className="w-44 h-44 rounded-xl bg-zinc-50 p-5"
               style={{
                 boxShadow: "inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)",
@@ -158,10 +166,9 @@ export default function SeamlessIntegrations() {
               >
                 {/* Border container */}
                 <div className="w-full h-full rounded-lg bg-[#e0e2e6] border-[#c9cdd2] border-[1px] p-1">
-                  {/* Dark center with logo placeholder */}
+                  {/* Dark center with logo */}
                   <div className="w-full h-full bg-[#24242a] border border-black rounded-md flex items-center justify-center">
                     <div className="absolute inset-0 pointer-events-none opacity-100 rounded-md" />
-                    {/* <div className="text-white text-2xl font-bold">T</div> */}
                     <img src="/logo.svg" alt="Logo" className="w-12 h-12 object-contain" />
                   </div>
                 </div>
@@ -171,16 +178,19 @@ export default function SeamlessIntegrations() {
         </div>
 
         {/* Surrounding cards */}
-        <div className="flex justify-between relative z-20">
+        <div className="flex justify-between items-center relative z-20 h-full">
           {/* Left Column */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col justify-center items-center gap-6 h-full">
             {leftIntegrations.map((integration, idx) => (
-              <motion.div 
+              <motion.div
                 key={integration.id}
                 ref={leftRefs[idx]}
-                className="rounded-xl overflow-hidden bg-zinc-50 w-44"
+                className="rounded-xl overflow-hidden bg-zinc-50 w-48"
                 style={{ boxShadow: "inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)" }}
-                variants={cardVariants}
+                variants={{
+                  idle: { scale: 1 },
+                  hover: { scale: 1.03, transition: { duration: 0.2 } }
+                }}
                 initial="idle"
                 animate={hovered === integration.id ? 'hover' : 'idle'}
                 onMouseEnter={() => setHovered(integration.id)}
@@ -188,23 +198,26 @@ export default function SeamlessIntegrations() {
               >
                 <div className="flex items-center p-6">
                   <div className="mr-3">
-                    {integration.svg}
+                    <integration.icon strokeWidth={1.5} />
                   </div>
-                  <span className="text-lg font-semibold">{integration.name}</span>
+                  <span className="text-base font-medium">{integration.name}</span>
                 </div>
               </motion.div>
             ))}
           </div>
-          
+
           {/* Right Column */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col justify-center items-center gap-12 h-full">
             {rightIntegrations.map((integration, idx) => (
-              <motion.div 
+              <motion.div
                 key={integration.id}
                 ref={rightRefs[idx]}
-                className="rounded-xl overflow-hidden bg-zinc-50 w-40"
+                className="rounded-xl overflow-hidden bg-zinc-50 w-48"
                 style={{ boxShadow: "inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)" }}
-                variants={cardVariants}
+                variants={{
+                  idle: { scale: 1 },
+                  hover: { scale: 1.03, transition: { duration: 0.2 } }
+                }}
                 initial="idle"
                 animate={hovered === integration.id ? 'hover' : 'idle'}
                 onMouseEnter={() => setHovered(integration.id)}
@@ -212,9 +225,9 @@ export default function SeamlessIntegrations() {
               >
                 <div className="flex items-center p-6">
                   <div className="mr-3">
-                    {integration.svg}
+                    <integration.icon strokeWidth={1.5} />
                   </div>
-                  <span className="text-lg font-semibold">{integration.name}</span>
+                  <span className="text-base font-medium">{integration.name}</span>
                 </div>
               </motion.div>
             ))}
@@ -223,4 +236,10 @@ export default function SeamlessIntegrations() {
       </div>
     </div>
   );
+
+  // Helper to get the Y for the bus (center of the card area)
+  function busY(points) {
+    // Use the merge Y (left) or split Y (right) as the vertical bus Y
+    return points.busYMerge && !isNaN(points.busYMerge) ? points.busYMerge : points.busYCenter;
+  }
 }
