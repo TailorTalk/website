@@ -160,7 +160,7 @@ export default function Home() {
       
       <main className="flex flex-col justify-center items-center py-10 bg-white font-sans"
       style={{
-        background: "repeating-linear-gradient(45deg, rgba(230, 225, 230, 0.3), rgba(230, 225, 230, 0.3) 1px, transparent 1px, transparent 4px)"
+        background: "repeating-linear-gradient(45deg, rgba(237, 238, 241, 0.8), rgba(237, 238, 241, 0.8) 1px, transparent 1px, transparent 4px)"
       }}
       // style={{
       //   background: "repeating-linear-gradient(45deg, rgb(245, 246, 248), rgb(245, 246, 248) 1px, transparent 1px, transparent 4px)"
@@ -192,7 +192,7 @@ export default function Home() {
         <div className="w-full">
           <FAQSection/>
         </div>
-        <div className="w-full">
+        <div className="w-full flex justify-center items-center">
           <ToolsIntegrations/>
         </div>
         <div className="w-full">
