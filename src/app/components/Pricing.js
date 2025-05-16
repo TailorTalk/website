@@ -80,7 +80,7 @@ export default function PricingModule() {
                 </p>
                 
                 {/* Price */}
-                <div className="mt-4 mb-6">
+                <div className={`mt-4 ${isPopular ? 'mb-5' : 'mb-6'}`}>
                   {isEnterprise ? (
                     <div className="flex items-baseline">
                       <span className="text-2xl font-semibold text-gray-900">

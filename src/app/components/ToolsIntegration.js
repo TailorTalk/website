@@ -3,13 +3,24 @@ import { motion } from 'framer-motion';
 import { CalendarCheck, Code, Globe, Image, NotebookText, QrCode } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
+// Linear interpolation
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+function getPointOnLine(x1, y1, x2, y2, t) {
+  return {
+    x: lerp(x1, x2, t),
+    y: lerp(y1, y2, t),
+  };
+}
+
 export default function SeamlessIntegrations() {
   const [hovered, setHovered] = useState(null);
 
   const integrations = [
-    { id: 'UPI Payments', name: 'UPI Payments', icon: QrCode },
+    { id: 'UPI Payments', name: 'Payments', icon: QrCode },
     { id: 'Booking', name: 'Booking', icon: CalendarCheck },
-    { id: 'Documnets', name: 'Documnets', icon: NotebookText },
+    { id: 'Documnets', name: 'Documents', icon: NotebookText },
     { id: 'Media', name: 'Media', icon: Image },
     { id: 'API', name: 'API', icon: Code },
     { id: 'Whatsapp', name: 'Whatsapp', icon: WhatsApp },
@@ -35,6 +46,20 @@ export default function SeamlessIntegrations() {
     busXMerge: 0,
     busYCenter: 0,
   });
+
+  // Animation state
+  const [progress, setProgress] = useState(0);
+
+  // Animation loop
+  useEffect(() => {
+    let raf;
+    function animate() {
+      setProgress(prev => (prev + 0.006) % 1);
+      raf = requestAnimationFrame(animate);
+    }
+    raf = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   useEffect(() => {
     function calculateBus() {
@@ -96,6 +121,163 @@ export default function SeamlessIntegrations() {
     return () => window.removeEventListener('resize', calculateBus);
   }, []);
 
+  // Animation phases:
+  // 0.0 - 0.33: left beams travel to merge point (L-shaped polyline)
+  // 0.33 - 0.66: single beam travels from merge to split (polyline)
+  // 0.66 - 1.0: 3 beams travel from split to right cards (L-shaped polyline)
+
+  let leftBeams = [];
+  let busBeam = null;
+  let rightBeams = [];
+
+  // Helper to get segment length
+  function segmentLength(a, b) {
+    return Math.hypot(b.x - a.x, b.y - a.y);
+  }
+
+  if (
+    busPoints.left.length === leftIntegrations.length &&
+    busPoints.right.length === rightIntegrations.length
+  ) {
+    const { busXMerge, busYMerge, busX, busXSplit, busYSplit } = busPoints;
+    const lefts = busPoints.left;
+    const rights = busPoints.right;
+
+    // Animation phase
+    const phase = progress < 0.33 ? "left" : progress < 0.66 ? "bus" : "right";
+    const tLeft = Math.min(progress / 0.33, 1);
+    const tBus = progress < 0.33 ? 0 : progress < 0.66 ? (progress - 0.33) / 0.33 : 1;
+    const tRight = progress < 0.66 ? 0 : (progress - 0.66) / 0.34;
+
+    // Beam length as a fraction of the segment
+    const beamLen = 0.08;
+    const busBeamLen = 0.08;
+
+    // Left beams: from each left card to merge point (L-shaped polyline)
+    if (phase === "left") {
+      for (let l = 0; l < lefts.length; l++) {
+        const from = lefts[l];
+        const corner = { x: busXMerge, y: from.y };
+        const to = { x: busXMerge, y: busYMerge };
+        const seg1 = segmentLength(from, corner);
+        const seg2 = segmentLength(corner, to);
+        const total = seg1 + seg2;
+        const t = tLeft * total;
+
+        let points;
+        if (t <= seg1) {
+          // Beam is on the first segment
+          const head = {
+            x: from.x + (corner.x - from.x) * (t / seg1),
+            y: from.y
+          };
+          const tailT = Math.max(0, t - beamLen * total) / seg1;
+          const tail = {
+            x: from.x + (corner.x - from.x) * tailT,
+            y: from.y
+          };
+          points = [tail, head];
+        } else {
+          // Beam is on the second segment
+          const tOnSeg2 = t - seg1;
+          const head = {
+            x: corner.x,
+            y: corner.y + (to.y - corner.y) * (tOnSeg2 / seg2)
+          };
+          const tailT = Math.max(0, tOnSeg2 - beamLen * total) / seg2;
+          const tail = {
+            x: corner.x,
+            y: corner.y + (to.y - corner.y) * tailT
+          };
+          points = [tail, head];
+        }
+        leftBeams.push({ points });
+      }
+    }
+
+    // Bus beam: from merge to split (polyline)
+    if (phase === "bus") {
+      const from = { x: busXMerge, y: busYMerge };
+      const corner = { x: busX, y: busYMerge };
+      const to = { x: busXSplit, y: busYSplit };
+      const seg1 = segmentLength(from, corner);
+      const seg2 = segmentLength(corner, to);
+      const total = seg1 + seg2;
+      const t = tBus * total;
+
+      let points;
+      if (t <= seg1) {
+        // Beam is on the first segment
+        const head = {
+          x: from.x + (corner.x - from.x) * (t / seg1),
+          y: from.y
+        };
+        const tailT = Math.max(0, t - busBeamLen * total) / seg1;
+        const tail = {
+          x: from.x + (corner.x - from.x) * tailT,
+          y: from.y
+        };
+        points = [tail, head];
+      } else {
+        // Beam is on the second segment
+        const tOnSeg2 = t - seg1;
+        const head = {
+          x: corner.x + (to.x - corner.x) * (tOnSeg2 / seg2),
+          y: corner.y + (to.y - corner.y) * (tOnSeg2 / seg2)
+        };
+        const tailT = Math.max(0, tOnSeg2 - busBeamLen * total) / seg2;
+        const tail = {
+          x: corner.x + (to.x - corner.x) * tailT,
+          y: corner.y + (to.y - corner.y) * tailT
+        };
+        points = [tail, head];
+      }
+      busBeam = { points };
+    }
+
+    // Right beams: from split to each right card (L-shaped polyline)
+    if (phase === "right") {
+      for (let r = 0; r < rights.length; r++) {
+        const to = rights[r];
+        const corner = { x: busXSplit, y: to.y };
+        const from = { x: busXSplit, y: busYSplit };
+        const seg1 = segmentLength(from, corner);
+        const seg2 = segmentLength(corner, to);
+        const total = seg1 + seg2;
+        const t = tRight * total;
+
+        let points;
+        if (t <= seg1) {
+          // Beam is on the first segment
+          const head = {
+            x: from.x,
+            y: from.y + (corner.y - from.y) * (t / seg1)
+          };
+          const tailT = Math.max(0, t - beamLen * total) / seg1;
+          const tail = {
+            x: from.x,
+            y: from.y + (corner.y - from.y) * tailT
+          };
+          points = [tail, head];
+        } else {
+          // Beam is on the second segment
+          const tOnSeg2 = t - seg1;
+          const head = {
+            x: corner.x + (to.x - corner.x) * (tOnSeg2 / seg2),
+            y: corner.y + (to.y - corner.y) * (tOnSeg2 / seg2)
+          };
+          const tailT = Math.max(0, tOnSeg2 - beamLen * total) / seg2;
+          const tail = {
+            x: corner.x + (to.x - corner.x) * tailT,
+            y: corner.y + (to.y - corner.y) * tailT
+          };
+          points = [tail, head];
+        }
+        rightBeams.push({ points });
+      }
+    }
+  }
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 w-[70%]">
       <div className="text-center mb-12">
@@ -138,6 +320,39 @@ export default function SeamlessIntegrations() {
               fill="none"
               stroke="#e0e2e6"
               strokeWidth="1"
+            />
+          ))}
+          {/* Animated beams (now always full length on each segment) */}
+          {leftBeams.map((beam, idx) => (
+            <polyline
+              key={`left-beam-${idx}`}
+              points={beam.points.map(p => `${p.x},${p.y}`).join(' ')}
+              stroke="#a78bfa"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.85"
+            />
+          ))}
+          {busBeam && (
+            <polyline
+              points={busBeam.points.map(p => `${p.x},${p.y}`).join(' ')}
+              stroke="#a78bfa"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.85"
+            />
+          )}
+          {rightBeams.map((beam, idx) => (
+            <polyline
+              key={`right-beam-${idx}`}
+              points={beam.points.map(p => `${p.x},${p.y}`).join(' ')}
+              stroke="#a78bfa"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.85"
             />
           ))}
         </svg>
