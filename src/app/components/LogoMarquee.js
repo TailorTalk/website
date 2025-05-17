@@ -44,7 +44,7 @@ const LogoMarquee = () => {
                     <img
                       src={item.logo}
                       alt={item.name}
-                      className="h-12 w-auto rounded-lg"
+                      className="h-11 w-auto rounded-lg"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = `/api/placeholder/120/40`;

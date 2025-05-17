@@ -60,7 +60,7 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.div
-            className="text-[17px] text-[#61646B] mb-8 max-w-[50rem] mx-auto pl-1 font-light"
+            className="text-[17px] text-[#61646B] mb-10 mt-10 max-w-[50rem] mx-auto pl-1 font-light"
             variants={fadeInUp}
           >
             <span>Let our AI agent manage your B2C sales, support, and any complex workflow on </span> 
