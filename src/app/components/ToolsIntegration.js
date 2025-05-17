@@ -1,6 +1,6 @@
 import { Instagram, WhatsApp } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import { CalendarCheck, Code, Globe, Image, NotebookText, QrCode } from 'lucide-react';
+import { CalendarCheck, Code, Globe, Image, NotebookText, QrCode, Files } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 // Linear interpolation
@@ -18,14 +18,14 @@ export default function SeamlessIntegrations() {
   const [hovered, setHovered] = useState(null);
 
   const integrations = [
-    { id: 'UPI Payments', name: 'Payments', icon: QrCode },
-    { id: 'Booking', name: 'Booking', icon: CalendarCheck },
-    { id: 'Documnets', name: 'Documents', icon: NotebookText },
-    { id: 'Media', name: 'Media', icon: Image },
-    { id: 'API', name: 'API', icon: Code },
-    { id: 'Whatsapp', name: 'Whatsapp', icon: WhatsApp },
-    { id: 'Instagram', name: 'Instagram', icon: Instagram },
-    { id: 'Website', name: 'Website', icon: Globe },
+    { id: 'UPI Payments', name: 'Payments', icon: QrCode, color: '#22c55e', bg: 'bg-green-100' },      // green
+    { id: 'Booking', name: 'Booking', icon: CalendarCheck, color: '#2563eb', bg: 'bg-blue-100' },      // blue
+    { id: 'Documnets', name: 'Documents', icon: Files, color: '#f59e42', bg: 'bg-amber-100' },          // amber
+    { id: 'Media', name: 'Media', icon: Image, color: '#a21caf', bg: 'bg-purple-100' },                // purple
+    { id: 'API', name: 'API', icon: Code, color: '#0ea5e9', bg: 'bg-cyan-100' },                       // cyan
+    { id: 'Whatsapp', name: 'Whatsapp', icon: WhatsApp, color: '#25d366', bg: 'bg-[#e7f9f3]' },        // WhatsApp green
+    { id: 'Instagram', name: 'Instagram', icon: Instagram, color: '#e1306c', bg: 'bg-pink-100' },      // Instagram pink
+    { id: 'Website', name: 'Website', icon: Globe, color: '#64748b', bg: 'bg-gray-100' },              // gray
   ];
 
   // 5 left, 3 right
@@ -286,7 +286,7 @@ export default function SeamlessIntegrations() {
           Seamless <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Integrations</span>
         </h2>
         <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">
-          Connect TodoFusion with your favorite tools like Notion and Google. Enjoy a unified workflow for enhanced productivity and efficiency.
+          Enhance your TailorTalk agent by integrating powerful tools to automate complex tasks and deliver actionable results within chat.
         </p>
       </div>
 
@@ -413,8 +413,10 @@ export default function SeamlessIntegrations() {
                 onMouseLeave={() => setHovered(null)}
               >
                 <div className="flex items-center p-6">
-                  <div className="mr-3">
-                    <integration.icon strokeWidth={1.5} />
+                  <div
+                    className={`mr-3 flex items-center justify-center rounded-lg w-10 h-10 ${integration.bg}`}
+                  >
+                    <integration.icon strokeWidth={1.5} style={{ color: integration.color }} className="w-6 h-6" />
                   </div>
                   <span className="text-base font-medium">{integration.name}</span>
                 </div>
@@ -440,8 +442,10 @@ export default function SeamlessIntegrations() {
                 onMouseLeave={() => setHovered(null)}
               >
                 <div className="flex items-center p-6">
-                  <div className="mr-3">
-                    <integration.icon strokeWidth={1.5} />
+                  <div
+                    className={`mr-3 flex items-center justify-center rounded-lg w-10 h-10 ${integration.bg}`}
+                  >
+                    <integration.icon strokeWidth={1.5} style={{ color: integration.color }} className="w-6 h-6" />
                   </div>
                   <span className="text-base font-medium">{integration.name}</span>
                 </div>
