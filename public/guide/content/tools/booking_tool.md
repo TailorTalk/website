@@ -4,12 +4,12 @@ The **Booking Tool** empowers users to connect single or multiple calendars with
 
 <img src="../images/booking_tool.png" alt="TailorTalk Agent Booking Tool Interface" width="50%"/>
 
-## Configuring the Booking Tool
+<!-- ## Configuring the Booking Tool
 
 1.  **Connect Your Google Calendar**: Use Google OAuth to securely add your desired calendars. This standard authentication method ensures your calendar data is handled safely.
 2.  **Assign Calendar Labels**: After connecting, you can assign descriptive labels to each calendar. This helps your agent identify the correct calendar for specific tasks. For example:
     *   `ceo@tailortalk.ai` → "CEO's primary calendar"
-    *   `sales-team@company.com` → "Sales team demo calendar"
+    *   `sales-team@company.com` → "Sales team demo calendar" -->
 
 ## Enabling Your TailorTalk Agent to Access Your Calendar
 
