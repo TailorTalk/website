@@ -51,7 +51,7 @@ const Header = () => {
   // Improved Navigation item component with consistent styling
   const NavItem = ({ href, label, id }) => {
     return (
-      <div className="group relative">
+      <a href={href} className="group relative">
         {/* Base/bottom layer for the 3D effect */}
         <div className={`
           absolute
@@ -62,11 +62,13 @@ const Header = () => {
         <button
           className={`
             relative text-[#24242A]
+            cursor-pointer
             hover:bg-zinc-100
             active:bg-zinc-100
             w-full
-            rounded-lg
-            text-[14px]
+            ${scrolled ? 'rounded-full' : 'rounded-lg'}
+            font-[430]
+            text-[15px]
             px-4.5 py-1.5
             transition-all duration-150
             
@@ -81,7 +83,7 @@ const Header = () => {
         >
           {label}
         </button>
-      </div>
+      </a>
     );
   };
 
@@ -95,23 +97,11 @@ const Header = () => {
         href: "/guide"
       },
       {
-        title: "Blog",
+        title: "FAQs",
         description: "Learn more about chatbase by reading our latest articles.",
         icon: HelpCircle,
-        href: "/blog"
+        href: "/faqs"
       },
-      {
-        title: "Docs",
-        description: "Explore our API and learn how to integrate chatbase with your app.",
-        icon: Code,
-        href: "/docs"
-      },
-      {
-        title: "Changelog",
-        description: "Stay up to date with the latest updates and features.",
-        icon: Clock,
-        href: "/changelog"
-      }
     ];
     return (
       <div className="group relative">
@@ -124,11 +114,13 @@ const Header = () => {
         <button
           className={`
             relative text-[#24242A]
-            hover:bg-zinc-100
+            group-hover:bg-zinc-100
             active:bg-zinc-100
+            cursor-pointer
             w-full
             rounded-lg
-            text-[14px]
+            font-[430]
+            text-[15px]
             px-4 py-1.5
             transition-all duration-150
             
@@ -182,10 +174,10 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed items-center justify-center top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed items-center justify-center top-0 left-0 right-0 z-50 transition-all duration-300 font-sans ${
         scrolled 
-        ? 'w-[84.5%] border border-white bg-[#ffffff80] backdrop-blur-lg backdrop-saturate-100 shadow-[0_1px_6px_0_rgba(99,102,241,0.4)] py-2 mx-auto mt-3 rounded-full' 
-        : 'bg-transparent py-4 mx-auto w-[90%]'
+        ? 'w-[81.5%] border border-white bg-[#ffffff80] backdrop-blur-lg backdrop-saturate-100 shadow-[0_1px_6px_0_rgba(99,102,241,0.4)] py-2 mx-auto mt-5 rounded-full' 
+        : 'bg-transparent py-4 mt-3 mx-auto w-[83%]'
       }`}
     >
       <div className="max-w-screen sm:px-3">
@@ -201,14 +193,14 @@ const Header = () => {
               <Image 
                 src={logo} 
                 alt="logo" 
-                className="w-28 md:w-32 h-full transition-all duration-300" 
+                className="w-28 md:w-[7.5rem] h-full transition-all duration-300" 
                 priority 
               />
             </motion.a>
             
             <nav className="hidden md:flex gap-3 items-center">
               <NavItem href="/" label="Home" id="home" />
-              <NavItem href="/pricing" label="Pricing" id="pricing" />
+              <NavItem href="#pricing" label="Pricing" id="pricingNav" />
               <ResourcesDropdown />
             </nav>
           </div>
@@ -225,12 +217,9 @@ const Header = () => {
             >
                <div className="group relative">
         {/* Base/bottom layer for the 3D effect */}
-        <div className={`
-          absolute
-          inset-0
-          bg-[#493fd8]
-          ${scrolled ? 'rounded-full' : 'rounded-lg'}
-        `}></div>
+        <div className="absolute top-4 right-1.5 flex items-start justify-center pointer-events-none group-hover:hidden">
+        <div className="w-28 h-4 bg-indigo-700 rounded-md blur-sm opacity-100"></div>
+      </div>
         
         <button
           className={`
@@ -248,7 +237,7 @@ const Header = () => {
             
             /* Default bulged out appearance */
             transform
-            shadow-[0_2px_4px_1px_rgba(99,102,241,0.9),inset_0_-1px_0_0_rgb(73,63,216)]
+            shadow-[inset_0_-1px_0_0_rgb(73,63,216)]
             
             /* Hover effect - sink in */
             group-hover:shadow-[inset_0_1px_0_0_rgba(0,0,0,0.7),inset_0_2px_3px_rgba(0,0,0,0.4),inset_0_-1px_0_0_rgba(255,255,255,0.9)]

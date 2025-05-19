@@ -1,92 +1,85 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import logo from "../../../public/logo.svg";
-import linkedin from "../../../public/linkedin.svg";
-import twitter from "../../../public/twitter.svg";
+import logo from "../../../public/logoSvg.svg";
+
 
 const Footer = () => {
   return (
-    <footer className="px-6 sm:px-12 md:px-24 lg:px-32 py-12 bg-black">
-      <div className="container mx-auto flex flex-wrap justify-between">
-        {/* Logo and Description */}
-        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
-          <div>
-          <div className="flex gap-4 items-center">
-        <span className="text-white text-lg font-normal">Tailortalk Private Limited</span>
-      </div>
-            <p className="mt-4 w-1/2 text-gray-400 text-sm">
-             Bangalore, India
+    <footer
+    style={{
+      background: "repeating-linear-gradient(45deg, rgba(247,246,249,255), rgba(247,246,249,255) 1px, transparent 1px, transparent 4px)"
+    }}
+     className="px-6 pt-16 pb-8 font-sans">
+      <div className="container mx-auto">
+        {/* Main footer content */}
+        <div className="flex flex-col md:flex-row mb-20">
+          {/* Logo and tagline */}
+          <div className="mb-8 md:mb-0 ml-16">
+            <div className="flex items-center">
+              <div className=" rounded">
+                <Image src={logo} alt="TailorTalk" className="w-36 h-20"/>
+              </div>
+            </div>
+            <p className="text-[#61646B] text-[17px] font-light ml-2">
+              Personalized conversations, enhanced engagement,<br />
+              seamless communication.
             </p>
-            <div className="flex mt-4 space-x-4">
-              <a href="https://x.com/tailortalk_ai" target="_blank" className="text-gray-400 hover:text-white">
-                <Image src={twitter} alt="twitter" />
-              </a>
-              <a href="https://www.linkedin.com/company/tailortalk-ai/?viewAsMember=true" target="_blank" className="text-gray-400 hover:text-white">
-                <Image src={linkedin} alt="linkedin" />
-              </a>
+          </div>
+
+          {/* Navigation columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:ml-40">
+            {/* Pages column */}
+            <div>
+              <h3 className="font-normal text-[#24242a] text-[15px] mb-4">Pages</h3>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-[#61646B] text-[15px] hover:text-gray-900">Home</a></li>
+                <li><a href="#" className="text-[#61646B] text-[15px] hover:text-gray-900">About</a></li>
+                <li><a href="#" className="text-[#61646B] text-[15px] hover:text-gray-900">Pricing</a></li>
+                <li><a href="#" className="text-[#61646B] text-[15px] hover:text-gray-900">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Products column */}
+            <div>
+              <h3 className="font-normal text-[#24242a] text-[15px] mb-4">Products</h3>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-[#61646B] text-[15px] hover:text-gray-900">Features</a></li>
+                <li><a href="#integrations" className="text-[#61646B] text-[15px] hover:text-gray-900">Integrations</a></li>
+                <li><a href="/guide" className="text-[#61646B] text-[15px] hover:text-gray-900">Docs</a></li>
+              </ul>
+            </div>
+
+            {/* Resources column */}
+            <div>
+              <h3 className="font-normal text-[#24242a] text-[15px] mb-4">Resources</h3>
+              <ul className="space-y-3">
+                <li><a href="/" className="text-[#61646B] text-[15px] hover:text-gray-900">Blog</a></li>
+                <li><a href="/faqs" className="text-[#61646B] text-[15px] hover:text-gray-900">FAQs</a></li>
+                <li><a href="/terms" className="text-[#61646B] text-[15px] hover:text-gray-900">Terms of service</a></li>
+                <li><a href="/privacy_policy" className="text-[#61646B] text-[15px] hover:text-gray-900">Privacy Policy</a></li>
+              </ul>
             </div>
           </div>
         </div>
-        {/* Resources */}
-        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
-          <h3 className="text-lg font-semibold text-white">Resources</h3>
-          <ul className="mt-4 space-y-2 text-gray-400 text-sm">
-            <li>
-            <a href="/about_founders" className="text-gray-400 hover:text-white">About Founders</a>
 
-            </li>
-            <li>
-              <a href="/pricing" className="text-gray-400 hover:text-white">Pricing</a>
-            </li>
-            <li>
-              <a href="#">Testimonials</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-          </ul>
-        </div>
-        {/* Useful Links */}
-        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
-          <h3 className="text-lg font-semibold text-white">Useful Links</h3>
-          <ul className="mt-4 space-y-2 text-gray-400 text-sm">
-          <li>
-          <a href="/privacy_policy" className="text-gray-400 hover:text-white">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="/terms">Terms of Service</a>
-            </li>
-            <li>
-              <a href="#">Cookie Policy</a>
-            </li>
-            <li>
-            <a href="mailto:contact@tailortalk.ai" className="text-gray-400 hover:text-white">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-        {/* Newsletter */}
-        <div className="w-full sm:w-1/2 lg:w-1/4 mb-6">
-          <h3 className="text-lg font-semibold text-white">Newsletter</h3>
-          <p className="mt-4 text-gray-400 text-sm">
-            Sign up and receive the latest news via email.
-          </p>
-          <div className="mt-6 flex">
-            <input
-              type="email"
-              className="w-full p-4 rounded-l-lg bg-gray-800 text-gray-300 focus:outline-hidden"
-              placeholder="Email address"
-            />
-            <button className="px-4 py-2 bg-[#42B4EE] text-white rounded-r-lg hover:bg-blue-500">
-              Send
-            </button>
+        {/* Bottom footer - copyright and social links */}
+        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-gray-500 text-sm mb-4 md:mb-0">
+            © TailorTalk Private Limited | Bangalore, India
+          </div>
+          <div className="flex items-center space-x-4">
+            <a href="https://x.com/tailortalk_ai" aria-label="Twitter" target="_blank" className="text-gray-400 hover:text-gray-600">
+              <svg width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/tailortalk-ai/?viewAsMember=true" target="_blank" aria-label="LinkedIn" className="text-gray-400 hover:text-gray-600">
+              <svg width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+            </a>
           </div>
         </div>
-      </div>
-      <div className="border-t border-gray-800 mt-8 pt-4">
-        <p className="text-center text-gray-500">
-          Copyright 2024 TailorTalk. All Rights Reserved.
-        </p>
       </div>
     </footer>
   );

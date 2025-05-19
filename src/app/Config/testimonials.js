@@ -40,3 +40,30 @@ export const testimonials = [
     role: "Founder",
   }
 ];
+
+export const clientsLogo = [
+  {
+    company: "Keerthi Triumph",
+    logo: "/keerthi.jpg",
+  },
+  {
+    company: "CoachDirect",
+    logo: "/coach_direct.jpg",
+  },
+  {
+    company: "Rage Room",
+    logo: "/rageroom.jpg",
+  },
+  {
+    company: "Tootly",
+    logo: "/tootly.jpg",
+  },
+  {
+    company: "Samyak Sarees",
+    logo: "/Samyakk.webp",
+  },
+  {
+    company: "Stallions",
+    logo: "/stallions.png",
+  }
+];

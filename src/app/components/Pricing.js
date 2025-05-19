@@ -6,7 +6,7 @@ export default function PricingModule() {
   const [billingPeriod, setBillingPeriod] = useState('monthly');
 
   return (
-    <div className="w-full max-w-6xl mx-auto py-16 px-4">
+    <div id='pricing' className="w-full max-w-6xl mx-auto py-16 px-4">
       {/* Pricing Headers */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-5">

@@ -52,7 +52,7 @@ export default function Button({
       shadow: 'shadow-[0_2px_4px_1px_rgba(99,102,241,0.9),inset_0_-1px_0_0_rgb(73,63,216)]'
     },
     white: {
-        main: 'bg-[#F7F7F8] text-black',
+        main: 'bg-[#fffef] text-[#24242a]',
         pressed: 'bg-gray-50',
         border: 'border-gray-200',
         shadow: 'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9),0_2px_8px_0_rgba(229,231,235,1),inset_0_-1px_0_0_rgba(229,231,235,1)]' // using gray-200 for shadow
@@ -103,7 +103,8 @@ export default function Button({
             active:${colorStyle.pressed}
             w-full
             rounded-lg
-            font-normal
+            font-light
+            text-[17px]
             px-5 py-2
             transition-all duration-150
             cursor-pointer

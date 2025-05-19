@@ -1,10 +1,10 @@
 // components/LogoMarquee.jsx
 import Marquee from 'react-fast-marquee';
-import { testimonials } from '../Config/testimonials';
+import { clientsLogo } from '../Config/testimonials';
 
 const LogoMarquee = () => {
   // Sample logos from testimonials
-  const logos = testimonials.map((item) => ({
+  const logos = clientsLogo.map((item) => ({
     id: item.company,
     logo: item.logo,
     name: item.role,

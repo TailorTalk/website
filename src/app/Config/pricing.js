@@ -1,4 +1,4 @@
-export const plans = [
+export const basePlans = [
   {
     forText: "For small businesses & startups",
     title: "Starter",
@@ -64,3 +64,20 @@ export const plans = [
     buttonStyle: "outline"
   }
 ];
+
+const discountPercentage = 20;
+
+function calculateAnnual(monthly, discount) {
+  if (isNaN(Number(monthly))) return monthly;
+  const annual = Number(monthly) * 12;
+  const discounted = Math.floor(annual * (1 - discount / 100));
+  return discounted.toString();
+}
+
+export const plans = basePlans.map(plan => ({
+  ...plan,
+  price: {
+    monthly: plan.price.monthly,
+    annual: calculateAnnual(plan.price.monthly, discountPercentage)
+  }
+}));
