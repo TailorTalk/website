@@ -1,37 +1,41 @@
 # Booking Tool
 
-The **Booking Tool** allows users to integrate single or multiple calendars with their AI agent. Once integrated, your TailorTalk agent can efficiently manage appointments and bookings, streamlining scheduling processes for various use cases.
+The **Booking Tool** empowers users to connect single or multiple calendars with their AI agent. Once integrated, your TailorTalk agent can efficiently manage appointments and bookings, streamlining scheduling processes for a variety of use cases.
 
-<img src="../images/booking_tool.png" alt="TailorTalk Agent Booking Tool Interface" width="50%" />
+<img src="../images/booking_tool.png" alt="TailorTalk Agent Booking Tool Interface" width="50%"/>
 
 ## Configuring the Booking Tool
-1. **Enter Calendar ID**: Enter Gmail ID associated with the calendar. This tells your TailorTalk agent which calendar to use.
-2. **Assign Calendar Labels**: You can define which calendar corresponds to which function. For example:
-   - `ceo@tailortalk.ai` → "CEO calendar"
-   - `cbo@gmail.com` → "CBO calendar"
 
-## Sharing Calendar with Your TailorTalk Agent
-To enable your TailorTalk agent to manage appointments, users need to share their calendar with Tailortalk. Follow these steps:
-1. Go to **Calendar Settings**.
-<img src="../images/calendar_settings.png" alt="text" width="40%" />
-2. Navigate to **Share with specific people or groups**.
-<img src="../images/share_navigation.png" alt="text" width="60%" />
-3. Click on **Add people and groups**.
-4. Add the service account **testcalendar@endless-lamp-269518.iam.gserviceaccount.com** with the required permissions.
-<img src="../images/add_account.png" alt="text" width="60%" />
-5. Change the **Permissions** to **Make changes and manage sharing**.
-<img src="../images/change_permissions.png" alt="text" width="60%" />
-6. Save the settings to enable the AI to schedule and manage bookings.
+1.  **Connect Your Google Calendar**: Use Google OAuth to securely add your desired calendars. This standard authentication method ensures your calendar data is handled safely.
+2.  **Assign Calendar Labels**: After connecting, you can assign descriptive labels to each calendar. This helps your agent identify the correct calendar for specific tasks. For example:
+    *   `ceo@tailortalk.ai` → "CEO's primary calendar"
+    *   `sales-team@company.com` → "Sales team demo calendar"
 
-## How Your TailorTalk Agent Works with Calendars
-Once the calendar is integrated and shared:
-- Your TailorTalk agent checks availability before booking an appointment
-- It can schedule based on user inputs and preferences
+## Enabling Your TailorTalk Agent to Access Your Calendar
 
-## Use Cases
-- **Book Personal Meetings with Leads**: Your TailorTalk agent automates scheduling of one-on-one calls
-- **Book Demos**: Your TailorTalk agent arranges product demonstrations with potential clients
-- **Book Test Rides**: Your TailorTalk agent manages test ride appointments for automotive businesses
-- **Clinic Appointments**: Your TailorTalk agent allows patients to book consultations seamlessly
+To allow your TailorTalk agent to manage appointments, you'll need to grant it access to your calendar(s). Follow these steps:
 
-By utilizing the **Calendar Tool**, businesses can eliminate manual scheduling, enhance customer experience, and improve overall productivity with automated appointment management.
+1.  Navigate to the **Booking Tool** and click the `+ Add Calendar` button.
+    <img src="../images/add_account.png" alt="Add Calendar button in Booking Tool" width="50%" />
+2.  From the pop-up window, select the Google account you wish to integrate.
+    <img src="../images/account_selection.png" alt="Google account selection pop-up" width="50%" />
+3.  Review the requested permissions and click **Allow** to grant access.
+    <img src="../images/allow_permissions.png" alt="Google permissions consent screen" width="50%" />
+4.  Save your settings. Your TailorTalk agent is now equipped to schedule and manage bookings on your behalf.
+    <img src="../images/save_booking.png" alt="Save booking tool settings" width="50%" />
+
+## How Your TailorTalk Agent Interacts with Calendars
+
+Once integrated and authorized:
+
+*   Your TailorTalk agent checks real-time availability before proposing or confirming appointments.
+*   It intelligently schedules new events based on user inputs, specified preferences, and existing calendar entries.
+
+## Common Use Cases
+
+*   **Automated Lead Meeting Scheduling**: Your agent can handle the back-and-forth of scheduling one-on-one calls with leads.
+*   **Seamless Demo Bookings**: Allow potential clients to book product demonstrations directly through your agent at their convenience.
+*   **Effortless Test Ride Appointments**: Streamline the booking process for test rides in automotive businesses.
+*   **Convenient Clinic Consultations**: Enable patients to easily book appointments for medical consultations.
+
+By utilizing the **Booking Tool**, businesses can significantly reduce manual scheduling efforts, enhance customer experience, and improve overall productivity through intelligent, automated appointment management.
