@@ -157,58 +157,6 @@ export default function AIAgentToolkit() {
           </BentoGrid>
         </div>
 
-        {/* Equip Your Agent with Tools */}
-        <div className="mb-20">
-          <div className="flex items-center justify-between mb-12">
-            <h3 className="text-xl font-semibold text-gray-800">
-              Equip Your Agent with Tools
-            </h3>
-          </div>
-          <BentoGrid>
-            {/* Booking Management */}
-            <BentoGridItem
-              title="Booking Management"
-              description="Automate appointment scheduling, confirmations, and reminders to streamline your business operations."
-              header={
-                <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 flex items-center justify-center">
-                  <div className="bg-white p-6 rounded-xl shadow-lg">
-                    <CalendarCheck2 className="h-12 w-12 text-blue-700" />
-                  </div>
-                </div>
-              }
-              icon={<CalendarCheck2 className="h-5 w-5 text-blue-700" />}
-            />
-            
-            {/* In-Chat Payments */}
-            <BentoGridItem
-              title="In-Chat Payments (UPI & More)"
-              description="Securely process payments directly within the conversation, increasing conversion rates and customer satisfaction."
-              header={
-                <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 flex items-center justify-center">
-                  <div className="bg-white p-6 rounded-xl shadow-lg">
-                    <CreditCard className="h-12 w-12 text-green-700" />
-                  </div>
-                </div>
-              }
-              icon={<CreditCard className="h-5 w-5 text-green-700" />}
-            />
-            
-            {/* Knowledge Base Access */}
-            <BentoGridItem
-              title="Knowledge Base Access"
-              description="Answer questions accurately using information from large documents or FAQs to provide valuable customer support."
-              header={
-                <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 flex items-center justify-center">
-                  <div className="bg-white p-6 rounded-xl shadow-lg">
-                    <Database className="h-12 w-12 text-purple-700" />
-                  </div>
-                </div>
-              }
-              icon={<Database className="h-5 w-5 text-purple-700" />}
-            />
-          </BentoGrid>
-        </div>
-
         {/* Leverage Intelligent Automation */}
         <div className="mb-20">
           <div className="flex items-center justify-between mb-12">

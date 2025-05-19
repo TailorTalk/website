@@ -13,9 +13,9 @@ const LogoMarquee = () => {
   return (
     <div className="py-32 overflow-hidden w-screen">
       {/* Trust badge text */}
-      <div className="text-center mb-8">
-        <p className="text-shadow-md font-normal">
-          Trusted by many <span className="font-semibold">Startups</span> and <span className="font-semibold">Enterprise</span> like
+      <div className="text-center mb-12">
+        <p className="font-normal">
+          Trusted by Businesses of All Sizes
         </p>
       </div>
 
@@ -44,7 +44,7 @@ const LogoMarquee = () => {
                     <img
                       src={item.logo}
                       alt={item.name}
-                      className="h-13 w-auto rounded-lg"
+                      className="h-11 w-auto rounded-lg"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = `/api/placeholder/120/40`;
