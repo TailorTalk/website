@@ -162,13 +162,13 @@ const FAQSection = () => {
             />
           ))}
          <div className="flex justify-center pt-4">
-  <a
-    href="/faqs"
-    className="px-5 py-2 rounded-lg bg-indigo-50 text-indigo-700 font-medium border border-indigo-100 hover:bg-indigo-100 hover:text-indigo-900 transition-colors duration-150 shadow"
-    style={{ minWidth: 140, textAlign: 'center' }}
+  <button
+    onClick={() => router.push('/faqs')}
+    className="group flex items-center gap-2 px-7 py-2 rounded-2xl bg-indigo-50 text-indigo-700 font-medium shadow hover:bg-indigo-100 hover:text-indigo-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 cursor-pointer"
   >
-    See all frequently asked questions
-  </a>
+    More FAQs
+    <MoveRight className="ml-1 transition-transform group-hover:translate-x-1 hover:text-indigo-800 text-indigo-700" size={20} />
+  </button>
 </div>
         </motion.div>
       </div>
