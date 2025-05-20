@@ -1,14 +1,17 @@
 // components/LogoMarquee.jsx
 import Marquee from 'react-fast-marquee';
 import { clientsLogo } from '../Config/testimonials';
+import Image from 'next/image';
 
 const LogoMarquee = () => {
   // Sample logos from testimonials
   const logos = clientsLogo.map((item) => ({
-    id: item.company,
-    logo: item.logo,
-    name: item.role,
-  }));
+  id: item.company,
+  logo: item.logo,
+  name: item.company, // or item.role if you want the role
+  width: item.width,
+  height: item.height,
+}));
 
   return (
     <div className="py-32 overflow-hidden w-screen">
@@ -41,10 +44,12 @@ const LogoMarquee = () => {
                     className="mx-8"
                     style={{ marginLeft: '32px', marginRight: '32px' }}
                   >
-                    <img
+                    <Image
                       src={item.logo}
                       alt={item.name}
-                      className="h-11 w-auto rounded-lg"
+                      height={item.height}
+                      width={item.width}
+                      className="rounded-lg"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = `/api/placeholder/120/40`;

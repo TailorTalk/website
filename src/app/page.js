@@ -22,6 +22,7 @@ import FAQSection from "./components/FAQ";
 import TestimonialSection from "./components/Testimonials";
 import AIAgentToolkit from "./components/Features";
 import ToolsIntegrations from "./components/ToolsIntegration";
+import WhyTailorTalk from "./components/whyTailorTalk";
 
 // export { homeMetadata as metadata };
 
@@ -182,6 +183,9 @@ export default function Home() {
         </div>
         <div className="w-full">
           <AIAgentToolkit/>
+        </div>
+        <div className="w-full">
+          <WhyTailorTalk/>
         </div>
         <div className="w-full flex justify-center items-center">
           <ToolsIntegrations/>

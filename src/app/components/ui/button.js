@@ -52,7 +52,7 @@ export default function Button({
       shadow: 'shadow-[0_2px_4px_1px_rgba(99,102,241,0.9),inset_0_-1px_0_0_rgb(73,63,216)]'
     },
     white: {
-        main: 'bg-[#fffef] text-[#24242a]',
+        main: 'bg-white text-[#24242a]',
         pressed: 'bg-gray-50',
         border: 'border-gray-200',
         shadow: 'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9),0_2px_8px_0_rgba(229,231,235,1),inset_0_-1px_0_0_rgba(229,231,235,1)]' // using gray-200 for shadow

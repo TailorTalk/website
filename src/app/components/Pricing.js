@@ -95,11 +95,12 @@ export default function PricingModule() {
                       <span className="text-3xl font-semibold text-gray-900">
                         ${plan.price[billingPeriod]}
                       </span>
-                      <span className="ml-1 text-gray-500">
-                        {plan.period[billingPeriod]}
+                      <span className="ml-1 text-gray-500 flex flex-row">
+                        {plan.period[billingPeriod]} {billingPeriod === 'annual' && <p className="text-xs text-gray-500 mt-1.5 ml-1"> (billed yearly)</p>}
                       </span>
                     </div>
                   )}
+                  
                   <p className="text-xs text-gray-500 mt-1">plus local taxes</p>
                 </div>
               </div>

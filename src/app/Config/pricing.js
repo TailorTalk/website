@@ -9,7 +9,7 @@ export const basePlans = [
     },
     period: {
       monthly: "/month",
-      annual: "/yearly"
+      annual: "/month"
     },
     features: [
       "Up to 1,000 Unique Monthly Users*",
@@ -29,7 +29,7 @@ export const basePlans = [
     },
     period: {
       monthly: "/month",
-      annual: "/yearly"
+      annual: "/month"
     },
     features: [
       "Up to 2,000 Unique Monthly Users*",
@@ -70,7 +70,7 @@ const discountPercentage = 20;
 function calculateAnnual(monthly, discount) {
   if (isNaN(Number(monthly))) return monthly;
   const annual = Number(monthly) * 12;
-  const discounted = Math.floor(annual * (1 - discount / 100));
+  const discounted = Math.floor((annual * (1 - discount / 100))/12);
   return discounted.toString();
 }
 

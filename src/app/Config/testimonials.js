@@ -45,25 +45,43 @@ export const clientsLogo = [
   {
     company: "Keerthi Triumph",
     logo: "/keerthi.jpg",
+    height: 11,
+    width: 90,
   },
   {
     company: "CoachDirect",
     logo: "/coach_direct.jpg",
+    height: 11,
+    width: 100,
   },
   {
     company: "Rage Room",
     logo: "/rageroom.jpg",
+    height: 11,
+    width: 90,
   },
   {
     company: "Tootly",
     logo: "/tootly.jpg",
+    height: 11,
+    width: 100,
   },
   {
     company: "Samyak Sarees",
     logo: "/Samyakk.webp",
+    height: 11,
+    width: 100,
   },
   {
     company: "Stallions",
     logo: "/stallions.png",
+    height: 11,
+    width: 120,
+  },
+  {
+    company: "cftech",
+    logo: "/cf_tech.jpg",
+    height: 11,
+    width: 90,
   }
 ];

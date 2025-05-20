@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:ml-40">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:ml-20">
             {/* Pages column */}
             <div>
               <h3 className="font-normal text-[#24242a] text-[15px] mb-4">Pages</h3>
@@ -63,7 +63,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom footer - copyright and social links */}
-        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+        <div className="pt-8 mx-16 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-500 text-sm mb-4 md:mb-0">
             © TailorTalk Private Limited | Bangalore, India
           </div>
