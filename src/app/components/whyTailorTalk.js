@@ -83,9 +83,9 @@ const featureCards = [
         {/* Header */}
         <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-5">
-          The <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">TailorTalk</span> Advantage
+          Why <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">TailorTalk?</span>
         </h2>    
-        <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">Choose the plan that fits your needs and boost your productivity with TailorTalk.</p>
+        <p className="text-[#61646b] text-[17px] max-w-2xl mx-auto">This is why businesses Choose TailorTalk</p>
       </div>
         
         {/* Features grid */}

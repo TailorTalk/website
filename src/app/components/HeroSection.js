@@ -77,7 +77,7 @@ const HeroSection = () => {
             className="inline-block text-[17px] font-medium text-indigo-600 px-2"
           />
 
-            <span>and even integrates with your systems for more actions.</span>
+            <span>and even integrates with your systems.</span>
           </motion.div>
           
           <motion.div 
