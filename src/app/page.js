@@ -20,90 +20,26 @@ import LogoMarquee from "./components/LogoMarquee";
 import PricingModule from "./components/Pricing";
 import FAQSection from "./components/FAQ";
 import TestimonialSection from "./components/Testimonials";
-import AIAgentToolkit from "./components/Features";
 import ToolsIntegrations from "./components/ToolsIntegration";
 import WhyTailorTalk from "./components/whyTailorTalk";
-import RichMediaSection from "./components/BeyoundText";
+import BeyondQASection from "./components/BeyoundText";
 
 // export { homeMetadata as metadata };
 
 export default function Home() {
   const organizationSchema = generateOrganizationSchema();
   const faqSchema = generateFAQSchema();
+  const [isDesktop, setIsDesktop] = useState(false);
 
-  const stars = 5;
-  const sliderRef = useRef(null);
+  useEffect(() => {
+    // This code runs only on the client
+    setIsDesktop(window.innerWidth >= 1280);
 
-  const next = () => {
-    sliderRef.current.slickNext();
-  };
-
-  const previous = () => {
-    sliderRef.current.slickPrev();
-  };
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ],
-  };
-
-  const settingsTestimonial = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 8000,
-    autoplaySpeed: 0,
-    cssEase: "linear",
-    pauseOnHover: false,
-    draggable: false,
-    swipe: false,
-    variableWidth: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  
-  const [isVisible, setIsVisible] = useState({ assistant: false, features: [] });
-  const assistantRef = useRef(null);
-  const featureRefs = useRef([]);
+    // Optional: Listen for resize events
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1280);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const businessInfo = {
     phoneNumber: '9900130255',
@@ -112,44 +48,6 @@ export default function Home() {
   };
 
   const whatsappUrl = `https://api.whatsapp.com/send?phone=${businessInfo.countryCode}${businessInfo.phoneNumber}&text=hi&source=&data=&app_absent=`;
-
-  
-  useEffect(() => {
-    const observerOptions = { threshold: 0.5 };
-  
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const index = entry.target.dataset.index;
-        if (entry.isIntersecting) {
-          if (entry.target.id === "Features") {
-            setIsVisible((prev) => ({ ...prev, assistant: true }));
-          } else if (index !== undefined) {
-            setIsVisible((prev) => {
-              const newFeatures = [...prev.features];
-              newFeatures[index] = true;
-              return { ...prev, features: newFeatures };
-            });
-          }
-        }
-      });
-    }, observerOptions);
-  
-    if (assistantRef.current) observer.observe(assistantRef.current);
-    featureRefs.current.forEach((ref) => observer.observe(ref));
-  
-    return () => {
-      observer.disconnect();
-    };
-  }, []);  
-
-  const AssistantPoints = [
-    "Automates **inbound** and **outbound** sales.",
-    "Automates **follow ups** with your leads",
-    "Automates **campaigns** for your leads.",
-    "Provide **insights** on your leads.",
-    "Provide 24x7 **customer support**.",
-    "Take actions like **payment**, book **appointments** and more.",
-  ];
 
   return (
     <>
@@ -161,9 +59,11 @@ export default function Home() {
       </Script>
       
       <main className="flex flex-col justify-center items-center py-10 bg-white font-sans"
-      style={{ 
-        background: "repeating-linear-gradient(45deg, rgba(247,246,249,1), rgba(247,246,249,1) min(1px, 0.1vmin), transparent min(1px, 0.1vmin), transparent min(4px, 0.4vmin))" 
-      }}
+     style={{
+      background: isDesktop 
+        ? "repeating-linear-gradient(45deg, rgba(247,246,249,0.5), rgba(247,246,249,0.5) 0.08vw, transparent 0.08vw, transparent 0.3vw)"
+        : "repeating-linear-gradient(45deg, rgba(247,246,249,0.9), rgba(247,246,249,0.9) 1px, transparent 1px, transparent 4px)"
+    }}
       // style={{
       //   background: "repeating-linear-gradient(45deg, rgb(245, 246, 248), rgb(245, 246, 248) 1px, transparent 1px, transparent 4px)"
       // }}
@@ -183,7 +83,7 @@ export default function Home() {
           <LogoMarquee/>
         </div>
         <div className="w-full">
-          <RichMediaSection/>
+          <BeyondQASection/>
         </div>
         <div className="w-full">
           <WhyTailorTalk/>

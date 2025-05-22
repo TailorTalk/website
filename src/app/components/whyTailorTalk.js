@@ -114,7 +114,7 @@ const featureCards = [
   ];
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen xl:min-h-full p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
