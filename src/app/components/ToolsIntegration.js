@@ -383,7 +383,7 @@ export default function SeamlessIntegrations() {
                 {/* Border container */}
                 <div className="w-full h-full rounded-lg bg-[#e0e2e6] border-[#c9cdd2] border-[1px] p-1">
                   {/* Dark center with logo */}
-                  <div className="w-full h-full bg-[#24242a] border border-black rounded-md flex items-center justify-center">
+                  <div className="w-full h-full bg-zinc-50 rounded-md flex items-center justify-center">
                     <div className="absolute inset-0 pointer-events-none opacity-100 rounded-md" />
                     <img src="/logo.svg" alt="Logo" className="w-12 h-12 object-contain" />
                   </div>
