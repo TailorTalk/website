@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FlipWords } from './ui/flip-words';
 import { Button } from './ui/button';
 import { PointerHighlight } from './ui/pointer-highlight';
+import { Pointer } from 'lucide-react';
 
 const HeroSection = () => {
   // Animation variants
@@ -59,34 +60,50 @@ const HeroSection = () => {
             </div>
           </motion.h1>
           <motion.div
-            className="text-[17px] text-[#61646B] mb-10 mt-10 max-w-[50rem] mx-auto pl-1 font-light leading-relaxed "
-            variants={fadeInUp}
-          >
-            <span>
-              Let our AI agent manage your B2C sales, support, and any complex workflow on{" "}
-              <span className="relative inline-block align-middle mr-1" style={{ minWidth: 110 }}>
-                <span className="invisible">Whatsapp</span>
-                <span className="absolute left-0 top-0 w-full h-full flex items-center justify-center border-1 border-dashed border-indigo-400 rounded-xl px-3 py-1 bg-white shadow-sm hover:bg-indigo-50 hover:border-solid transition-all duration-300">
-                  <FlipWords
-                    words={["Whatsapp", "Instagram"]}
-                    duration={1000}
-                    className="inline-block text-[17px] font-medium text-indigo-600"
-                  />
-                </span>
-              </span>chat. It automates{" "}
-              <span className="relative inline-block align-middle mx-1" style={{ minWidth: 135 }}>
-                <span className="invisible">appointments</span>
-                <span className="absolute left-0 top-0 w-full h-full flex items-center justify-center border-1 border-dashed border-indigo-400 rounded-xl px-3 py-1 bg-white shadow-sm hover:bg-emerald-50 hover:border-solid transition-all duration-300">
-                  <FlipWords
-                    words={["follow-ups", "appointments", "payments"]}
-                    duration={1000}
-                    className="inline-block font-medium text-indigo-600"
-                  />
-                </span>
-              </span>{" "}
-              and even integrates with your systems.
-            </span>
-          </motion.div>
+  className="text-[17px] text-[#61646B] mb-10 mt-10 max-w-[50rem] mx-auto pl-1 font-light leading-relaxed"
+  variants={fadeInUp}
+>
+  <span>
+    Let our AI agent manage your B2C sales, support, and any complex workflow on{" "}
+    <PointerHighlight
+    rectangleClassName="rounded-lg bg-zinc-50 border-blue-300 leading-loose"
+    pointerClassName="text-blue-500 h-3 w-3"
+    containerClassName="inline-block mx-1"
+    >
+    <span className="relative inline-block align-middle mr-1" style={{ minWidth: 110 }}>
+      <span className="invisible">Whatsapp</span>
+      <span className="absolute inset-0 flex items-center justify-center rounded-lg
+                       pl-3 pr-1 py-1">
+        <FlipWords
+          words={["Whatsapp", "Instagram"]}
+          duration={1000}
+          className="inline-block text-[17px] font-medium text-indigo-600"
+        />
+      </span>
+    </span>
+    </PointerHighlight>
+    chat. It automates{" "}
+    <PointerHighlight
+    rectangleClassName="rounded-lg bg-zinc-50 border-blue-300 leading-loose"
+    pointerClassName="text-blue-500 h-3 w-3"
+    containerClassName="inline-block mx-1"
+    >
+    <span className="relative inline-block align-middle mx-1" style={{ minWidth: 135 }}>
+      <span className="invisible">appointments</span>
+      <span className="absolute inset-0 flex items-center justify-center px-3 py-1">
+        <FlipWords
+          words={["follow-ups", "appointments", "payments"]}
+          duration={1000}
+          className="inline-block font-medium text-indigo-600"
+        />
+      </span>
+    </span>
+    </PointerHighlight>
+    {" "}
+    and even integrates with your systems.
+  </span>
+</motion.div>
+
 
           <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"

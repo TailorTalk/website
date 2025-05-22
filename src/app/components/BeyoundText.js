@@ -20,7 +20,7 @@ export default function BeyondQASection() {
     {
       id: 2,
       type: 'ai-support',
-      name: 'HotelBot',
+      name: 'TailorTalk',
       message: "Absolutely! Would you like to see pictures of our available rooms?",
       timestamp: '10:00 AM',
     },
@@ -34,65 +34,73 @@ export default function BeyondQASection() {
     {
       id: 4,
       type: 'ai-support',
-      name: 'HotelBot',
-      message: "Here are some pictures of our deluxe and standard rooms.",
+      name: 'TailorTalk',
+      message: "Here are some pictures of our deluxe rooms.",
       media: {
         type: 'image',
-        content: '/api/placeholder/room1.jpg',
+        content: '/deluxeRoom.jpeg',
         alt: 'Deluxe Room'
       },
       timestamp: '10:01 AM',
     },
     {
-        id: 5,
-        type: 'ai-support',
-        name: 'HotelBot',
-        message: "",
-        media: {
-          type: 'image',
-          content: '/api/placeholder/room2.jpg',
-          alt: 'Standard Room'
-        },
-        timestamp: '10:01 AM',
+      id: 5,
+      type: 'ai-support',
+      name: 'TailorTalk',
+      message: "Standard rooms:",
+      media: {
+        type: 'image',
+        content: '/standardRoom.webp',
+        alt: 'Standard Room'
       },
-      {
-        id: 6,
-        type: 'customer',
-        name: 'Alex',
-        message: "I’d like to book the deluxe room.",
-        timestamp: '10:02 AM',
+      timestamp: '10:01 AM',
+    },
+    {
+      id: 6,
+      type: 'customer',
+      name: 'Alex',
+      message: "I’d like to book the deluxe room.",
+      timestamp: '10:02 AM',
+    },
+    {
+      id: 7,
+      type: 'ai-support',
+      name: 'TailorTalk',
+      message: "Great choice! Please scan this QR code to pay ₹15,000 for your deluxe room booking. After payment, please send the payment screenshot.",
+      media: {
+        type: 'qr',
+        content: '/QR_code_sample.svg',
+        alt: 'Payment QR Code'
       },
-      {
-        id: 7,
-        type: 'ai-support',
-        name: 'HotelBot',
-        message: "Great choice! Please scan this QR code to complete your payment.",
-        media: {
-          type: 'qr',
-          content: '/api/placeholder/qr-code.png',
-          alt: 'Payment QR Code'
-        },
-        timestamp: '10:02 AM',
+      timestamp: '10:02 AM',
+    },
+    {
+      id: 8,
+      type: 'customer',
+      name: 'Alex',
+      message: "Here's the payment screenshot.",
+      media: {
+        type: 'image',
+        content: '/payment_ss.jpg',
+        alt: 'Payment Screenshot'
       },
-      {
-        id: 8,
-        type: 'customer',
-        name: 'Alex',
-        message: "Here's the payment screenshot.",
-        media: {
-          type: 'image',
-          content: '/api/placeholder/payment-screenshot.jpg',
-          alt: 'Payment Screenshot'
-        },
-        timestamp: '10:03 AM',
-      },
-      {
-        id: 9,
-        type: 'ai-support',
-        name: 'HotelBot',
-        message: "Payment received! Your deluxe room is booked. We look forward to your stay.",
-        timestamp: '10:03 AM',
-      }
+      timestamp: '10:03 AM',
+    },
+    {
+      id: 9,
+      type: 'ai-support',
+      name: 'TailorTalk',
+      message: `Payment received! Your deluxe room is booked.
+
+Booking Details:
+- Room Type: Deluxe Room
+- Check-in: 12:00 PM, 15th June 2024
+- Check-out: 11:00 AM, 16th June 2024
+- Amount Paid: ₹15,000
+
+We look forward to your stay!`,
+      timestamp: '10:03 AM',
+    }
   ];
 
   const scrollToBottom = () => {
@@ -120,7 +128,7 @@ export default function BeyondQASection() {
           setTimeout(() => {
             setVisibleMessages([]);
             setCurrentStep(0);
-          }, 3000);
+          }, 0);
           return prev;
         }
       });
@@ -134,7 +142,7 @@ export default function BeyondQASection() {
       const message = chatScenarios[currentStep - 1];
       setTimeout(() => {
         setVisibleMessages(prev => [...prev, message]);
-        setTimeout(scrollToBottom, 100);
+        setTimeout(scrollToBottom, 200);
       }, chatScenarios[currentStep - 1].type !== 'customer' ? 1200 : 0);
     } else if (currentStep === 0) {
       setVisibleMessages([]);
@@ -149,7 +157,7 @@ export default function BeyondQASection() {
                 <img 
                   src={media.content} 
                   alt={media.alt}
-                  className="rounded-xl max-w-full h-24 object-cover border shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="rounded-xl max-w-full h-32 object-cover border shadow-sm hover:shadow-md transition-shadow duration-200"
                 />
               </div>
             );
@@ -249,7 +257,7 @@ export default function BeyondQASection() {
         <Bot className="w-3 h-3 text-white" />
       </div>
       <div className="flex-1">
-        <div className="text-xs text-gray-500 mb-1">AI is typing...</div>
+        <div className="text-xs text-gray-500 mb-1">TailorTalk is typing...</div>
         <div className="bg-white border shadow-sm p-3 rounded-2xl rounded-bl-md max-w-xs">
           <div className="flex items-center gap-1">
             <motion.div
@@ -340,7 +348,7 @@ export default function BeyondQASection() {
         {/* Right Chat Animation */}
         <div className="flex items-end justify-center w-full h-full">
           <div className="w-full max-w-2xl">
-            <div className="bg-white rounded-3xl shadow-2xl border-0 overflow-hidden w-full">
+            <div className="bg-white rounded-3xl shadow-lg shadow-indigo-500/40 border-0 overflow-hidden w-full">
               {/* Only Chat Messages, no header or input */}
               <div 
                 ref={chatContainerRef}
@@ -366,7 +374,7 @@ export default function BeyondQASection() {
                       {/* Enhanced Avatar */}
                       <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center shadow-sm ${
                         message.type === 'customer' 
-                          ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white ring-2 ring-blue-200' 
+                          ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white ring-2 ring-indigo-200' 
                           : message.type === 'ai-sales'
                           ? 'bg-gradient-to-br from-green-500 to-emerald-500 text-white ring-2 ring-green-200'
                           : 'bg-gradient-to-br from-purple-500 to-indigo-500 text-white ring-2 ring-purple-200'
@@ -376,7 +384,7 @@ export default function BeyondQASection() {
                         ) : message.type === 'ai-sales' ? (
                           <Bot className="w-3 h-3" />
                         ) : (
-                          <Headphones className="w-3 h-3" />
+                          <Bot className="w-3 h-3" />
                         )}
                       </div>
 
@@ -389,7 +397,7 @@ export default function BeyondQASection() {
                         </div>
                         <div className={`p-3 rounded-2xl text-sm leading-relaxed shadow-sm hover:shadow-md transition-all duration-200 ${
                           message.type === 'customer'
-                            ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white ml-auto rounded-br-md'
+                            ? 'bg-gradient-to-br from-indigo-400 to-indigo-500 text-white ml-auto rounded-br-md'
                             : 'bg-white border border-gray-100 rounded-bl-md hover:border-gray-200'
                         }`}>
                           <p>{message.message}</p>
