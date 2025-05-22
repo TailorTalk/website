@@ -20,17 +20,16 @@ export default function SeamlessIntegrations() {
   const integrations = [
     { id: 'UPI Payments', name: 'Payments', icon: QrCode, color: '#22c55e', bg: 'bg-green-100' },      // green
     { id: 'Booking', name: 'Booking', icon: CalendarCheck, color: '#2563eb', bg: 'bg-blue-100' },      // blue
-    { id: 'Documnets', name: 'Documents', icon: Files, color: '#f59e42', bg: 'bg-amber-100' },          // amber
-    { id: 'Media', name: 'Media', icon: Image, color: '#a21caf', bg: 'bg-purple-100' },                // purple
+    { id: 'Documnets', name: 'Documents', icon: Files, color: '#f59e42', bg: 'bg-amber-100' },         // amber
     { id: 'API', name: 'API', icon: Code, color: '#0ea5e9', bg: 'bg-cyan-100' },                       // cyan
     { id: 'Whatsapp', name: 'Whatsapp', icon: WhatsApp, color: '#25d366', bg: 'bg-[#e7f9f3]' },        // WhatsApp green
     { id: 'Instagram', name: 'Instagram', icon: Instagram, color: '#e1306c', bg: 'bg-pink-100' },      // Instagram pink
     { id: 'Website', name: 'Website', icon: Globe, color: '#64748b', bg: 'bg-gray-100' },              // gray
   ];
 
-  // 5 left, 3 right
-  const leftIntegrations = integrations.slice(0, 5);
-  const rightIntegrations = integrations.slice(5);
+  // 4 left, 3 right (since there are now 7 cards)
+  const leftIntegrations = integrations.slice(0, 4);
+  const rightIntegrations = integrations.slice(4);
 
   // Use refs as arrays, initialized once
   const leftRefs = useRef([]);
@@ -364,7 +363,7 @@ export default function SeamlessIntegrations() {
           <div className="w-full h-full rounded-2xl flex items-center justify-center">
             {/* Card container */}
             <motion.div
-              className="w-44 h-44 rounded-xl bg-zinc-50 p-5"
+              className="w-36 h-36 rounded-xl bg-zinc-50 p-3"
               style={{
                 boxShadow: "inset 0 1px 0 0 white, inset 0 -1px 0 0 #E2E8F0, 0 4px 8px 0 rgba(0,0,0,0.08)",
                 transition: "all 0.3s ease"
@@ -385,7 +384,7 @@ export default function SeamlessIntegrations() {
                   {/* Dark center with logo */}
                   <div className="w-full h-full bg-zinc-50 rounded-md flex items-center justify-center">
                     <div className="absolute inset-0 pointer-events-none opacity-100 rounded-md" />
-                    <img src="/logo.svg" alt="Logo" className="w-12 h-12 object-contain" />
+                    <img src="/logo.svg" alt="Logo" className="w-9 h-9 object-contain" />
                   </div>
                 </div>
               </div>
@@ -396,7 +395,7 @@ export default function SeamlessIntegrations() {
         {/* Surrounding cards */}
         <div className="flex justify-between items-center relative z-20 h-full">
           {/* Left Column */}
-          <div className="flex flex-col justify-center items-center gap-6 h-full">
+          <div className="flex flex-col justify-center items-center gap-8 h-full">
             {leftIntegrations.map((integration, idx) => (
               <motion.div
                 key={integration.id}
