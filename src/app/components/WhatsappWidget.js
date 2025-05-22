@@ -62,12 +62,29 @@ const WhatsappWidget = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <button
-        onClick={() => setIsOpen(true)}
-        className="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-all duration-200 flex items-center justify-center"
-      >
-        <div className="w-2 h-2 bg-red-500 fixed right-[1.75rem] bottom-[4.5rem] rounded-full"/>
-        <Image src={whatsappIcon} alt='w' width={30} height={30} className='w-[2.4rem] h-[2.4rem]' />
-      </button>
+  onClick={() => setIsOpen(true)}
+  className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white w-32 h-8 rounded-lg p-2 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer group transform hover:scale-105 active:scale-95 relative overflow-hidden"
+>
+  {/* Subtle shine effect */}
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+  
+  {/* WhatsApp icon with subtle animation */}
+  <Image 
+    src={whatsappIcon} 
+    alt='WhatsApp' 
+    width={30} 
+    height={30} 
+    className='w-[1.2rem] h-[1.2rem]' 
+  />
+  
+  {/* Text with improved typography */}
+  <p className='font-sans font-medium text-sm relative z-10'>Start Chat</p>
+  
+  {/* Optional: Small pulse indicator */}
+  {/* <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse shadow-md">
+    <div className="absolute inset-0 w-3 h-3 bg-red-500 rounded-full animate-ping opacity-75"></div>
+  </div> */}
+</button>
 
       <Dialog 
         open={isOpen} 
