@@ -12,22 +12,21 @@ const Footer = () => {
      className="px-6 pt-16 pb-8 font-sans">
       <div className="container mx-auto">
         {/* Main footer content */}
-        <div className="flex flex-col md:flex-row mb-20">
+        <div className="flex flex-col md:flex-row mb-6">
           {/* Logo and tagline */}
-          <div className="mb-8 md:mb-0 ml-16">
+          <div className="mb-8 md:mb-40 ml-16">
             <div className="flex items-center">
               <div className=" rounded">
                 <Image src={logo} alt="TailorTalk" className="w-36 h-20"/>
               </div>
             </div>
             <p className="text-[#61646B] text-[17px] font-light ml-2">
-              Personalized conversations, enhanced engagement,<br />
-              seamless communication.
+            Transform Customer Engagement with Actionable <br/> AI Agent
             </p>
           </div>
 
           {/* Navigation columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:ml-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-24 md:ml-40 md:mt-5">
             {/* Pages column */}
             <div>
               <h3 className="font-normal text-[#24242a] text-[15px] mb-4">Pages</h3>

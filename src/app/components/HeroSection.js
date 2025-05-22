@@ -60,25 +60,43 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.div
-            className="text-[17px] text-[#61646B] mb-10 mt-10 max-w-[50rem] mx-auto pl-1 font-light"
-            variants={fadeInUp}
-          >
-            <span>Let our AI agent manage your B2C sales, support, and any complex workflow on </span> 
-            <FlipWords
-            words={["Whatsapp", "Instagram",]}
-            duration={1000}
-            className="inline-block text-[17px] font-medium text-indigo-600"
-          />
-
-          <span>chat. It automates </span>
-            <FlipWords
-            words={["follow-ups", "appointments", "payments"]}
-            duration={1000}
-            className="inline-block text-[17px] font-medium text-indigo-600 px-2"
-          />
-
-            <span>and even integrates with your systems.</span>
-          </motion.div>
+  className="text-[17px] text-[#61646B] mb-10 mt-10 max-w-[50rem] mx-auto pl-1 font-light"
+  variants={fadeInUp}
+>
+  <span>
+    Let our AI agent manage your B2C sales, support, and any complex workflow on{" "}
+    <span className="relative inline-block align-middle mr-1" style={{ minWidth: 105 }}>
+      {/* Placeholder for width stability */}
+      <span className="invisible">
+        Whatsapp
+      </span>
+      {/* FlipWords absolutely positioned */}
+      <span className="absolute left-0 top-0 w-full h-full flex items-center justify-center border border-indigo-400 rounded px-2 bg-white shadow">
+        <FlipWords
+          words={["Whatsapp", "Instagram"]}
+          duration={1000}
+          className="inline-block text-[17px] font-medium text-indigo-600"
+        />
+      </span>
+    </span>
+    chat. It automates{" "}
+    <span className="relative inline-block align-middle mx-1" style={{ minWidth: 130 }}>
+      {/* Placeholder for width stability */}
+      <span className="invisible">
+        appointments
+      </span>
+      {/* FlipWords absolutely positioned */}
+      <span className="absolute left-0 top-0 w-full h-full flex items-center justify-center border border-indigo-400 rounded px-2 bg-white shadow">
+        <FlipWords
+          words={["follow-ups", "appointments", "payments"]}
+          duration={1000}
+          className="inline-block text-[17px] font-medium text-indigo-600 px-2"
+        />
+      </span>
+    </span>
+    and even integrates with your systems.
+  </span>
+</motion.div>
           
           <motion.div 
             className="flex flex-col sm:flex-row justify-center gap-4"

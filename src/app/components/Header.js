@@ -92,13 +92,13 @@ const Header = () => {
     const resourceItems = [
       {
         title: "Guide",
-        description: "Find out everything on how to use chatbase, and unlock its full potential.",
+        description: "Find out everything on how to use TailorTalk, and unlock its full potential.",
         icon: Book,
         href: "/guide"
       },
       {
         title: "FAQs",
-        description: "Learn more about chatbase by reading our latest articles.",
+        description: "Find answers to common questions about TailorTalk and our platform.",
         icon: HelpCircle,
         href: "/faqs"
       },
@@ -208,7 +208,7 @@ const Header = () => {
           <div className="flex items-center gap-4">
             {/* Desktop CTA Button */}
             <motion.a 
-              href="/remix-template" 
+              href="/" 
               className="hidden md:block"
               variants={buttonVariant}
               initial="hidden"
