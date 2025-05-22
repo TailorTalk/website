@@ -107,7 +107,7 @@ const featureCards = [
     </svg>
   ),
   title: "Seamless Integration",
-  description: "Easily integrate TailorTalk with your systems through APIs—let it take actions, interact with your data and workflows.",
+  description: "Easily integrate TailorTalk with your systems through APIs—let it take actions and interact with your data.",
   shadow: "rgba(34, 211, 238, 0.2)", // cyan
   insetShadow: "rgba(34, 211, 238, 0.3)" // slightly deeper cyan
 },
