@@ -267,12 +267,12 @@ export default function BeyondQASection() {
                       </div>
 
                       {/* Minimal Message Bubble */}
-                      <div className={`flex-1 max-w-xs ${
+                      <div className={` max-w-xs ${
                         message.type === 'customer' ? 'text-right' : ''
                       }`}>
                         <div className={`p-3 rounded-2xl text-sm leading-relaxed shadow ${
                           message.type === 'customer'
-                            ? 'bg-gradient-to-br from-indigo-400 to-indigo-500 text-white ml-auto rounded-br-md'
+                            ? 'bg-gradient-to-br from-indigo-400 to-indigo-500 text-white rounded-br-md'
                             : 'bg-white border border-gray-100 rounded-bl-md'
                         }`}>
                           <span>{message.message}</span>
