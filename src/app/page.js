@@ -23,6 +23,7 @@ import TestimonialSection from "./components/Testimonials";
 import AIAgentToolkit from "./components/Features";
 import ToolsIntegrations from "./components/ToolsIntegration";
 import WhyTailorTalk from "./components/whyTailorTalk";
+import RichMediaSection from "./components/BeyoundText";
 
 // export { homeMetadata as metadata };
 
@@ -182,7 +183,7 @@ export default function Home() {
           <LogoMarquee/>
         </div>
         <div className="w-full">
-          <AIAgentToolkit/>
+          <RichMediaSection/>
         </div>
         <div className="w-full">
           <WhyTailorTalk/>
