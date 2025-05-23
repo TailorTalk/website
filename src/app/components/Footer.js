@@ -14,15 +14,38 @@ const Footer = () => {
         {/* Main footer content */}
         <div className="flex flex-col md:flex-row mb-6">
           {/* Logo and tagline */}
-          <div className="mb-8 md:mb-40 ml-16">
+          <div className="mb-0 md:mb-0 ml-16">
             <div className="flex items-center">
               <div className=" rounded">
                 <Image src={logo} alt="TailorTalk" className="w-36 h-20"/>
               </div>
             </div>
-            <p className="text-[#61646B] text-[17px] font-light ml-2">
-            Transform Customer Engagement with Actionable <br/> AI Agent
+            <p className="text-[#61646B] text-[15px] font-light ml-2">
+              Our vision is to empower SMBs with simple and powerful AI.
             </p>
+            <div className="flex items-center space-x-4 mt-8 ml-2">
+              <Image
+                src="/meta_partner.jpg"
+                alt="Meta Partner"
+                width={80}
+                height={32}
+                className="object-contain"
+              />
+                <Image
+                src="/google_startup.png"
+                alt="Startup India"
+                width={170}
+                height={32}
+                className="object-contain"
+              />
+              <Image
+                src="/startup_india.jpg"
+                alt="Startup India"
+                width={110}
+                height={32}
+                className="object-contain"
+              />
+            </div>
           </div>
 
           {/* Navigation columns */}
@@ -53,9 +76,36 @@ const Footer = () => {
               <h3 className="font-normal text-[#24242a] text-[15px] mb-4">Resources</h3>
               <ul className="space-y-3">
                 <li><a href="/" className="text-[#61646B] text-[15px] hover:text-gray-900">Blog</a></li>
-                <li><a href="/faqs" className="text-[#61646B] text-[15px] hover:text-gray-900">FAQs</a></li>
-                <li><a href="/terms" className="text-[#61646B] text-[15px] hover:text-gray-900">Terms of service</a></li>
-                <li><a href="/privacy_policy" className="text-[#61646B] text-[15px] hover:text-gray-900">Privacy Policy</a></li>
+                <li>
+                  <a
+                    href="/faqs"
+                    className="text-[#61646B] text-[15px] hover:text-gray-900"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    FAQs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/terms"
+                    className="text-[#61646B] text-[15px] hover:text-gray-900"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Terms of service
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/privacy_policy"
+                    className="text-[#61646B] text-[15px] hover:text-gray-900"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -77,6 +127,7 @@ const Footer = () => {
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
               </svg>
             </a>
+
           </div>
         </div>
       </div>
